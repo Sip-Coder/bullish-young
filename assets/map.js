@@ -1,5 +1,6 @@
 const narrowMap = matchMedia("(max-width: 700px)");
 let selectedTicker = null;
+let tipTimer = null;
 
 shell("map").then(render);
 addEventListener("resize", () => {
@@ -77,9 +78,10 @@ function drawLeaves(box, leaves, tip) {
       tip.style.display = "block";
       tip.style.left = `${e.clientX + 12}px`;
       tip.style.top = `${e.clientY + 12}px`;
-      tip.innerHTML = `${s.name || s.ticker}<br>${BY.money(s.price)} &nbsp; ${BY.change(s.change)} (${BY.pct(s.chg_pct)})<br>Mkt Cap ${BY.big(s.market_cap)}`;
+      clearTimeout(tipTimer);
+      tip.innerHTML = `<div class="tooltip-head"><strong>${s.name || s.ticker}</strong>${BY.starButton(s.ticker)}</div>${BY.money(s.price)} &nbsp; ${BY.change(s.change)} (${BY.pct(s.chg_pct)})<br>Mkt Cap ${BY.big(s.market_cap)}`;
     };
-    node.onmouseleave = () => (tip.style.display = "none");
+    node.onmouseleave = () => { tipTimer = setTimeout(() => (tip.style.display = "none"), 180); };
     box.append(node);
   });
 }
@@ -88,5 +90,9 @@ function updateInfo(s) {
   const info = document.querySelector("#map-info");
   if (!s) { info.hidden = true; info.innerHTML = ""; return; }
   info.hidden = false;
-  info.innerHTML = `<span><strong>${s.ticker}</strong> · ${s.name || s.ticker} · <span class="${s.chg_pct >= 0 ? "up" : "down"}">${BY.pct(s.chg_pct)}</span></span><a href="stock.html?t=${encodeURIComponent(s.ticker)}">View stock</a>`;
+  info.innerHTML = `<span><strong>${s.ticker}</strong> · ${s.name || s.ticker} · <span class="${s.chg_pct >= 0 ? "up" : "down"}">${BY.pct(s.chg_pct)}</span></span>${BY.starButton(s.ticker)}<a href="stock.html?t=${encodeURIComponent(s.ticker)}">View stock</a>`;
 }
+
+const mapTip = document.querySelector("#tip");
+mapTip.onmouseenter = () => clearTimeout(tipTimer);
+mapTip.onmouseleave = () => (mapTip.style.display = "none");

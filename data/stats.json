@@ -1,7 +1,7 @@
 {
  "generated_at": "2026-11-18T05:41:23+00:00",
  "as_of": "2026-11-18T05:41:23+00:00",
- "count": 101,
+ "count": 102,
  "stocks": [
   {
    "ticker": "AAPL",
@@ -3537,6 +3537,41 @@
    "debt_equity_ratio": 1.6765,
    "ma50": 75.57,
    "ma200": 77.69
+  },
+  {
+   "ticker": "TSM",
+   "as_of": "2026-11-18T05:54:04+00:00",
+   "source": "https://finance.yahoo.com/quote/TSM/key-statistics/",
+   "market_cap": 1865522479104,
+   "enterprise_value": 12022279307264,
+   "pe": 24.20525,
+   "forward_pe": 15.381037,
+   "peg": 0.6762,
+   "ps": 0.37726822,
+   "pb": 69.08984,
+   "ev_revenue": 2.431,
+   "ev_ebitda": 3.339,
+   "profit_margin": 0.51116,
+   "roa": 0.20581,
+   "roe": 0.4186,
+   "revenue": 4944817553408,
+   "net_income": 2527571476480,
+   "eps": 14.86,
+   "total_cash": 4016968302592,
+   "debt_equity_pct": 15.188,
+   "levered_fcf": 1042594725888,
+   "price": 359.69,
+   "high_52w": 487.47,
+   "low_52w": 266.82,
+   "sector": "Technology",
+   "industry": "Semiconductors",
+   "name": "Taiwan Semiconductor Manufactur",
+   "chg_pct": -3.68457,
+   "prev_close": 373.45,
+   "change": -13.76,
+   "debt_equity_ratio": 0.1519,
+   "ma50": 427.3,
+   "ma200": 402.0
   }
  ]
 }

@@ -1,4 +1,4 @@
-"""Refresh Yahoo statistics, two-year OHLCV history, and the AI basket."""
+"""Refresh Yahoo statistics, daily/weekly OHLCV history, and the AI basket."""
 import datetime as dt
 import json
 import os
@@ -9,6 +9,7 @@ import yfinance as yf
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(ROOT, "data")
 HISTORY = os.path.join(D, "history")
+HISTORY_LONG = os.path.join(D, "history_long")
 NOW = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
 def load_json(path, default):
@@ -19,6 +20,7 @@ def load_json(path, default):
 with open(os.path.join(D, "universe.txt"), encoding="utf-8") as f:
     UNIVERSE = [line.strip() for line in f if line.strip()]
 BASKET = load_json(os.path.join(D, "basket_targets.json"), {"positions": []})
+WATCHLIST = load_json(os.path.join(D, "watchlist.json"), {"stocks": []})
 PREVIOUS = {r["ticker"]: r for r in load_json(os.path.join(D, "stats.json"), {}).get("stocks", [])}
 FIELDS = {"marketCap":"market_cap","enterpriseValue":"enterprise_value","trailingPE":"pe","forwardPE":"forward_pe",
  "trailingPegRatio":"peg","priceToSalesTrailing12Months":"ps","priceToBook":"pb","enterpriseToRevenue":"ev_revenue",
@@ -58,17 +60,34 @@ def pull(ticker):
     old = PREVIOUS.get(ticker)
     return (ticker,{**old,"stale":True},None,str(error)) if old else (ticker,None,None,str(error))
 
+def pull_long(ticker):
+    path = os.path.join(HISTORY_LONG,f"{ticker}.json")
+    # The hourly job only refreshes weekly history once a day (with a small safety margin).
+    if os.path.exists(path) and time.time()-os.path.getmtime(path) < 20*60*60: return ticker,None,None
+    try:
+        h = yf.Ticker(ticker.replace(".", "-")).history(period="max", interval="1wk")
+        if len(h) < 1: raise RuntimeError("no weekly history rows")
+        return ticker,history_rows(h),None
+    except Exception as exc:
+        return ticker,None,str(exc)
+
 def write_json(path, value):
     with open(path,"w",encoding="utf-8") as f: json.dump(value,f,indent=1,allow_nan=False); f.write("\n")
 
-tickers = sorted(set(UNIVERSE) | {b["ticker"] for b in BASKET["positions"]})
+# Tickers in data/watchlist.json are always included in the hourly refresh; no other file edits are needed.
+# Every page renders all stats.json rows (universe ∪ basket ∪ watchlist).
+tickers = sorted(set(UNIVERSE) | {b["ticker"] for b in BASKET["positions"]} | {s["ticker"] for s in WATCHLIST["stocks"]})
 with ThreadPoolExecutor(max_workers=4) as executor: results = list(executor.map(pull,tickers))
+with ThreadPoolExecutor(max_workers=4) as executor: long_results = list(executor.map(pull_long,tickers))
 failures = [ticker for ticker,row,hist,error in results if error]
 if len(failures) > len(tickers)/2: raise SystemExit(f"refusing to write: {len(failures)}/{len(tickers)} tickers failed")
 os.makedirs(HISTORY,exist_ok=True); rows=[]
 for ticker,row,hist,error in results:
     if row is not None: rows.append(row)
     if hist is not None: write_json(os.path.join(HISTORY,f"{ticker}.json"),hist)
+long_updates = [(ticker,hist) for ticker,hist,error in long_results if hist is not None]
+if long_updates: os.makedirs(HISTORY_LONG,exist_ok=True)
+for ticker,hist in long_updates: write_json(os.path.join(HISTORY_LONG,f"{ticker}.json"),hist)
 stats = {r["ticker"]:r for r in rows}
 write_json(os.path.join(D,"stats.json"),{"generated_at":NOW,"as_of":NOW,"count":len(rows),"stocks":rows})
 
@@ -84,4 +103,4 @@ for target in BASKET["positions"]:
       "pct_vs_entry":round((price/entry-1)*100,2) if price else None,"status":status,"flag":flag,"as_of":NOW})
 write_json(os.path.join(D,"basket.json"),{"generated_at":NOW,"as_of":NOW,"total":BASKET["total"],
  "cash_reserve":BASKET["cash_reserve"],"positions":positions})
-print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}")
+print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}; long history updates: {len(long_updates)}")

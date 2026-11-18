@@ -30,14 +30,14 @@ shell("portfolio").then(async () => {
       sub = rows.reduce((a, x) => a + x.target_usd, 0);
     rows.forEach(
       (x, i) =>
-        (html += `<tr><td class="text">${i ? "" : area}</td><td class="text"><a href="stock.html?t=${x.ticker}">${x.ticker}</a></td><td>${BY.money(x.target_usd)}</td><td>${BY.money(x.entry_price)}</td><td>${BY.money(x.price)}</td><td>${BY.fmt(x.shares)}</td><td>${BY.money(x.first_half_usd)}</td><td class="${x.pct_vs_entry >= 0 ? "up" : "down"}">${BY.pct(x.pct_vs_entry)}</td><td>${BY.money(x.ma50)}</td><td class="${x.pct_vs_ma50 >= 0 ? "up" : "down"}">${BY.pct(x.pct_vs_ma50)}</td><td class="text"><span class="pill ${x.status.includes("Above") ? "green" : x.status.includes("10%") ? "amber" : ""}">${x.status}</span></td><td class="text">${x.flag || "—"}</td><td class="text brooks-ref"><a href="stock.html?t=${x.ticker}&amp;brooks=1">${label(states[x.ticker])}</a></td></tr>`),
+        (html += `<tr><td class="text">${i ? "" : area}</td><td class="text"><a href="stock.html?t=${x.ticker}">${x.ticker}</a></td><td class="star-cell">${BY.starButton(x.ticker)}</td><td>${BY.money(x.target_usd)}</td><td>${BY.money(x.entry_price)}</td><td>${BY.money(x.price)}</td><td>${BY.fmt(x.shares)}</td><td>${BY.money(x.first_half_usd)}</td><td class="${x.pct_vs_entry >= 0 ? "up" : "down"}">${BY.pct(x.pct_vs_entry)}</td><td>${BY.money(x.ma50)}</td><td class="${x.pct_vs_ma50 >= 0 ? "up" : "down"}">${BY.pct(x.pct_vs_ma50)}</td><td class="text"><span class="pill ${x.status.includes("Above") ? "green" : x.status.includes("10%") ? "amber" : ""}">${x.status}</span></td><td class="text">${x.flag || "—"}</td><td class="text brooks-ref"><a href="stock.html?t=${x.ticker}&amp;brooks=1">${label(states[x.ticker])}</a></td></tr>`),
     );
-    html += `<tr><td class="text" colspan="2"><strong>${area} subtotal</strong></td><td><strong>${BY.money(sub)}</strong></td><td colspan="10"></td></tr>`;
+    html += `<tr><td class="text" colspan="3"><strong>${area} subtotal</strong></td><td><strong>${BY.money(sub)}</strong></td><td colspan="10"></td></tr>`;
   });
-  html += `<tr><td class="text">Cash reserve</td><td class="text">Cash</td><td>${BY.money(b.cash_reserve)}</td><td colspan="10"></td></tr>`;
+  html += `<tr><td class="text">Cash reserve</td><td class="text">Cash</td><td></td><td>${BY.money(b.cash_reserve)}</td><td colspan="10"></td></tr>`;
   tbody.innerHTML = html;
   document.querySelector("tfoot").innerHTML =
-    `<tr><td class="text" colspan="2"><strong>Grand total</strong></td><td><strong>${BY.money(b.total)}</strong></td><td colspan="10"></td></tr>`;
+    `<tr><td class="text" colspan="3"><strong>Grand total</strong></td><td><strong>${BY.money(b.total)}</strong></td><td colspan="10"></td></tr>`;
   let groups = order.map((a) => [
     a,
     b.positions

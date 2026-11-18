@@ -1,3 +1,4 @@
+@import url("stars.css");
 #treemap{overflow:hidden}
 .sector-label{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .map-info{align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);background:var(--soft);margin:8px 0;padding:9px 10px}
@@ -9,7 +10,9 @@
 
 @media (max-width:700px){
   html,body{max-width:100%;overflow-x:hidden}
-  header{white-space:normal}
+  header{white-space:normal;overflow-x:hidden}
+  .nav{flex-wrap:wrap;justify-content:flex-start;gap:8px 12px}
+  .nav a{white-space:nowrap}
   .search{min-width:180px}
   .updated{flex:1 1 150px}
   #treemap{height:auto;min-height:0;overflow:hidden}
@@ -25,8 +28,11 @@
   .table-wrap table{width:max-content;min-width:100%;background:#fff}
   .screener-wrap table{min-width:1120px}
   .portfolio-wrap table{min-width:1320px}
+  .watchlist-wrap table{min-width:1240px}
   .screener-wrap th:first-child,.screener-wrap td:first-child,.portfolio-wrap th:nth-child(2),.portfolio-wrap td:nth-child(2){position:sticky;left:0;z-index:2;background:#fff;box-shadow:1px 0 0 var(--line),6px 0 8px -8px #18202a}
   .screener-wrap th:first-child,.portfolio-wrap th:nth-child(2){z-index:3;background:#f0f3f6}
+  .watchlist-wrap th:first-child,.watchlist-wrap td:first-child{position:sticky;left:0;z-index:2;background:#fff;box-shadow:1px 0 0 var(--line),6px 0 8px -8px #18202a}
+  .watchlist-wrap th:first-child{z-index:3;background:#f0f3f6}
   .source-list{padding-left:22px}
   .source-list li,.brooks-source p{overflow-wrap:anywhere}
 }
@@ -59,4 +65,11 @@
   .source-line{line-height:1.5}
   .map-node{line-height:1.08}
   .map-node small{margin-top:2px}
+  .trade-inputs{grid-template-columns:1fr 1fr;gap:10px}
+  .trade-inputs input,.trade-rate input{font-size:16px;min-width:0}
+  .trade-tax{align-items:flex-start;flex-direction:column;gap:7px}
+  .trade-results{grid-template-columns:1fr}
+  .trade-results .trade-after-tax,.trade-results .trade-range-result{grid-column:auto;flex-wrap:wrap}
+  .trade-results .trade-after-tax strong,.trade-range-result small{width:100%;margin-left:0;text-align:left}
+  .trade-note{font-size:14px}
 }

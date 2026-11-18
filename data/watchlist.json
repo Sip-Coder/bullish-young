@@ -1,0 +1,12 @@
+{
+ "stocks": [
+  {"ticker": "SPCX", "name": "SpaceX"},
+  {"ticker": "NVDA", "name": "NVIDIA"},
+  {"ticker": "MSFT", "name": "Microsoft"},
+  {"ticker": "AAPL", "name": "Apple"},
+  {"ticker": "AMZN", "name": "Amazon"},
+  {"ticker": "AMD", "name": "AMD"},
+  {"ticker": "TSM", "name": "TSMC"},
+  {"ticker": "TSLA", "name": "Tesla"}
+ ]
+}

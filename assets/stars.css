@@ -1,0 +1,29 @@
+.tooltip { pointer-events: auto; }
+.star { color: #7a5a00; background: transparent; border: 0; padding: 1px 4px; font-size: 19px; line-height: 1; vertical-align: middle; }
+.star:hover { color: #a66a00; background: #fff7d6; }
+.star.active { color: #a66a00; background: transparent; border-color: transparent; }
+.star-cell { text-align: center !important; width: 30px; }
+.no-sort { cursor: default; }
+.tooltip-head { align-items: center; justify-content: space-between; gap: 12px; display: flex; }
+.tooltip .star { color: #ffd65a; }
+.portfolio-intro { margin: 0 0 2px; }
+.watchlist-wrap table { min-width: 1240px; }
+.range52 { background: #dfe4e8; border-radius: 3px; width: 58px; height: 7px; margin-right: 5px; display: inline-block; overflow: hidden; vertical-align: middle; }
+.range52 i { background: var(--green); height: 100%; display: block; }
+.range52-label { display: inline-block; min-width: 30px; }
+.sparkline { width: 80px; height: 24px; display: block; }
+.sparkline polyline { fill: none; stroke: var(--green); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+#trade-calc { margin-top: 22px; }
+.trade-calc-card { border: 1px solid var(--line); border-radius: 4px; background: #fff; padding: 14px; }
+.trade-inputs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.trade-inputs label, .trade-tax label { color: var(--muted); font-size: 14px; }
+.trade-inputs input { display: block; width: 100%; box-sizing: border-box; margin-top: 4px; padding: 8px 9px; border: 1px solid var(--line); border-radius: 3px; background: #fff; color: inherit; font: inherit; font-size: 16px; }
+.trade-tax { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 13px; padding-top: 12px; border-top: 1px solid var(--line); }
+.trade-rate { display: inline-flex; align-items: center; gap: 4px; margin-left: 8px; color: inherit; }
+.trade-rate input { width: 72px; box-sizing: border-box; padding: 7px 8px; border: 1px solid var(--line); border-radius: 3px; font-size: 16px; }
+.trade-results { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 24px; margin-top: 12px; border-top: 1px solid var(--line); }
+.trade-results > div { display: flex; justify-content: space-between; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.trade-results strong { text-align: right; }
+.trade-results .trade-after-tax, .trade-results .trade-range-result { grid-column: 1 / -1; }
+.trade-range-result small { margin-left: auto; }
+.trade-note { margin-top: 9px; font-size: 12px; text-transform: none; }
