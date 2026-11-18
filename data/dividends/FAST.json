@@ -134,26 +134,6 @@
    "pct": 2.9412
   },
   {
-   "ex_date": "2003-09-24",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0094,
-   "source": "yahoo",
-   "close": 2.65,
-   "pct": 0.3547
-  },
-  {
-   "ex_date": "2004-02-19",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0094,
-   "source": "yahoo",
-   "close": 3.08,
-   "pct": 0.3052
-  },
-  {
    "ex_date": "2004-08-19",
    "record_date": null,
    "payable_date": null,

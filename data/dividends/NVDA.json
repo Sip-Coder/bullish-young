@@ -4,36 +4,6 @@
  "source": "nasdaq",
  "dividends": [
   {
-   "ex_date": "2012-11-20",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0019,
-   "source": "yahoo",
-   "close": 0.29,
-   "pct": 0.6552
-  },
-  {
-   "ex_date": "2013-02-26",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0019,
-   "source": "yahoo",
-   "close": 0.31,
-   "pct": 0.6129
-  },
-  {
-   "ex_date": "2013-05-21",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0019,
-   "source": "yahoo",
-   "close": 0.37,
-   "pct": 0.5135
-  },
-  {
    "ex_date": "2013-08-20",
    "record_date": "2013-08-22",
    "payable_date": "2013-09-13",

@@ -4,36 +4,6 @@
  "source": "nasdaq",
  "dividends": [
   {
-   "ex_date": "1991-11-22",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
-   "close": 1.26,
-   "pct": 0.3968
-  },
-  {
-   "ex_date": "1992-11-27",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
-   "close": 1.86,
-   "pct": 0.2688
-  },
-  {
-   "ex_date": "1993-11-26",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
-   "close": 4.51,
-   "pct": 0.1109
-  },
-  {
    "ex_date": "1994-04-26",
    "record_date": null,
    "payable_date": null,

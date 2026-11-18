@@ -4,106 +4,6 @@
  "source": "nasdaq",
  "dividends": [
   {
-   "ex_date": "1992-04-20",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
-   "close": 2.44,
-   "pct": 0.2049
-  },
-  {
-   "ex_date": "1992-06-23",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
-   "close": 1.69,
-   "pct": 0.2959
-  },
-  {
-   "ex_date": "1992-10-05",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
-   "close": 2.06,
-   "pct": 0.2427
-  },
-  {
-   "ex_date": "1993-01-19",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
-   "close": 2.59,
-   "pct": 0.1931
-  },
-  {
-   "ex_date": "1993-05-04",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
-   "close": 4.84,
-   "pct": 0.1033
-  },
-  {
-   "ex_date": "1993-06-29",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
-   "close": 6.75,
-   "pct": 0.0741
-  },
-  {
-   "ex_date": "1993-08-30",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0075,
-   "source": "yahoo",
-   "close": 8.7,
-   "pct": 0.0862
-  },
-  {
-   "ex_date": "1994-01-10",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0075,
-   "source": "yahoo",
-   "close": 8.12,
-   "pct": 0.0924
-  },
-  {
-   "ex_date": "1994-04-12",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0075,
-   "source": "yahoo",
-   "close": 5.75,
-   "pct": 0.1304
-  },
-  {
-   "ex_date": "1994-07-01",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0075,
-   "source": "yahoo",
-   "close": 6.56,
-   "pct": 0.1143
-  },
-  {
    "ex_date": "1994-10-03",
    "record_date": null,
    "payable_date": null,
@@ -192,26 +92,6 @@
    "source": "yahoo",
    "close": 11.5,
    "pct": 0.1957
-  },
-  {
-   "ex_date": "1997-01-08",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0057,
-   "source": "yahoo",
-   "close": 9.84,
-   "pct": 0.0579
-  },
-  {
-   "ex_date": "1997-04-09",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0057,
-   "source": "yahoo",
-   "close": 10.28,
-   "pct": 0.0554
   },
   {
    "ex_date": "1997-07-16",

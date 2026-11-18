@@ -408,6 +408,25 @@ def pull_markets():
     return payload
 
 
+
+def drop_unconfirmed_micro_dividends(rows):
+    """Drop Yahoo-only payouts under $0.01/share that Nasdaq did not confirm.
+
+    These are usually non-payer artifacts (MNST, TTWO). Nasdaq-confirmed rows and
+    larger Yahoo-only payouts (for example TSM, where Nasdaq has a gap) are kept.
+    """
+    out = []
+    for row in rows or []:
+        amount = row.get("amount")
+        if (
+            amount is not None
+            and amount < 0.01
+            and row.get("source") != "nasdaq"
+        ):
+            continue
+        out.append(row)
+    return out
+
 def pull_stock_dividends(ticker):
     """Daily Yahoo + Nasdaq dividend history for stock-page D markers. Soft-fail."""
     path = os.path.join(DIVIDENDS_DIR, f"{ticker}.json")
@@ -429,8 +448,8 @@ def pull_stock_dividends(ticker):
             except Exception as exc:
                 print(f"nasdaq dividends {ticker} failed: {exc}")
         if not yahoo and not nasdaq:
-            return ticker, previous or None, "no dividends"
-        rows = merge_dividend_rows(yahoo, nasdaq)
+            return ticker, {"generated_at": NOW, "ticker": ticker, "source": "yahoo", "dividends": []}, "no dividends"
+        rows = drop_unconfirmed_micro_dividends(merge_dividend_rows(yahoo, nasdaq))
         try:
             h = yf.Ticker(ticker.replace(".", "-")).history(period="max", interval="1d", auto_adjust=False)
             h = h.dropna(subset=["Close"]) if h is not None and not h.empty else None
@@ -439,10 +458,14 @@ def pull_stock_dividends(ticker):
             print(f"dividend closes {ticker} failed: {exc}")
             closes = {}
         rows = attach_closes(rows, closes) if closes else rows
+        rows = drop_unconfirmed_micro_dividends(rows)
         source = "nasdaq" if nasdaq else "yahoo"
         return ticker, {"generated_at": NOW, "ticker": ticker, "source": source, "dividends": rows}, None
     except Exception as exc:
-        return ticker, previous or None, str(exc)
+        if previous.get("dividends"):
+            previous = {**previous, "dividends": drop_unconfirmed_micro_dividends(previous.get("dividends") or [])}
+            return ticker, previous, str(exc)
+        return ticker, None, str(exc)
 
 def write_json(path, value):
     with open(path,"w",encoding="utf-8") as f: json.dump(value,f,indent=1,allow_nan=False); f.write("\n")
@@ -493,6 +516,7 @@ markets = pull_markets()
 write_json(os.path.join(D,"markets.json"), markets)
 # Stock-page dividend markers: daily Yahoo + Nasdaq (payers only, throttled). Failures must not fail the job.
 div_written = 0
+div_removed = 0
 try:
     os.makedirs(DIVIDENDS_DIR, exist_ok=True)
     with ThreadPoolExecutor(max_workers=2) as executor:
@@ -500,9 +524,17 @@ try:
     for ticker, payload, error in div_results:
         if error:
             print(f"dividends {ticker} failed: {error}")
-        if payload and payload.get("dividends"):
-            write_json(os.path.join(DIVIDENDS_DIR, f"{ticker}.json"), payload)
+        if payload is None:
+            continue
+        path = os.path.join(DIVIDENDS_DIR, f"{ticker}.json")
+        div_rows = payload.get("dividends") or []
+        if div_rows:
+            write_json(path, payload)
             div_written += 1
+        elif os.path.exists(path):
+            os.remove(path)
+            div_removed += 1
+            print(f"dividends {ticker}: no confirmed rows, removed {path}")
 except Exception as exc:
     print(f"stock dividends refresh failed: {exc}")
-print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}; long history updates: {len(long_updates)}; intraday files written: {len(intraday_updates)}; market series: {list(markets.get('series', {}))}; dividend files: {div_written}")
+print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}; long history updates: {len(long_updates)}; intraday files written: {len(intraday_updates)}; market series: {list(markets.get('series', {}))}; dividend files: {div_written}; removed: {div_removed}")

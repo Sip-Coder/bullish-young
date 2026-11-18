@@ -124,16 +124,6 @@
    "pct": 4.321
   },
   {
-   "ex_date": "1997-03-06",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0028,
-   "source": "yahoo",
-   "close": 1.57,
-   "pct": 0.1783
-  },
-  {
    "ex_date": "1997-06-11",
    "record_date": "1997-06-11",
    "payable_date": null,
@@ -382,26 +372,6 @@
    "source": "nasdaq",
    "close": 5.25,
    "pct": 1.0952
-  },
-  {
-   "ex_date": "2003-09-02",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0073,
-   "source": "yahoo",
-   "close": 6.28,
-   "pct": 0.1162
-  },
-  {
-   "ex_date": "2003-11-28",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0073,
-   "source": "yahoo",
-   "close": 6.86,
-   "pct": 0.1064
   },
   {
    "ex_date": "2004-02-25",

@@ -4,26 +4,6 @@
  "source": "nasdaq",
  "dividends": [
   {
-   "ex_date": "1987-03-10",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0013,
-   "source": "yahoo",
-   "close": 0.9,
-   "pct": 0.1444
-  },
-  {
-   "ex_date": "1988-03-14",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0036,
-   "source": "yahoo",
-   "close": 0.88,
-   "pct": 0.4091
-  },
-  {
    "ex_date": "1989-03-13",
    "record_date": "1989-03-13",
    "payable_date": null,

@@ -4,66 +4,6 @@
  "source": "nasdaq",
  "dividends": [
   {
-   "ex_date": "1987-05-11",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0005,
-   "source": "yahoo",
-   "close": 0.35,
-   "pct": 0.1429
-  },
-  {
-   "ex_date": "1987-08-10",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0005,
-   "source": "yahoo",
-   "close": 0.42,
-   "pct": 0.119
-  },
-  {
-   "ex_date": "1987-11-17",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0007,
-   "source": "yahoo",
-   "close": 0.33,
-   "pct": 0.2121
-  },
-  {
-   "ex_date": "1988-02-12",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0007,
-   "source": "yahoo",
-   "close": 0.36,
-   "pct": 0.1944
-  },
-  {
-   "ex_date": "1988-05-16",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0007,
-   "source": "yahoo",
-   "close": 0.36,
-   "pct": 0.1944
-  },
-  {
-   "ex_date": "1988-08-15",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0007,
-   "source": "yahoo",
-   "close": 0.38,
-   "pct": 0.1842
-  },
-  {
    "ex_date": "1988-11-21",
    "record_date": "1988-11-21",
    "payable_date": null,

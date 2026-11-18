@@ -4,76 +4,6 @@
  "source": "nasdaq",
  "dividends": [
   {
-   "ex_date": "1987-02-27",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0014,
-   "source": "yahoo",
-   "close": 1.02,
-   "pct": 0.1373
-  },
-  {
-   "ex_date": "1987-05-29",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0014,
-   "source": "yahoo",
-   "close": 1.07,
-   "pct": 0.1308
-  },
-  {
-   "ex_date": "1987-08-28",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0014,
-   "source": "yahoo",
-   "close": 1.19,
-   "pct": 0.1176
-  },
-  {
-   "ex_date": "1987-11-27",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0014,
-   "source": "yahoo",
-   "close": 1.01,
-   "pct": 0.1386
-  },
-  {
-   "ex_date": "1988-02-26",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0019,
-   "source": "yahoo",
-   "close": 1.21,
-   "pct": 0.157
-  },
-  {
-   "ex_date": "1988-05-26",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0021,
-   "source": "yahoo",
-   "close": 0.98,
-   "pct": 0.2143
-  },
-  {
-   "ex_date": "1988-08-26",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0021,
-   "source": "yahoo",
-   "close": 0.96,
-   "pct": 0.2187
-  },
-  {
    "ex_date": "1988-11-25",
    "record_date": "1988-11-25",
    "payable_date": null,
@@ -264,26 +194,6 @@
    "source": "nasdaq",
    "close": 3.81,
    "pct": 0.9186
-  },
-  {
-   "ex_date": "1993-12-20",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0036,
-   "source": "yahoo",
-   "close": 3.41,
-   "pct": 0.1056
-  },
-  {
-   "ex_date": "1994-02-28",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
-   "amount": 0.0006,
-   "source": "yahoo",
-   "close": 3.01,
-   "pct": 0.0199
   },
   {
    "ex_date": "1994-05-27",
