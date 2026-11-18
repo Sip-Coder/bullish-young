@@ -1,0 +1,22 @@
+name: Refresh market data
+on:
+  schedule:
+    - cron: "15 * * * 1-5"   # hourly at :15 UTC, weekdays
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install yfinance pandas
+      - run: python scripts/refresh.py
+      - run: |
+          git config user.name "data-bot"
+          git config user.email "data-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "Data refresh $(date -u +%FT%TZ)"
+          git push

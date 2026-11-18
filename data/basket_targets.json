@@ -1,0 +1,71 @@
+{
+ "total": 45000,
+ "cash_reserve": 4500,
+ "positions": [
+  {
+   "ticker": "NVDA",
+   "area": "Chips",
+   "target_usd": 5000
+  },
+  {
+   "ticker": "AVGO",
+   "area": "Chips",
+   "target_usd": 4000
+  },
+  {
+   "ticker": "MU",
+   "area": "Chips",
+   "target_usd": 2900
+  },
+  {
+   "ticker": "ASML",
+   "area": "Chip equipment",
+   "target_usd": 2800
+  },
+  {
+   "ticker": "LRCX",
+   "area": "Chip equipment",
+   "target_usd": 2000
+  },
+  {
+   "ticker": "MRVL",
+   "area": "Chips",
+   "target_usd": 1300
+  },
+  {
+   "ticker": "MSFT",
+   "area": "AI models and cloud",
+   "target_usd": 4500
+  },
+  {
+   "ticker": "META",
+   "area": "AI models and cloud",
+   "target_usd": 4500
+  },
+  {
+   "ticker": "GOOGL",
+   "area": "AI models and cloud",
+   "target_usd": 4500
+  },
+  {
+   "ticker": "CSCO",
+   "area": "AI connections",
+   "target_usd": 2500
+  },
+  {
+   "ticker": "ALAB",
+   "area": "AI connections",
+   "target_usd": 2000
+  },
+  {
+   "ticker": "MPWR",
+   "area": "AI power and storage",
+   "target_usd": 2650
+  },
+  {
+   "ticker": "STX",
+   "area": "AI power and storage",
+   "target_usd": 1850
+  }
+ ]
+}
