@@ -81,3 +81,16 @@
   .chart-controls button{grid-column:1 / -1;width:max-content;font-size:16px}
   .chart-availability{font-size:14px}
 }
+
+@media (max-width:700px){
+  .sector-heading{cursor:pointer}
+  .sector-map-zoom{min-height:480px}
+  .map-card{font-size:16px}
+  .map-card .card-open{font-size:16px;padding:8px 10px}
+  .map-hint{font-size:14px}
+  #map-back{font-size:16px}
+}
+@media (max-width:640px){
+  .map-card{font-size:16px}
+  .map-hint{font-size:14px}
+}
