@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-18T04:45:36+00:00",
- "as_of": "2026-11-18T04:45:36+00:00",
+ "generated_at": "2026-11-18T05:41:23+00:00",
+ "as_of": "2026-11-18T05:41:23+00:00",
  "total": 45000,
- "cash_reserve": 4500,
+ "cash_reserve": 3250,
  "positions": [
   {
    "ticker": "NVDA",
@@ -19,7 +19,7 @@
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "AVGO",
@@ -36,7 +36,7 @@
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "MU",
@@ -53,7 +53,7 @@
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "MRVL",
@@ -70,7 +70,7 @@
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "ASML",
@@ -87,7 +87,7 @@
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "LRCX",
@@ -104,7 +104,7 @@
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "MSFT",
@@ -121,7 +121,7 @@
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "META",
@@ -138,24 +138,24 @@
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "GOOGL",
    "area": "AI models and cloud",
-   "target_usd": 4500,
+   "target_usd": 3000,
    "entry_price": 280.2,
    "flag": "FCF slightly negative",
-   "shares": 16.06,
-   "whole_shares": 16,
-   "first_half_usd": 2250.0,
-   "second_half_usd": 2250.0,
+   "shares": 10.71,
+   "whole_shares": 10,
+   "first_half_usd": 1500.0,
+   "second_half_usd": 1500.0,
    "price": 280.2,
    "ma50": 325.93,
    "pct_vs_ma50": -14.03,
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "CSCO",
@@ -172,7 +172,7 @@
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "ALAB",
@@ -189,7 +189,7 @@
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "MPWR",
@@ -206,24 +206,58 @@
    "pct_vs_entry": 0.0,
    "status": "Above 50D: signal",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
+  },
+  {
+   "ticker": "SNDK",
+   "area": "AI power and storage",
+   "target_usd": 1600,
+   "entry_price": 797.24,
+   "shares": 2.01,
+   "whole_shares": 2,
+   "first_half_usd": 800.0,
+   "second_half_usd": 800.0,
+   "price": 797.24,
+   "ma50": 1404.0,
+   "pct_vs_ma50": -43.22,
+   "pct_vs_entry": 0.0,
+   "status": "Below 50D: waiting",
+   "flag": null,
+   "as_of": "2026-11-18T05:41:23+00:00"
+  },
+  {
+   "ticker": "WDC",
+   "area": "AI power and storage",
+   "target_usd": 1500,
+   "entry_price": 283.33,
+   "shares": 5.29,
+   "whole_shares": 5,
+   "first_half_usd": 750.0,
+   "second_half_usd": 750.0,
+   "price": 283.33,
+   "ma50": 384.11,
+   "pct_vs_ma50": -26.24,
+   "pct_vs_entry": 0.0,
+   "status": "Below 50D: waiting",
+   "flag": null,
+   "as_of": "2026-11-18T05:41:23+00:00"
   },
   {
    "ticker": "STX",
    "area": "AI power and storage",
-   "target_usd": 1850,
+   "target_usd": 1500,
    "entry_price": 504.4,
-   "shares": 3.67,
-   "whole_shares": 3,
-   "first_half_usd": 925.0,
-   "second_half_usd": 925.0,
+   "shares": 2.97,
+   "whole_shares": 2,
+   "first_half_usd": 750.0,
+   "second_half_usd": 750.0,
    "price": 504.4,
    "ma50": 725.45,
    "pct_vs_ma50": -30.47,
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-18T04:45:36+00:00"
+   "as_of": "2026-11-18T05:41:23+00:00"
   }
  ]
 }
