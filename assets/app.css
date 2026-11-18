@@ -31,3 +31,19 @@
 .map-card .card-name{font-weight:600;white-space:normal;overflow-wrap:break-word}
 .map-card .card-price{margin-top:6px;font-variant-numeric:tabular-nums;font-weight:650}
 .map-card .card-open{display:block;text-align:center;margin-top:10px;width:100%}
+.watchlist-table td.signal,.watchlist-table th.signal,.watchlist-table td.brooks-ref,.watchlist-table th.brooks-ref{text-align:left;white-space:normal;vertical-align:top}
+.watchlist-table td.signal{min-width:220px;max-width:280px}
+.watchlist-table td.brooks-ref{min-width:130px;white-space:nowrap}
+.signal-kind{display:block;font-weight:700}
+.signal-detail{display:block;color:var(--muted);font-weight:400;white-space:normal}
+.signal-buy .signal-kind{color:var(--green)}
+.signal-sell .signal-kind{color:var(--red)}
+.market-section{margin:0 0 28px}
+.market-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px}
+.market-head h2{margin:0}
+.market-sub{color:var(--muted);margin:2px 0 8px}
+.market-controls{display:flex;flex-wrap:wrap;align-items:end;gap:8px 12px;margin:0 0 8px}
+.market-controls label{color:var(--muted);font-size:11px}
+.market-controls select{display:block;margin-top:3px;font-size:13px}
+.market-chart{height:380px}.market-chart>div{width:100%;height:100%}
+.brooks-toc h3,.brooks-toc h4{margin:16px 0 6px}

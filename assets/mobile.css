@@ -28,7 +28,7 @@
   .table-wrap table{width:max-content;min-width:100%;background:#fff}
   .screener-wrap table{min-width:1120px}
   .portfolio-wrap table{min-width:1320px}
-  .watchlist-wrap table{min-width:1240px}
+  .watchlist-wrap table{min-width:1680px}
   .screener-wrap th:first-child,.screener-wrap td:first-child,.portfolio-wrap th:nth-child(2),.portfolio-wrap td:nth-child(2){position:sticky;left:0;z-index:2;background:#fff;box-shadow:1px 0 0 var(--line),6px 0 8px -8px #18202a}
   .screener-wrap th:first-child,.portfolio-wrap th:nth-child(2){z-index:3;background:#f0f3f6}
   .watchlist-wrap th:first-child,.watchlist-wrap td:first-child{position:sticky;left:0;z-index:2;background:#fff;box-shadow:1px 0 0 var(--line),6px 0 8px -8px #18202a}
@@ -93,4 +93,14 @@
 @media (max-width:640px){
   .map-card{font-size:16px}
   .map-hint{font-size:14px}
+}
+
+@media (max-width:640px){
+  .watchlist-table td.signal,.watchlist-table td.brooks-ref{font-size:14px}
+  .signal-kind{font-size:16px}
+  .market-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);width:100%}
+  .market-controls label{min-width:0;font-size:14px}
+  .market-controls select{width:100%;font-size:16px}
+  .market-controls button{grid-column:1 / -1;width:max-content;font-size:16px}
+  .market-chart{height:320px}
 }

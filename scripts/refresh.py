@@ -22,6 +22,7 @@ with open(os.path.join(D, "universe.txt"), encoding="utf-8") as f:
     UNIVERSE = [line.strip() for line in f if line.strip()]
 BASKET = load_json(os.path.join(D, "basket_targets.json"), {"positions": []})
 WATCHLIST = load_json(os.path.join(D, "watchlist.json"), {"stocks": []})
+MARKET_TICKERS = ["QYLD", "ES=F"]
 PREVIOUS = {r["ticker"]: r for r in load_json(os.path.join(D, "stats.json"), {}).get("stocks", [])}
 FIELDS = {"marketCap":"market_cap","enterpriseValue":"enterprise_value","trailingPE":"pe","forwardPE":"forward_pe",
  "trailingPegRatio":"peg","priceToSalesTrailing12Months":"ps","priceToBook":"pb","enterpriseToRevenue":"ev_revenue",
@@ -98,6 +99,48 @@ def pull_intraday(job):
     except Exception as exc:
         return ticker,interval,None,str(exc)
 
+
+def markets_rows(h):
+    has_adj = "Adj Close" in h.columns
+    rows = []
+    for stamp, row in h.iterrows():
+        day = stamp.date().isoformat() if hasattr(stamp, "date") else str(stamp)[:10]
+        item = {"time":day,"open":round(float(row["Open"]),2),"high":round(float(row["High"]),2),
+                "low":round(float(row["Low"]),2),"close":round(float(row["Close"]),2),
+                "volume":int(row["Volume"]) if row["Volume"]==row["Volume"] else 0}
+        if has_adj and row["Adj Close"]==row["Adj Close"]:
+            item["adjclose"] = round(float(row["Adj Close"]),2)
+        rows.append(item)
+    return rows
+
+def pull_markets():
+    """QYLD and ES=F for the Markets tab only — not added to stats.json."""
+    payload = {"generated_at":NOW,"series":{}}
+    previous = load_json(os.path.join(D,"markets.json"), {"series":{}})
+    for ticker in MARKET_TICKERS:
+        try:
+            tk = yf.Ticker(ticker)
+            daily = tk.history(period="2y", interval="1d", auto_adjust=False)
+            weekly = tk.history(period="max", interval="1wk", auto_adjust=False)
+            if daily is None or daily.empty: raise RuntimeError("no daily history rows")
+            daily = daily.dropna(subset=["Open","High","Low","Close"])
+            weekly = weekly.dropna(subset=["Open","High","Low","Close"]) if weekly is not None and not weekly.empty else daily.iloc[0:0]
+            try: info = tk.info or {}
+            except Exception: info = {}
+            last = daily.iloc[-1]
+            payload["series"][ticker] = {
+                "ticker":ticker,
+                "name":info.get("shortName") or info.get("longName") or ticker,
+                "price":round(float(last["Close"]),2),
+                "daily":markets_rows(daily),
+                "weekly":markets_rows(weekly) if len(weekly) else [],
+            }
+        except Exception as exc:
+            if ticker in previous.get("series",{}):
+                payload["series"][ticker] = previous["series"][ticker]
+            print(f"markets {ticker} failed: {exc}")
+    return payload
+
 def write_json(path, value):
     with open(path,"w",encoding="utf-8") as f: json.dump(value,f,indent=1,allow_nan=False); f.write("\n")
 
@@ -140,4 +183,6 @@ for target in BASKET["positions"]:
       "pct_vs_entry":round((price/entry-1)*100,2) if price else None,"status":status,"flag":flag,"as_of":NOW})
 write_json(os.path.join(D,"basket.json"),{"generated_at":NOW,"as_of":NOW,"total":BASKET["total"],
  "cash_reserve":BASKET["cash_reserve"],"positions":positions})
-print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}; long history updates: {len(long_updates)}; intraday files written: {len(intraday_updates)}")
+markets = pull_markets()
+write_json(os.path.join(D,"markets.json"), markets)
+print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}; long history updates: {len(long_updates)}; intraday files written: {len(intraday_updates)}; market series: {list(markets.get('series', {}))}")

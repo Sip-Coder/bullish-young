@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bullish Young — Markets</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a8a3a'/%3E%3Cpath d='M14 43 27 30l9 8 15-18' fill='none' stroke='white' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="assets/app.css" />
+    <link rel="stylesheet" href="assets/mobile.css" />
+    <script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Markets</h1>
+
+      <section class="market-section" data-market="QYLD">
+        <div class="market-head">
+          <h2>QYLD</h2>
+          <div class="stock-price" id="qyld-price"></div>
+        </div>
+        <p class="market-sub" id="qyld-name"></p>
+        <div class="market-controls">
+          <label>Bar interval
+            <select id="qyld-interval" aria-label="QYLD bar interval">
+              <option value="daily" selected>Daily</option>
+              <option value="weekly">Weekly</option>
+            </select>
+          </label>
+          <label>Date range
+            <select id="qyld-range" aria-label="QYLD date range">
+              <option value="1M">1M</option>
+              <option value="3M">3M</option>
+              <option value="6M" selected>6M</option>
+              <option value="1Y">1Y</option>
+              <option value="2Y">2Y</option>
+              <option value="MAX">MAX</option>
+            </select>
+          </label>
+          <button type="button" id="qyld-dividends" class="active" aria-pressed="true">With dividends</button>
+        </div>
+        <div class="chart-box market-chart"><div id="qyld-chart"></div></div>
+        <p class="chart-note">The With dividends line uses Yahoo adjusted close (total return), so QYLD’s regular distributions don’t look like price declines.</p>
+      </section>
+
+      <section class="market-section" data-market="ES=F">
+        <div class="market-head">
+          <h2>ES=F</h2>
+          <div class="stock-price" id="es-price"></div>
+        </div>
+        <p class="market-sub" id="es-name"></p>
+        <div class="market-controls">
+          <label>Bar interval
+            <select id="es-interval" aria-label="ES bar interval">
+              <option value="daily" selected>Daily</option>
+              <option value="weekly">Weekly</option>
+            </select>
+          </label>
+          <label>Date range
+            <select id="es-range" aria-label="ES date range">
+              <option value="1M">1M</option>
+              <option value="3M">3M</option>
+              <option value="6M" selected>6M</option>
+              <option value="1Y">1Y</option>
+              <option value="2Y">2Y</option>
+              <option value="MAX">MAX</option>
+            </select>
+          </label>
+        </div>
+        <div class="chart-box market-chart"><div id="es-chart"></div></div>
+        <p class="chart-note">ES=F is the nearest futures contract; it trades nearly 24h Sun–Fri, and small jumps on quarterly roll dates are contract switches, not real moves.</p>
+      </section>
+    </main>
+    <script src="assets/common.js"></script>
+    <script src="assets/markets.js"></script>
+  </body>
+</html>
