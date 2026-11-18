@@ -20,8 +20,6 @@
         ><button data-type="line">Line</button
         ><button id="sma50" class="active">50-bar SMA</button
         ><button id="sma200" class="active">200-bar SMA</button
-        ><button id="hline">H-line</button
-        ><button id="clear-lines">Clear lines</button
         ><label class="brooks-toggle"
           ><input id="brooks" type="checkbox" /> Brooks (reference)</label
         ><span id="brooks-layers" hidden
@@ -32,6 +30,13 @@
         ><span class="ohlc"></span>
       </div>
       <div id="brooks-badge" class="brooks-badge" hidden></div>
+      <div class="drawing-toolbar" aria-label="Drawing tools">
+        <button id="draw-pointer" class="active" aria-label="Pointer / select" title="Pointer / select">↖ <span>Pointer</span></button>
+        <button id="draw-trend" aria-label="Trend line" title="Trend line">╱ <span>Trend</span></button>
+        <button id="draw-hline" aria-label="Horizontal line" title="Horizontal line">— <span>H line</span></button>
+        <button id="draw-delete" aria-label="Delete selected drawing" title="Delete selected" disabled>⌫ <span>Delete</span></button>
+        <button id="draw-clear" aria-label="Clear all drawings" title="Clear all">× <span>Clear all</span></button>
+      </div>
       <div class="chart-box"><div id="chart"></div></div>
       <div class="chart-note">
         Indicator inspired by Al Brooks' price action concepts; not affiliated.
@@ -70,5 +75,6 @@
     <script src="assets/common.js"></script>
     <script src="assets/brooks.js"></script>
     <script src="assets/stock.js"></script>
+    <script src="assets/drawings.js"></script>
   </body>
 </html>

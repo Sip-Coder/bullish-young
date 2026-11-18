@@ -9,8 +9,6 @@ let ticker = new URLSearchParams(location.search).get("t")?.toUpperCase(),
   longData = null,
   intradayData = {},
   data = [],
-  lines = [],
-  lineMode = false,
   type = "candles",
   selectedRange = "6M",
   selectedInterval = "daily",
@@ -364,9 +362,11 @@ function makeChart() {
   setSupportingData();
   setType("candles");
   setRange("6M", false);
-  new ResizeObserver(() =>
-    chart.applyOptions({ width: el.clientWidth, height: el.clientHeight }),
-  ).observe(el);
+  window.initDrawings?.();
+  new ResizeObserver(() => {
+    chart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
+    window.syncDrawings?.();
+  }).observe(el);
   chart.subscribeCrosshairMove((p) => {
     let d = p.seriesData.get(mainSeries),
       base = d
@@ -381,21 +381,6 @@ function makeChart() {
       ? `${base}  ·  ${m.meta.setup} · ${m.meta.strong ? "strong" : "weak"} · ${m.meta.emaTest ? "EMA test" : "no EMA test"} · entry ${BY.fmt(m.meta.entry)} stop ${BY.fmt(m.meta.stop)}`
       : base;
   });
-  el.addEventListener("click", (e) => {
-    if (!lineMode) return;
-    let price = mainSeries.coordinateToPrice(e.offsetY);
-    if (price != null)
-      lines.push(
-        mainSeries.createPriceLine({
-          price,
-          color: "#6b3fad",
-          lineWidth: 1,
-          lineStyle: 2,
-          axisLabelVisible: true,
-          title: "H",
-        }),
-      );
-  });
   document
     .querySelectorAll("[data-type]")
     .forEach((b) => (b.onclick = () => setType(b.dataset.type)));
@@ -404,14 +389,6 @@ function makeChart() {
   document.querySelector("#log-scale").onclick = toggleLogScale;
   sma50.onclick = () => toggle(sma50, s50);
   sma200.onclick = () => toggle(sma200, s200);
-  hline.onclick = () => {
-    lineMode = !lineMode;
-    hline.classList.toggle("active", lineMode);
-  };
-  document.querySelector("#clear-lines").onclick = () => {
-    lines.forEach((x) => mainSeries.removePriceLine(x));
-    lines = [];
-  };
   document.querySelector("#brooks").onchange = applyBrooks;
   document.querySelector("#bar-types").onchange = setPriceData;
   document.querySelector("#inside-outside").onchange = applyMarkers;
@@ -434,6 +411,7 @@ function setLogScale(on) {
   let button = document.querySelector("#log-scale");
   button.classList.toggle("active", on);
   button.setAttribute("aria-pressed", String(on));
+  window.syncDrawings?.();
 }
 function toggleLogScale() {
   setLogScale(!document.querySelector("#log-scale").classList.contains("active"));
@@ -447,12 +425,14 @@ function setInterval(interval) {
   setPriceData();
   updateAvailability();
   applyVisibleRange();
+  window.syncDrawings?.();
 }
 function applyVisibleRange() {
   if (!data.length) return;
   let to = data.at(-1).time, from = rangeStart(selectedRange, to);
   if (from == null || from < data[0].time) from = data[0].time;
   chart.timeScale().setVisibleRange({ from, to });
+  window.syncDrawings?.();
 }
 function setRange(range, applyLogDefault = true) {
   selectedRange = range;
@@ -481,9 +461,9 @@ function setType(t) {
   document
     .querySelectorAll("[data-type]")
     .forEach((b) => b.classList.toggle("active", b.dataset.type === t));
-  lines = [];
   applyBrooks();
   setRange(selectedRange, false);
+  window.syncDrawings?.();
 }
 function toggle(btn, series) {
   let on = !btn.classList.contains("active");

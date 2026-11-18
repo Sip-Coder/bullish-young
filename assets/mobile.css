@@ -50,6 +50,9 @@
   .filters label,.filters input,.filters select{width:100%}
   .toolbar{gap:8px}
   .toolbar button{padding:7px 10px}
+  .drawing-toolbar{gap:4px}
+  .drawing-toolbar button{font-size:16px;padding:3px 6px;line-height:22px}
+  .drawing-toolbar button span{font-size:12px}
   table{font-size:16px}
   th,td{padding:8px 9px}
   .stock-price{font-size:26px}
