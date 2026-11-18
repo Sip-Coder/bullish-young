@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T07:03:00+00:00",
+ "generated_at": "2026-11-18T13:56:36+00:00",
  "series": {
   "QYLD": {
    "ticker": "QYLD",
@@ -17,9 +17,10 @@
     "payable_date": "2026-10-22",
     "declared_date": "2026-10-16",
     "amount": 0.1826,
+    "type": "Cash",
     "source": "nasdaq",
-    "close": 18.29,
-    "pct": 0.9984
+    "close": 18.32,
+    "pct": 0.9967
    },
    "globalx": {
     "as_of": "2026-11-17",
@@ -34,7 +35,7 @@
    "ticker": "ES=F",
    "slug": "ES-F",
    "name": "E-Mini S&P 500 Dec 26",
-   "price": 7378.25,
+   "price": 7387.5,
    "price_date": "2026-11-18"
   }
  }
