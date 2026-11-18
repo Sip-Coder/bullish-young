@@ -10,6 +10,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(ROOT, "data")
 HISTORY = os.path.join(D, "history")
 HISTORY_LONG = os.path.join(D, "history_long")
+INTRADAY = os.path.join(D, "intraday")
 NOW = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
 
 def load_json(path, default):
@@ -71,14 +72,44 @@ def pull_long(ticker):
     except Exception as exc:
         return ticker,None,str(exc)
 
+def intraday_payload(h, interval):
+    """Column arrays keep hourly refresh files substantially smaller than row JSON."""
+    digits = 4 if float(h["Close"].median()) < 1 else 2
+    price = lambda values: [round(float(value),digits) for value in values]
+    return {"interval":interval,"as_of":NOW,
+            "t":[int(value.timestamp()) for value in h.index],
+            "o":price(h.Open),"h":price(h.High),"l":price(h.Low),"c":price(h.Close),
+            "v":[int(value) for value in h.Volume]}
+
+def pull_intraday(job):
+    ticker, interval, period = job
+    try:
+        tk = yf.Ticker(ticker.replace(".","-"))
+        h = tk.history(period=period,interval=interval)
+        if (h is None or h.empty) and interval == "1h":
+            for alt_period, alt_interval in ((period,"60m"),("2y","1h"),("2y","60m")):
+                h = tk.history(period=alt_period,interval=alt_interval)
+                if h is not None and not h.empty: break
+        if h is None or h.empty: raise RuntimeError("no intraday history rows")
+        h = h.dropna(subset=["Open","High","Low","Close"])
+        if h.empty: raise RuntimeError("no complete intraday history rows")
+        h["Volume"] = h["Volume"].fillna(0)
+        return ticker,interval,intraday_payload(h,interval),None
+    except Exception as exc:
+        return ticker,interval,None,str(exc)
+
 def write_json(path, value):
     with open(path,"w",encoding="utf-8") as f: json.dump(value,f,indent=1,allow_nan=False); f.write("\n")
 
 # Tickers in data/watchlist.json are always included in the hourly refresh; no other file edits are needed.
 # Every page renders all stats.json rows (universe ∪ basket ∪ watchlist).
 tickers = sorted(set(UNIVERSE) | {b["ticker"] for b in BASKET["positions"]} | {s["ticker"] for s in WATCHLIST["stocks"]})
+intraday_tickers = sorted({b["ticker"] for b in BASKET["positions"]} | {s["ticker"] for s in WATCHLIST["stocks"]})
+intraday_jobs = [(ticker,interval,period) for ticker in intraday_tickers for interval,period in
+                 (("1m","5d"),("5m","60d"),("1h","730d"))]
 with ThreadPoolExecutor(max_workers=4) as executor: results = list(executor.map(pull,tickers))
 with ThreadPoolExecutor(max_workers=4) as executor: long_results = list(executor.map(pull_long,tickers))
+with ThreadPoolExecutor(max_workers=4) as executor: intraday_results = list(executor.map(pull_intraday,intraday_jobs))
 failures = [ticker for ticker,row,hist,error in results if error]
 if len(failures) > len(tickers)/2: raise SystemExit(f"refusing to write: {len(failures)}/{len(tickers)} tickers failed")
 os.makedirs(HISTORY,exist_ok=True); rows=[]
@@ -88,6 +119,12 @@ for ticker,row,hist,error in results:
 long_updates = [(ticker,hist) for ticker,hist,error in long_results if hist is not None]
 if long_updates: os.makedirs(HISTORY_LONG,exist_ok=True)
 for ticker,hist in long_updates: write_json(os.path.join(HISTORY_LONG,f"{ticker}.json"),hist)
+intraday_updates = [(ticker,interval,payload) for ticker,interval,payload,error in intraday_results if payload is not None]
+if intraday_updates: os.makedirs(INTRADAY,exist_ok=True)
+for ticker,interval,payload in intraday_updates:
+    path = os.path.join(INTRADAY,f"{ticker}_{interval}.json")
+    with open(path,"w",encoding="utf-8") as f:
+        json.dump(payload,f,separators=(",",":"),allow_nan=False); f.write("\n")
 stats = {r["ticker"]:r for r in rows}
 write_json(os.path.join(D,"stats.json"),{"generated_at":NOW,"as_of":NOW,"count":len(rows),"stocks":rows})
 
@@ -103,4 +140,4 @@ for target in BASKET["positions"]:
       "pct_vs_entry":round((price/entry-1)*100,2) if price else None,"status":status,"flag":flag,"as_of":NOW})
 write_json(os.path.join(D,"basket.json"),{"generated_at":NOW,"as_of":NOW,"total":BASKET["total"],
  "cash_reserve":BASKET["cash_reserve"],"positions":positions})
-print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}; long history updates: {len(long_updates)}")
+print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}; long history updates: {len(long_updates)}; intraday files written: {len(intraday_updates)}")

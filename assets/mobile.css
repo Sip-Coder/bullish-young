@@ -72,4 +72,9 @@
   .trade-results .trade-after-tax,.trade-results .trade-range-result{grid-column:auto;flex-wrap:wrap}
   .trade-results .trade-after-tax strong,.trade-range-result small{width:100%;margin-left:0;text-align:left}
   .trade-note{font-size:14px}
+  .chart-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);width:100%}
+  .chart-controls label{min-width:0;font-size:14px}
+  .chart-controls select{width:100%;min-width:0;font-size:16px}
+  .chart-controls button{grid-column:1 / -1;width:max-content;font-size:16px}
+  .chart-availability{font-size:14px}
 }

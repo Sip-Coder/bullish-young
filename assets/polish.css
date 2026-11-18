@@ -4,6 +4,11 @@
   padding-right: 4px;
 }
 
+.chart-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 8px; margin: 10px 0 4px; }
+.chart-controls label { color: var(--muted); font-size: 11px; }
+.chart-controls select { display: block; min-width: 118px; margin-top: 2px; border: 1px solid #b9c0c9; border-radius: 3px; background: #fff; padding: 5px 28px 5px 8px; color: #18202a; }
+.chart-availability { min-height: 18px; font-size: 11px; }
+
 .portfolio-table .brooks-ref,
 .portfolio-table .brooks-ref a {
   color: var(--muted);

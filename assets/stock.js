@@ -7,15 +7,17 @@ let ticker = new URLSearchParams(location.search).get("t")?.toUpperCase(),
   brooksEma,
   dailyData = [],
   longData = null,
+  intradayData = {},
   data = [],
   lines = [],
   lineMode = false,
   type = "candles",
-  rangeDays = 180,
+  selectedRange = "6M",
+  selectedInterval = "daily",
   brooksResult = null;
 const brooksOn = () => document.querySelector("#brooks").checked;
 const syncBrooksVisibility = () => {
-  let visible = brooksOn() && !isLongRange();
+  let visible = brooksOn() && selectedInterval === "daily";
   document.querySelector("#brooks-layers").hidden = !visible;
   document.querySelector("#brooks-badge").hidden = !visible;
 };
@@ -33,6 +35,19 @@ shell("").then(async () => {
   longData = await fetch(`data/history_long/${ticker}.json`)
     .then((r) => r.ok ? r.json() : null)
     .catch(() => null);
+  let [watchlist, targets] = await Promise.all([
+    fetch("data/watchlist.json").then((r) => r.json()).catch(() => ({ stocks: [] })),
+    fetch("data/basket_targets.json").then((r) => r.json()).catch(() => ({ positions: [] })),
+  ]);
+  let intradayEligible = [...watchlist.stocks, ...targets.positions].some((x) => x.ticker === ticker);
+  if (intradayEligible) {
+    await Promise.all(["1m", "5m", "1h"].map(async (interval) => {
+      let payload = await fetch(`data/intraday/${ticker}_${interval}.json`)
+        .then((r) => r.ok ? r.json() : null).catch(() => null);
+      if (payload?.t?.length) intradayData[interval] = unpackIntraday(payload);
+    }));
+  }
+  document.querySelector("#stock-main").dataset.intradayEligible = intradayEligible ? "1" : "0";
   data = dailyData;
   document.querySelector("#brooks").checked =
     new URLSearchParams(location.search).get("brooks") === "1";
@@ -120,6 +135,81 @@ function tradeCalc(s) {
   [sell, low, high, rate].forEach((input) => input.addEventListener("change", update));
   syncFromShares();
 }
+function unpackIntraday(payload) {
+  return payload.t.map((time, i) => ({
+    time, open: payload.o[i], high: payload.h[i], low: payload.l[i],
+    close: payload.c[i], volume: payload.v[i],
+  }));
+}
+function aggregateBars(source, keyFor) {
+  let groups = new Map();
+  source.forEach((bar) => {
+    let key = keyFor(bar.time), group = groups.get(key);
+    if (!group) groups.set(key, { time: key, open: bar.open, high: bar.high, low: bar.low, close: bar.close, volume: bar.volume || 0 });
+    else {
+      group.high = Math.max(group.high, bar.high); group.low = Math.min(group.low, bar.low);
+      group.close = bar.close; group.volume += bar.volume || 0;
+    }
+  });
+  return [...groups.values()];
+}
+function aggregateSeconds(source, seconds) {
+  return aggregateBars(source, (time) => Math.floor(time / seconds) * seconds);
+}
+function aggregateCalendar(source, quarterly) {
+  return aggregateBars(source, (time) => {
+    let d = new Date(`${time}T00:00:00Z`), month = quarterly ? Math.floor(d.getUTCMonth() / 3) * 3 : d.getUTCMonth();
+    return `${d.getUTCFullYear()}-${String(month + 1).padStart(2, "0")}-01`;
+  });
+}
+const longRanges = ["3Y", "5Y", "10Y", "MAX"];
+function defaultInterval(range) { return longRanges.includes(range) ? "weekly" : "daily"; }
+function intervalSource(interval = selectedInterval) {
+  if (interval === "1m") return intradayData["1m"] || [];
+  if (["5m", "10m", "15m", "30m"].includes(interval)) {
+    let base = intradayData["5m"] || [];
+    return interval === "5m" ? base : aggregateSeconds(base, parseInt(interval, 10) * 60);
+  }
+  if (["1h", "2h", "4h"].includes(interval)) {
+    let base = intradayData["1h"] || [];
+    return interval === "1h" ? base : aggregateSeconds(base, parseInt(interval, 10) * 3600);
+  }
+  if (interval === "daily") return dailyData;
+  if (interval === "weekly") return longData?.length ? longData : dailyData;
+  let base = longRanges.includes(selectedRange) ? (longData || dailyData) : dailyData;
+  return aggregateCalendar(base, interval === "quarterly");
+}
+function intervalDisabled(interval, range = selectedRange) {
+  if (interval === "1m") return range !== "1M" || !intradayData["1m"];
+  if (["5m", "10m", "15m", "30m"].includes(interval))
+    return ["4M", "6M", "9M", "YTD", "1Y", "2Y", ...longRanges].includes(range) || !intradayData["5m"];
+  if (["1h", "2h", "4h"].includes(interval)) return longRanges.includes(range) || !intradayData["1h"];
+  if (interval === "daily") return longRanges.includes(range);
+  return false;
+}
+function rangeStart(range, lastTime) {
+  if (range === "MAX") return null;
+  if (range === "YTD") {
+    let start = new Date(Date.UTC(new Date().getFullYear(), 0, 1));
+    return typeof lastTime === "number" ? Math.floor(start.getTime() / 1000) : start.toISOString().slice(0, 10);
+  }
+  let d = typeof lastTime === "number" ? new Date(lastTime * 1000) : new Date(`${lastTime}T00:00:00Z`);
+  if (range.endsWith("M")) d.setUTCMonth(d.getUTCMonth() - parseInt(range, 10));
+  else d.setUTCFullYear(d.getUTCFullYear() - parseInt(range, 10));
+  return typeof lastTime === "number" ? Math.floor(d.getTime() / 1000) : d.toISOString().slice(0, 10);
+}
+function updateAvailability() {
+  let select = document.querySelector("#bar-interval");
+  [...select.options].forEach((option) => option.disabled = intervalDisabled(option.value));
+  let eligible = document.querySelector("#stock-main").dataset.intradayEligible === "1";
+  let note = "";
+  if (!eligible) note = "Intraday for starred stocks.";
+  else if (!Object.keys(intradayData).length) note = "Intraday data is not available yet.";
+  else if (selectedInterval === "1m") note = "1-minute bars: last 5 trading days only.";
+  else if (["5m", "10m", "15m", "30m"].includes(selectedInterval)) note = "5–30-minute bars: available history is limited to about 60 days.";
+  else if (["1h", "2h", "4h"].includes(selectedInterval)) note = "Hourly bars: available history is limited to about 730 days.";
+  document.querySelector("#chart-availability").textContent = note;
+}
 function sma(n) {
   return data
     .map((x, i) =>
@@ -196,7 +286,7 @@ function applyBrooks() {
     chart.removeSeries(brooksEma);
     brooksEma = null;
   }
-  if (!brooksOn() || isLongRange()) {
+  if (!brooksOn() || selectedInterval !== "daily") {
     brooksResult = null;
     mainSeries.setMarkers([]);
     setPriceData();
@@ -225,7 +315,7 @@ function applyBrooks() {
 }
 function setPriceData() {
   let bars =
-    document.querySelector("#bar-types").checked && brooksOn() && !isLongRange()
+    document.querySelector("#bar-types").checked && brooksOn() && selectedInterval === "daily"
       ? coloredBars()
       : data;
   mainSeries.setData(
@@ -236,8 +326,8 @@ function setPriceData() {
 }
 function applyMarkers() {
   if (!mainSeries) return;
-  let markers = brooksOn() ? brooksResult.markers.map(stripMarker) : [];
-  if (brooksOn() && document.querySelector("#inside-outside").checked)
+  let markers = brooksOn() && brooksResult ? brooksResult.markers.map(stripMarker) : [];
+  if (brooksOn() && brooksResult && document.querySelector("#inside-outside").checked)
     markers = markers.concat(insideOutsideMarkers());
   markers.sort((a, b) => String(a.time).localeCompare(String(b.time)));
   mainSeries.setMarkers(markers);
@@ -273,7 +363,7 @@ function makeChart() {
   });
   setSupportingData();
   setType("candles");
-  setRange(180);
+  setRange("6M", false);
   new ResizeObserver(() =>
     chart.applyOptions({ width: el.clientWidth, height: el.clientHeight }),
   ).observe(el);
@@ -309,14 +399,8 @@ function makeChart() {
   document
     .querySelectorAll("[data-type]")
     .forEach((b) => (b.onclick = () => setType(b.dataset.type)));
-  document.querySelectorAll("[data-days]").forEach(
-    (b) =>
-      (b.onclick = () => setRange(+b.dataset.days)),
-  );
-  document.querySelectorAll("[data-years]").forEach(
-    (b) => (b.onclick = () => setRange(`${b.dataset.years}y`)),
-  );
-  document.querySelector("[data-max]").onclick = () => setRange("max");
+  document.querySelector("#date-range").onchange = (event) => setRange(event.target.value);
+  document.querySelector("#bar-interval").onchange = (event) => setInterval(event.target.value);
   document.querySelector("#log-scale").onclick = toggleLogScale;
   sma50.onclick = () => toggle(sma50, s50);
   sma200.onclick = () => toggle(sma200, s200);
@@ -331,9 +415,6 @@ function makeChart() {
   document.querySelector("#brooks").onchange = applyBrooks;
   document.querySelector("#bar-types").onchange = setPriceData;
   document.querySelector("#inside-outside").onchange = applyMarkers;
-}
-function isLongRange(value = rangeDays) {
-  return typeof value === "string";
 }
 function setSupportingData() {
   s50.setData(sma(50));
@@ -357,38 +438,29 @@ function setLogScale(on) {
 function toggleLogScale() {
   setLogScale(!document.querySelector("#log-scale").classList.contains("active"));
 }
-function setRange(days, applyLogDefault = true) {
-  let wasLong = isLongRange();
-  rangeDays = days;
-  let nextData = isLongRange() && longData?.length ? longData : dailyData;
-  if (data !== nextData) {
-    data = nextData;
-    setSupportingData();
-    applyBrooks();
-  } else if (wasLong !== isLongRange()) {
-    applyBrooks();
-  }
+function setInterval(interval) {
+  selectedInterval = interval;
+  document.querySelector("#bar-interval").value = interval;
+  data = intervalSource();
+  setSupportingData();
+  applyBrooks();
+  setPriceData();
+  updateAvailability();
+  applyVisibleRange();
+}
+function applyVisibleRange() {
   if (!data.length) return;
-  let to = data.at(-1).time, from;
-  if (days === "max") {
-    from = data[0].time;
-  } else if (isLongRange()) {
-    let date = new Date(`${to}T00:00:00Z`);
-    date.setUTCFullYear(date.getUTCFullYear() - parseInt(days, 10));
-    from = date.toISOString().slice(0, 10);
-    if (from < data[0].time) from = data[0].time;
-  } else {
-    from = data[Math.max(0, data.length - days)].time;
-  }
+  let to = data.at(-1).time, from = rangeStart(selectedRange, to);
+  if (from == null || from < data[0].time) from = data[0].time;
   chart.timeScale().setVisibleRange({ from, to });
-  document
-    .querySelectorAll("[data-days]")
-    .forEach((b) => b.classList.toggle("active", +b.dataset.days === days));
-  document
-    .querySelectorAll("[data-years]")
-    .forEach((b) => b.classList.toggle("active", `${b.dataset.years}y` === days));
-  document.querySelector("[data-max]").classList.toggle("active", days === "max");
-  if (applyLogDefault) setLogScale(isLongRange());
+}
+function setRange(range, applyLogDefault = true) {
+  selectedRange = range;
+  document.querySelector("#date-range").value = range;
+  updateAvailability();
+  if (intervalDisabled(selectedInterval, range)) selectedInterval = defaultInterval(range);
+  setInterval(selectedInterval);
+  if (applyLogDefault) setLogScale(longRanges.includes(range));
 }
 function setType(t) {
   if (mainSeries) chart.removeSeries(mainSeries);
@@ -411,7 +483,7 @@ function setType(t) {
     .forEach((b) => b.classList.toggle("active", b.dataset.type === t));
   lines = [];
   applyBrooks();
-  setRange(rangeDays, false);
+  setRange(selectedRange, false);
 }
 function toggle(btn, series) {
   let on = !btn.classList.contains("active");

@@ -18,8 +18,8 @@
         <button data-type="candles" class="active">Candles</button
         ><button data-type="bars">Bars</button
         ><button data-type="line">Line</button
-        ><button id="sma50" class="active">50D SMA</button
-        ><button id="sma200" class="active">200D SMA</button
+        ><button id="sma50" class="active">50-bar SMA</button
+        ><button id="sma200" class="active">200-bar SMA</button
         ><button id="hline">H-line</button
         ><button id="clear-lines">Clear lines</button
         ><label class="brooks-toggle"
@@ -36,13 +36,34 @@
       <div class="chart-note">
         Indicator inspired by Al Brooks' price action concepts; not affiliated.
       </div>
-      <div class="toolbar ranges">
-        <button data-days="30">1M</button><button data-days="90">3M</button
-        ><button data-days="180">6M</button><button data-days="365">1Y</button
-        ><button data-days="730">2Y</button><button data-years="5">5Y</button
-        ><button data-years="10">10Y</button><button data-max>MAX</button
-        ><button id="log-scale" aria-pressed="false">Log scale</button>
+      <div class="chart-controls">
+        <label>Bar interval
+          <select id="bar-interval" aria-label="Bar interval">
+            <option value="1m">1m</option><option value="5m">5m</option
+            ><option value="10m">10m</option><option value="15m">15m</option
+            ><option value="30m">30m</option><option value="1h">1h</option
+            ><option value="2h">2h</option><option value="4h">4h</option
+            ><option value="daily" selected>Daily</option
+            ><option value="weekly">Weekly</option
+            ><option value="monthly">Monthly</option
+            ><option value="quarterly">Quarterly</option>
+          </select>
+        </label>
+        <label>Date range
+          <select id="date-range" aria-label="Date range">
+            <option value="1M">1M</option><option value="2M">2M</option
+            ><option value="3M">3M</option><option value="4M">4M</option
+            ><option value="6M" selected>6M</option><option value="9M">9M</option
+            ><option value="YTD">YTD</option><option value="1Y">1Y</option
+            ><option value="2Y">2Y</option><option value="3Y">3Y</option
+            ><option value="5Y">5Y</option><option value="10Y">10Y</option
+            ><option value="MAX">MAX</option>
+          </select>
+        </label>
+        <button id="log-scale" aria-pressed="false">Log scale</button>
       </div>
+      <div id="chart-availability" class="chart-availability muted" aria-live="polite"></div>
+      <div class="chart-availability muted">Intraday data is refreshed hourly, so the latest bars may lag by up to an hour.</div>
       <section id="trade-calc"></section>
       <section id="statistics"></section>
     </main>
