@@ -1,15 +1,17 @@
-{"total":45000,"cash_reserve":4500,"positions":[
+{"total":45000,"cash_reserve":3250,"positions":[
  {"ticker":"NVDA","area":"Chips","target_usd":5000,"entry_price":155.46},
- {"ticker":"AVGO","area":"Chips","target_usd":4000,"entry_price":341.60},
+ {"ticker":"AVGO","area":"Chips","target_usd":4000,"entry_price":341.6},
  {"ticker":"MU","area":"Chips","target_usd":2900,"entry_price":712.42},
  {"ticker":"MRVL","area":"Chips","target_usd":1300,"entry_price":148.74},
  {"ticker":"ASML","area":"Chip equipment","target_usd":2800,"entry_price":1383.11},
  {"ticker":"LRCX","area":"Chip equipment","target_usd":2000,"entry_price":210.69},
  {"ticker":"MSFT","area":"AI models and cloud","target_usd":4500,"entry_price":506.24},
  {"ticker":"META","area":"AI models and cloud","target_usd":4500,"entry_price":618.87},
- {"ticker":"GOOGL","area":"AI models and cloud","target_usd":4500,"entry_price":280.20,"flag":"FCF slightly negative"},
+ {"ticker":"GOOGL","area":"AI models and cloud","target_usd":3000,"entry_price":280.2,"flag":"FCF slightly negative"},
  {"ticker":"CSCO","area":"AI connections","target_usd":2500,"entry_price":95.11},
- {"ticker":"ALAB","area":"AI connections","target_usd":2000,"entry_price":211.60},
+ {"ticker":"ALAB","area":"AI connections","target_usd":2000,"entry_price":211.6},
  {"ticker":"MPWR","area":"AI power and storage","target_usd":2650,"entry_price":1317.37},
- {"ticker":"STX","area":"AI power and storage","target_usd":1850,"entry_price":504.40}
+ {"ticker":"SNDK","area":"AI power and storage","target_usd":1600,"entry_price":797.24},
+ {"ticker":"WDC","area":"AI power and storage","target_usd":1500,"entry_price":283.33},
+ {"ticker":"STX","area":"AI power and storage","target_usd":1500,"entry_price":504.4}
 ]}
