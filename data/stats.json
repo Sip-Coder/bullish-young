@@ -36,7 +36,21 @@
    "change": -0.869995,
    "debt_equity_ratio": 0.8429,
    "ma50": 340.17,
-   "ma200": 301.66
+   "ma200": 301.66,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2025-09-15",
+    "trading_days_since": 296,
+    "state": "above",
+    "sma50": 340.17,
+    "sma200": 301.66,
+    "gap_pct": 12.77,
+    "close": 351.91,
+    "cross_sma50": 220.49,
+    "cross_sma200": 220.12,
+    "cross_close": 235.65
+   }
   },
   {
    "ticker": "ABNB",
@@ -71,7 +85,21 @@
    "change": -5.25,
    "debt_equity_ratio": 0.2701,
    "ma50": 169.33,
-   "ma200": 149.64
+   "ma200": 149.64,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-04-14",
+    "trading_days_since": 151,
+    "state": "above",
+    "sma50": 169.33,
+    "sma200": 149.64,
+    "gap_pct": 13.16,
+    "close": 180.94,
+    "cross_sma50": 128.07,
+    "cross_sma200": 128.03,
+    "cross_close": 133.85
+   }
   },
   {
    "ticker": "ADBE",
@@ -106,7 +134,21 @@
    "change": -10.45,
    "debt_equity_ratio": 0.5769,
    "ma50": 245.54,
-   "ma200": 247.14
+   "ma200": 247.14,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-11-11",
+    "trading_days_since": 4,
+    "state": "below",
+    "sma50": 245.54,
+    "sma200": 247.14,
+    "gap_pct": -0.65,
+    "close": 235.55,
+    "cross_sma50": 248.07,
+    "cross_sma200": 248.21,
+    "cross_close": 237.6
+   }
   },
   {
    "ticker": "ADI",
@@ -141,7 +183,18 @@
    "change": 0.5,
    "debt_equity_ratio": 0.2731,
    "ma50": 395.63,
-   "ma200": 376.04
+   "ma200": 376.04,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 395.63,
+    "sma200": 376.04,
+    "gap_pct": 5.21,
+    "close": 383.67
+   }
   },
   {
    "ticker": "ADP",
@@ -176,7 +229,21 @@
    "change": -5.13998,
    "debt_equity_ratio": 1.0976,
    "ma50": 282.83,
-   "ma200": 241.34
+   "ma200": 241.34,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-07-30",
+    "trading_days_since": 77,
+    "state": "above",
+    "sma50": 282.83,
+    "sma200": 241.34,
+    "gap_pct": 17.19,
+    "close": 308.29,
+    "cross_sma50": 232.49,
+    "cross_sma200": 231.61,
+    "cross_close": 262.19
+   }
   },
   {
    "ticker": "ADSK",
@@ -211,7 +278,21 @@
    "change": -10.31,
    "debt_equity_ratio": 1.0952,
    "ma50": 236.02,
-   "ma200": 233.88
+   "ma200": 233.88,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-11-13",
+    "trading_days_since": 2,
+    "state": "above",
+    "sma50": 236.02,
+    "sma200": 233.88,
+    "gap_pct": 0.91,
+    "close": 255.22,
+    "cross_sma50": 234.2,
+    "cross_sma200": 233.82,
+    "cross_close": 264.42
+   }
   },
   {
    "ticker": "AEP",
@@ -246,7 +327,21 @@
    "change": -3.37,
    "debt_equity_ratio": 1.6193,
    "ma50": 123.8,
-   "ma200": 126.79
+   "ma200": 126.79,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-09-23",
+    "trading_days_since": 39,
+    "state": "below",
+    "sma50": 123.8,
+    "sma200": 126.79,
+    "gap_pct": -2.36,
+    "close": 125.97,
+    "cross_sma50": 124.47,
+    "cross_sma200": 124.5,
+    "cross_close": 117.51
+   }
   },
   {
    "ticker": "ALAB",
@@ -281,7 +376,21 @@
    "change": 9.26001,
    "debt_equity_ratio": 0.0225,
    "ma50": 290.56,
-   "ma200": 258.02
+   "ma200": 258.02,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-05-22",
+    "trading_days_since": 123,
+    "state": "above",
+    "sma50": 290.56,
+    "sma200": 258.02,
+    "gap_pct": 12.61,
+    "close": 211.6,
+    "cross_sma50": 173.73,
+    "cross_sma200": 170.76,
+    "cross_close": 306.88
+   }
   },
   {
    "ticker": "ALNY",
@@ -316,7 +425,21 @@
    "change": -3.23,
    "debt_equity_ratio": 0.8316,
    "ma50": 215.05,
-   "ma200": 273.68
+   "ma200": 273.68,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-02-11",
+    "trading_days_since": 193,
+    "state": "below",
+    "sma50": 215.05,
+    "sma200": 273.68,
+    "gap_pct": -21.42,
+    "close": 156.5,
+    "cross_sma50": 385.33,
+    "cross_sma200": 386.66,
+    "cross_close": 322.28
+   }
   },
   {
    "ticker": "AMAT",
@@ -351,7 +474,21 @@
    "change": -1.01999,
    "debt_equity_ratio": 0.2502,
    "ma50": 433.35,
-   "ma200": 446.26
+   "ma200": 446.26,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-11-09",
+    "trading_days_since": 6,
+    "state": "below",
+    "sma50": 433.35,
+    "sma200": 446.26,
+    "gap_pct": -2.89,
+    "close": 349.23,
+    "cross_sma50": 443.02,
+    "cross_sma200": 445.03,
+    "cross_close": 370.55
+   }
   },
   {
    "ticker": "AMD",
@@ -386,7 +523,18 @@
    "change": -0.869995,
    "debt_equity_ratio": 0.1347,
    "ma50": 555.04,
-   "ma200": 425.74
+   "ma200": 425.74,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 555.04,
+    "sma200": 425.74,
+    "gap_pct": 30.37,
+    "close": 503.41
+   }
   },
   {
    "ticker": "AMGN",
@@ -421,7 +569,21 @@
    "change": -4.39001,
    "debt_equity_ratio": 3.763,
    "ma50": 427.1,
-   "ma200": 379.69
+   "ma200": 379.69,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2025-11-06",
+    "trading_days_since": 258,
+    "state": "above",
+    "sma50": 427.1,
+    "sma200": 379.69,
+    "gap_pct": 12.49,
+    "close": 457.93,
+    "cross_sma50": 281.44,
+    "cross_sma200": 281.28,
+    "cross_close": 307.07
+   }
   },
   {
    "ticker": "AMZN",
@@ -456,7 +618,21 @@
    "change": 0.140015,
    "debt_equity_ratio": 0.4968,
    "ma50": 254.81,
-   "ma200": 244.76
+   "ma200": 244.76,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-05-06",
+    "trading_days_since": 135,
+    "state": "above",
+    "sma50": 254.81,
+    "sma200": 244.76,
+    "gap_pct": 4.11,
+    "close": 257.89,
+    "cross_sma50": 228.73,
+    "cross_sma200": 228.08,
+    "cross_close": 274.99
+   }
   },
   {
    "ticker": "APP",
@@ -491,7 +667,21 @@
    "change": -16.28,
    "debt_equity_ratio": 1.0659,
    "ma50": 305.76,
-   "ma200": 405.08
+   "ma200": 405.08,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-03-11",
+    "trading_days_since": 174,
+    "state": "below",
+    "sma50": 305.76,
+    "sma200": 405.08,
+    "gap_pct": -24.52,
+    "close": 398.94,
+    "cross_sma50": 510.61,
+    "cross_sma200": 513.03,
+    "cross_close": 461.45
+   }
   },
   {
    "ticker": "ARM",
@@ -526,7 +716,21 @@
    "change": 8.34,
    "debt_equity_ratio": 0.055,
    "ma50": 245.04,
-   "ma200": 233.55
+   "ma200": 233.55,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-04-23",
+    "trading_days_since": 144,
+    "state": "above",
+    "sma50": 245.04,
+    "sma200": 233.55,
+    "gap_pct": 4.92,
+    "close": 183.39,
+    "cross_sma50": 139.46,
+    "cross_sma200": 139.36,
+    "cross_close": 204.61
+   }
   },
   {
    "ticker": "ASML",
@@ -561,7 +765,18 @@
    "change": -23.675,
    "debt_equity_ratio": 0.089,
    "ma50": 1645.17,
-   "ma200": 1597.77
+   "ma200": 1597.77,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 1645.17,
+    "sma200": 1597.77,
+    "gap_pct": 2.97,
+    "close": 1383.11
+   }
   },
   {
    "ticker": "AVGO",
@@ -596,7 +811,21 @@
    "change": 8.20001,
    "debt_equity_ratio": 0.596,
    "ma50": 344.25,
-   "ma200": 366.56
+   "ma200": 366.56,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-10-15",
+    "trading_days_since": 23,
+    "state": "below",
+    "sma50": 344.25,
+    "sma200": 366.56,
+    "gap_pct": -6.09,
+    "close": 341.6,
+    "cross_sma50": 367.14,
+    "cross_sma200": 367.15,
+    "cross_close": 344.33
+   }
   },
   {
    "ticker": "AXON",
@@ -631,7 +860,21 @@
    "change": -7.85001,
    "debt_equity_ratio": 0.7941,
    "ma50": 409.47,
-   "ma200": 464.67
+   "ma200": 464.67,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-10-23",
+    "trading_days_since": 17,
+    "state": "below",
+    "sma50": 409.47,
+    "sma200": 464.67,
+    "gap_pct": -11.88,
+    "close": 298.59,
+    "cross_sma50": 482.59,
+    "cross_sma200": 483.87,
+    "cross_close": 420.37
+   }
   },
   {
    "ticker": "BKNG",
@@ -666,7 +909,21 @@
    "change": -3.06999,
    "debt_equity_ratio": null,
    "ma50": 161.42,
-   "ma200": 173.64
+   "ma200": 173.64,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-10-23",
+    "trading_days_since": 17,
+    "state": "below",
+    "sma50": 161.42,
+    "sma200": 173.64,
+    "gap_pct": -7.04,
+    "close": 154.46,
+    "cross_sma50": 177.04,
+    "cross_sma200": 177.77,
+    "cross_close": 155.83
+   }
   },
   {
    "ticker": "BKR",
@@ -701,7 +958,21 @@
    "change": -0.48,
    "debt_equity_ratio": 0.8883,
    "ma50": 54.57,
-   "ma200": 59.42
+   "ma200": 59.42,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-10-20",
+    "trading_days_since": 20,
+    "state": "below",
+    "sma50": 54.57,
+    "sma200": 59.42,
+    "gap_pct": -8.16,
+    "close": 47.46,
+    "cross_sma50": 59.23,
+    "cross_sma200": 59.43,
+    "cross_close": 55.39
+   }
   },
   {
    "ticker": "CCEP",
@@ -736,7 +1007,18 @@
    "change": -0.770004,
    "debt_equity_ratio": 1.3906,
    "ma50": 108.13,
-   "ma200": 101.88
+   "ma200": 101.88,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 108.13,
+    "sma200": 101.88,
+    "gap_pct": 6.14,
+    "close": 118.42
+   }
   },
   {
    "ticker": "CDNS",
@@ -771,7 +1053,21 @@
    "change": -2.45999,
    "debt_equity_ratio": 0.4091,
    "ma50": 321.62,
-   "ma200": 328.24
+   "ma200": 328.24,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-09-18",
+    "trading_days_since": 42,
+    "state": "below",
+    "sma50": 321.62,
+    "sma200": 328.24,
+    "gap_pct": -2.02,
+    "close": 306.97,
+    "cross_sma50": 324.77,
+    "cross_sma200": 326.08,
+    "cross_close": 282.9
+   }
   },
   {
    "ticker": "CEG",
@@ -806,7 +1102,21 @@
    "change": -9.75,
    "debt_equity_ratio": 0.7079,
    "ma50": 268.07,
-   "ma200": 277.46
+   "ma200": 277.46,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-02-13",
+    "trading_days_since": 191,
+    "state": "below",
+    "sma50": 268.07,
+    "sma200": 277.45,
+    "gap_pct": -3.38,
+    "close": 268.07,
+    "cross_sma50": 322.06,
+    "cross_sma200": 323.8,
+    "cross_close": 286.72
+   }
   },
   {
    "ticker": "CMCSA",
@@ -841,7 +1151,21 @@
    "change": -0.290001,
    "debt_equity_ratio": 0.9428,
    "ma50": 22.78,
-   "ma200": 25.23
+   "ma200": 25.23,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-05-15",
+    "trading_days_since": 128,
+    "state": "below",
+    "sma50": 22.78,
+    "sma200": 25.23,
+    "gap_pct": -9.72,
+    "close": 25.31,
+    "cross_sma50": 27.33,
+    "cross_sma200": 27.35,
+    "cross_close": 24.05
+   }
   },
   {
    "ticker": "COST",
@@ -876,7 +1200,21 @@
    "change": -3.66003,
    "debt_equity_ratio": 0.2844,
    "ma50": 974.04,
-   "ma200": 974.56
+   "ma200": 974.56,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-08-04",
+    "trading_days_since": 74,
+    "state": "below",
+    "sma50": 974.04,
+    "sma200": 974.56,
+    "gap_pct": -0.05,
+    "close": 1110.08,
+    "cross_sma50": 952.7,
+    "cross_sma200": 953.57,
+    "cross_close": 946.45
+   }
   },
   {
    "ticker": "CPRT",
@@ -911,7 +1249,18 @@
    "change": -0.630001,
    "debt_equity_ratio": 0.0097,
    "ma50": 29.33,
-   "ma200": 31.84
+   "ma200": 31.84,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "below",
+    "sma50": 29.33,
+    "sma200": 31.84,
+    "gap_pct": -7.9,
+    "close": 31.45
+   }
   },
   {
    "ticker": "CRWD",
@@ -946,7 +1295,21 @@
    "change": -3.63,
    "debt_equity_ratio": 0.1596,
    "ma50": 245.31,
-   "ma200": 174.16
+   "ma200": 174.16,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-05-26",
+    "trading_days_since": 122,
+    "state": "above",
+    "sma50": 245.31,
+    "sma200": 174.16,
+    "gap_pct": 40.86,
+    "close": 219.58,
+    "cross_sma50": 116.86,
+    "cross_sma200": 116.61,
+    "cross_close": 167.89
+   }
   },
   {
    "ticker": "CRWV",
@@ -981,7 +1344,21 @@
    "change": 0.00999832,
    "debt_equity_ratio": 16.4524,
    "ma50": 70.81,
-   "ma200": 88.58
+   "ma200": 88.58,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-07-28",
+    "trading_days_since": 79,
+    "state": "below",
+    "sma50": 70.81,
+    "sma200": 88.58,
+    "gap_pct": -20.06,
+    "close": 49.89,
+    "cross_sma50": 95.84,
+    "cross_sma200": 95.91,
+    "cross_close": 67.3
+   }
   },
   {
    "ticker": "CSCO",
@@ -1016,7 +1393,18 @@
    "change": 0.590004,
    "debt_equity_ratio": 0.5774,
    "ma50": 107.04,
-   "ma200": 101.9
+   "ma200": 101.9,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 107.04,
+    "sma200": 101.91,
+    "gap_pct": 5.04,
+    "close": 95.11
+   }
   },
   {
    "ticker": "CSX",
@@ -1051,7 +1439,18 @@
    "change": -0.889999,
    "debt_equity_ratio": 1.3517,
    "ma50": 49.08,
-   "ma200": 46.31
+   "ma200": 46.31,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 49.08,
+    "sma200": 46.31,
+    "gap_pct": 5.98,
+    "close": 51.14
+   }
   },
   {
    "ticker": "CTAS",
@@ -1086,7 +1485,21 @@
    "change": -1.96001,
    "debt_equity_ratio": 0.521,
    "ma50": 209.4,
-   "ma200": 191.26
+   "ma200": 191.26,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-08-05",
+    "trading_days_since": 73,
+    "state": "above",
+    "sma50": 209.4,
+    "sma200": 191.26,
+    "gap_pct": 9.48,
+    "close": 222.2,
+    "cross_sma50": 183.89,
+    "cross_sma200": 183.7,
+    "cross_close": 200.42
+   }
   },
   {
    "ticker": "DASH",
@@ -1121,7 +1534,21 @@
    "change": -4.87,
    "debt_equity_ratio": 0.3075,
    "ma50": 186.61,
-   "ma200": 181.01
+   "ma200": 181.01,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-08-19",
+    "trading_days_since": 63,
+    "state": "above",
+    "sma50": 186.61,
+    "sma200": 181.01,
+    "gap_pct": 3.09,
+    "close": 164.91,
+    "cross_sma50": 188.75,
+    "cross_sma200": 187.78,
+    "cross_close": 220.22
+   }
   },
   {
    "ticker": "DDOG",
@@ -1156,7 +1583,21 @@
    "change": -7.68001,
    "debt_equity_ratio": 0.2772,
    "ma50": 241.83,
-   "ma200": 201.76
+   "ma200": 201.76,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-05-20",
+    "trading_days_since": 125,
+    "state": "above",
+    "sma50": 241.83,
+    "sma200": 201.76,
+    "gap_pct": 19.86,
+    "close": 165.18,
+    "cross_sma50": 141.25,
+    "cross_sma200": 141.06,
+    "cross_close": 212.24
+   }
   },
   {
    "ticker": "DXCM",
@@ -1191,7 +1632,21 @@
    "change": 0.43,
    "debt_equity_ratio": 0.5494,
    "ma50": 84.12,
-   "ma200": 75.17
+   "ma200": 75.17,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-06-29",
+    "trading_days_since": 99,
+    "state": "above",
+    "sma50": 84.12,
+    "sma200": 75.17,
+    "gap_pct": 11.91,
+    "close": 82.04,
+    "cross_sma50": 67.36,
+    "cross_sma200": 67.24,
+    "cross_close": 69.98
+   }
   },
   {
    "ticker": "EXC",
@@ -1226,7 +1681,21 @@
    "change": -0.599998,
    "debt_equity_ratio": 1.7653,
    "ma50": 43.31,
-   "ma200": 45.15
+   "ma200": 45.15,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-09-14",
+    "trading_days_since": 46,
+    "state": "below",
+    "sma50": 43.31,
+    "sma200": 45.15,
+    "gap_pct": -4.06,
+    "close": 45.86,
+    "cross_sma50": 45.04,
+    "cross_sma200": 45.06,
+    "cross_close": 42.72
+   }
   },
   {
    "ticker": "FANG",
@@ -1261,7 +1730,21 @@
    "change": -0.339996,
    "debt_equity_ratio": 0.2931,
    "ma50": 191.6,
-   "ma200": 188.91
+   "ma200": 188.91,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2025-11-18",
+    "trading_days_since": 250,
+    "state": "above",
+    "sma50": 191.6,
+    "sma200": 188.91,
+    "gap_pct": 1.42,
+    "close": 177.07,
+    "cross_sma50": 138.77,
+    "cross_sma200": 138.47,
+    "cross_close": 146.11
+   }
   },
   {
    "ticker": "FAST",
@@ -1296,7 +1779,21 @@
    "change": -0.760002,
    "debt_equity_ratio": 0.1089,
    "ma50": 51.3,
-   "ma200": 47.39
+   "ma200": 47.39,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-03-02",
+    "trading_days_since": 181,
+    "state": "above",
+    "sma50": 51.3,
+    "sma200": 47.39,
+    "gap_pct": 8.24,
+    "close": 54.35,
+    "cross_sma50": 43.08,
+    "cross_sma200": 43.04,
+    "cross_close": 45.6
+   }
   },
   {
    "ticker": "FER",
@@ -1331,7 +1828,21 @@
    "change": -0.899998,
    "debt_equity_ratio": 1.4409,
    "ma50": 54.0,
-   "ma200": 62.61
+   "ma200": 62.61,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-08-04",
+    "trading_days_since": 74,
+    "state": "below",
+    "sma50": 54.01,
+    "sma200": 62.61,
+    "gap_pct": -13.75,
+    "close": 60.86,
+    "cross_sma50": 65.29,
+    "cross_sma200": 65.32,
+    "cross_close": 65.46
+   }
   },
   {
    "ticker": "FTNT",
@@ -1366,7 +1877,21 @@
    "change": 1.23,
    "debt_equity_ratio": 0.2495,
    "ma50": 163.16,
-   "ma200": 131.14
+   "ma200": 131.14,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-05-07",
+    "trading_days_since": 134,
+    "state": "above",
+    "sma50": 163.16,
+    "sma200": 131.14,
+    "gap_pct": 24.42,
+    "close": 124.5,
+    "cross_sma50": 83.29,
+    "cross_sma200": 82.9,
+    "cross_close": 107.97
+   }
   },
   {
    "ticker": "GEHC",
@@ -1401,7 +1926,21 @@
    "change": -1.12,
    "debt_equity_ratio": 0.8771,
    "ma50": 71.11,
-   "ma200": 69.9
+   "ma200": 69.9,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-11-11",
+    "trading_days_since": 4,
+    "state": "above",
+    "sma50": 71.11,
+    "sma200": 69.9,
+    "gap_pct": 1.74,
+    "close": 81.84,
+    "cross_sma50": 70.03,
+    "cross_sma200": 69.83,
+    "cross_close": 82.6
+   }
   },
   {
    "ticker": "GILD",
@@ -1436,7 +1975,21 @@
    "change": 2.67999,
    "debt_equity_ratio": 2.0246,
    "ma50": 155.84,
-   "ma200": 140.87
+   "ma200": 140.87,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-08-24",
+    "trading_days_since": 60,
+    "state": "above",
+    "sma50": 155.84,
+    "sma200": 140.87,
+    "gap_pct": 10.62,
+    "close": 170.26,
+    "cross_sma50": 131.56,
+    "cross_sma200": 131.35,
+    "cross_close": 145.92
+   }
   },
   {
    "ticker": "GOOG",
@@ -1471,7 +2024,21 @@
    "change": -3.66,
    "debt_equity_ratio": 0.2219,
    "ma50": 322.87,
-   "ma200": 335.51
+   "ma200": 335.51,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-10-26",
+    "trading_days_since": 16,
+    "state": "below",
+    "sma50": 322.87,
+    "sma200": 335.51,
+    "gap_pct": -3.77,
+    "close": 277.6,
+    "cross_sma50": 338.94,
+    "cross_sma200": 339.05,
+    "cross_close": 314.19
+   }
   },
   {
    "ticker": "GOOGL",
@@ -1506,7 +2073,21 @@
    "change": -3.51999,
    "debt_equity_ratio": 0.2219,
    "ma50": 325.93,
-   "ma200": 337.62
+   "ma200": 337.62,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-10-29",
+    "trading_days_since": 13,
+    "state": "below",
+    "sma50": 325.93,
+    "sma200": 337.62,
+    "gap_pct": -3.46,
+    "close": 280.2,
+    "cross_sma50": 340.24,
+    "cross_sma200": 340.62,
+    "cross_close": 283.82
+   }
   },
   {
    "ticker": "HON",
@@ -1541,7 +2122,21 @@
    "change": 1.01001,
    "debt_equity_ratio": 0.761,
    "ma50": 213.4,
-   "ma200": 228.47
+   "ma200": 228.47,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-09-08",
+    "trading_days_since": 50,
+    "state": "below",
+    "sma50": 213.4,
+    "sma200": 228.47,
+    "gap_pct": -6.6,
+    "close": 218.96,
+    "cross_sma50": 227.03,
+    "cross_sma200": 227.31,
+    "cross_close": 207.59
+   }
   },
   {
    "ticker": "HONA",
@@ -1576,7 +2171,18 @@
    "change": -2.72,
    "debt_equity_ratio": null,
    "ma50": 160.04,
-   "ma200": 180.69
+   "ma200": 180.69,
+   "cross": {
+    "enough_history": false,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": null,
+    "sma50": null,
+    "sma200": null,
+    "gap_pct": null,
+    "close": null
+   }
   },
   {
    "ticker": "IDXX",
@@ -1611,7 +2217,21 @@
    "change": -10.41,
    "debt_equity_ratio": 0.5205,
    "ma50": 569.11,
-   "ma200": 572.75
+   "ma200": 572.75,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-03-26",
+    "trading_days_since": 163,
+    "state": "below",
+    "sma50": 569.11,
+    "sma200": 572.75,
+    "gap_pct": -0.64,
+    "close": 690.24,
+    "cross_sma50": 636.02,
+    "cross_sma200": 636.22,
+    "cross_close": 573.29
+   }
   },
   {
    "ticker": "INTC",
@@ -1646,7 +2266,18 @@
    "change": -0.272003,
    "debt_equity_ratio": 0.3811,
    "ma50": 93.18,
-   "ma200": 87.48
+   "ma200": 87.48,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 93.18,
+    "sma200": 87.48,
+    "gap_pct": 6.52,
+    "close": 55.17
+   }
   },
   {
    "ticker": "INTU",
@@ -1681,7 +2312,21 @@
    "change": -24.77,
    "debt_equity_ratio": 0.4434,
    "ma50": 317.4,
-   "ma200": 346.59
+   "ma200": 346.59,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2025-11-07",
+    "trading_days_since": 257,
+    "state": "below",
+    "sma50": 317.4,
+    "sma200": 346.59,
+    "gap_pct": -8.42,
+    "close": 320.79,
+    "cross_sma50": 658.68,
+    "cross_sma200": 659.28,
+    "cross_close": 639.83
+   }
   },
   {
    "ticker": "ISRG",
@@ -1716,7 +2361,21 @@
    "change": -7.22,
    "debt_equity_ratio": null,
    "ma50": 420.62,
-   "ma200": 428.72
+   "ma200": 428.72,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-03-19",
+    "trading_days_since": 168,
+    "state": "below",
+    "sma50": 420.62,
+    "sma200": 428.72,
+    "gap_pct": -1.89,
+    "close": 430.53,
+    "cross_sma50": 508.13,
+    "cross_sma200": 509.81,
+    "cross_close": 479.93
+   }
   },
   {
    "ticker": "KDP",
@@ -1751,7 +2410,21 @@
    "change": -0.790001,
    "debt_equity_ratio": 0.9497,
    "ma50": 33.38,
-   "ma200": 30.21
+   "ma200": 30.21,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-06-01",
+    "trading_days_since": 118,
+    "state": "above",
+    "sma50": 33.38,
+    "sma200": 30.21,
+    "gap_pct": 10.47,
+    "close": 34.79,
+    "cross_sma50": 27.34,
+    "cross_sma200": 27.3,
+    "cross_close": 29.77
+   }
   },
   {
    "ticker": "KLAC",
@@ -1786,7 +2459,21 @@
    "change": 0.599991,
    "debt_equity_ratio": 0.9186,
    "ma50": 171.02,
-   "ma200": 181.3
+   "ma200": 181.3,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-10-26",
+    "trading_days_since": 16,
+    "state": "below",
+    "sma50": 171.02,
+    "sma200": 181.3,
+    "gap_pct": -5.67,
+    "close": 144.56,
+    "cross_sma50": 181.06,
+    "cross_sma200": 181.18,
+    "cross_close": 148.98
+   }
   },
   {
    "ticker": "LIN",
@@ -1821,7 +2508,21 @@
    "change": -8.35004,
    "debt_equity_ratio": 0.6514,
    "ma50": 492.05,
-   "ma200": 495.22
+   "ma200": 495.22,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-09-29",
+    "trading_days_since": 35,
+    "state": "below",
+    "sma50": 492.05,
+    "sma200": 495.22,
+    "gap_pct": -0.64,
+    "close": 515.11,
+    "cross_sma50": 481.45,
+    "cross_sma200": 482.49,
+    "cross_close": 473.37
+   }
   },
   {
    "ticker": "LITE",
@@ -1856,7 +2557,18 @@
    "change": 13.97,
    "debt_equity_ratio": 0.3128,
    "ma50": 852.16,
-   "ma200": 815.33
+   "ma200": 815.33,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 852.15,
+    "sma200": 815.33,
+    "gap_pct": 4.52,
+    "close": 559.97
+   }
   },
   {
    "ticker": "LRCX",
@@ -1891,7 +2603,21 @@
    "change": -0.139999,
    "debt_equity_ratio": 0.2686,
    "ma50": 273.47,
-   "ma200": 283.27
+   "ma200": 283.27,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-11-09",
+    "trading_days_since": 6,
+    "state": "below",
+    "sma50": 273.47,
+    "sma200": 283.27,
+    "gap_pct": -3.46,
+    "close": 210.69,
+    "cross_sma50": 282.66,
+    "cross_sma200": 283.65,
+    "cross_close": 221.31
+   }
   },
   {
    "ticker": "MAR",
@@ -1926,7 +2652,21 @@
    "change": -2.96002,
    "debt_equity_ratio": null,
    "ma50": 378.47,
-   "ma200": 361.41
+   "ma200": 361.41,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-10-13",
+    "trading_days_since": 25,
+    "state": "above",
+    "sma50": 378.47,
+    "sma200": 361.41,
+    "gap_pct": 4.72,
+    "close": 422.74,
+    "cross_sma50": 350.21,
+    "cross_sma200": 350.16,
+    "cross_close": 371.5
+   }
   },
   {
    "ticker": "MCHP",
@@ -1961,7 +2701,21 @@
    "change": 0.790001,
    "debt_equity_ratio": 0.8365,
    "ma50": 73.14,
-   "ma200": 78.52
+   "ma200": 78.52,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-09-17",
+    "trading_days_since": 43,
+    "state": "below",
+    "sma50": 73.14,
+    "sma200": 78.52,
+    "gap_pct": -6.86,
+    "close": 59.43,
+    "cross_sma50": 77.09,
+    "cross_sma200": 77.44,
+    "cross_close": 70.82
+   }
   },
   {
    "ticker": "MDLZ",
@@ -1996,7 +2750,21 @@
    "change": -0.790001,
    "debt_equity_ratio": 0.8378,
    "ma50": 62.62,
-   "ma200": 60.13
+   "ma200": 60.13,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-05-15",
+    "trading_days_since": 128,
+    "state": "above",
+    "sma50": 62.62,
+    "sma200": 60.13,
+    "gap_pct": 4.14,
+    "close": 66.75,
+    "cross_sma50": 57.19,
+    "cross_sma200": 57.17,
+    "cross_close": 59.41
+   }
   },
   {
    "ticker": "MELI",
@@ -2031,7 +2799,21 @@
    "change": -25.29,
    "debt_equity_ratio": 1.9737,
    "ma50": 1740.68,
-   "ma200": 1776.69
+   "ma200": 1776.69,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-11-10",
+    "trading_days_since": 5,
+    "state": "below",
+    "sma50": 1740.68,
+    "sma200": 1776.69,
+    "gap_pct": -2.03,
+    "close": 1436.83,
+    "cross_sma50": 1790.45,
+    "cross_sma200": 1795.18,
+    "cross_close": 1490.24
+   }
   },
   {
    "ticker": "META",
@@ -2066,7 +2848,21 @@
    "change": -7.53998,
    "debt_equity_ratio": 0.4216,
    "ma50": 680.02,
-   "ma200": 629.15
+   "ma200": 629.15,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-10-06",
+    "trading_days_since": 30,
+    "state": "above",
+    "sma50": 680.02,
+    "sma200": 629.15,
+    "gap_pct": 8.09,
+    "close": 618.87,
+    "cross_sma50": 630.52,
+    "cross_sma200": 628.27,
+    "cross_close": 738.88
+   }
   },
   {
    "ticker": "MNST",
@@ -2101,7 +2897,18 @@
    "change": -1.36,
    "debt_equity_ratio": 0.0092,
    "ma50": 44.82,
-   "ma200": 43.45
+   "ma200": 43.45,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 44.82,
+    "sma200": 43.45,
+    "gap_pct": 3.16,
+    "close": 44.44
+   }
   },
   {
    "ticker": "MPWR",
@@ -2136,7 +2943,21 @@
    "change": 3.37,
    "debt_equity_ratio": 0.0057,
    "ma50": 1288.2,
-   "ma200": 1326.89
+   "ma200": 1326.89,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-10-20",
+    "trading_days_since": 20,
+    "state": "below",
+    "sma50": 1288.2,
+    "sma200": 1326.89,
+    "gap_pct": -2.92,
+    "close": 1317.37,
+    "cross_sma50": 1300.56,
+    "cross_sma200": 1303.52,
+    "cross_close": 1248.74
+   }
   },
   {
    "ticker": "MRNA",
@@ -2171,7 +2992,21 @@
    "change": -8.47,
    "debt_equity_ratio": 0.6185,
    "ma50": 204.39,
-   "ma200": 98.09
+   "ma200": 98.09,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-01-06",
+    "trading_days_since": 218,
+    "state": "above",
+    "sma50": 204.39,
+    "sma200": 98.09,
+    "gap_pct": 108.37,
+    "close": 206.8,
+    "cross_sma50": 27.48,
+    "cross_sma200": 27.4,
+    "cross_close": 35.66
+   }
   },
   {
    "ticker": "MRVL",
@@ -2206,7 +3041,21 @@
    "change": 3.38,
    "debt_equity_ratio": 0.2853,
    "ma50": 226.08,
-   "ma200": 187.62
+   "ma200": 187.62,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2025-10-24",
+    "trading_days_since": 267,
+    "state": "above",
+    "sma50": 226.08,
+    "sma200": 187.61,
+    "gap_pct": 20.5,
+    "close": 148.74,
+    "cross_sma50": 77.23,
+    "cross_sma200": 77.22,
+    "cross_close": 83.99
+   }
   },
   {
    "ticker": "MSFT",
@@ -2241,7 +3090,21 @@
    "change": -11.75,
    "debt_equity_ratio": 0.2847,
    "ma50": 519.61,
-   "ma200": 441.37
+   "ma200": 441.37,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-08-28",
+    "trading_days_since": 56,
+    "state": "above",
+    "sma50": 519.61,
+    "sma200": 441.37,
+    "gap_pct": 17.73,
+    "close": 506.24,
+    "cross_sma50": 429.97,
+    "cross_sma200": 429.4,
+    "cross_close": 513.53
+   }
   },
   {
    "ticker": "MSTR",
@@ -2276,7 +3139,21 @@
    "change": -6.53,
    "debt_equity_ratio": 0.0989,
    "ma50": 141.67,
-   "ma200": 132.33
+   "ma200": 132.33,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-10-19",
+    "trading_days_since": 21,
+    "state": "above",
+    "sma50": 141.67,
+    "sma200": 132.33,
+    "gap_pct": 7.05,
+    "close": 96.5,
+    "cross_sma50": 135.64,
+    "cross_sma200": 135.53,
+    "cross_close": 136.02
+   }
   },
   {
    "ticker": "MU",
@@ -2311,7 +3188,18 @@
    "change": -6.60004,
    "debt_equity_ratio": 0.0374,
    "ma50": 931.99,
-   "ma200": 768.31
+   "ma200": 768.31,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 931.99,
+    "sma200": 768.31,
+    "gap_pct": 21.3,
+    "close": 712.42
+   }
   },
   {
    "ticker": "NBIS",
@@ -2346,7 +3234,18 @@
    "change": -1.09499,
    "debt_equity_ratio": 1.3088,
    "ma50": 189.46,
-   "ma200": 179.55
+   "ma200": 179.55,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 189.46,
+    "sma200": 179.55,
+    "gap_pct": 5.52,
+    "close": 106.04
+   }
   },
   {
    "ticker": "NFLX",
@@ -2381,7 +3280,21 @@
    "change": -1.07,
    "debt_equity_ratio": 0.5986,
    "ma50": 68.49,
-   "ma200": 80.27
+   "ma200": 80.27,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2025-12-05",
+    "trading_days_since": 238,
+    "state": "below",
+    "sma50": 68.49,
+    "sma200": 80.27,
+    "gap_pct": -14.67,
+    "close": 59.68,
+    "cross_sma50": 113.16,
+    "cross_sma200": 113.42,
+    "cross_close": 100.24
+   }
   },
   {
    "ticker": "NVDA",
@@ -2416,7 +3329,18 @@
    "change": -0.679993,
    "debt_equity_ratio": 0.1697,
    "ma50": 211.75,
-   "ma200": 203.6
+   "ma200": 203.6,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 211.75,
+    "sma200": 203.6,
+    "gap_pct": 4.0,
+    "close": 155.46
+   }
   },
   {
    "ticker": "NXPI",
@@ -2451,7 +3375,21 @@
    "change": -1.68001,
    "debt_equity_ratio": 0.8807,
    "ma50": 241.01,
-   "ma200": 246.67
+   "ma200": 246.67,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-09-16",
+    "trading_days_since": 44,
+    "state": "below",
+    "sma50": 241.01,
+    "sma200": 246.67,
+    "gap_pct": -2.29,
+    "close": 252.51,
+    "cross_sma50": 241.95,
+    "cross_sma200": 242.78,
+    "cross_close": 218.98
+   }
   },
   {
    "ticker": "ODFL",
@@ -2486,7 +3424,21 @@
    "change": -2.43999,
    "debt_equity_ratio": 0.0043,
    "ma50": 178.21,
-   "ma200": 201.17
+   "ma200": 201.17,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-09-30",
+    "trading_days_since": 34,
+    "state": "below",
+    "sma50": 178.21,
+    "sma200": 201.17,
+    "gap_pct": -11.41,
+    "close": 171.85,
+    "cross_sma50": 198.48,
+    "cross_sma200": 199.1,
+    "cross_close": 173.84
+   }
   },
   {
    "ticker": "ORLY",
@@ -2521,7 +3473,21 @@
    "change": -0.00999451,
    "debt_equity_ratio": null,
    "ma50": 87.84,
-   "ma200": 90.11
+   "ma200": 90.11,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-01-02",
+    "trading_days_since": 220,
+    "state": "below",
+    "sma50": 87.84,
+    "sma200": 90.11,
+    "gap_pct": -2.52,
+    "close": 92.69,
+    "cross_sma50": 96.14,
+    "cross_sma200": 96.28,
+    "cross_close": 90.34
+   }
   },
   {
    "ticker": "PANW",
@@ -2556,7 +3522,21 @@
    "change": -6.79999,
    "debt_equity_ratio": 0.0934,
    "ma50": 366.61,
-   "ma200": 278.6
+   "ma200": 278.6,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-05-28",
+    "trading_days_since": 120,
+    "state": "above",
+    "sma50": 366.61,
+    "sma200": 278.6,
+    "gap_pct": 31.59,
+    "close": 309.29,
+    "cross_sma50": 189.16,
+    "cross_sma200": 188.88,
+    "cross_close": 257.77
+   }
   },
   {
    "ticker": "PAYX",
@@ -2591,7 +3571,21 @@
    "change": -3.67,
    "debt_equity_ratio": 1.247,
    "ma50": 110.1,
-   "ma200": 102.1
+   "ma200": 102.1,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-07-28",
+    "trading_days_since": 79,
+    "state": "above",
+    "sma50": 110.1,
+    "sma200": 102.1,
+    "gap_pct": 7.84,
+    "close": 114.1,
+    "cross_sma50": 100.56,
+    "cross_sma200": 100.11,
+    "cross_close": 117.67
+   }
   },
   {
    "ticker": "PCAR",
@@ -2626,7 +3620,21 @@
    "change": -0.919998,
    "debt_equity_ratio": 0.7215,
    "ma50": 109.46,
-   "ma200": 118.34
+   "ma200": 118.34,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-10-15",
+    "trading_days_since": 23,
+    "state": "below",
+    "sma50": 109.46,
+    "sma200": 118.34,
+    "gap_pct": -7.5,
+    "close": 104.61,
+    "cross_sma50": 119.71,
+    "cross_sma200": 119.75,
+    "cross_close": 110.44
+   }
   },
   {
    "ticker": "PDD",
@@ -2661,7 +3669,21 @@
    "change": -0.720001,
    "debt_equity_ratio": 0.0108,
    "ma50": 79.27,
-   "ma200": 89.57
+   "ma200": 89.57,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-01-23",
+    "trading_days_since": 206,
+    "state": "below",
+    "sma50": 79.27,
+    "sma200": 89.57,
+    "gap_pct": -11.5,
+    "close": 77.39,
+    "cross_sma50": 115.67,
+    "cross_sma200": 115.82,
+    "cross_close": 106.38
+   }
   },
   {
    "ticker": "PEP",
@@ -2696,7 +3718,21 @@
    "change": -4.40999,
    "debt_equity_ratio": 2.3072,
    "ma50": 133.89,
-   "ma200": 143.64
+   "ma200": 143.64,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-06-29",
+    "trading_days_since": 99,
+    "state": "below",
+    "sma50": 133.89,
+    "sma200": 143.64,
+    "gap_pct": -6.79,
+    "close": 142.02,
+    "cross_sma50": 145.76,
+    "cross_sma200": 145.9,
+    "cross_close": 137.21
+   }
   },
   {
    "ticker": "PLTR",
@@ -2731,7 +3767,21 @@
    "change": -3.83,
    "debt_equity_ratio": 0.0199,
    "ma50": 184.24,
-   "ma200": 153.84
+   "ma200": 153.84,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-09-09",
+    "trading_days_since": 49,
+    "state": "above",
+    "sma50": 184.24,
+    "sma200": 153.84,
+    "gap_pct": 19.76,
+    "close": 156.56,
+    "cross_sma50": 152.11,
+    "cross_sma200": 151.41,
+    "cross_close": 169.53
+   }
   },
   {
    "ticker": "PYPL",
@@ -2766,7 +3816,21 @@
    "change": -0.720001,
    "debt_equity_ratio": 0.7315,
    "ma50": 55.78,
-   "ma200": 50.04
+   "ma200": 50.04,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-08-20",
+    "trading_days_since": 62,
+    "state": "above",
+    "sma50": 55.78,
+    "sma200": 50.04,
+    "gap_pct": 11.49,
+    "close": 58.11,
+    "cross_sma50": 51.48,
+    "cross_sma200": 51.15,
+    "cross_close": 62.15
+   }
   },
   {
    "ticker": "QCOM",
@@ -2801,7 +3865,21 @@
    "change": -1.85001,
    "debt_equity_ratio": 0.526,
    "ma50": 178.58,
-   "ma200": 169.35
+   "ma200": 169.35,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-05-27",
+    "trading_days_since": 121,
+    "state": "above",
+    "sma50": 178.58,
+    "sma200": 169.35,
+    "gap_pct": 5.45,
+    "close": 166.67,
+    "cross_sma50": 159.56,
+    "cross_sma200": 158.89,
+    "cross_close": 231.28
+   }
   },
   {
    "ticker": "REGN",
@@ -2836,7 +3914,21 @@
    "change": 5.35999,
    "debt_equity_ratio": 0.0808,
    "ma50": 821.61,
-   "ma200": 747.94
+   "ma200": 747.94,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-09-03",
+    "trading_days_since": 52,
+    "state": "above",
+    "sma50": 821.61,
+    "sma200": 747.94,
+    "gap_pct": 9.85,
+    "close": 957.76,
+    "cross_sma50": 733.1,
+    "cross_sma200": 729.75,
+    "cross_close": 843.47
+   }
   },
   {
    "ticker": "RKLB",
@@ -2871,7 +3963,21 @@
    "change": -2.32,
    "debt_equity_ratio": 0.0207,
    "ma50": 62.11,
-   "ma200": 78.07
+   "ma200": 78.07,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-08-27",
+    "trading_days_since": 57,
+    "state": "below",
+    "sma50": 62.11,
+    "sma200": 78.07,
+    "gap_pct": -20.44,
+    "close": 55.05,
+    "cross_sma50": 78.81,
+    "cross_sma200": 79.0,
+    "cross_close": 67.53
+   }
   },
   {
    "ticker": "ROP",
@@ -2906,7 +4012,21 @@
    "change": -11.8,
    "debt_equity_ratio": 0.507,
    "ma50": 407.29,
-   "ma200": 368.72
+   "ma200": 368.72,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-08-31",
+    "trading_days_since": 55,
+    "state": "above",
+    "sma50": 407.29,
+    "sma200": 368.72,
+    "gap_pct": 10.46,
+    "close": 471.92,
+    "cross_sma50": 376.04,
+    "cross_sma200": 374.43,
+    "cross_close": 423.57
+   }
   },
   {
    "ticker": "ROST",
@@ -2941,7 +4061,21 @@
    "change": -2.54001,
    "debt_equity_ratio": 0.7028,
    "ma50": 231.31,
-   "ma200": 224.53
+   "ma200": 224.53,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2025-09-10",
+    "trading_days_since": 299,
+    "state": "above",
+    "sma50": 231.31,
+    "sma200": 224.53,
+    "gap_pct": 3.02,
+    "close": 220.45,
+    "cross_sma50": 139.71,
+    "cross_sma200": 139.56,
+    "cross_close": 148.01
+   }
   },
   {
    "ticker": "SBUX",
@@ -2976,7 +4110,21 @@
    "change": -1.23,
    "debt_equity_ratio": null,
    "ma50": 99.0,
-   "ma200": 99.44
+   "ma200": 99.44,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-11-03",
+    "trading_days_since": 10,
+    "state": "below",
+    "sma50": 99.0,
+    "sma200": 99.44,
+    "gap_pct": -0.44,
+    "close": 107.49,
+    "cross_sma50": 98.57,
+    "cross_sma200": 98.69,
+    "cross_close": 104.15
+   }
   },
   {
    "ticker": "SHOP",
@@ -3011,7 +4159,21 @@
    "change": -5.91,
    "debt_equity_ratio": 0.0148,
    "ma50": 153.0,
-   "ma200": 130.3
+   "ma200": 130.3,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-08-31",
+    "trading_days_since": 55,
+    "state": "above",
+    "sma50": 153.0,
+    "sma200": 130.3,
+    "gap_pct": 17.42,
+    "close": 141.9,
+    "cross_sma50": 131.53,
+    "cross_sma200": 131.38,
+    "cross_close": 147.37
+   }
   },
   {
    "ticker": "SNDK",
@@ -3046,7 +4208,18 @@
    "change": -11.87,
    "debt_equity_ratio": 0.0111,
    "ma50": 1404.0,
-   "ma200": 1284.26
+   "ma200": 1284.26,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 1404.0,
+    "sma200": 1284.26,
+    "gap_pct": 9.32,
+    "close": 797.24
+   }
   },
   {
    "ticker": "SNPS",
@@ -3081,7 +4254,21 @@
    "change": -5.81998,
    "debt_equity_ratio": 0.348,
    "ma50": 446.98,
-   "ma200": 440.86
+   "ma200": 440.86,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-11-09",
+    "trading_days_since": 6,
+    "state": "above",
+    "sma50": 446.98,
+    "sma200": 440.86,
+    "gap_pct": 1.39,
+    "close": 435.51,
+    "cross_sma50": 442.1,
+    "cross_sma200": 441.88,
+    "cross_close": 466.97
+   }
   },
   {
    "ticker": "SPCX",
@@ -3116,7 +4303,18 @@
    "change": 4.34,
    "debt_equity_ratio": 0.2219,
    "ma50": 148.46,
-   "ma200": 144.87
+   "ma200": 144.87,
+   "cross": {
+    "enough_history": false,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": null,
+    "sma50": null,
+    "sma200": null,
+    "gap_pct": null,
+    "close": null
+   }
   },
   {
    "ticker": "STX",
@@ -3151,7 +4349,18 @@
    "change": 5.39999,
    "debt_equity_ratio": 0.7738,
    "ma50": 725.45,
-   "ma200": 701.07
+   "ma200": 701.07,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 725.45,
+    "sma200": 701.07,
+    "gap_pct": 3.48,
+    "close": 504.4
+   }
   },
   {
    "ticker": "TER",
@@ -3186,7 +4395,21 @@
    "change": 2.28,
    "debt_equity_ratio": 0.0367,
    "ma50": 337.35,
-   "ma200": 349.94
+   "ma200": 349.94,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-11-09",
+    "trading_days_since": 6,
+    "state": "below",
+    "sma50": 337.35,
+    "sma200": 349.94,
+    "gap_pct": -3.6,
+    "close": 234.18,
+    "cross_sma50": 349.42,
+    "cross_sma200": 349.8,
+    "cross_close": 246.0
+   }
   },
   {
    "ticker": "TMUS",
@@ -3221,7 +4444,21 @@
    "change": -2.11,
    "debt_equity_ratio": 2.1132,
    "ma50": 163.09,
-   "ma200": 184.29
+   "ma200": 184.29,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2025-10-17",
+    "trading_days_since": 272,
+    "state": "below",
+    "sma50": 163.09,
+    "sma200": 184.29,
+    "gap_pct": -11.51,
+    "close": 167.9,
+    "cross_sma50": 236.55,
+    "cross_sma200": 236.7,
+    "cross_close": 224.59
+   }
   },
   {
    "ticker": "TRI",
@@ -3256,7 +4493,21 @@
    "change": -4.12,
    "debt_equity_ratio": 0.3696,
    "ma50": 106.2,
-   "ma200": 94.92
+   "ma200": 94.92,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-09-11",
+    "trading_days_since": 47,
+    "state": "above",
+    "sma50": 106.2,
+    "sma200": 94.92,
+    "gap_pct": 11.88,
+    "close": 104.17,
+    "cross_sma50": 98.92,
+    "cross_sma200": 98.86,
+    "cross_close": 97.35
+   }
   },
   {
    "ticker": "TSLA",
@@ -3291,7 +4542,21 @@
    "change": 0.369995,
    "debt_equity_ratio": 0.183,
    "ma50": 375.49,
-   "ma200": 382.27
+   "ma200": 382.27,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-04-09",
+    "trading_days_since": 154,
+    "state": "below",
+    "sma50": 375.49,
+    "sma200": 382.27,
+    "gap_pct": -1.77,
+    "close": 380.11,
+    "cross_sma50": 395.96,
+    "cross_sma200": 397.31,
+    "cross_close": 345.62
+   }
   },
   {
    "ticker": "TSM",
@@ -3326,7 +4591,18 @@
    "change": -13.76,
    "debt_equity_ratio": 0.1519,
    "ma50": 427.3,
-   "ma200": 402.0
+   "ma200": 402.0,
+   "cross": {
+    "enough_history": true,
+    "type": null,
+    "date": null,
+    "trading_days_since": null,
+    "state": "above",
+    "sma50": 427.3,
+    "sma200": 402.0,
+    "gap_pct": 6.29,
+    "close": 359.69
+   }
   },
   {
    "ticker": "TTWO",
@@ -3361,7 +4637,21 @@
    "change": -9.54001,
    "debt_equity_ratio": 0.7925,
    "ma50": 207.64,
-   "ma200": 218.3
+   "ma200": 218.3,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-10-07",
+    "trading_days_since": 29,
+    "state": "below",
+    "sma50": 207.64,
+    "sma200": 218.3,
+    "gap_pct": -4.88,
+    "close": 203.93,
+    "cross_sma50": 223.94,
+    "cross_sma200": 223.96,
+    "cross_close": 204.01
+   }
   },
   {
    "ticker": "TXN",
@@ -3396,7 +4686,21 @@
    "change": 1.64999,
    "debt_equity_ratio": 0.7065,
    "ma50": 284.32,
-   "ma200": 263.18
+   "ma200": 263.18,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-02-02",
+    "trading_days_since": 200,
+    "state": "above",
+    "sma50": 284.32,
+    "sma200": 263.18,
+    "gap_pct": 8.03,
+    "close": 295.86,
+    "cross_sma50": 178.95,
+    "cross_sma200": 178.63,
+    "cross_close": 221.65
+   }
   },
   {
    "ticker": "VRTX",
@@ -3431,7 +4735,21 @@
    "change": -3.58997,
    "debt_equity_ratio": 0.3099,
    "ma50": 522.31,
-   "ma200": 483.99
+   "ma200": 483.99,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-06-29",
+    "trading_days_since": 99,
+    "state": "above",
+    "sma50": 522.31,
+    "sma200": 483.99,
+    "gap_pct": 7.92,
+    "close": 534.2,
+    "cross_sma50": 442.8,
+    "cross_sma200": 442.19,
+    "cross_close": 499.65
+   }
   },
   {
    "ticker": "WDAY",
@@ -3466,7 +4784,21 @@
    "change": -11.26,
    "debt_equity_ratio": 0.5839,
    "ma50": 193.21,
-   "ma200": 156.16
+   "ma200": 156.16,
+   "cross": {
+    "enough_history": true,
+    "type": "golden",
+    "date": "2026-09-01",
+    "trading_days_since": 54,
+    "state": "above",
+    "sma50": 193.21,
+    "sma200": 156.16,
+    "gap_pct": 23.72,
+    "close": 182.8,
+    "cross_sma50": 160.66,
+    "cross_sma200": 160.56,
+    "cross_close": 198.38
+   }
   },
   {
    "ticker": "WDC",
@@ -3501,7 +4833,21 @@
    "change": 2.39999,
    "debt_equity_ratio": 0.0986,
    "ma50": 384.11,
-   "ma200": 422.05
+   "ma200": 422.05,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-11-02",
+    "trading_days_since": 11,
+    "state": "below",
+    "sma50": 384.11,
+    "sma200": 422.05,
+    "gap_pct": -8.99,
+    "close": 283.33,
+    "cross_sma50": 419.01,
+    "cross_sma200": 419.39,
+    "cross_close": 338.59
+   }
   },
   {
    "ticker": "WMT",
@@ -3536,7 +4882,21 @@
    "change": -0.890007,
    "debt_equity_ratio": 0.7165,
    "ma50": 115.39,
-   "ma200": 118.68
+   "ma200": 118.68,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-07-27",
+    "trading_days_since": 80,
+    "state": "below",
+    "sma50": 115.39,
+    "sma200": 118.68,
+    "gap_pct": -2.77,
+    "close": 127.52,
+    "cross_sma50": 116.99,
+    "cross_sma200": 117.17,
+    "cross_close": 111.47
+   }
   },
   {
    "ticker": "XEL",
@@ -3571,7 +4931,21 @@
    "change": -0.489998,
    "debt_equity_ratio": 1.6765,
    "ma50": 75.57,
-   "ma200": 77.69
+   "ma200": 77.69,
+   "cross": {
+    "enough_history": true,
+    "type": "death",
+    "date": "2026-09-18",
+    "trading_days_since": 42,
+    "state": "below",
+    "sma50": 75.57,
+    "sma200": 77.69,
+    "gap_pct": -2.73,
+    "close": 80.72,
+    "cross_sma50": 77.05,
+    "cross_sma200": 77.11,
+    "cross_close": 72.3
+   }
   }
  ]
 }

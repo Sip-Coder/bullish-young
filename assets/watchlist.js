@@ -1,6 +1,6 @@
 const watchlistCols = [
   ["ticker", "Ticker"], ["name", "Name"],
-  ["signal", "Signal"], ["brooksRef", "Brooks (ref)"],
+  ["signal", "Signal"], ["cross", "Cross"], ["brooksRef", "Brooks (ref)"],
   ["price", "Price"],
   ["chg_pct", "Day %"], ["vs50", "% vs 50D"], ["vs200", "% vs 200D"],
   ["range52", "52W range"], ["pe", "P/E"], ["forward_pe", "Fwd P/E"],
@@ -9,9 +9,19 @@ const watchlistCols = [
 ];
 let watchlistSort = "ticker", watchlistDir = 1, histories = new Map(), weeklies = new Map();
 
+let crossFilter = "all";
+
 shell("watchlist").then(async () => {
+  const wrap = document.querySelector("#cross-filter-wrap");
+  if (wrap && window.BYCross) {
+    wrap.innerHTML = BYCross.filterControl("cross-filter");
+    document.querySelector("#cross-filter").onchange = (event) => {
+      crossFilter = event.target.value;
+      drawWatchlist();
+    };
+  }
   document.querySelector("#watchlist-heads").innerHTML = watchlistCols.map(([key, label]) =>
-    `<th class="${["ticker", "name", "signal", "brooksRef"].includes(key) ? "text" : ""}${["spark", "unstar"].includes(key) ? " no-sort" : ""}"${["spark", "unstar"].includes(key) ? "" : ` data-key="${key}"`}>${label}</th>`
+    `<th class="${["ticker", "name", "signal", "cross", "brooksRef"].includes(key) ? "text" : ""}${["spark", "unstar"].includes(key) ? " no-sort" : ""}"${["spark", "unstar"].includes(key) ? "" : ` data-key="${key}"`}>${label}</th>`
   ).join("");
   document.querySelectorAll("#watchlist-heads [data-key]").forEach((th) => th.onclick = () => {
     watchlistDir = watchlistSort === th.dataset.key ? -watchlistDir : 1;
@@ -120,25 +130,29 @@ function rows() {
     const span = s.high_52w != null && s.low_52w != null ? s.high_52w - s.low_52w : 0;
     const range52 = span > 0 && s.price != null ? Math.max(0, Math.min(100, (s.price - s.low_52w) / span * 100)) : null;
     const computed = computeSignal(ticker, s);
+    const cross = s.cross || null;
     return {
       ...s, ticker, name: names.get(ticker) || s.name || ticker, vs50, vs200, range52,
-      signal: computed.kind, signalDetail: computed, brooksRef: brooksRef(ticker)
+      signal: computed.kind, signalDetail: computed, cross, crossLabel: window.BYCross ? BYCross.label(cross).text : "",
+      brooksRef: brooksRef(ticker)
     };
   });
 }
 
 function drawWatchlist() {
-  const list = rows().sort((a, b) => {
-    const x = a[watchlistSort], y = b[watchlistSort];
+  const list = rows().filter((s) => !window.BYCross || BYCross.matches(s.cross, crossFilter)).sort((a, b) => {
+    const x = watchlistSort === "cross" ? a.crossLabel : a[watchlistSort], y = watchlistSort === "cross" ? b.crossLabel : b[watchlistSort];
     if (x == null && y == null) return a.ticker.localeCompare(b.ticker);
     if (x == null) return 1;
     if (y == null) return -1;
     return (typeof x === "string" ? x.localeCompare(y) : x - y) * watchlistDir;
   });
-  document.querySelector(".watchlist-table tbody").innerHTML = list.map((s) => `<tr>
+  const empty = !list.length ? `<tr><td class="text" colspan="${watchlistCols.length}">No stocks match this cross filter.</td></tr>` : "";
+  document.querySelector(".watchlist-table tbody").innerHTML = (list.map((s) => `<tr>
     <td><a href="stock.html?t=${encodeURIComponent(s.ticker)}">${s.ticker}</a></td>
     <td class="text">${s.name || "—"}</td>
-    <td class="text signal ${s.signalDetail.className}" data-sort="${s.signal}"><span class="signal-kind">${s.signal}</span><span class="signal-detail">${s.signalDetail.text}</span></td>
+    <td class="text signal ${s.signalDetail.className}" data-sort="${s.signal}"><span class="signal-kind">${s.signal}</span>${window.BYCross ? BYCross.tagsHtml(s.cross, s.signal) : ""}<span class="signal-detail">${s.signalDetail.text}</span></td>
+    <td class="text cross-col">${window.BYCross ? BYCross.html(s.cross) : "—"}</td>
     <td class="text brooks-ref">${s.brooksRef}</td>
     <td>${BY.money(s.price)}</td>
     <td class="${valueClass(s.chg_pct)}">${BY.pct(s.chg_pct)}</td>
@@ -148,7 +162,7 @@ function drawWatchlist() {
     <td>${s.roe == null ? "—" : `${BY.fmt(s.roe * 100)}%`}</td>
     <td>${BY.fmt(s.debt_equity_ratio)}</td><td>${BY.big(s.levered_fcf)}</td><td>${BY.big(s.market_cap)}</td>
     <td>${sparkline(histories.get(s.ticker))}</td><td>${BY.starButton(s.ticker)}</td>
-  </tr>`).join("");
+  </tr>`).join("") || empty);
 }
 
 function valueClass(value) { return value == null ? "" : value >= 0 ? "up" : "down"; }

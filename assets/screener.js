@@ -1,5 +1,99 @@
-const cols=[['ticker','Ticker'],['star',''],['name','Name'],['sector','Sector'],['price','Price'],['chg_pct','Chg%'],['market_cap','Mkt Cap'],['pe','P/E'],['forward_pe','Fwd P/E'],['peg','PEG'],['roe','ROE'],['debt_equity_ratio','Debt/Eq'],['levered_fcf','Levered FCF'],['vs50','% vs 50D'],['vs200','% vs 200D']];let sort='ticker',dir=1;
-shell('screener').then(()=>{let sec=document.querySelector('#sector');[...new Set(BY.stats.stocks.map(s=>s.sector).filter(Boolean))].sort().forEach(x=>sec.add(new Option(x,x)));document.querySelector('#heads').innerHTML=cols.map(c=>`<th class="${['ticker','name','sector'].includes(c[0])?'text':''}${c[0]==='star'?' no-sort':''}"${c[0]==='star'?'':` data-key="${c[0]}"`}>${c[1]}</th>`).join('');document.querySelectorAll('.filters input,.filters select').forEach(x=>x.onchange=()=>draw(true));document.querySelectorAll('[data-preset]').forEach(x=>x.onclick=()=>preset(x.dataset.preset));document.querySelectorAll('th[data-key]').forEach(x=>x.onclick=()=>{dir=sort===x.dataset.key?-dir:1;sort=x.dataset.key;draw()});let p=new URLSearchParams(location.search).get('preset');if(p)preset(p);else draw()});
-function preset(p){['pe','fpe','roe','de'].forEach(x=>document.querySelector('#'+x).value='');['fcf','ma50','ma200'].forEach(x=>document.querySelector('#'+x).value='Any');sector.value='All';if(p==='strict'){pe.value=20;roe.value=50;de.value=.5}else if(p==='growth'){fpe.value=30;roe.value=15;de.value=1;fcf.value='Positive'}history.replaceState(null,'',p==='reset'?'screener.html':`?preset=${p}`);draw()}
-function constrained(v,id,fn){let q=document.querySelector('#'+id).value;return q===''||q==='Any'||q==='All'?(true):(v!=null&&fn(v,q))}
-function draw(filtersChanged=false){if(filtersChanged)history.replaceState(null,'','screener.html');let rows=BY.stats.stocks.map(s=>({...s,vs50:s.price&&s.ma50?(s.price/s.ma50-1)*100:null,vs200:s.price&&s.ma200?(s.price/s.ma200-1)*100:null})).filter(s=>constrained(s.pe,'pe',(v,q)=>v<+q)&&constrained(s.forward_pe,'fpe',(v,q)=>v<+q)&&constrained(s.roe,'roe',(v,q)=>v*100>+q)&&constrained(s.debt_equity_ratio,'de',(v,q)=>v<+q)&&constrained(s.levered_fcf,'fcf',(v,q)=>q==='Positive'?v>0:v<0)&&constrained(s.vs50,'ma50',(v,q)=>q==='Above'?v>0:v<=0)&&constrained(s.vs200,'ma200',(v,q)=>q==='Above'?v>0:v<=0)&&constrained(s.sector,'sector',(v,q)=>v===q));rows.sort((a,b)=>{let x=a[sort],y=b[sort];if(x==null)return 1;if(y==null)return-1;return (typeof x==='string'?x.localeCompare(y):x-y)*dir});document.querySelector('.count').textContent=`${rows.length} results`;document.querySelector('tbody').innerHTML=rows.map(s=>`<tr><td><a href="stock.html?t=${s.ticker}">${s.ticker}</a></td><td class="star-cell">${BY.starButton(s.ticker)}</td><td class="text">${s.name||'—'}</td><td class="text">${s.sector||'—'}</td><td>${BY.money(s.price)}</td><td class="${s.chg_pct>=0?'up':'down'}">${BY.pct(s.chg_pct)}</td><td>${BY.big(s.market_cap)}</td><td>${BY.fmt(s.pe)}</td><td>${BY.fmt(s.forward_pe)}</td><td>${BY.fmt(s.peg)}</td><td>${s.roe==null?'—':`${BY.fmt(s.roe*100)}%`}</td><td>${BY.fmt(s.debt_equity_ratio)}</td><td>${BY.big(s.levered_fcf)}</td><td class="${s.vs50>=0?'up':'down'}">${BY.pct(s.vs50)}</td><td class="${s.vs200>=0?'up':'down'}">${BY.pct(s.vs200)}</td></tr>`).join('')}
+const cols = [
+  ["ticker", "Ticker"], ["star", ""], ["name", "Name"], ["cross", "Cross"],
+  ["sector", "Sector"], ["price", "Price"], ["chg_pct", "Chg%"], ["market_cap", "Mkt Cap"],
+  ["pe", "P/E"], ["forward_pe", "Fwd P/E"], ["peg", "PEG"], ["roe", "ROE"],
+  ["debt_equity_ratio", "Debt/Eq"], ["levered_fcf", "Levered FCF"],
+  ["vs50", "% vs 50D"], ["vs200", "% vs 200D"],
+];
+let sort = "ticker", dir = 1;
+
+shell("screener").then(() => {
+  let sec = document.querySelector("#sector");
+  [...new Set(BY.stats.stocks.map((s) => s.sector).filter(Boolean))].sort().forEach((x) => sec.add(new Option(x, x)));
+  document.querySelector("#heads").innerHTML = cols.map((c) =>
+    `<th class="${["ticker", "name", "sector", "cross"].includes(c[0]) ? "text" : ""}${c[0] === "star" ? " no-sort" : ""}"${c[0] === "star" ? "" : ` data-key="${c[0]}"`}>${c[1]}</th>`
+  ).join("");
+  document.querySelectorAll(".filters input,.filters select").forEach((x) => (x.onchange = () => draw(true)));
+  document.querySelectorAll("[data-preset]").forEach((x) => (x.onclick = () => preset(x.dataset.preset)));
+  document.querySelectorAll("th[data-key]").forEach((x) => (x.onclick = () => {
+    dir = sort === x.dataset.key ? -dir : 1;
+    sort = x.dataset.key;
+    draw();
+  }));
+  let p = new URLSearchParams(location.search).get("preset");
+  if (p) preset(p);
+  else draw();
+});
+
+function preset(p) {
+  ["pe", "fpe", "roe", "de"].forEach((x) => (document.querySelector("#" + x).value = ""));
+  ["fcf", "ma50", "ma200"].forEach((x) => (document.querySelector("#" + x).value = "Any"));
+  sector.value = "All";
+  const cf = document.querySelector("#cross-filter");
+  if (cf) cf.value = "all";
+  if (p === "strict") {
+    pe.value = 20;
+    roe.value = 50;
+    de.value = 0.5;
+  } else if (p === "growth") {
+    fpe.value = 30;
+    roe.value = 15;
+    de.value = 1;
+    fcf.value = "Positive";
+  }
+  history.replaceState(null, "", p === "reset" ? "screener.html" : `?preset=${p}`);
+  draw();
+}
+
+function constrained(v, id, fn) {
+  let q = document.querySelector("#" + id).value;
+  return q === "" || q === "Any" || q === "All" ? true : v != null && fn(v, q);
+}
+
+function draw(filtersChanged = false) {
+  if (filtersChanged) history.replaceState(null, "", "screener.html");
+  const crossSel = document.querySelector("#cross-filter")?.value || "all";
+  let rows = BY.stats.stocks
+    .map((s) => ({
+      ...s,
+      vs50: s.price && s.ma50 ? (s.price / s.ma50 - 1) * 100 : null,
+      vs200: s.price && s.ma200 ? (s.price / s.ma200 - 1) * 100 : null,
+      crossLabel: window.BYCross ? BYCross.label(s.cross).text : "",
+    }))
+    .filter((s) =>
+      constrained(s.pe, "pe", (v, q) => v < +q) &&
+      constrained(s.forward_pe, "fpe", (v, q) => v < +q) &&
+      constrained(s.roe, "roe", (v, q) => v * 100 > +q) &&
+      constrained(s.debt_equity_ratio, "de", (v, q) => v < +q) &&
+      constrained(s.levered_fcf, "fcf", (v, q) => (q === "Positive" ? v > 0 : v < 0)) &&
+      constrained(s.vs50, "ma50", (v, q) => (q === "Above" ? v > 0 : v <= 0)) &&
+      constrained(s.vs200, "ma200", (v, q) => (q === "Above" ? v > 0 : v <= 0)) &&
+      constrained(s.sector, "sector", (v, q) => v === q) &&
+      (!window.BYCross || BYCross.matches(s.cross, crossSel))
+    );
+  rows.sort((a, b) => {
+    let x = sort === "cross" ? a.crossLabel : a[sort], y = sort === "cross" ? b.crossLabel : b[sort];
+    if (x == null) return 1;
+    if (y == null) return -1;
+    return (typeof x === "string" ? x.localeCompare(y) : x - y) * dir;
+  });
+  document.querySelector(".count").textContent = `${rows.length} results`;
+  document.querySelector("tbody").innerHTML = rows.map((s) => `<tr>
+    <td><a href="stock.html?t=${s.ticker}">${s.ticker}</a></td>
+    <td class="star-cell">${BY.starButton(s.ticker)}</td>
+    <td class="text">${s.name || "—"}</td>
+    <td class="text cross-col">${window.BYCross ? BYCross.html(s.cross) : "—"}</td>
+    <td class="text">${s.sector || "—"}</td>
+    <td>${BY.money(s.price)}</td>
+    <td class="${s.chg_pct >= 0 ? "up" : "down"}">${BY.pct(s.chg_pct)}</td>
+    <td>${BY.big(s.market_cap)}</td>
+    <td>${BY.fmt(s.pe)}</td>
+    <td>${BY.fmt(s.forward_pe)}</td>
+    <td>${BY.fmt(s.peg)}</td>
+    <td>${s.roe == null ? "—" : `${BY.fmt(s.roe * 100)}%`}</td>
+    <td>${BY.fmt(s.debt_equity_ratio)}</td>
+    <td>${BY.big(s.levered_fcf)}</td>
+    <td class="${s.vs50 >= 0 ? "up" : "down"}">${BY.pct(s.vs50)}</td>
+    <td class="${s.vs200 >= 0 ? "up" : "down"}">${BY.pct(s.vs200)}</td>
+  </tr>`).join("");
+}

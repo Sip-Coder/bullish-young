@@ -22,6 +22,8 @@
         ><button id="sma200" class="active">200-bar SMA</button
         ><label class="brooks-toggle"
           ><input id="brooks" type="checkbox" /> Brooks (reference)</label
+        ><label class="brooks-toggle"
+          ><input id="crosses" class="cross-toggle-input" type="checkbox" /> Golden/Death cross</label
         ><span id="brooks-layers" hidden
           ><label><input id="bar-types" type="checkbox" /> Bar types</label
           ><label
@@ -68,6 +70,7 @@
         <button id="log-scale" aria-pressed="false">Log scale</button>
       </div>
       <div id="chart-availability" class="chart-availability muted" aria-live="polite"></div>
+      <div id="cross-note" class="cross-note muted" hidden></div>
       <div class="chart-availability muted">Intraday data is refreshed hourly, so the latest bars may lag by up to an hour.</div>
       <section id="trade-calc"></section>
       <section id="statistics"></section>

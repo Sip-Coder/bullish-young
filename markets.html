@@ -30,6 +30,8 @@
           ><button data-sma="200" class="active">200-bar SMA</button
           ><label class="brooks-toggle"
             ><input class="brooks-toggle-input" type="checkbox" /> Brooks (reference)</label
+          ><label class="brooks-toggle"
+            ><input class="cross-toggle-input" type="checkbox" /> Golden/Death cross</label
           ><span class="brooks-layers" hidden
             ><label><input class="bar-types" type="checkbox" /> Bar types</label
             ><label><input class="inside-outside" type="checkbox" /> Inside/outside</label
@@ -72,6 +74,7 @@
           <button type="button" class="log-scale" aria-pressed="false">Log scale</button>
         </div>
         <div class="chart-availability chart-availability-detail muted" aria-live="polite"></div>
+        <div class="cross-note muted" hidden></div>
 
         <section class="dividend-section" aria-labelledby="qyld-div-heading">
           <h2 id="qyld-div-heading">QYLD monthly dividends</h2>
@@ -110,6 +113,8 @@
           ><button data-sma="200" class="active">200-bar SMA</button
           ><label class="brooks-toggle"
             ><input class="brooks-toggle-input" type="checkbox" /> Brooks (reference)</label
+          ><label class="brooks-toggle"
+            ><input class="cross-toggle-input" type="checkbox" /> Golden/Death cross</label
           ><span class="brooks-layers" hidden
             ><label><input class="bar-types" type="checkbox" /> Bar types</label
             ><label><input class="inside-outside" type="checkbox" /> Inside/outside</label
@@ -153,6 +158,7 @@
           <button type="button" class="log-scale" aria-pressed="false">Log scale</button>
         </div>
         <div class="chart-availability chart-availability-detail muted" aria-live="polite"></div>
+        <div class="cross-note muted" hidden></div>
         <p class="chart-availability muted es-lag-note">Intraday data is refreshed hourly, so the latest bars may lag by up to an hour.</p>
       </section>
     </main>

@@ -38,6 +38,18 @@
 .signal-detail{display:block;color:var(--muted);font-weight:400;white-space:normal}
 .signal-buy .signal-kind{color:var(--green)}
 .signal-sell .signal-kind{color:var(--red)}
+.watchlist-table td.cross-col,.watchlist-table th.cross-col,.screener-wrap td.cross-col,.portfolio-table td.cross-col{text-align:left;white-space:normal;vertical-align:top;min-width:200px;max-width:280px}
+.cross-golden{color:var(--green);font-weight:650;white-space:normal}
+.cross-death{color:var(--red);font-weight:650;white-space:normal}
+.cross-muted{color:var(--muted);white-space:normal}
+.signal-tag{display:inline-block;margin:3px 6px 0 0;padding:1px 7px;border-radius:9px;font-size:11px;font-weight:650}
+.signal-tag-gc{color:#08702f;background:#daf2e2}
+.signal-tag-caution{color:#805100;background:#fff0c9}
+.cross-filters{margin:0 0 10px}
+.cross-filters select,.filters select#cross-filter{width:min(100%,280px)}
+.filter-note{color:var(--muted);font-size:11px}
+.cross-note{margin:6px 0 0;font-size:12px}
+.cross-note[hidden]{display:none}
 .market-section{margin:0 0 28px}
 .market-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:12px}
 .market-head h2{margin:0}

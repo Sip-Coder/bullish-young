@@ -3,12 +3,16 @@ import datetime as dt
 import json
 import os
 import re
+import sys
 import threading
 import time
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
-import yfinance as yf
+try:
+    import yfinance as yf
+except ImportError:
+    yf = None
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(ROOT, "data")
@@ -582,10 +586,89 @@ def pull_stock_dividends(ticker, force=False):
             return ticker, previous, str(exc)
         return ticker, None, str(exc)
 
+
+def sma_at(closes, i, n):
+    if i < n - 1:
+        return None
+    return sum(closes[i - n + 1:i + 1]) / n
+
+def compute_cross(hist):
+    """Latest 50/200 SMA golden or death cross on daily closes, plus current state.
+
+    A golden cross is the first day the 50-day SMA closes above the 200-day SMA
+    after being at or below it the day before. A death cross is the first day
+    the 50-day closes below the 200-day after being at or above it.
+    trading_days_since counts daily bars after the cross bar (0 if it is today).
+    """
+    empty = {
+        "enough_history": False, "type": None, "date": None, "trading_days_since": None,
+        "state": None, "sma50": None, "sma200": None, "gap_pct": None, "close": None,
+    }
+    if not hist or len(hist) < 201:
+        return empty
+    closes = [row["close"] for row in hist]
+    latest = None
+    for i in range(200, len(hist)):
+        s50, s200 = sma_at(closes, i, 50), sma_at(closes, i, 200)
+        p50, p200 = sma_at(closes, i - 1, 50), sma_at(closes, i - 1, 200)
+        if None in (s50, s200, p50, p200):
+            continue
+        if s50 > s200 and p50 <= p200:
+            latest = ("golden", i)
+        elif s50 < s200 and p50 >= p200:
+            latest = ("death", i)
+    i = len(hist) - 1
+    s50, s200 = sma_at(closes, i, 50), sma_at(closes, i, 200)
+    close = closes[i]
+    gap = (s50 / s200 - 1) * 100 if s200 else None
+    if s50 > s200:
+        state = "above"
+    elif s50 < s200:
+        state = "below"
+    else:
+        state = "even"
+    result = {
+        "enough_history": True,
+        "type": None,
+        "date": None,
+        "trading_days_since": None,
+        "state": state,
+        "sma50": round(s50, 2),
+        "sma200": round(s200, 2),
+        "gap_pct": round(gap, 2) if gap is not None else None,
+        "close": close,
+    }
+    if latest:
+        typ, idx = latest
+        result["type"] = typ
+        result["date"] = hist[idx]["time"]
+        result["trading_days_since"] = i - idx
+        result["cross_sma50"] = round(sma_at(closes, idx, 50), 2)
+        result["cross_sma200"] = round(sma_at(closes, idx, 200), 2)
+        result["cross_close"] = hist[idx]["close"]
+    return result
+
+def attach_cross_data(rows, hist_by_ticker=None):
+    hist_by_ticker = hist_by_ticker or {}
+    for row in rows:
+        ticker = row["ticker"]
+        hist = hist_by_ticker.get(ticker)
+        if hist is None:
+            path = os.path.join(HISTORY, f"{file_slug(ticker)}.json")
+            hist = load_json(path, []) if os.path.exists(path) else []
+        row["cross"] = compute_cross(hist)
+    return rows
+
 def write_json(path, value):
     with open(path,"w",encoding="utf-8") as f: json.dump(value,f,indent=1,allow_nan=False); f.write("\n")
 
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "--crosses-only":
+        payload = load_json(os.path.join(D, "stats.json"), {"stocks": []})
+        attach_cross_data(payload.get("stocks") or [])
+        write_json(os.path.join(D, "stats.json"), payload)
+        print(f"updated crosses for {len(payload.get('stocks') or [])} tickers")
+        raise SystemExit(0)
     # Tickers in data/watchlist.json are always included in the hourly refresh; no other file edits are needed.
     # Every page renders all stats.json rows (universe ∪ basket ∪ watchlist).
     tickers = sorted(set(UNIVERSE) | {b["ticker"] for b in BASKET["positions"]} | {s["ticker"] for s in WATCHLIST["stocks"]})
@@ -613,6 +696,8 @@ if __name__ == "__main__":
         path = os.path.join(INTRADAY,f"{file_slug(ticker)}_{interval}.json")
         with open(path,"w",encoding="utf-8") as f:
             json.dump(payload,f,separators=(",",":"),allow_nan=False); f.write("\n")
+    hist_by_ticker = {ticker: hist for ticker, row, hist, error in results if hist is not None}
+    attach_cross_data(rows, hist_by_ticker)
     stats = {r["ticker"]:r for r in rows}
     write_json(os.path.join(D,"stats.json"),{"generated_at":NOW,"as_of":NOW,"count":len(rows),"stocks":rows})
 

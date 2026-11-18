@@ -126,7 +126,7 @@
     let divTip = null;
     const state = {};
 
-    const brooksOn = () => Boolean(q(".brooks-toggle input, #brooks")?.checked);
+    const brooksOn = () => Boolean(q("#brooks, .brooks-toggle-input")?.checked);
     const syncBrooksVisibility = () => {
       let visible = brooksOn() && selectedInterval === "daily";
       let layers = q("#brooks-layers, .brooks-layers");
@@ -211,6 +211,84 @@
       let { meta, ...marker } = m;
       return marker;
     }
+    const crossesOn = () => Boolean(q("#crosses, .cross-toggle-input")?.checked);
+    const isIntradayInterval = (interval = selectedInterval) =>
+      !["daily", "weekly", "monthly", "quarterly"].includes(interval);
+    function smaAtCloses(closes, i, n) {
+      if (i < n - 1) return null;
+      let sum = 0;
+      for (let j = i - n + 1; j <= i; j++) sum += closes[j];
+      return sum / n;
+    }
+    function findDailyCrosses(daily) {
+      const closes = daily.map((bar) => bar.close);
+      const crosses = [];
+      for (let i = 200; i < daily.length; i++) {
+        const s50 = smaAtCloses(closes, i, 50);
+        const s200 = smaAtCloses(closes, i, 200);
+        const p50 = smaAtCloses(closes, i - 1, 50);
+        const p200 = smaAtCloses(closes, i - 1, 200);
+        if (s50 == null || s200 == null || p50 == null || p200 == null) continue;
+        if (s50 > s200 && p50 <= p200) {
+          crosses.push({
+            type: "golden", date: dayFromTime(daily[i].time), time: daily[i].time,
+            sma50: s50, sma200: s200, close: daily[i].close,
+          });
+        } else if (s50 < s200 && p50 >= p200) {
+          crosses.push({
+            type: "death", date: dayFromTime(daily[i].time), time: daily[i].time,
+            sma50: s50, sma200: s200, close: daily[i].close,
+          });
+        }
+      }
+      return crosses;
+    }
+    let dailyCrosses = findDailyCrosses(dailyData);
+    let hoverMarkers = [];
+    function crossMarkers() {
+      if (!crossesOn() || isIntradayInterval() || !data.length) return [];
+      const out = [];
+      dailyCrosses.forEach((cross) => {
+        const bar = selectedInterval === "daily"
+          ? data.find((b) => dayFromTime(b.time) === cross.date) || data.find((b) => dayFromTime(b.time) >= cross.date)
+          : findBarForEx(cross.date);
+        if (!bar) return;
+        out.push({
+          time: bar.time,
+          position: cross.type === "golden" ? "belowBar" : "aboveBar",
+          color: cross.type === "golden" ? "#16a34a" : "#dc2626",
+          shape: cross.type === "golden" ? "arrowUp" : "arrowDown",
+          text: cross.type === "golden" ? "GC" : "DC",
+          meta: { cross },
+        });
+      });
+      return out;
+    }
+    function syncCrossNote() {
+      const note = q("#cross-note, .cross-note");
+      if (!note) return;
+      const show = crossesOn() && isIntradayInterval();
+      note.hidden = !show;
+      if (show) note.textContent = "Golden and death crosses use daily bars.";
+    }
+    function mergeMarkersByTime(markers) {
+      const byTime = new Map();
+      markers.forEach((marker) => {
+        const key = String(marker.time);
+        const prev = byTime.get(key);
+        if (!prev) {
+          byTime.set(key, { ...marker, meta: { ...(marker.meta || {}) } });
+          return;
+        }
+        const prefer = marker.meta?.cross ? marker : (prev.meta?.cross ? prev : marker);
+        const other = prefer === marker ? prev : marker;
+        byTime.set(key, {
+          ...prefer,
+          meta: { ...(other.meta || {}), ...(prefer.meta || {}) },
+        });
+      });
+      return [...byTime.values()];
+    }
     function setSupportingData() {
       s50.setData(sma(50));
       s200.setData(sma(200));
@@ -229,22 +307,26 @@
     }
     function applyMarkers() {
       if (!mainSeries) return;
-      let markers = brooksOn() && brooksResult ? brooksResult.markers.map(stripMarker) : [];
+      let markers = brooksOn() && brooksResult ? brooksResult.markers.slice() : [];
       let inside = q("#inside-outside, .inside-outside");
       if (brooksOn() && brooksResult && inside?.checked) markers = markers.concat(insideOutsideMarkers());
+      markers = markers.concat(crossMarkers());
+      markers = mergeMarkersByTime(markers);
       markers.sort((a, b) => String(a.time).localeCompare(String(b.time)));
-      mainSeries.setMarkers(markers);
+      hoverMarkers = markers;
+      mainSeries.setMarkers(markers.map(stripMarker));
     }
     function applyBrooks() {
       syncBrooksVisibility();
+      syncCrossNote();
       if (brooksEma) {
         chart.removeSeries(brooksEma);
         brooksEma = null;
       }
       if (!brooksOn() || selectedInterval !== "daily") {
         brooksResult = null;
-        mainSeries.setMarkers([]);
         setPriceData();
+        applyMarkers();
         return;
       }
       brooksResult = window.BrooksPA.analyze(data);
@@ -579,11 +661,23 @@
             ? `O ${BY.fmt(d.open)}  H ${BY.fmt(d.high)}  L ${BY.fmt(d.low)}  C ${BY.fmt(d.close)}`
             : `Close ${BY.fmt(d.value)}`
           : "",
-        m = brooksResult?.markers.find((x) => timeKey(x.time) === timeKey(p.time) && x.meta);
+        m = hoverMarkers.find((x) => timeKey(x.time) === timeKey(p.time) && x.meta);
       const ohlc = q(".ohlc");
-      if (ohlc) ohlc.textContent = m
-        ? `${base}  ·  ${m.meta.setup} · ${m.meta.strong ? "strong" : "weak"} · ${m.meta.emaTest ? "EMA test" : "no EMA test"} · entry ${BY.fmt(m.meta.entry)} stop ${BY.fmt(m.meta.stop)}`
-        : base;
+      if (!ohlc) return;
+      if (!m) {
+        ohlc.textContent = base;
+        return;
+      }
+      const parts = [base];
+      if (m.meta.setup) {
+        parts.push(`${m.meta.setup} · ${m.meta.strong ? "strong" : "weak"} · ${m.meta.emaTest ? "EMA test" : "no EMA test"} · entry ${BY.fmt(m.meta.entry)} stop ${BY.fmt(m.meta.stop)}`);
+      }
+      if (m.meta.cross) {
+        const c = m.meta.cross;
+        const kind = c.type === "golden" ? "Golden cross" : "Death cross";
+        parts.push(`${kind} ${fmtDivDate(c.date)}  50-day ${BY.fmt(c.sma50)}  200-day ${BY.fmt(c.sma200)}  Close ${BY.fmt(c.close)}`);
+      }
+      ohlc.textContent = parts.filter(Boolean).join("  ·  ");
     });
     qa("[data-type]").forEach((b) => (b.onclick = () => setType(b.dataset.type)));
     q("#date-range, .date-range").onchange = (event) => setRange(event.target.value);
@@ -594,12 +688,15 @@
     const sma200 = q("#sma200, [data-sma='200']");
     if (sma50) sma50.onclick = () => toggle(sma50, s50);
     if (sma200) sma200.onclick = () => toggle(sma200, s200);
-    const brooks = q("#brooks, .brooks-toggle input");
+    const brooks = q("#brooks, .brooks-toggle-input");
     if (brooks) brooks.onchange = applyBrooks;
+    const crosses = q("#crosses, .cross-toggle-input");
+    if (crosses) crosses.onchange = () => { syncCrossNote(); applyMarkers(); };
     const barTypes = q("#bar-types, .bar-types");
     if (barTypes) barTypes.onchange = setPriceData;
     const inside = q("#inside-outside, .inside-outside");
     if (inside) inside.onchange = applyMarkers;
+    syncCrossNote();
     return {
       get chart() { return chart; },
       get mainSeries() { return mainSeries; },

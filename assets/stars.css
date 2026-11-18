@@ -7,7 +7,7 @@
 .tooltip-head { align-items: center; justify-content: space-between; gap: 12px; display: flex; }
 .tooltip .star { color: #ffd65a; }
 .portfolio-intro { margin: 0 0 2px; }
-.watchlist-wrap table { min-width: 1240px; }
+.watchlist-wrap table { min-width: 1480px; }
 .range52 { background: #dfe4e8; border-radius: 3px; width: 58px; height: 7px; margin-right: 5px; display: inline-block; overflow: hidden; vertical-align: middle; }
 .range52 i { background: var(--green); height: 100%; display: block; }
 .range52-label { display: inline-block; min-width: 30px; }

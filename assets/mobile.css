@@ -27,9 +27,9 @@
   .table-hint{color:var(--muted);text-align:right;margin:0 2px 5px;font-size:14px;display:block}
   .table-wrap{position:relative;width:100%;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;background:linear-gradient(to right,#fff 30%,rgba(255,255,255,0)),linear-gradient(to left,#fff 30%,rgba(255,255,255,0)),linear-gradient(to right,rgba(24,32,42,.16),rgba(24,32,42,0)),linear-gradient(to left,rgba(24,32,42,.16),rgba(24,32,42,0));background-position:left center,right center,left center,right center;background-repeat:no-repeat;background-size:40px 100%,40px 100%,12px 100%,12px 100%;background-attachment:local,local,scroll,scroll}
   .table-wrap table{width:max-content;min-width:100%;background:#fff}
-  .screener-wrap table{min-width:1120px}
-  .portfolio-wrap table{min-width:1320px}
-  .watchlist-wrap table{min-width:1680px}
+  .screener-wrap table{min-width:1360px}
+  .portfolio-wrap table{min-width:1540px}
+  .watchlist-wrap table{min-width:1900px}
   .screener-wrap th:first-child,.screener-wrap td:first-child,.portfolio-wrap th:nth-child(2),.portfolio-wrap td:nth-child(2){position:sticky;left:0;z-index:2;background:#fff;box-shadow:1px 0 0 var(--line),6px 0 8px -8px #18202a}
   .screener-wrap th:first-child,.portfolio-wrap th:nth-child(2){z-index:3;background:#f0f3f6}
   .watchlist-wrap th:first-child,.watchlist-wrap td:first-child{position:sticky;left:0;z-index:2;background:#fff;box-shadow:1px 0 0 var(--line),6px 0 8px -8px #18202a}
@@ -61,7 +61,7 @@
   .stat-row{font-size:16px;padding:8px 0}
   .stat-row span:first-child{min-width:0}
   .stat-row span:last-child{flex:none;max-width:55%;overflow-wrap:anywhere}
-  .chart-note,.brooks-toggle,#brooks-layers label,.brooks-badge,.brooks-ref,.brooks-ref a{font-size:14px}
+  .chart-note,.cross-note,.brooks-toggle,#brooks-layers label,.brooks-badge,.brooks-ref,.brooks-ref a,.filter-note{font-size:14px}
   .chart-box{height:420px}
   .allocation{height:25px}
   .alloc-legend{gap:9px 14px}
@@ -97,7 +97,7 @@
 }
 
 @media (max-width:640px){
-  .watchlist-table td.signal,.watchlist-table td.brooks-ref{font-size:14px}
+  .watchlist-table td.signal,.watchlist-table td.brooks-ref,.watchlist-table td.cross-col,.screener-wrap td.cross-col,.portfolio-table td.cross-col{font-size:14px}
   .signal-kind{font-size:16px}
   .market-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);width:100%}
   .market-controls label{min-width:0;font-size:14px}
