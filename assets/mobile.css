@@ -1,5 +1,5 @@
 @import url("stars.css");
-#treemap{overflow:hidden}
+#treemap{overflow:visible}
 .sector-label{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .map-info{align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);border-left:4px solid var(--green);background:var(--soft);margin:8px 0;padding:9px 10px}
 .map-info[hidden],.table-hint{display:none}
@@ -15,11 +15,11 @@
   .nav a{white-space:nowrap}
   .search{min-width:180px}
   .updated{flex:1 1 150px}
-  #treemap{height:auto;min-height:0;overflow:hidden}
+  #treemap{height:auto;min-height:0;overflow:visible}
   .treemap-stacked{border:0;background:transparent}
-  .map-sector{width:100%;margin:0 0 10px;overflow:hidden;border:1px solid var(--line);background:#fff}
+  .map-sector{width:100%;margin:0 0 10px;overflow:visible;border:1px solid var(--line);background:#fff}
   .sector-heading{height:28px;margin:0;padding:4px 7px;font-size:15px;line-height:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .sector-map{width:100%;position:relative;overflow:hidden}
+  .sector-map{width:100%;position:relative;overflow:visible}
   .map-info{display:flex;position:sticky;top:0;z-index:8;font-size:14px}
   .map-info span{min-width:0}
   .map-info a{flex:none}
