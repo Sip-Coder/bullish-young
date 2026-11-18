@@ -1,5 +1,6 @@
 .brooks-toggle,#brooks-layers label{font-size:11px;color:var(--muted);white-space:nowrap}
 #brooks-layers{display:inline-flex;gap:8px;align-items:center}
+#brooks-layers[hidden],.brooks-badge[hidden]{display:none}
 .brooks-badge{display:inline-block;margin:0 0 7px;padding:3px 8px;border-radius:10px;font-size:11px;background:#eceff2;color:#555}
 .brooks-badge.long{background:#daf2e2;color:#08702f}
 .brooks-badge.short{background:#f8dfe0;color:#a51f25}

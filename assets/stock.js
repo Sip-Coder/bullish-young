@@ -12,6 +12,10 @@ let ticker = new URLSearchParams(location.search).get("t")?.toUpperCase(),
   rangeDays = 180,
   brooksResult = null;
 const brooksOn = () => document.querySelector("#brooks").checked;
+const syncBrooksVisibility = () => {
+  document.querySelector("#brooks-layers").hidden = !brooksOn();
+  document.querySelector("#brooks-badge").hidden = !brooksOn();
+};
 shell("").then(async () => {
   let s = BY.stock(ticker);
   if (!s) {
@@ -25,6 +29,7 @@ shell("").then(async () => {
   data = await fetch(`data/history/${ticker}.json`).then((r) => r.json());
   document.querySelector("#brooks").checked =
     new URLSearchParams(location.search).get("brooks") === "1";
+  syncBrooksVisibility();
   makeChart();
   stats(s);
 });
@@ -99,8 +104,7 @@ function timeKey(t) {
     : t && `${t.year}-${String(t.month).padStart(2, "0")}-${String(t.day).padStart(2, "0")}`;
 }
 function applyBrooks() {
-  document.querySelector("#brooks-layers").hidden = !brooksOn();
-  document.querySelector("#brooks-badge").hidden = !brooksOn();
+  syncBrooksVisibility();
   if (brooksEma) {
     chart.removeSeries(brooksEma);
     brooksEma = null;
