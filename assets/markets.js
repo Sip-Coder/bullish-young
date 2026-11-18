@@ -169,7 +169,7 @@ function renderDividends(payload, series) {
       const pct = Number(row.pct) || 0;
       const height = Math.max(8, (pct / maxPct) * 100);
       bar.innerHTML = `<span class="dividend-plot"><span class="dividend-col" style="height:${height}%"></span></span>
-        <span class="dividend-label">${fmtPct(pct)} (${fmtMoney(row.amount, 4)})</span>
+        <span class="dividend-label"><span class="dividend-pct">${fmtPct(pct)}</span><span class="dividend-amt">(${fmtMoney(row.amount, 4)})</span></span>
         <span class="dividend-month">${fmtDate(row.ex_date).replace(/, \d{4}$/, "")}</span>`;
       bar.setAttribute("aria-label", `${fmtDate(row.ex_date)} ${fmtPct(pct)} (${fmtMoney(row.amount, 4)})`);
       bar.addEventListener("pointerenter", (event) => placeTip(event, row));

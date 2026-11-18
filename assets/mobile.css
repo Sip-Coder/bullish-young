@@ -104,6 +104,8 @@
   .market-controls button{grid-column:1 / -1;width:max-content;font-size:16px}
   .dividend-headlines{grid-template-columns:1fr}
   .dividend-stat-value{font-size:24px}
-  .dividend-bar{width:80px;min-width:80px}
+  .dividend-bar{width:72px;min-width:72px}
+  .dividend-pct{font-size:13px}
+  .dividend-amt{font-size:11px}
     .dividend-chart{height:300px;min-height:280px}
 }

@@ -63,11 +63,11 @@
 .dividend-controls select{display:block;margin-top:3px}
 .dividend-scroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;border:1px solid var(--line);background:#fff}
 .dividend-chart{display:flex;align-items:flex-end;gap:6px;min-height:260px;height:280px;padding:8px 12px 6px;width:max-content;min-width:100%}
-.dividend-bar{appearance:none;background:none;border:0;padding:0;margin:0;width:72px;min-width:72px;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;cursor:pointer;color:inherit;font:inherit}
+.dividend-bar{appearance:none;background:none;border:0;padding:0;margin:0;width:68px;min-width:68px;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;cursor:pointer;color:inherit;font:inherit}
 .dividend-plot{flex:1 1 auto;width:100%;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end}
 .dividend-col{width:28px;background:#0a8a3a;border-radius:3px 3px 0 0;display:block;flex:0 0 auto}
 .dividend-bar:hover .dividend-col,.dividend-bar:focus-visible .dividend-col{background:#075d29}
-.dividend-label{display:block;margin-top:4px;line-height:1.2;text-align:center;font-size:11px;font-weight:750;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dividend-label{display:flex;flex-direction:column;align-items:center;margin-top:4px;line-height:1.15;text-align:center;white-space:nowrap}
 .dividend-pct{font-size:12px;font-weight:750;font-variant-numeric:tabular-nums}
 .dividend-amt{font-size:10px;color:var(--muted);font-variant-numeric:tabular-nums}
 .dividend-month{font-size:10px;color:var(--muted);margin-top:2px;white-space:nowrap}
