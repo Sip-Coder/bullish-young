@@ -1,3 +1,4 @@
+import math
 """Refresh Yahoo statistics, daily/weekly OHLCV history, and the AI basket."""
 import datetime as dt
 import json
@@ -73,6 +74,7 @@ FIELDS = {"marketCap":"market_cap","enterpriseValue":"enterprise_value","trailin
  "regularMarketChangePercent":"chg_pct","regularMarketPreviousClose":"prev_close","regularMarketChange":"change"}
 
 def history_rows(h):
+    h = h.dropna(subset=["Open","High","Low","Close"])
     return [{"time":str(i.date()),"open":round(float(o),2),"high":round(float(hi),2),"low":round(float(lo),2),
              "close":round(float(cl),2),"volume":int(v)} for i,o,hi,lo,cl,v in
             zip(h.index,h.Open,h.High,h.Low,h.Close,h.Volume)]
@@ -659,8 +661,14 @@ def attach_cross_data(rows, hist_by_ticker=None):
         row["cross"] = compute_cross(hist)
     return rows
 
+def _finite(v):
+    if isinstance(v, float) and not math.isfinite(v): return None
+    if isinstance(v, dict): return {k: _finite(x) for k, x in v.items()}
+    if isinstance(v, (list, tuple)): return [_finite(x) for x in v]
+    return v
+
 def write_json(path, value):
-    with open(path,"w",encoding="utf-8") as f: json.dump(value,f,indent=1,allow_nan=False); f.write("\n")
+    with open(path,"w",encoding="utf-8") as f: json.dump(_finite(value),f,indent=1,allow_nan=False); f.write("\n")
 
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "--crosses-only":
