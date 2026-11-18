@@ -1,15 +1,15 @@
 {
- "generated_at": "2026-11-18T07:22:55+00:00",
+ "generated_at": "2026-11-18T07:31:24+00:00",
  "ticker": "HONA",
- "source": "yahoo",
+ "source": "nasdaq",
  "dividends": [
   {
    "ex_date": "2026-11-13",
-   "record_date": null,
-   "payable_date": null,
-   "declared_date": null,
+   "record_date": "2026-11-13",
+   "payable_date": "2026-12-04",
+   "declared_date": "2026-10-25",
    "amount": 0.4,
-   "source": "yahoo",
+   "source": "nasdaq",
    "close": 166.23,
    "pct": 0.2406
   }

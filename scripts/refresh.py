@@ -3,6 +3,7 @@ import datetime as dt
 import json
 import os
 import re
+import threading
 import time
 import urllib.error
 import urllib.request
@@ -157,13 +158,25 @@ def close_before(closes, day):
     earlier = [key for key in closes if key < day]
     return closes[max(earlier)] if earlier else None
 
-def fetch_nasdaq_dividends():
-    raw = http_get(NASDAQ_DIVIDENDS_URL, {
-        "User-Agent": BROWSER_UA,
-        "Accept": "application/json, text/plain, */*",
-        "Origin": "https://www.nasdaq.com",
-        "Referer": "https://www.nasdaq.com/market-activity/etf/qyld/dividend-history",
-    })
+_nasdaq_lock = threading.Lock()
+_nasdaq_last = 0.0
+
+def fetch_nasdaq_dividends(ticker="QYLD", assetclass="etf"):
+    """Nasdaq dividend history. Throttled; callers must treat failures as soft."""
+    global _nasdaq_last
+    url = f"https://api.nasdaq.com/api/quote/{ticker}/dividends?assetclass={assetclass}"
+    kind = "etf" if assetclass == "etf" else "stocks"
+    with _nasdaq_lock:
+        wait = 0.7 - (time.time() - _nasdaq_last)
+        if wait > 0:
+            time.sleep(wait)
+        raw = http_get(url, {
+            "User-Agent": BROWSER_UA,
+            "Accept": "application/json, text/plain, */*",
+            "Origin": "https://www.nasdaq.com",
+            "Referer": f"https://www.nasdaq.com/market-activity/{kind}/{ticker.lower()}/dividend-history",
+        })
+        _nasdaq_last = time.time()
     payload = json.loads(raw)
     rows = (((payload or {}).get("data") or {}).get("dividends") or {}).get("rows") or []
     out = []
@@ -186,6 +199,24 @@ def fetch_nasdaq_dividends():
         raise RuntimeError("nasdaq returned no cash dividends")
     out.sort(key=lambda row: row["ex_date"])
     return out
+
+def merge_dividend_rows(base_rows, nasdaq_rows):
+    """Merge Nasdaq record/pay/declared dates and amounts onto Yahoo (or prior) rows by ex-date."""
+    by_ex = {}
+    for row in base_rows or []:
+        if row.get("ex_date"):
+            by_ex[row["ex_date"]] = dict(row)
+    for row in nasdaq_rows or []:
+        existing = by_ex.get(row["ex_date"], {})
+        merged = dict(existing)
+        for key in ("ex_date", "record_date", "payable_date", "declared_date", "amount", "source"):
+            if row.get(key) is not None:
+                merged[key] = row[key]
+        merged["source"] = "nasdaq"
+        by_ex[row["ex_date"]] = merged
+    rows = list(by_ex.values())
+    rows.sort(key=lambda row: row["ex_date"])
+    return rows
 
 def fetch_yahoo_dividends(ticker="QYLD"):
     series = yf.Ticker(ticker).dividends
@@ -378,11 +409,28 @@ def pull_markets():
 
 
 def pull_stock_dividends(ticker):
-    """Yahoo dividend history for stock pages. Soft-fail; never breaks the hourly job."""
+    """Daily Yahoo + Nasdaq dividend history for stock-page D markers. Soft-fail."""
     path = os.path.join(DIVIDENDS_DIR, f"{ticker}.json")
     previous = load_json(path, {})
+    # Same once-a-day cadence as weekly history; Nasdaq is only hit for payers.
+    if os.path.exists(path) and time.time() - os.path.getmtime(path) < 20 * 60 * 60:
+        return ticker, None, None
     try:
-        rows = fetch_yahoo_dividends(ticker)
+        yahoo = []
+        try:
+            yahoo = fetch_yahoo_dividends(ticker)
+        except Exception as exc:
+            print(f"yahoo dividends {ticker} failed: {exc}")
+            yahoo = [row for row in (previous.get("dividends") or [])]
+        nasdaq = []
+        if yahoo:
+            try:
+                nasdaq = fetch_nasdaq_dividends(ticker, "stocks")
+            except Exception as exc:
+                print(f"nasdaq dividends {ticker} failed: {exc}")
+        if not yahoo and not nasdaq:
+            return ticker, previous or None, "no dividends"
+        rows = merge_dividend_rows(yahoo, nasdaq)
         try:
             h = yf.Ticker(ticker.replace(".", "-")).history(period="max", interval="1d", auto_adjust=False)
             h = h.dropna(subset=["Close"]) if h is not None and not h.empty else None
@@ -391,7 +439,8 @@ def pull_stock_dividends(ticker):
             print(f"dividend closes {ticker} failed: {exc}")
             closes = {}
         rows = attach_closes(rows, closes) if closes else rows
-        return ticker, {"generated_at": NOW, "ticker": ticker, "source": "yahoo", "dividends": rows}, None
+        source = "nasdaq" if nasdaq else "yahoo"
+        return ticker, {"generated_at": NOW, "ticker": ticker, "source": source, "dividends": rows}, None
     except Exception as exc:
         return ticker, previous or None, str(exc)
 
@@ -442,11 +491,11 @@ write_json(os.path.join(D,"basket.json"),{"generated_at":NOW,"as_of":NOW,"total"
  "cash_reserve":BASKET["cash_reserve"],"positions":positions})
 markets = pull_markets()
 write_json(os.path.join(D,"markets.json"), markets)
-# Stock-page dividend markers (Yahoo ex-date + amount). Failures must not fail the job.
+# Stock-page dividend markers: daily Yahoo + Nasdaq (payers only, throttled). Failures must not fail the job.
 div_written = 0
 try:
     os.makedirs(DIVIDENDS_DIR, exist_ok=True)
-    with ThreadPoolExecutor(max_workers=4) as executor:
+    with ThreadPoolExecutor(max_workers=2) as executor:
         div_results = list(executor.map(pull_stock_dividends, tickers))
     for ticker, payload, error in div_results:
         if error:

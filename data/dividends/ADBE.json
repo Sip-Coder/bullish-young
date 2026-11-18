@@ -1,317 +1,341 @@
 {
- "generated_at": "2026-11-18T07:22:55+00:00",
+ "generated_at": "2026-11-18T07:31:24+00:00",
  "ticker": "ADBE",
- "source": "yahoo",
+ "source": "nasdaq",
  "dividends": [
   {
+   "ex_date": "1989-01-05",
+   "record_date": "1989-01-05",
+   "amount": 0.04,
+   "source": "nasdaq"
+  },
+  {
+   "ex_date": "1989-03-22",
+   "record_date": "1989-03-22",
+   "amount": 0.05,
+   "source": "nasdaq"
+  },
+  {
+   "ex_date": "1989-06-14",
+   "record_date": "1989-06-14",
+   "amount": 0.05,
+   "source": "nasdaq"
+  },
+  {
+   "ex_date": "1989-09-19",
+   "record_date": "1989-09-19",
+   "amount": 0.05,
+   "source": "nasdaq"
+  },
+  {
    "ex_date": "1990-01-08",
-   "record_date": null,
+   "record_date": "1990-01-08",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0031,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 1.42,
-   "pct": 0.2183
+   "pct": 3.5211
   },
   {
    "ex_date": "1990-03-26",
-   "record_date": null,
+   "record_date": "1990-03-26",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0037,
-   "source": "yahoo",
+   "amount": 0.06,
+   "source": "nasdaq",
    "close": 2.38,
-   "pct": 0.1555
+   "pct": 2.521
   },
   {
    "ex_date": "1990-07-02",
-   "record_date": null,
+   "record_date": "1990-07-02",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0037,
-   "source": "yahoo",
+   "amount": 0.06,
+   "source": "nasdaq",
    "close": 2.3,
-   "pct": 0.1609
+   "pct": 2.6087
   },
   {
    "ex_date": "1990-09-14",
-   "record_date": null,
+   "record_date": "1990-09-14",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0003,
-   "source": "yahoo",
+   "amount": 0.06,
+   "source": "nasdaq",
    "close": 1.77,
-   "pct": 0.0169
+   "pct": 3.3898
   },
   {
    "ex_date": "1991-01-09",
-   "record_date": null,
+   "record_date": "1991-01-09",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0003,
-   "source": "yahoo",
+   "amount": 0.06,
+   "source": "nasdaq",
    "close": 1.91,
-   "pct": 0.0157
+   "pct": 3.1414
   },
   {
    "ex_date": "1991-03-22",
-   "record_date": null,
+   "record_date": "1991-03-22",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
+   "amount": 0.08,
+   "source": "nasdaq",
    "close": 3.19,
-   "pct": 0.1567
+   "pct": 2.5078
   },
   {
    "ex_date": "1991-06-26",
-   "record_date": null,
+   "record_date": "1991-06-26",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
+   "amount": 0.08,
+   "source": "nasdaq",
    "close": 2.9,
-   "pct": 0.1724
+   "pct": 2.7586
   },
   {
    "ex_date": "1991-09-25",
-   "record_date": null,
+   "record_date": "1991-09-25",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
+   "amount": 0.08,
+   "source": "nasdaq",
    "close": 3.24,
-   "pct": 0.1543
+   "pct": 2.4691
   },
   {
    "ex_date": "1992-01-09",
-   "record_date": null,
+   "record_date": "1992-01-09",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
+   "amount": 0.08,
+   "source": "nasdaq",
    "close": 4.11,
-   "pct": 0.1217
+   "pct": 1.9465
   },
   {
    "ex_date": "1992-03-23",
-   "record_date": null,
+   "record_date": "1992-03-23",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
+   "amount": 0.08,
+   "source": "nasdaq",
    "close": 3.42,
-   "pct": 0.1462
+   "pct": 2.3392
   },
   {
    "ex_date": "1992-06-23",
-   "record_date": null,
+   "record_date": "1992-06-23",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
+   "amount": 0.08,
+   "source": "nasdaq",
    "close": 2.88,
-   "pct": 0.1736
+   "pct": 2.7778
   },
   {
    "ex_date": "1992-09-24",
-   "record_date": null,
+   "record_date": "1992-09-24",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
+   "amount": 0.08,
+   "source": "nasdaq",
    "close": 1.84,
-   "pct": 0.2717
+   "pct": 4.3478
   },
   {
    "ex_date": "1993-01-19",
-   "record_date": null,
+   "record_date": "1993-01-19",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.005,
-   "source": "yahoo",
+   "amount": 0.08,
+   "source": "nasdaq",
    "close": 2.44,
-   "pct": 0.2049
+   "pct": 3.2787
   },
   {
    "ex_date": "1993-03-26",
-   "record_date": null,
+   "record_date": "1993-03-26",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.1,
+   "source": "nasdaq",
    "close": 2.76,
-   "pct": 0.2283
+   "pct": 3.6232
   },
   {
    "ex_date": "1993-06-23",
-   "record_date": null,
+   "record_date": "1993-06-23",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.1,
+   "source": "nasdaq",
    "close": 3.84,
-   "pct": 0.1641
+   "pct": 2.6042
   },
   {
    "ex_date": "1993-10-01",
-   "record_date": null,
+   "record_date": "1993-10-01",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 2.28,
-   "pct": 0.2763
+   "pct": 2.193
   },
   {
    "ex_date": "1994-01-21",
-   "record_date": null,
+   "record_date": "1994-01-21",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 3.44,
-   "pct": 0.1831
+   "pct": 1.4535
   },
   {
    "ex_date": "1994-03-28",
-   "record_date": null,
+   "record_date": "1994-03-28",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 3.28,
-   "pct": 0.1921
+   "pct": 1.5244
   },
   {
    "ex_date": "1994-06-30",
-   "record_date": null,
+   "record_date": "1994-06-30",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 3.38,
-   "pct": 0.1864
+   "pct": 1.4793
   },
   {
    "ex_date": "1994-09-29",
-   "record_date": null,
+   "record_date": "1994-09-29",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 4.22,
-   "pct": 0.1493
+   "pct": 1.1848
   },
   {
    "ex_date": "1995-01-12",
-   "record_date": null,
+   "record_date": "1995-01-12",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 3.88,
-   "pct": 0.1624
+   "pct": 1.2887
   },
   {
    "ex_date": "1995-03-31",
-   "record_date": null,
+   "record_date": "1995-03-31",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 6.28,
-   "pct": 0.1003
+   "pct": 0.7962
   },
   {
    "ex_date": "1995-07-05",
-   "record_date": null,
+   "record_date": "1995-07-05",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 7.28,
-   "pct": 0.0865
+   "pct": 0.6868
   },
   {
    "ex_date": "1995-10-04",
-   "record_date": null,
+   "record_date": "1995-10-04",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 6.53,
-   "pct": 0.0965
+   "pct": 0.7657
   },
   {
    "ex_date": "1996-01-17",
-   "record_date": null,
+   "record_date": "1996-01-17",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 4.55,
-   "pct": 0.1385
+   "pct": 1.0989
   },
   {
    "ex_date": "1996-04-02",
-   "record_date": null,
+   "record_date": "1996-04-02",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 4.11,
-   "pct": 0.1533
+   "pct": 1.2165
   },
   {
    "ex_date": "1996-07-03",
-   "record_date": null,
+   "record_date": "1996-07-03",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 4.51,
-   "pct": 0.1397
+   "pct": 1.1086
   },
   {
    "ex_date": "1996-09-30",
-   "record_date": null,
+   "record_date": "1996-09-30",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 4.73,
-   "pct": 0.1332
+   "pct": 1.0571
   },
   {
    "ex_date": "1997-01-14",
-   "record_date": null,
+   "record_date": "1997-01-14",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 4.92,
-   "pct": 0.128
+   "pct": 1.0163
   },
   {
    "ex_date": "1997-03-27",
-   "record_date": null,
+   "record_date": "1997-03-27",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 5.34,
-   "pct": 0.118
+   "pct": 0.9363
   },
   {
    "ex_date": "1997-07-02",
-   "record_date": null,
+   "record_date": "1997-07-02",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 4.34,
-   "pct": 0.1452
+   "pct": 1.1521
   },
   {
    "ex_date": "1997-07-29",
@@ -325,233 +349,233 @@
   },
   {
    "ex_date": "1997-09-29",
-   "record_date": null,
+   "record_date": "1997-09-29",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 6.23,
-   "pct": 0.1011
+   "pct": 0.8026
   },
   {
    "ex_date": "1997-12-30",
-   "record_date": null,
+   "record_date": "1997-12-30",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0022,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 4.8,
-   "pct": 0.0458
+   "pct": 1.0417
   },
   {
    "ex_date": "1998-04-01",
-   "record_date": null,
+   "record_date": "1998-04-01",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0022,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 5.65,
-   "pct": 0.0389
+   "pct": 0.885
   },
   {
    "ex_date": "1998-07-01",
-   "record_date": null,
+   "record_date": "1998-07-01",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0022,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 5.3,
-   "pct": 0.0415
+   "pct": 0.9434
   },
   {
    "ex_date": "1998-09-21",
-   "record_date": null,
+   "record_date": "1998-09-21",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 3.98,
-   "pct": 0.1583
+   "pct": 1.2563
   },
   {
    "ex_date": "1998-12-23",
-   "record_date": null,
+   "record_date": "1998-12-23",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 5.74,
-   "pct": 0.1098
+   "pct": 0.8711
   },
   {
    "ex_date": "1999-03-29",
-   "record_date": null,
+   "record_date": "1999-03-29",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 7.12,
-   "pct": 0.0885
+   "pct": 0.7022
   },
   {
    "ex_date": "1999-06-29",
-   "record_date": null,
+   "record_date": "1999-06-29",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 10.7,
-   "pct": 0.0589
+   "pct": 0.4673
   },
   {
    "ex_date": "1999-09-24",
-   "record_date": null,
+   "record_date": "1999-09-24",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.05,
+   "source": "nasdaq",
    "close": 13.52,
-   "pct": 0.0466
+   "pct": 0.3698
   },
   {
    "ex_date": "1999-12-23",
-   "record_date": null,
+   "record_date": "1999-12-23",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.025,
+   "source": "nasdaq",
    "close": 16.72,
-   "pct": 0.0377
+   "pct": 0.1495
   },
   {
    "ex_date": "2000-03-23",
-   "record_date": null,
+   "record_date": "2000-03-23",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.025,
+   "source": "nasdaq",
    "close": 25.5,
-   "pct": 0.0247
+   "pct": 0.098
   },
   {
    "ex_date": "2000-06-30",
-   "record_date": null,
+   "record_date": "2000-06-30",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.025,
+   "source": "nasdaq",
    "close": 31.06,
-   "pct": 0.0203
+   "pct": 0.0805
   },
   {
    "ex_date": "2000-09-28",
-   "record_date": null,
+   "record_date": "2000-09-28",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0063,
-   "source": "yahoo",
+   "amount": 0.025,
+   "source": "nasdaq",
    "close": 37.09,
-   "pct": 0.017
+   "pct": 0.0674
   },
   {
    "ex_date": "2001-01-02",
-   "record_date": null,
+   "record_date": "2001-01-02",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0065,
-   "source": "yahoo",
+   "amount": 0.0125,
+   "source": "nasdaq",
    "close": 29.09,
-   "pct": 0.0223
+   "pct": 0.043
   },
   {
    "ex_date": "2001-03-22",
-   "record_date": null,
+   "record_date": "2001-03-22",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0065,
-   "source": "yahoo",
+   "amount": 0.0125,
+   "source": "nasdaq",
    "close": 16.28,
-   "pct": 0.0399
+   "pct": 0.0768
   },
   {
    "ex_date": "2001-06-22",
-   "record_date": null,
+   "record_date": "2001-06-22",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0065,
-   "source": "yahoo",
+   "amount": 0.0125,
+   "source": "nasdaq",
    "close": 22.66,
-   "pct": 0.0287
+   "pct": 0.0552
   },
   {
    "ex_date": "2001-09-21",
-   "record_date": null,
+   "record_date": "2001-09-21",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0065,
-   "source": "yahoo",
+   "amount": 0.0125,
+   "source": "nasdaq",
    "close": 12.98,
-   "pct": 0.0501
+   "pct": 0.0963
   },
   {
    "ex_date": "2001-12-31",
-   "record_date": null,
+   "record_date": "2001-12-31",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0065,
-   "source": "yahoo",
+   "amount": 0.0125,
+   "source": "nasdaq",
    "close": 16.12,
-   "pct": 0.0403
+   "pct": 0.0775
   },
   {
    "ex_date": "2002-03-21",
-   "record_date": null,
+   "record_date": "2002-03-21",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0065,
-   "source": "yahoo",
+   "amount": 0.0125,
+   "source": "nasdaq",
    "close": 19.25,
-   "pct": 0.0338
+   "pct": 0.0649
   },
   {
    "ex_date": "2002-06-21",
-   "record_date": null,
+   "record_date": "2002-06-21",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0065,
-   "source": "yahoo",
+   "amount": 0.0125,
+   "source": "nasdaq",
    "close": 13.9,
-   "pct": 0.0468
+   "pct": 0.0899
   },
   {
    "ex_date": "2002-09-20",
-   "record_date": null,
+   "record_date": "2002-09-20",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0065,
-   "source": "yahoo",
+   "amount": 0.0125,
+   "source": "nasdaq",
    "close": 9.81,
-   "pct": 0.0663
+   "pct": 0.1274
   },
   {
    "ex_date": "2003-01-07",
-   "record_date": null,
+   "record_date": "2003-01-07",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0065,
-   "source": "yahoo",
+   "amount": 0.0125,
+   "source": "nasdaq",
    "close": 13.76,
-   "pct": 0.0472
+   "pct": 0.0908
   },
   {
    "ex_date": "2003-03-20",
-   "record_date": null,
+   "record_date": "2003-03-20",
    "payable_date": null,
    "declared_date": null,
-   "amount": 0.0065,
-   "source": "yahoo",
+   "amount": 0.0125,
+   "source": "nasdaq",
    "close": 16.51,
-   "pct": 0.0394
+   "pct": 0.0757
   },
   {
    "ex_date": "2003-06-19",

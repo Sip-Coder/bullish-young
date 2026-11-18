@@ -415,7 +415,7 @@
       const height = box.clientHeight;
       const width = box.clientWidth;
       // Volume occupies the bottom 20% of the plot; the time axis is ~26px.
-      const y = Math.round((height - 26) * 0.80 - 4);
+      const y = Math.round((height - 26) * 0.79);
       const groups = new Map();
       dividendRows.forEach((row) => {
         const bar = findBarForEx(row.ex_date);
@@ -445,7 +445,9 @@
         btn.type = "button";
         btn.className = "div-marker";
         btn.textContent = "D";
-        btn.style.left = `${Math.round(group.x)}px`;
+        const pad = 12;
+        const left = Math.max(pad, Math.min(width - pad, group.x));
+        btn.style.left = `${Math.round(left)}px`;
         btn.style.top = `${y}px`;
         const label = group.rows.length > 1
           ? `${group.rows.length} dividends`
@@ -492,6 +494,11 @@
       priceScaleId: "volume",
     });
     chart.priceScale("volume").applyOptions({ scaleMargins: { top: 0.8, bottom: 0 } });
+    if (dividendRows.length) {
+      // Keep the last-price line in the price pane and leave a lane for D markers above volume.
+      chart.priceScale("right").applyOptions({ scaleMargins: { top: 0.06, bottom: 0.24 } });
+      chart.priceScale("volume").applyOptions({ scaleMargins: { top: 0.82, bottom: 0 } });
+    }
     s50 = chart.addLineSeries({ color: "#e39116", lineWidth: 1, priceLineVisible: false, lastValueVisible: false });
     s200 = chart.addLineSeries({ color: "#366dc9", lineWidth: 1, priceLineVisible: false, lastValueVisible: false });
     state.chart = chart;

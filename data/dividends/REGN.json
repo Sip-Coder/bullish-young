@@ -1,77 +1,84 @@
 {
- "generated_at": "2026-11-18T07:22:55+00:00",
+ "generated_at": "2026-11-18T07:31:24+00:00",
  "ticker": "REGN",
- "source": "yahoo",
+ "source": "nasdaq",
  "dividends": [
   {
    "ex_date": "2025-02-20",
-   "record_date": null,
-   "payable_date": null,
+   "record_date": "2025-02-20",
+   "payable_date": "2025-03-20",
    "declared_date": null,
    "amount": 0.88,
-   "source": "yahoo",
+   "source": "nasdaq",
    "close": 685.66,
    "pct": 0.1283
   },
   {
    "ex_date": "2025-05-20",
-   "record_date": null,
-   "payable_date": null,
+   "record_date": "2025-05-20",
+   "payable_date": "2025-06-06",
    "declared_date": null,
    "amount": 0.88,
-   "source": "yahoo",
+   "source": "nasdaq",
    "close": 596.54,
    "pct": 0.1475
   },
   {
    "ex_date": "2025-08-18",
-   "record_date": null,
-   "payable_date": null,
+   "record_date": "2025-08-18",
+   "payable_date": "2025-09-03",
    "declared_date": null,
    "amount": 0.88,
-   "source": "yahoo",
+   "source": "nasdaq",
    "close": 580.41,
    "pct": 0.1516
   },
   {
    "ex_date": "2025-11-20",
-   "record_date": null,
-   "payable_date": null,
+   "record_date": "2025-11-20",
+   "payable_date": "2025-12-05",
    "declared_date": null,
    "amount": 0.88,
-   "source": "yahoo",
+   "source": "nasdaq",
    "close": 702.75,
    "pct": 0.1252
   },
   {
    "ex_date": "2026-02-20",
-   "record_date": null,
-   "payable_date": null,
+   "record_date": "2026-02-20",
+   "payable_date": "2026-03-05",
    "declared_date": null,
    "amount": 0.94,
-   "source": "yahoo",
+   "source": "nasdaq",
    "close": 782.38,
    "pct": 0.1201
   },
   {
    "ex_date": "2026-05-20",
-   "record_date": null,
-   "payable_date": null,
+   "record_date": "2026-05-20",
+   "payable_date": "2026-06-04",
    "declared_date": null,
    "amount": 0.94,
-   "source": "yahoo",
+   "source": "nasdaq",
    "close": 630.3,
    "pct": 0.1491
   },
   {
    "ex_date": "2026-08-18",
-   "record_date": null,
-   "payable_date": null,
+   "record_date": "2026-08-18",
+   "payable_date": "2026-08-31",
    "declared_date": null,
    "amount": 0.94,
-   "source": "yahoo",
+   "source": "nasdaq",
    "close": 805.93,
    "pct": 0.1166
+  },
+  {
+   "ex_date": "2026-11-20",
+   "record_date": "2026-11-20",
+   "payable_date": "2026-12-03",
+   "amount": 0.94,
+   "source": "nasdaq"
   }
  ]
 }
