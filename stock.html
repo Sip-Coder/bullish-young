@@ -31,11 +31,11 @@
       </div>
       <div id="brooks-badge" class="brooks-badge" hidden></div>
       <div class="drawing-toolbar" aria-label="Drawing tools">
-        <button id="draw-pointer" class="active" aria-label="Pointer / select" title="Pointer / select">↖ <span>Pointer</span></button>
-        <button id="draw-trend" aria-label="Trend line" title="Trend line">╱ <span>Trend</span></button>
-        <button id="draw-hline" aria-label="Horizontal line" title="Horizontal line">— <span>H line</span></button>
-        <button id="draw-delete" aria-label="Delete selected drawing" title="Delete selected" disabled>⌫ <span>Delete</span></button>
-        <button id="draw-clear" aria-label="Clear all drawings" title="Clear all">× <span>Clear all</span></button>
+        <button id="draw-pointer" data-draw="pointer" class="active" aria-label="Pointer / select" title="Pointer / select">↖ <span>Pointer</span></button>
+        <button id="draw-trend" data-draw="trend" aria-label="Trend line" title="Trend line">╱ <span>Trend</span></button>
+        <button id="draw-hline" data-draw="hline" aria-label="Horizontal line" title="Horizontal line">— <span>H line</span></button>
+        <button id="draw-delete" data-draw="delete" aria-label="Delete selected drawing" title="Delete selected" disabled>⌫ <span>Delete</span></button>
+        <button id="draw-clear" data-draw="clear" aria-label="Clear all drawings" title="Clear all">× <span>Clear all</span></button>
       </div>
       <div class="chart-box"><div id="chart"></div></div>
       <div class="chart-note">
@@ -74,7 +74,8 @@
     </main>
     <script src="assets/common.js"></script>
     <script src="assets/brooks.js"></script>
-    <script src="assets/stock.js"></script>
     <script src="assets/drawings.js"></script>
+    <script src="assets/chart.js"></script>
+    <script src="assets/stock.js"></script>
   </body>
 </html>

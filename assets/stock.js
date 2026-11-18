@@ -1,24 +1,7 @@
 let ticker = new URLSearchParams(location.search).get("t")?.toUpperCase(),
   chart,
   mainSeries,
-  s50,
-  s200,
-  volume,
-  brooksEma,
-  dailyData = [],
-  longData = null,
-  intradayData = {},
-  data = [],
-  type = "candles",
-  selectedRange = "6M",
-  selectedInterval = "daily",
-  brooksResult = null;
-const brooksOn = () => document.querySelector("#brooks").checked;
-const syncBrooksVisibility = () => {
-  let visible = brooksOn() && selectedInterval === "daily";
-  document.querySelector("#brooks-layers").hidden = !visible;
-  document.querySelector("#brooks-badge").hidden = !visible;
-};
+  data = [];
 shell("").then(async () => {
   let s = BY.stock(ticker);
   if (!s) {
@@ -29,8 +12,8 @@ shell("").then(async () => {
   let basket = BY.basket?.positions?.find((x) => x.ticker === ticker);
   document.querySelector(".stock-head").innerHTML =
     `<div><h1>${ticker} · ${s.name || ""}</h1><div class="muted">${s.sector || "—"} · ${s.industry || "—"}</div></div>${BY.starButton(ticker)}<span class="stock-price">${BY.money(s.price)}</span><span class="${s.change >= 0 ? "up" : "down"}">${BY.change(s.change)} (${BY.pct(s.chg_pct)})</span>${basket ? `<span class="mobile-break"></span><span class="pill basket-pill ${basket.status.includes("Above") ? "green" : basket.status.includes("10%") ? "amber" : ""}">${BY.money(basket.target_usd)} · ${basket.status}</span>` : ""}`;
-  dailyData = await fetch(`data/history/${ticker}.json`).then((r) => r.json());
-  longData = await fetch(`data/history_long/${ticker}.json`)
+  let dailyData = await fetch(`data/history/${ticker}.json`).then((r) => r.json());
+  let longData = await fetch(`data/history_long/${ticker}.json`)
     .then((r) => r.ok ? r.json() : null)
     .catch(() => null);
   let [watchlist, targets] = await Promise.all([
@@ -38,22 +21,33 @@ shell("").then(async () => {
     fetch("data/basket_targets.json").then((r) => r.json()).catch(() => ({ positions: [] })),
   ]);
   let intradayEligible = [...watchlist.stocks, ...targets.positions].some((x) => x.ticker === ticker);
+  let intradayData = {};
   if (intradayEligible) {
     await Promise.all(["1m", "5m", "1h"].map(async (interval) => {
       let payload = await fetch(`data/intraday/${ticker}_${interval}.json`)
         .then((r) => r.ok ? r.json() : null).catch(() => null);
-      if (payload?.t?.length) intradayData[interval] = unpackIntraday(payload);
+      if (payload?.t?.length) intradayData[interval] = BYChart.unpackIntraday(payload);
     }));
   }
   document.querySelector("#stock-main").dataset.intradayEligible = intradayEligible ? "1" : "0";
-  data = dailyData;
   document.querySelector("#brooks").checked =
     new URLSearchParams(location.search).get("brooks") === "1";
-  syncBrooksVisibility();
-  makeChart();
+  const mounted = BYChart.mount(document.querySelector("#stock-main"), {
+    ticker,
+    daily: dailyData,
+    weekly: longData,
+    intraday: intradayData,
+    defaultRange: "6M",
+    defaultInterval: "daily",
+    intradayEligible,
+  });
+  chart = mounted.chart;
+  mainSeries = mounted.mainSeries;
+  data = mounted.data;
   tradeCalc(s);
   stats(s);
 });
+
 function tradeCalc(s) {
   let el = document.querySelector("#trade-calc");
   el.innerHTML = `
@@ -132,345 +126,7 @@ function tradeCalc(s) {
   dollars.addEventListener("change", syncFromDollars);
   [sell, low, high, rate].forEach((input) => input.addEventListener("change", update));
   syncFromShares();
-}
-function unpackIntraday(payload) {
-  return payload.t.map((time, i) => ({
-    time, open: payload.o[i], high: payload.h[i], low: payload.l[i],
-    close: payload.c[i], volume: payload.v[i],
-  }));
-}
-function aggregateBars(source, keyFor) {
-  let groups = new Map();
-  source.forEach((bar) => {
-    let key = keyFor(bar.time), group = groups.get(key);
-    if (!group) groups.set(key, { time: key, open: bar.open, high: bar.high, low: bar.low, close: bar.close, volume: bar.volume || 0 });
-    else {
-      group.high = Math.max(group.high, bar.high); group.low = Math.min(group.low, bar.low);
-      group.close = bar.close; group.volume += bar.volume || 0;
-    }
-  });
-  return [...groups.values()];
-}
-function aggregateSeconds(source, seconds) {
-  return aggregateBars(source, (time) => Math.floor(time / seconds) * seconds);
-}
-function aggregateCalendar(source, quarterly) {
-  return aggregateBars(source, (time) => {
-    let d = new Date(`${time}T00:00:00Z`), month = quarterly ? Math.floor(d.getUTCMonth() / 3) * 3 : d.getUTCMonth();
-    return `${d.getUTCFullYear()}-${String(month + 1).padStart(2, "0")}-01`;
-  });
-}
-const longRanges = ["3Y", "5Y", "10Y", "MAX"];
-function defaultInterval(range) { return longRanges.includes(range) ? "weekly" : "daily"; }
-function intervalSource(interval = selectedInterval) {
-  if (interval === "1m") return intradayData["1m"] || [];
-  if (["5m", "10m", "15m", "30m"].includes(interval)) {
-    let base = intradayData["5m"] || [];
-    return interval === "5m" ? base : aggregateSeconds(base, parseInt(interval, 10) * 60);
-  }
-  if (["1h", "2h", "4h"].includes(interval)) {
-    let base = intradayData["1h"] || [];
-    return interval === "1h" ? base : aggregateSeconds(base, parseInt(interval, 10) * 3600);
-  }
-  if (interval === "daily") return dailyData;
-  if (interval === "weekly") return longData?.length ? longData : dailyData;
-  let base = longRanges.includes(selectedRange) ? (longData || dailyData) : dailyData;
-  return aggregateCalendar(base, interval === "quarterly");
-}
-function intervalDisabled(interval, range = selectedRange) {
-  if (interval === "1m") return range !== "1M" || !intradayData["1m"];
-  if (["5m", "10m", "15m", "30m"].includes(interval))
-    return ["4M", "6M", "9M", "YTD", "1Y", "2Y", ...longRanges].includes(range) || !intradayData["5m"];
-  if (["1h", "2h", "4h"].includes(interval)) return longRanges.includes(range) || !intradayData["1h"];
-  if (interval === "daily") return longRanges.includes(range);
-  return false;
-}
-function rangeStart(range, lastTime) {
-  if (range === "MAX") return null;
-  if (range === "YTD") {
-    let start = new Date(Date.UTC(new Date().getFullYear(), 0, 1));
-    return typeof lastTime === "number" ? Math.floor(start.getTime() / 1000) : start.toISOString().slice(0, 10);
-  }
-  let d = typeof lastTime === "number" ? new Date(lastTime * 1000) : new Date(`${lastTime}T00:00:00Z`);
-  if (range.endsWith("M")) d.setUTCMonth(d.getUTCMonth() - parseInt(range, 10));
-  else d.setUTCFullYear(d.getUTCFullYear() - parseInt(range, 10));
-  return typeof lastTime === "number" ? Math.floor(d.getTime() / 1000) : d.toISOString().slice(0, 10);
-}
-function updateAvailability() {
-  let select = document.querySelector("#bar-interval");
-  [...select.options].forEach((option) => option.disabled = intervalDisabled(option.value));
-  let eligible = document.querySelector("#stock-main").dataset.intradayEligible === "1";
-  let note = "";
-  if (!eligible) note = "Intraday for starred stocks.";
-  else if (!Object.keys(intradayData).length) note = "Intraday data is not available yet.";
-  else if (selectedInterval === "1m") note = "1-minute bars: last 5 trading days only.";
-  else if (["5m", "10m", "15m", "30m"].includes(selectedInterval)) note = "5–30-minute bars: available history is limited to about 60 days.";
-  else if (["1h", "2h", "4h"].includes(selectedInterval)) note = "Hourly bars: available history is limited to about 730 days.";
-  document.querySelector("#chart-availability").textContent = note;
-}
-function sma(n) {
-  return data
-    .map((x, i) =>
-      i < n - 1
-        ? null
-        : {
-            time: x.time,
-            value:
-              data.slice(i - n + 1, i + 1).reduce((a, b) => a + b.close, 0) / n,
-          },
-    )
-    .filter(Boolean);
-}
-function coloredBars() {
-  return data.map((b) => {
-    let range = b.high - b.low || 1e-9,
-      ratio = Math.abs(b.close - b.open) / range,
-      color =
-        ratio <= 0.25
-          ? "#7c858e"
-          : b.close > b.open && ratio >= 0.5
-            ? "#0a8a3a"
-            : b.close < b.open && ratio >= 0.5
-              ? "#d0282e"
-              : b.close >= b.open
-                ? "#75b98c"
-                : "#df8589";
-    return { ...b, color, wickColor: color, borderColor: color };
-  });
-}
-function insideOutsideMarkers() {
-  let out = [],
-    run = 0;
-  for (let i = 1; i < data.length; i++) {
-    let b = data[i],
-      p = data[i - 1],
-      inside = b.high <= p.high && b.low >= p.low,
-      outside = b.high > p.high && b.low < p.low;
-    if (inside) {
-      run++;
-      out.push({
-        time: b.time,
-        position: "aboveBar",
-        color: "#7c858e",
-        shape: "square",
-        text: run === 1 ? "i" : run === 2 ? "ii" : "iii",
-      });
-    } else {
-      run = 0;
-      if (outside)
-        out.push({
-          time: b.time,
-          position: "aboveBar",
-          color: "#7c858e",
-          shape: "square",
-          text: "o",
-        });
-    }
-  }
-  return out;
-}
-function stripMarker(m) {
-  let { meta, ...marker } = m;
-  return marker;
-}
-function timeKey(t) {
-  return typeof t === "string"
-    ? t
-    : t && `${t.year}-${String(t.month).padStart(2, "0")}-${String(t.day).padStart(2, "0")}`;
-}
-function applyBrooks() {
-  syncBrooksVisibility();
-  if (brooksEma) {
-    chart.removeSeries(brooksEma);
-    brooksEma = null;
-  }
-  if (!brooksOn() || selectedInterval !== "daily") {
-    brooksResult = null;
-    mainSeries.setMarkers([]);
-    setPriceData();
-    return;
-  }
-  brooksResult = window.BrooksPA.analyze(data);
-  brooksEma = chart.addLineSeries({
-    color: "#e8751a",
-    lineWidth: 1,
-    priceLineVisible: false,
-    lastValueVisible: false,
-    title: "20 EMA",
-  });
-  brooksEma.setData(brooksResult.ema20);
-  let state = brooksResult.state.alwaysIn,
-    badge = document.querySelector("#brooks-badge");
-  badge.textContent =
-    state === "long"
-      ? "Always in long"
-      : state === "short"
-        ? "Always in short"
-        : "Trading range";
-  badge.className = `brooks-badge ${state}`;
-  setPriceData();
-  applyMarkers();
-}
-function setPriceData() {
-  let bars =
-    document.querySelector("#bar-types").checked && brooksOn() && selectedInterval === "daily"
-      ? coloredBars()
-      : data;
-  mainSeries.setData(
-    type === "line"
-      ? data.map((x) => ({ time: x.time, value: x.close }))
-      : bars,
-  );
-}
-function applyMarkers() {
-  if (!mainSeries) return;
-  let markers = brooksOn() && brooksResult ? brooksResult.markers.map(stripMarker) : [];
-  if (brooksOn() && brooksResult && document.querySelector("#inside-outside").checked)
-    markers = markers.concat(insideOutsideMarkers());
-  markers.sort((a, b) => String(a.time).localeCompare(String(b.time)));
-  mainSeries.setMarkers(markers);
-}
-function makeChart() {
-  let el = document.querySelector("#chart");
-  chart = LightweightCharts.createChart(el, {
-    width: el.clientWidth,
-    height: el.clientHeight,
-    layout: { background: { color: "#fff" }, textColor: "#333" },
-    grid: { vertLines: { color: "#eef0f2" }, horzLines: { color: "#eef0f2" } },
-    crosshair: { mode: LightweightCharts.CrosshairMode.Normal },
-    timeScale: { borderColor: "#ccd1d7" },
-  });
-  volume = chart.addHistogramSeries({
-    priceFormat: { type: "volume" },
-    priceScaleId: "volume",
-  });
-  chart
-    .priceScale("volume")
-    .applyOptions({ scaleMargins: { top: 0.8, bottom: 0 } });
-  s50 = chart.addLineSeries({
-    color: "#e39116",
-    lineWidth: 1,
-    priceLineVisible: false,
-    lastValueVisible: false,
-  });
-  s200 = chart.addLineSeries({
-    color: "#366dc9",
-    lineWidth: 1,
-    priceLineVisible: false,
-    lastValueVisible: false,
-  });
-  setSupportingData();
-  setType("candles");
-  setRange("6M", false);
-  window.initDrawings?.();
-  new ResizeObserver(() => {
-    chart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
-    window.syncDrawings?.();
-  }).observe(el);
-  chart.subscribeCrosshairMove((p) => {
-    let d = p.seriesData.get(mainSeries),
-      base = d
-        ? d.open != null
-          ? `O ${BY.fmt(d.open)}  H ${BY.fmt(d.high)}  L ${BY.fmt(d.low)}  C ${BY.fmt(d.close)}`
-          : `Close ${BY.fmt(d.value)}`
-        : "",
-      m = brooksResult?.markers.find(
-        (x) => timeKey(x.time) === timeKey(p.time) && x.meta,
-      );
-    document.querySelector(".ohlc").textContent = m
-      ? `${base}  ·  ${m.meta.setup} · ${m.meta.strong ? "strong" : "weak"} · ${m.meta.emaTest ? "EMA test" : "no EMA test"} · entry ${BY.fmt(m.meta.entry)} stop ${BY.fmt(m.meta.stop)}`
-      : base;
-  });
-  document
-    .querySelectorAll("[data-type]")
-    .forEach((b) => (b.onclick = () => setType(b.dataset.type)));
-  document.querySelector("#date-range").onchange = (event) => setRange(event.target.value);
-  document.querySelector("#bar-interval").onchange = (event) => setInterval(event.target.value);
-  document.querySelector("#log-scale").onclick = toggleLogScale;
-  sma50.onclick = () => toggle(sma50, s50);
-  sma200.onclick = () => toggle(sma200, s200);
-  document.querySelector("#brooks").onchange = applyBrooks;
-  document.querySelector("#bar-types").onchange = setPriceData;
-  document.querySelector("#inside-outside").onchange = applyMarkers;
-}
-function setSupportingData() {
-  s50.setData(sma(50));
-  s200.setData(sma(200));
-  volume.setData(data.map((x) => ({
-    time: x.time,
-    value: x.volume,
-    color: x.close >= x.open ? "#0a8a3a66" : "#d0282e66",
-  })));
-}
-function setLogScale(on) {
-  chart.applyOptions({
-    rightPriceScale: {
-      mode: on ? LightweightCharts.PriceScaleMode.Logarithmic : LightweightCharts.PriceScaleMode.Normal,
-    },
-  });
-  let button = document.querySelector("#log-scale");
-  button.classList.toggle("active", on);
-  button.setAttribute("aria-pressed", String(on));
-  window.syncDrawings?.();
-}
-function toggleLogScale() {
-  setLogScale(!document.querySelector("#log-scale").classList.contains("active"));
-}
-function setInterval(interval) {
-  selectedInterval = interval;
-  document.querySelector("#bar-interval").value = interval;
-  data = intervalSource();
-  setSupportingData();
-  applyBrooks();
-  setPriceData();
-  updateAvailability();
-  applyVisibleRange();
-  window.syncDrawings?.();
-}
-function applyVisibleRange() {
-  if (!data.length) return;
-  let to = data.at(-1).time, from = rangeStart(selectedRange, to);
-  if (from == null || from < data[0].time) from = data[0].time;
-  chart.timeScale().setVisibleRange({ from, to });
-  window.syncDrawings?.();
-}
-function setRange(range, applyLogDefault = true) {
-  selectedRange = range;
-  document.querySelector("#date-range").value = range;
-  updateAvailability();
-  if (intervalDisabled(selectedInterval, range)) selectedInterval = defaultInterval(range);
-  setInterval(selectedInterval);
-  if (applyLogDefault) setLogScale(longRanges.includes(range));
-}
-function setType(t) {
-  if (mainSeries) chart.removeSeries(mainSeries);
-  type = t;
-  mainSeries =
-    t === "line"
-      ? chart.addLineSeries({ color: "#1261a0", lineWidth: 2 })
-      : t === "bars"
-        ? chart.addBarSeries({ upColor: "#0a8a3a", downColor: "#d0282e" })
-        : chart.addCandlestickSeries({
-            upColor: "#0a8a3a",
-            downColor: "#d0282e",
-            wickUpColor: "#0a8a3a",
-            wickDownColor: "#d0282e",
-            borderVisible: false,
-          });
-  setPriceData();
-  document
-    .querySelectorAll("[data-type]")
-    .forEach((b) => b.classList.toggle("active", b.dataset.type === t));
-  applyBrooks();
-  setRange(selectedRange, false);
-  window.syncDrawings?.();
-}
-function toggle(btn, series) {
-  let on = !btn.classList.contains("active");
-  btn.classList.toggle("active", on);
-  series.applyOptions({ visible: on });
-}
-function stats(s) {
+}function stats(s) {
   let valuation = [
       ["Market Cap", BY.big(s.market_cap)],
       ["Enterprise Value", BY.big(s.enterprise_value)],

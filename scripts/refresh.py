@@ -2,7 +2,10 @@
 import datetime as dt
 import json
 import os
+import re
 import time
+import urllib.error
+import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 import yfinance as yf
 
@@ -23,6 +26,37 @@ with open(os.path.join(D, "universe.txt"), encoding="utf-8") as f:
 BASKET = load_json(os.path.join(D, "basket_targets.json"), {"positions": []})
 WATCHLIST = load_json(os.path.join(D, "watchlist.json"), {"stocks": []})
 MARKET_TICKERS = ["QYLD", "ES=F"]
+
+def file_slug(ticker):
+    return ticker.replace("=", "-")
+
+BROWSER_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+NASDAQ_DIVIDENDS_URL = "https://api.nasdaq.com/api/quote/QYLD/dividends?assetclass=etf"
+GLOBALX_FUND_URL = "https://www.globalxetfs.com/funds/qyld"
+GLOBALX_DISTRIBUTIONS = "https://www.globalxetfs.com/funds/qyld#distributions"
+MARKETS_DIR = os.path.join(D, "markets")
+
+def http_get(url, headers, timeout=20):
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return resp.read().decode("utf-8", "replace")
+
+def parse_mdy(value):
+    if not value or str(value).strip() in ("N/A", "--", "-", "n/a"):
+        return None
+    parts = str(value).strip().split("/")
+    if len(parts) != 3:
+        return None
+    month, day, year = parts
+    return f"{int(year):04d}-{int(month):02d}-{int(day):02d}"
+
+def parse_money(value):
+    if value is None:
+        return None
+    text = str(value).replace("$", "").replace(",", "").strip()
+    if text in ("", "-", "N/A", "--"):
+        return None
+    return round(float(text), 4)
 PREVIOUS = {r["ticker"]: r for r in load_json(os.path.join(D, "stats.json"), {}).get("stocks", [])}
 FIELDS = {"marketCap":"market_cap","enterpriseValue":"enterprise_value","trailingPE":"pe","forwardPE":"forward_pe",
  "trailingPegRatio":"peg","priceToSalesTrailing12Months":"ps","priceToBook":"pb","enterpriseToRevenue":"ev_revenue",
@@ -100,6 +134,7 @@ def pull_intraday(job):
         return ticker,interval,None,str(exc)
 
 
+
 def markets_rows(h):
     has_adj = "Adj Close" in h.columns
     rows = []
@@ -113,32 +148,231 @@ def markets_rows(h):
         rows.append(item)
     return rows
 
+def close_lookup(rows):
+    return {row["time"]: row["close"] for row in rows}
+
+def close_before(closes, day):
+    """Unadjusted close on the last trading day strictly before the ex-date."""
+    earlier = [key for key in closes if key < day]
+    return closes[max(earlier)] if earlier else None
+
+def fetch_nasdaq_dividends():
+    raw = http_get(NASDAQ_DIVIDENDS_URL, {
+        "User-Agent": BROWSER_UA,
+        "Accept": "application/json, text/plain, */*",
+        "Origin": "https://www.nasdaq.com",
+        "Referer": "https://www.nasdaq.com/market-activity/etf/qyld/dividend-history",
+    })
+    payload = json.loads(raw)
+    rows = (((payload or {}).get("data") or {}).get("dividends") or {}).get("rows") or []
+    out = []
+    for row in rows:
+        if str(row.get("type") or "").strip().lower() not in ("cash", ""):
+            continue
+        ex_date = parse_mdy(row.get("exOrEffDate"))
+        amount = parse_money(row.get("amount"))
+        if not ex_date or amount is None:
+            continue
+        out.append({
+            "ex_date": ex_date,
+            "record_date": parse_mdy(row.get("recordDate")),
+            "payable_date": parse_mdy(row.get("paymentDate")),
+            "declared_date": parse_mdy(row.get("declarationDate")),
+            "amount": amount,
+            "source": "nasdaq",
+        })
+    if not out:
+        raise RuntimeError("nasdaq returned no cash dividends")
+    out.sort(key=lambda row: row["ex_date"])
+    return out
+
+def fetch_yahoo_dividends(ticker="QYLD"):
+    series = yf.Ticker(ticker).dividends
+    if series is None or len(series) == 0:
+        raise RuntimeError("yahoo returned no dividends")
+    out = []
+    for stamp, amount in series.items():
+        day = stamp.date().isoformat() if hasattr(stamp, "date") else str(stamp)[:10]
+        value = parse_money(amount)
+        if not day or value is None:
+            continue
+        out.append({
+            "ex_date": day,
+            "record_date": None,
+            "payable_date": None,
+            "declared_date": None,
+            "amount": value,
+            "source": "yahoo",
+        })
+    if not out:
+        raise RuntimeError("yahoo returned no parseable dividends")
+    out.sort(key=lambda row: row["ex_date"])
+    return out
+
+def fetch_globalx_official():
+    html = http_get(GLOBALX_FUND_URL, {
+        "User-Agent": BROWSER_UA,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Referer": "https://www.globalxetfs.com/",
+    })
+    if "Security Checkpoint" in html or "Just a moment" in html:
+        raise RuntimeError("globalx returned a security checkpoint")
+    def pct_near(label):
+        match = re.search(re.escape(label) + r".{0,400}?(-?\d+\.\d+)\s*%", html, re.I | re.S)
+        return float(match.group(1)) if match else None
+    def money_near(label):
+        match = re.search(re.escape(label) + r".{0,400}?\$(\d+\.\d{2})", html, re.I | re.S)
+        return float(match.group(1)) if match else None
+    trailing = pct_near("Trailing 12-Month Distribution") or pct_near("12-Month Trailing Yield")
+    dist = pct_near("Distribution Rate")
+    nav = money_near("NAV")
+    if trailing is None and dist is None:
+        raise RuntimeError("globalx official yields not found")
+    as_of = None
+    match = re.search(r"as of\s+([A-Z][a-z]{2,8}\s+\d{1,2},\s+\d{4})", html, re.I)
+    if match:
+        try:
+            as_of = dt.datetime.strptime(match.group(1), "%B %d, %Y").date().isoformat()
+        except ValueError:
+            try:
+                as_of = dt.datetime.strptime(match.group(1), "%b %d, %Y").date().isoformat()
+            except ValueError:
+                as_of = None
+    return {
+        "as_of": as_of or dt.datetime.now(dt.timezone.utc).date().isoformat(),
+        "nav": nav,
+        "trailing_12m_yield": trailing,
+        "distribution_rate": dist,
+        "source": GLOBALX_DISTRIBUTIONS,
+        "fetched_at": NOW,
+    }
+
+def attach_closes(rows, closes):
+    out = []
+    for row in rows:
+        close = close_before(closes, row["ex_date"])
+        item = dict(row)
+        item["close"] = close
+        item["pct"] = round(row["amount"] / close * 100, 4) if close else None
+        out.append(item)
+    return out
+
+def summarize_dividends(rows, price, price_date, globalx, source):
+    paid = [row for row in rows if row.get("amount") is not None]
+    latest = paid[-1] if paid else None
+    last12 = paid[-12:]
+    ttm_total = round(sum(row["amount"] for row in last12), 4) if last12 else None
+    annualized = round(latest["amount"] * 12, 4) if latest else None
+    ttm_yield = round(ttm_total / price * 100, 2) if ttm_total is not None and price else None
+    distribution_rate = round(annualized / price * 100, 2) if annualized is not None and price else None
+    return {
+        "generated_at": NOW,
+        "ticker": "QYLD",
+        "source": source,
+        "price": price,
+        "price_date": price_date,
+        "latest": latest,
+        "ttm_total": ttm_total,
+        "ttm_yield": ttm_yield,
+        "annualized_payout": annualized,
+        "distribution_rate": distribution_rate,
+        "globalx": globalx,
+        "dividends": paid,
+    }
+
+def pull_qyld_dividends(price, price_date, closes):
+    previous = load_json(os.path.join(MARKETS_DIR, "QYLD_dividends.json"), {})
+    source = None
+    rows = None
+    try:
+        rows = fetch_nasdaq_dividends()
+        source = "nasdaq"
+    except Exception as exc:
+        print(f"nasdaq dividends failed: {exc}")
+        try:
+            rows = fetch_yahoo_dividends()
+            source = "yahoo"
+        except Exception as yahoo_exc:
+            print(f"yahoo dividends failed: {yahoo_exc}")
+    if not rows:
+        rows = previous.get("dividends") or []
+        source = previous.get("source") or "previous"
+        if not rows:
+            print("qyld dividends unavailable; leaving previous file untouched")
+            return previous or None
+    rows = attach_closes(rows, closes) if closes else rows
+    globalx = previous.get("globalx")
+    try:
+        globalx = fetch_globalx_official()
+    except Exception as exc:
+        print(f"globalx official yields failed: {exc}")
+    return summarize_dividends(rows, price, price_date, globalx, source)
+
 def pull_markets():
     """QYLD and ES=F for the Markets tab only — not added to stats.json."""
-    payload = {"generated_at":NOW,"series":{}}
-    previous = load_json(os.path.join(D,"markets.json"), {"series":{}})
+    os.makedirs(MARKETS_DIR, exist_ok=True)
+    payload = {"generated_at": NOW, "series": {}}
+    previous = load_json(os.path.join(D, "markets.json"), {"series": {}})
+    qyld_closes, qyld_price, qyld_price_date = {}, None, None
     for ticker in MARKET_TICKERS:
+        slug = file_slug(ticker)
         try:
             tk = yf.Ticker(ticker)
             daily = tk.history(period="2y", interval="1d", auto_adjust=False)
             weekly = tk.history(period="max", interval="1wk", auto_adjust=False)
-            if daily is None or daily.empty: raise RuntimeError("no daily history rows")
-            daily = daily.dropna(subset=["Open","High","Low","Close"])
-            weekly = weekly.dropna(subset=["Open","High","Low","Close"]) if weekly is not None and not weekly.empty else daily.iloc[0:0]
-            try: info = tk.info or {}
-            except Exception: info = {}
+            if daily is None or daily.empty:
+                raise RuntimeError("no daily history rows")
+            daily = daily.dropna(subset=["Open", "High", "Low", "Close"])
+            weekly = weekly.dropna(subset=["Open", "High", "Low", "Close"]) if weekly is not None and not weekly.empty else daily.iloc[0:0]
+            try:
+                info = tk.info or {}
+            except Exception:
+                info = {}
             last = daily.iloc[-1]
-            payload["series"][ticker] = {
-                "ticker":ticker,
-                "name":info.get("shortName") or info.get("longName") or ticker,
-                "price":round(float(last["Close"]),2),
-                "daily":markets_rows(daily),
-                "weekly":markets_rows(weekly) if len(weekly) else [],
+            daily_rows = markets_rows(daily)
+            weekly_rows = markets_rows(weekly) if len(weekly) else []
+            write_json(os.path.join(MARKETS_DIR, f"{slug}_daily.json"), daily_rows)
+            write_json(os.path.join(MARKETS_DIR, f"{slug}_weekly.json"), weekly_rows)
+            price = round(float(last["Close"]), 2)
+            price_date = daily_rows[-1]["time"] if daily_rows else None
+            item = {
+                "ticker": ticker,
+                "slug": slug,
+                "name": info.get("shortName") or info.get("longName") or ticker,
+                "price": price,
+                "price_date": price_date,
             }
+            if ticker == "QYLD":
+                qyld_price, qyld_price_date = price, price_date
+                try:
+                    long_daily = tk.history(period="max", interval="1d", auto_adjust=False)
+                    long_daily = long_daily.dropna(subset=["Close"]) if long_daily is not None else daily
+                    qyld_closes = close_lookup(markets_rows(long_daily))
+                except Exception as exc:
+                    print(f"qyld long daily closes failed: {exc}")
+                    qyld_closes = close_lookup(daily_rows)
+            payload["series"][ticker] = item
         except Exception as exc:
-            if ticker in previous.get("series",{}):
+            if ticker in previous.get("series", {}):
                 payload["series"][ticker] = previous["series"][ticker]
             print(f"markets {ticker} failed: {exc}")
+    dividends = None
+    try:
+        series = payload["series"].get("QYLD") or {}
+        dividends = pull_qyld_dividends(qyld_price or series.get("price"), qyld_price_date or series.get("price_date"), qyld_closes)
+        if dividends:
+            write_json(os.path.join(MARKETS_DIR, "QYLD_dividends.json"), dividends)
+            if "QYLD" in payload["series"]:
+                payload["series"]["QYLD"].update({
+                    "ttm_total": dividends.get("ttm_total"),
+                    "ttm_yield": dividends.get("ttm_yield"),
+                    "annualized_payout": dividends.get("annualized_payout"),
+                    "distribution_rate": dividends.get("distribution_rate"),
+                    "latest_dividend": dividends.get("latest"),
+                    "globalx": dividends.get("globalx"),
+                })
+    except Exception as exc:
+        print(f"qyld dividends summary failed: {exc}")
     return payload
 
 def write_json(path, value):
@@ -150,6 +384,9 @@ tickers = sorted(set(UNIVERSE) | {b["ticker"] for b in BASKET["positions"]} | {s
 intraday_tickers = sorted({b["ticker"] for b in BASKET["positions"]} | {s["ticker"] for s in WATCHLIST["stocks"]})
 intraday_jobs = [(ticker,interval,period) for ticker in intraday_tickers for interval,period in
                  (("1m","5d"),("5m","60d"),("1h","730d"))]
+# Markets tickers get compact intraday too, but are not added to stats.json / Map / Screener.
+intraday_jobs += [(ticker,interval,period) for ticker in MARKET_TICKERS for interval,period in
+                  (("1m","5d"),("5m","60d"),("1h","730d"))]
 with ThreadPoolExecutor(max_workers=4) as executor: results = list(executor.map(pull,tickers))
 with ThreadPoolExecutor(max_workers=4) as executor: long_results = list(executor.map(pull_long,tickers))
 with ThreadPoolExecutor(max_workers=4) as executor: intraday_results = list(executor.map(pull_intraday,intraday_jobs))
@@ -165,7 +402,7 @@ for ticker,hist in long_updates: write_json(os.path.join(HISTORY_LONG,f"{ticker}
 intraday_updates = [(ticker,interval,payload) for ticker,interval,payload,error in intraday_results if payload is not None]
 if intraday_updates: os.makedirs(INTRADAY,exist_ok=True)
 for ticker,interval,payload in intraday_updates:
-    path = os.path.join(INTRADAY,f"{ticker}_{interval}.json")
+    path = os.path.join(INTRADAY,f"{file_slug(ticker)}_{interval}.json")
     with open(path,"w",encoding="utf-8") as f:
         json.dump(payload,f,separators=(",",":"),allow_nan=False); f.write("\n")
 stats = {r["ticker"]:r for r in rows}

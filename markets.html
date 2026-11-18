@@ -6,6 +6,8 @@
     <title>Bullish Young — Markets</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a8a3a'/%3E%3Cpath d='M14 43 27 30l9 8 15-18' fill='none' stroke='white' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="assets/app.css" />
+    <link rel="stylesheet" href="assets/brooks.css" />
+    <link rel="stylesheet" href="assets/polish.css" />
     <link rel="stylesheet" href="assets/mobile.css" />
     <script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
   </head>
@@ -13,64 +15,151 @@
     <main>
       <h1>Markets</h1>
 
-      <section class="market-section" data-market="QYLD">
+      <section class="market-section" id="qyld-root" data-market="QYLD">
         <div class="market-head">
           <h2>QYLD</h2>
           <div class="stock-price" id="qyld-price"></div>
+          <span id="qyld-change"></span>
         </div>
         <p class="market-sub" id="qyld-name"></p>
-        <div class="market-controls">
+        <div class="toolbar">
+          <button data-type="candles" class="active">Candles</button
+          ><button data-type="bars">Bars</button
+          ><button data-type="line">Line</button
+          ><button data-sma="50" class="active">50-bar SMA</button
+          ><button data-sma="200" class="active">200-bar SMA</button
+          ><label class="brooks-toggle"
+            ><input class="brooks-toggle-input" type="checkbox" /> Brooks (reference)</label
+          ><span class="brooks-layers" hidden
+            ><label><input class="bar-types" type="checkbox" /> Bar types</label
+            ><label><input class="inside-outside" type="checkbox" /> Inside/outside</label
+            ></span
+          ><span class="ohlc"></span>
+        </div>
+        <div class="brooks-badge" hidden></div>
+        <div class="drawing-toolbar" aria-label="QYLD drawing tools">
+          <button data-draw="pointer" class="active" aria-label="Pointer / select" title="Pointer / select">↖ <span>Pointer</span></button>
+          <button data-draw="trend" aria-label="Trend line" title="Trend line">╱ <span>Trend</span></button>
+          <button data-draw="hline" aria-label="Horizontal line" title="Horizontal line">— <span>H line</span></button>
+          <button data-draw="delete" aria-label="Delete selected drawing" title="Delete selected" disabled>⌫ <span>Delete</span></button>
+          <button data-draw="clear" aria-label="Clear all drawings" title="Clear all">× <span>Clear all</span></button>
+        </div>
+        <div class="chart-box"><div class="chart-el" id="qyld-chart"></div></div>
+        <div class="chart-controls">
           <label>Bar interval
-            <select id="qyld-interval" aria-label="QYLD bar interval">
-              <option value="daily" selected>Daily</option>
-              <option value="weekly">Weekly</option>
+            <select class="bar-interval" aria-label="QYLD bar interval">
+              <option value="1m">1m</option><option value="5m">5m</option
+              ><option value="10m">10m</option><option value="15m">15m</option
+              ><option value="30m">30m</option><option value="1h">1h</option
+              ><option value="2h">2h</option><option value="4h">4h</option
+              ><option value="daily" selected>Daily</option
+              ><option value="weekly">Weekly</option
+              ><option value="monthly">Monthly</option
+              ><option value="quarterly">Quarterly</option>
             </select>
           </label>
           <label>Date range
-            <select id="qyld-range" aria-label="QYLD date range">
-              <option value="1M">1M</option>
-              <option value="3M">3M</option>
-              <option value="6M" selected>6M</option>
-              <option value="1Y">1Y</option>
-              <option value="2Y">2Y</option>
-              <option value="MAX">MAX</option>
+            <select class="date-range" aria-label="QYLD date range">
+              <option value="1M">1M</option><option value="2M">2M</option
+              ><option value="3M">3M</option><option value="4M">4M</option
+              ><option value="6M" selected>6M</option><option value="9M">9M</option
+              ><option value="YTD">YTD</option><option value="1Y">1Y</option
+              ><option value="2Y">2Y</option><option value="3Y">3Y</option
+              ><option value="5Y">5Y</option><option value="10Y">10Y</option
+              ><option value="MAX">MAX</option>
             </select>
           </label>
-          <button type="button" id="qyld-dividends" class="active" aria-pressed="true">With dividends</button>
+          <button type="button" class="log-scale" aria-pressed="false">Log scale</button>
         </div>
-        <div class="chart-box market-chart"><div id="qyld-chart"></div></div>
-        <p class="chart-note">The With dividends line uses Yahoo adjusted close (total return), so QYLD’s regular distributions don’t look like price declines.</p>
+        <div class="chart-availability chart-availability-detail muted" aria-live="polite"></div>
+
+        <section class="dividend-section" aria-labelledby="qyld-div-heading">
+          <h2 id="qyld-div-heading">QYLD monthly dividends</h2>
+          <div class="dividend-headlines" id="qyld-div-headlines"></div>
+          <div class="dividend-controls">
+            <label>Date range
+              <select id="qyld-div-range" aria-label="QYLD dividend date range">
+                <option value="1Y" selected>1Y</option>
+                <option value="3Y">3Y</option>
+                <option value="5Y">5Y</option>
+                <option value="MAX">MAX</option>
+              </select>
+            </label>
+          </div>
+          <div class="dividend-scroll" id="qyld-div-scroll">
+            <div class="dividend-chart" id="qyld-div-chart"></div>
+          </div>
+          <div class="dividend-tooltip" id="qyld-div-tip" hidden></div>
+          <p class="chart-note">Much of QYLD’s payout is often return of capital. Check your Fidelity 1099 for the official breakdown; we don’t invent a per-distribution ROC percentage.</p>
+          <p class="source-line">Source: <a href="https://www.globalxetfs.com/funds/qyld#distributions">Global X QYLD fund page</a> (Distributions). Amounts and dates for the bars and yield math come from Nasdaq when available, with Yahoo Finance as a fallback. Global X’s official yields are NAV-based, so they can differ slightly from our market-price figures.</p>
+        </section>
       </section>
 
-      <section class="market-section" data-market="ES=F">
+      <section class="market-section" id="es-root" data-market="ES=F">
         <div class="market-head">
           <h2>ES=F</h2>
           <div class="stock-price" id="es-price"></div>
+          <span id="es-change"></span>
         </div>
         <p class="market-sub" id="es-name"></p>
-        <div class="market-controls">
+        <div class="toolbar">
+          <button data-type="candles" class="active">Candles</button
+          ><button data-type="bars">Bars</button
+          ><button data-type="line">Line</button
+          ><button data-sma="50" class="active">50-bar SMA</button
+          ><button data-sma="200" class="active">200-bar SMA</button
+          ><label class="brooks-toggle"
+            ><input class="brooks-toggle-input" type="checkbox" /> Brooks (reference)</label
+          ><span class="brooks-layers" hidden
+            ><label><input class="bar-types" type="checkbox" /> Bar types</label
+            ><label><input class="inside-outside" type="checkbox" /> Inside/outside</label
+            ></span
+          ><span class="ohlc"></span>
+        </div>
+        <div class="brooks-badge" hidden></div>
+        <div class="drawing-toolbar" aria-label="ES drawing tools">
+          <button data-draw="pointer" class="active" aria-label="Pointer / select" title="Pointer / select">↖ <span>Pointer</span></button>
+          <button data-draw="trend" aria-label="Trend line" title="Trend line">╱ <span>Trend</span></button>
+          <button data-draw="hline" aria-label="Horizontal line" title="Horizontal line">— <span>H line</span></button>
+          <button data-draw="delete" aria-label="Delete selected drawing" title="Delete selected" disabled>⌫ <span>Delete</span></button>
+          <button data-draw="clear" aria-label="Clear all drawings" title="Clear all">× <span>Clear all</span></button>
+        </div>
+        <div class="chart-box"><div class="chart-el" id="es-chart"></div></div>
+        <p class="chart-note">ES=F is the nearest futures contract; it trades nearly 24h Sun–Fri, and small jumps on quarterly roll dates are contract switches, not real moves.</p>
+        <div class="chart-controls">
           <label>Bar interval
-            <select id="es-interval" aria-label="ES bar interval">
-              <option value="daily" selected>Daily</option>
-              <option value="weekly">Weekly</option>
+            <select class="bar-interval" aria-label="ES bar interval">
+              <option value="1m">1m</option><option value="5m" selected>5m</option
+              ><option value="10m">10m</option><option value="15m">15m</option
+              ><option value="30m">30m</option><option value="1h">1h</option
+              ><option value="2h">2h</option><option value="4h">4h</option
+              ><option value="daily">Daily</option
+              ><option value="weekly">Weekly</option
+              ><option value="monthly">Monthly</option
+              ><option value="quarterly">Quarterly</option>
             </select>
           </label>
           <label>Date range
-            <select id="es-range" aria-label="ES date range">
-              <option value="1M">1M</option>
-              <option value="3M">3M</option>
-              <option value="6M" selected>6M</option>
-              <option value="1Y">1Y</option>
-              <option value="2Y">2Y</option>
-              <option value="MAX">MAX</option>
+            <select class="date-range" aria-label="ES date range">
+              <option value="1M" selected>1M</option><option value="2M">2M</option
+              ><option value="3M">3M</option><option value="4M">4M</option
+              ><option value="6M">6M</option><option value="9M">9M</option
+              ><option value="YTD">YTD</option><option value="1Y">1Y</option
+              ><option value="2Y">2Y</option><option value="3Y">3Y</option
+              ><option value="5Y">5Y</option><option value="10Y">10Y</option
+              ><option value="MAX">MAX</option>
             </select>
           </label>
+          <button type="button" class="log-scale" aria-pressed="false">Log scale</button>
         </div>
-        <div class="chart-box market-chart"><div id="es-chart"></div></div>
-        <p class="chart-note">ES=F is the nearest futures contract; it trades nearly 24h Sun–Fri, and small jumps on quarterly roll dates are contract switches, not real moves.</p>
+        <div class="chart-availability chart-availability-detail muted" aria-live="polite"></div>
+        <p class="chart-availability muted es-lag-note">Intraday data is refreshed hourly, so the latest bars may lag by up to an hour.</p>
       </section>
     </main>
     <script src="assets/common.js"></script>
+    <script src="assets/brooks.js"></script>
+    <script src="assets/drawings.js"></script>
+    <script src="assets/chart.js"></script>
     <script src="assets/markets.js"></script>
   </body>
 </html>
