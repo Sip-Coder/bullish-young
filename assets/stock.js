@@ -32,6 +32,9 @@ shell("").then(async () => {
   document.querySelector("#stock-main").dataset.intradayEligible = intradayEligible ? "1" : "0";
   document.querySelector("#brooks").checked =
     new URLSearchParams(location.search).get("brooks") === "1";
+  const dividendPayload = await fetch(`data/dividends/${ticker}.json`)
+    .then((r) => r.ok ? r.json() : null)
+    .catch(() => null);
   const mounted = BYChart.mount(document.querySelector("#stock-main"), {
     ticker,
     daily: dailyData,
@@ -39,6 +42,7 @@ shell("").then(async () => {
     intraday: intradayData,
     defaultRange: "6M",
     defaultInterval: "daily",
+    dividends: dividendPayload?.dividends || [],
     intradayEligible,
   });
   chart = mounted.chart;

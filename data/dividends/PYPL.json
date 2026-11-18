@@ -1,0 +1,47 @@
+{
+ "generated_at": "2026-11-18T07:22:55+00:00",
+ "ticker": "PYPL",
+ "source": "yahoo",
+ "dividends": [
+  {
+   "ex_date": "2025-11-19",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.14,
+   "source": "yahoo",
+   "close": 60.7,
+   "pct": 0.2306
+  },
+  {
+   "ex_date": "2026-03-04",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.14,
+   "source": "yahoo",
+   "close": 46.38,
+   "pct": 0.3019
+  },
+  {
+   "ex_date": "2026-06-04",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.14,
+   "source": "yahoo",
+   "close": 42.61,
+   "pct": 0.3286
+  },
+  {
+   "ex_date": "2026-09-04",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.14,
+   "source": "yahoo",
+   "close": 56.82,
+   "pct": 0.2464
+  }
+ ]
+}

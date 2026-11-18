@@ -1,0 +1,1757 @@
+{
+ "generated_at": "2026-11-18T07:22:55+00:00",
+ "ticker": "ADP",
+ "source": "yahoo",
+ "dividends": [
+  {
+   "ex_date": "1983-06-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0069,
+   "source": "yahoo",
+   "close": 1.98,
+   "pct": 0.3485
+  },
+  {
+   "ex_date": "1983-09-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0069,
+   "source": "yahoo",
+   "close": 1.92,
+   "pct": 0.3594
+  },
+  {
+   "ex_date": "1983-12-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0069,
+   "source": "yahoo",
+   "close": 1.79,
+   "pct": 0.3855
+  },
+  {
+   "ex_date": "1984-03-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0069,
+   "source": "yahoo",
+   "close": 1.62,
+   "pct": 0.4259
+  },
+  {
+   "ex_date": "1984-06-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0077,
+   "source": "yahoo",
+   "close": 1.64,
+   "pct": 0.4695
+  },
+  {
+   "ex_date": "1984-09-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0077,
+   "source": "yahoo",
+   "close": 1.88,
+   "pct": 0.4096
+  },
+  {
+   "ex_date": "1984-12-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0077,
+   "source": "yahoo",
+   "close": 1.77,
+   "pct": 0.435
+  },
+  {
+   "ex_date": "1985-03-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0077,
+   "source": "yahoo",
+   "close": 2.13,
+   "pct": 0.3615
+  },
+  {
+   "ex_date": "1985-06-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0084,
+   "source": "yahoo",
+   "close": 2.39,
+   "pct": 0.3515
+  },
+  {
+   "ex_date": "1985-09-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0084,
+   "source": "yahoo",
+   "close": 2.47,
+   "pct": 0.3401
+  },
+  {
+   "ex_date": "1985-12-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0084,
+   "source": "yahoo",
+   "close": 2.88,
+   "pct": 0.2917
+  },
+  {
+   "ex_date": "1986-03-17",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0084,
+   "source": "yahoo",
+   "close": 3.51,
+   "pct": 0.2393
+  },
+  {
+   "ex_date": "1986-06-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0094,
+   "source": "yahoo",
+   "close": 3.54,
+   "pct": 0.2655
+  },
+  {
+   "ex_date": "1986-09-15",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0094,
+   "source": "yahoo",
+   "close": 3.1,
+   "pct": 0.3032
+  },
+  {
+   "ex_date": "1986-12-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0094,
+   "source": "yahoo",
+   "close": 3.52,
+   "pct": 0.267
+  },
+  {
+   "ex_date": "1987-01-27",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0094,
+   "source": "yahoo",
+   "close": 4.29,
+   "pct": 0.2191
+  },
+  {
+   "ex_date": "1987-06-15",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0109,
+   "source": "yahoo",
+   "close": 4.92,
+   "pct": 0.2215
+  },
+  {
+   "ex_date": "1987-09-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0109,
+   "source": "yahoo",
+   "close": 5.01,
+   "pct": 0.2176
+  },
+  {
+   "ex_date": "1987-12-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0109,
+   "source": "yahoo",
+   "close": 4.08,
+   "pct": 0.2672
+  },
+  {
+   "ex_date": "1988-03-15",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0109,
+   "source": "yahoo",
+   "close": 4.47,
+   "pct": 0.2438
+  },
+  {
+   "ex_date": "1988-06-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0129,
+   "source": "yahoo",
+   "close": 4.06,
+   "pct": 0.3177
+  },
+  {
+   "ex_date": "1988-09-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0129,
+   "source": "yahoo",
+   "close": 3.69,
+   "pct": 0.3496
+  },
+  {
+   "ex_date": "1988-12-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0129,
+   "source": "yahoo",
+   "close": 3.92,
+   "pct": 0.3291
+  },
+  {
+   "ex_date": "1989-03-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0129,
+   "source": "yahoo",
+   "close": 3.61,
+   "pct": 0.3573
+  },
+  {
+   "ex_date": "1989-06-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0149,
+   "source": "yahoo",
+   "close": 4.05,
+   "pct": 0.3679
+  },
+  {
+   "ex_date": "1989-09-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0149,
+   "source": "yahoo",
+   "close": 4.36,
+   "pct": 0.3417
+  },
+  {
+   "ex_date": "1989-12-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0149,
+   "source": "yahoo",
+   "close": 4.6,
+   "pct": 0.3239
+  },
+  {
+   "ex_date": "1990-03-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0149,
+   "source": "yahoo",
+   "close": 5.15,
+   "pct": 0.2893
+  },
+  {
+   "ex_date": "1990-06-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0173,
+   "source": "yahoo",
+   "close": 5.63,
+   "pct": 0.3073
+  },
+  {
+   "ex_date": "1990-09-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0173,
+   "source": "yahoo",
+   "close": 5.01,
+   "pct": 0.3453
+  },
+  {
+   "ex_date": "1990-12-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0173,
+   "source": "yahoo",
+   "close": 5.34,
+   "pct": 0.324
+  },
+  {
+   "ex_date": "1991-03-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0173,
+   "source": "yahoo",
+   "close": 6.39,
+   "pct": 0.2707
+  },
+  {
+   "ex_date": "1991-06-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0198,
+   "source": "yahoo",
+   "close": 6.27,
+   "pct": 0.3158
+  },
+  {
+   "ex_date": "1991-09-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0198,
+   "source": "yahoo",
+   "close": 6.59,
+   "pct": 0.3005
+  },
+  {
+   "ex_date": "1991-12-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0198,
+   "source": "yahoo",
+   "close": 7.41,
+   "pct": 0.2672
+  },
+  {
+   "ex_date": "1992-03-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0198,
+   "source": "yahoo",
+   "close": 8.45,
+   "pct": 0.2343
+  },
+  {
+   "ex_date": "1992-06-02",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0228,
+   "source": "yahoo",
+   "close": 9.05,
+   "pct": 0.2519
+  },
+  {
+   "ex_date": "1992-09-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0228,
+   "source": "yahoo",
+   "close": 8.95,
+   "pct": 0.2547
+  },
+  {
+   "ex_date": "1992-12-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0228,
+   "source": "yahoo",
+   "close": 10.38,
+   "pct": 0.2197
+  },
+  {
+   "ex_date": "1993-03-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0228,
+   "source": "yahoo",
+   "close": 10.61,
+   "pct": 0.2149
+  },
+  {
+   "ex_date": "1993-06-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0258,
+   "source": "yahoo",
+   "close": 9.84,
+   "pct": 0.2622
+  },
+  {
+   "ex_date": "1993-09-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0258,
+   "source": "yahoo",
+   "close": 9.72,
+   "pct": 0.2654
+  },
+  {
+   "ex_date": "1993-12-06",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0258,
+   "source": "yahoo",
+   "close": 10.95,
+   "pct": 0.2356
+  },
+  {
+   "ex_date": "1994-03-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0258,
+   "source": "yahoo",
+   "close": 10.88,
+   "pct": 0.2371
+  },
+  {
+   "ex_date": "1994-06-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0297,
+   "source": "yahoo",
+   "close": 10.58,
+   "pct": 0.2807
+  },
+  {
+   "ex_date": "1994-09-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0297,
+   "source": "yahoo",
+   "close": 10.68,
+   "pct": 0.2781
+  },
+  {
+   "ex_date": "1994-12-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0297,
+   "source": "yahoo",
+   "close": 10.61,
+   "pct": 0.2799
+  },
+  {
+   "ex_date": "1995-03-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0297,
+   "source": "yahoo",
+   "close": 12.59,
+   "pct": 0.2359
+  },
+  {
+   "ex_date": "1995-06-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0347,
+   "source": "yahoo",
+   "close": 12.66,
+   "pct": 0.2741
+  },
+  {
+   "ex_date": "1995-09-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0347,
+   "source": "yahoo",
+   "close": 13.58,
+   "pct": 0.2555
+  },
+  {
+   "ex_date": "1995-12-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0397,
+   "source": "yahoo",
+   "close": 15.39,
+   "pct": 0.258
+  },
+  {
+   "ex_date": "1996-03-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0397,
+   "source": "yahoo",
+   "close": 15.27,
+   "pct": 0.26
+  },
+  {
+   "ex_date": "1996-06-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0397,
+   "source": "yahoo",
+   "close": 15.12,
+   "pct": 0.2626
+  },
+  {
+   "ex_date": "1996-09-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0397,
+   "source": "yahoo",
+   "close": 16.8,
+   "pct": 0.2363
+  },
+  {
+   "ex_date": "1996-12-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0456,
+   "source": "yahoo",
+   "close": 16.46,
+   "pct": 0.277
+  },
+  {
+   "ex_date": "1997-03-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0456,
+   "source": "yahoo",
+   "close": 17.74,
+   "pct": 0.257
+  },
+  {
+   "ex_date": "1997-06-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0456,
+   "source": "yahoo",
+   "close": 19.18,
+   "pct": 0.2377
+  },
+  {
+   "ex_date": "1997-09-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0456,
+   "source": "yahoo",
+   "close": 18.91,
+   "pct": 0.2411
+  },
+  {
+   "ex_date": "1997-12-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0523,
+   "source": "yahoo",
+   "close": 22.5,
+   "pct": 0.2324
+  },
+  {
+   "ex_date": "1998-03-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0523,
+   "source": "yahoo",
+   "close": 25.38,
+   "pct": 0.2061
+  },
+  {
+   "ex_date": "1998-06-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0523,
+   "source": "yahoo",
+   "close": 26.87,
+   "pct": 0.1946
+  },
+  {
+   "ex_date": "1998-09-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0523,
+   "source": "yahoo",
+   "close": 28.85,
+   "pct": 0.1813
+  },
+  {
+   "ex_date": "1998-12-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0603,
+   "source": "yahoo",
+   "close": 30.93,
+   "pct": 0.195
+  },
+  {
+   "ex_date": "1999-03-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0595,
+   "source": "yahoo",
+   "close": 31.13,
+   "pct": 0.1911
+  },
+  {
+   "ex_date": "1999-06-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0595,
+   "source": "yahoo",
+   "close": 32.57,
+   "pct": 0.1827
+  },
+  {
+   "ex_date": "1999-09-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0603,
+   "source": "yahoo",
+   "close": 32.96,
+   "pct": 0.1829
+  },
+  {
+   "ex_date": "1999-12-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0698,
+   "source": "yahoo",
+   "close": 40.55,
+   "pct": 0.1721
+  },
+  {
+   "ex_date": "2000-03-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0698,
+   "source": "yahoo",
+   "close": 34.5,
+   "pct": 0.2023
+  },
+  {
+   "ex_date": "2000-06-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0698,
+   "source": "yahoo",
+   "close": 45.75,
+   "pct": 0.1526
+  },
+  {
+   "ex_date": "2000-09-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0698,
+   "source": "yahoo",
+   "close": 49.72,
+   "pct": 0.1404
+  },
+  {
+   "ex_date": "2000-12-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0817,
+   "source": "yahoo",
+   "close": 52.49,
+   "pct": 0.1556
+  },
+  {
+   "ex_date": "2001-03-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0817,
+   "source": "yahoo",
+   "close": 46.59,
+   "pct": 0.1754
+  },
+  {
+   "ex_date": "2001-06-06",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0817,
+   "source": "yahoo",
+   "close": 45.13,
+   "pct": 0.181
+  },
+  {
+   "ex_date": "2001-09-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0817,
+   "source": "yahoo",
+   "close": 40.44,
+   "pct": 0.202
+  },
+  {
+   "ex_date": "2001-09-17",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0817,
+   "source": "yahoo",
+   "close": 40.44,
+   "pct": 0.202
+  },
+  {
+   "ex_date": "2001-12-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0912,
+   "source": "yahoo",
+   "close": 46.62,
+   "pct": 0.1956
+  },
+  {
+   "ex_date": "2002-03-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0912,
+   "source": "yahoo",
+   "close": 45.92,
+   "pct": 0.1986
+  },
+  {
+   "ex_date": "2002-06-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0912,
+   "source": "yahoo",
+   "close": 40.18,
+   "pct": 0.227
+  },
+  {
+   "ex_date": "2002-09-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0912,
+   "source": "yahoo",
+   "close": 30.45,
+   "pct": 0.2995
+  },
+  {
+   "ex_date": "2002-12-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0952,
+   "source": "yahoo",
+   "close": 33.03,
+   "pct": 0.2882
+  },
+  {
+   "ex_date": "2003-03-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0952,
+   "source": "yahoo",
+   "close": 24.06,
+   "pct": 0.3957
+  },
+  {
+   "ex_date": "2003-06-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0952,
+   "source": "yahoo",
+   "close": 27.62,
+   "pct": 0.3447
+  },
+  {
+   "ex_date": "2003-09-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0952,
+   "source": "yahoo",
+   "close": 31.13,
+   "pct": 0.3058
+  },
+  {
+   "ex_date": "2003-12-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.111,
+   "source": "yahoo",
+   "close": 30.61,
+   "pct": 0.3626
+  },
+  {
+   "ex_date": "2004-03-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.111,
+   "source": "yahoo",
+   "close": 34.19,
+   "pct": 0.3247
+  },
+  {
+   "ex_date": "2004-06-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.111,
+   "source": "yahoo",
+   "close": 35.58,
+   "pct": 0.312
+  },
+  {
+   "ex_date": "2004-09-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.111,
+   "source": "yahoo",
+   "close": 32.59,
+   "pct": 0.3406
+  },
+  {
+   "ex_date": "2004-12-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.1229,
+   "source": "yahoo",
+   "close": 35.94,
+   "pct": 0.342
+  },
+  {
+   "ex_date": "2005-03-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.1229,
+   "source": "yahoo",
+   "close": 34.31,
+   "pct": 0.3582
+  },
+  {
+   "ex_date": "2005-06-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.1229,
+   "source": "yahoo",
+   "close": 34.66,
+   "pct": 0.3546
+  },
+  {
+   "ex_date": "2005-09-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.1229,
+   "source": "yahoo",
+   "close": 33.95,
+   "pct": 0.362
+  },
+  {
+   "ex_date": "2005-12-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.1467,
+   "source": "yahoo",
+   "close": 37.27,
+   "pct": 0.3936
+  },
+  {
+   "ex_date": "2006-03-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.1467,
+   "source": "yahoo",
+   "close": 36.32,
+   "pct": 0.4039
+  },
+  {
+   "ex_date": "2006-06-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.1467,
+   "source": "yahoo",
+   "close": 36.24,
+   "pct": 0.4048
+  },
+  {
+   "ex_date": "2006-09-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.1467,
+   "source": "yahoo",
+   "close": 37.69,
+   "pct": 0.3892
+  },
+  {
+   "ex_date": "2006-12-06",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.1824,
+   "source": "yahoo",
+   "close": 38.11,
+   "pct": 0.4786
+  },
+  {
+   "ex_date": "2007-03-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.1824,
+   "source": "yahoo",
+   "close": 38.7,
+   "pct": 0.4713
+  },
+  {
+   "ex_date": "2007-06-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2019,
+   "source": "yahoo",
+   "close": 42.19,
+   "pct": 0.4785
+  },
+  {
+   "ex_date": "2007-09-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2019,
+   "source": "yahoo",
+   "close": 39.09,
+   "pct": 0.5165
+  },
+  {
+   "ex_date": "2007-12-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2546,
+   "source": "yahoo",
+   "close": 39.96,
+   "pct": 0.6371
+  },
+  {
+   "ex_date": "2008-03-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2546,
+   "source": "yahoo",
+   "close": 35.13,
+   "pct": 0.7247
+  },
+  {
+   "ex_date": "2008-06-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2546,
+   "source": "yahoo",
+   "close": 37.87,
+   "pct": 0.6723
+  },
+  {
+   "ex_date": "2008-09-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2546,
+   "source": "yahoo",
+   "close": 39.39,
+   "pct": 0.6464
+  },
+  {
+   "ex_date": "2008-12-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2897,
+   "source": "yahoo",
+   "close": 34.35,
+   "pct": 0.8434
+  },
+  {
+   "ex_date": "2009-03-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2897,
+   "source": "yahoo",
+   "close": 30.39,
+   "pct": 0.9533
+  },
+  {
+   "ex_date": "2009-06-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2897,
+   "source": "yahoo",
+   "close": 33.63,
+   "pct": 0.8614
+  },
+  {
+   "ex_date": "2009-09-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2897,
+   "source": "yahoo",
+   "close": 34.02,
+   "pct": 0.8516
+  },
+  {
+   "ex_date": "2009-12-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2985,
+   "source": "yahoo",
+   "close": 37.77,
+   "pct": 0.7903
+  },
+  {
+   "ex_date": "2010-03-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2985,
+   "source": "yahoo",
+   "close": 38.34,
+   "pct": 0.7786
+  },
+  {
+   "ex_date": "2010-06-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2985,
+   "source": "yahoo",
+   "close": 36.07,
+   "pct": 0.8276
+  },
+  {
+   "ex_date": "2010-09-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2985,
+   "source": "yahoo",
+   "close": 34.84,
+   "pct": 0.8568
+  },
+  {
+   "ex_date": "2010-12-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3161,
+   "source": "yahoo",
+   "close": 40.83,
+   "pct": 0.7742
+  },
+  {
+   "ex_date": "2011-03-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3161,
+   "source": "yahoo",
+   "close": 44.67,
+   "pct": 0.7076
+  },
+  {
+   "ex_date": "2011-06-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3161,
+   "source": "yahoo",
+   "close": 46.52,
+   "pct": 0.6795
+  },
+  {
+   "ex_date": "2011-09-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3161,
+   "source": "yahoo",
+   "close": 42.15,
+   "pct": 0.7499
+  },
+  {
+   "ex_date": "2011-12-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3468,
+   "source": "yahoo",
+   "close": 45.78,
+   "pct": 0.7575
+  },
+  {
+   "ex_date": "2012-03-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3468,
+   "source": "yahoo",
+   "close": 47.3,
+   "pct": 0.7332
+  },
+  {
+   "ex_date": "2012-06-06",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3468,
+   "source": "yahoo",
+   "close": 45.49,
+   "pct": 0.7624
+  },
+  {
+   "ex_date": "2012-09-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3468,
+   "source": "yahoo",
+   "close": 51.66,
+   "pct": 0.6713
+  },
+  {
+   "ex_date": "2012-12-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3819,
+   "source": "yahoo",
+   "close": 50.95,
+   "pct": 0.7496
+  },
+  {
+   "ex_date": "2013-03-06",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3819,
+   "source": "yahoo",
+   "close": 55.01,
+   "pct": 0.6942
+  },
+  {
+   "ex_date": "2013-06-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3819,
+   "source": "yahoo",
+   "close": 59.8,
+   "pct": 0.6386
+  },
+  {
+   "ex_date": "2013-09-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.3819,
+   "source": "yahoo",
+   "close": 64.74,
+   "pct": 0.5899
+  },
+  {
+   "ex_date": "2013-12-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.4214,
+   "source": "yahoo",
+   "close": 68.93,
+   "pct": 0.6113
+  },
+  {
+   "ex_date": "2014-03-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.4214,
+   "source": "yahoo",
+   "close": 68.39,
+   "pct": 0.6162
+  },
+  {
+   "ex_date": "2014-06-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.4214,
+   "source": "yahoo",
+   "close": 69.71,
+   "pct": 0.6045
+  },
+  {
+   "ex_date": "2014-09-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.4214,
+   "source": "yahoo",
+   "close": 73.41,
+   "pct": 0.574
+  },
+  {
+   "ex_date": "2014-12-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.49,
+   "source": "yahoo",
+   "close": 85.26,
+   "pct": 0.5747
+  },
+  {
+   "ex_date": "2015-03-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.49,
+   "source": "yahoo",
+   "close": 85.15,
+   "pct": 0.5755
+  },
+  {
+   "ex_date": "2015-06-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.49,
+   "source": "yahoo",
+   "close": 83.16,
+   "pct": 0.5892
+  },
+  {
+   "ex_date": "2015-09-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.49,
+   "source": "yahoo",
+   "close": 78.2,
+   "pct": 0.6266
+  },
+  {
+   "ex_date": "2015-12-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.53,
+   "source": "yahoo",
+   "close": 86.32,
+   "pct": 0.614
+  },
+  {
+   "ex_date": "2016-03-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.53,
+   "source": "yahoo",
+   "close": 85.49,
+   "pct": 0.62
+  },
+  {
+   "ex_date": "2016-06-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.53,
+   "source": "yahoo",
+   "close": 86.87,
+   "pct": 0.6101
+  },
+  {
+   "ex_date": "2016-09-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.53,
+   "source": "yahoo",
+   "close": 89.86,
+   "pct": 0.5898
+  },
+  {
+   "ex_date": "2016-12-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.57,
+   "source": "yahoo",
+   "close": 96.0,
+   "pct": 0.5937
+  },
+  {
+   "ex_date": "2017-03-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.57,
+   "source": "yahoo",
+   "close": 104.27,
+   "pct": 0.5467
+  },
+  {
+   "ex_date": "2017-06-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.57,
+   "source": "yahoo",
+   "close": 101.2,
+   "pct": 0.5632
+  },
+  {
+   "ex_date": "2017-09-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.57,
+   "source": "yahoo",
+   "close": 108.05,
+   "pct": 0.5275
+  },
+  {
+   "ex_date": "2017-12-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.63,
+   "source": "yahoo",
+   "close": 115.92,
+   "pct": 0.5435
+  },
+  {
+   "ex_date": "2018-03-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.63,
+   "source": "yahoo",
+   "close": 115.18,
+   "pct": 0.547
+  },
+  {
+   "ex_date": "2018-06-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.69,
+   "source": "yahoo",
+   "close": 136.1,
+   "pct": 0.507
+  },
+  {
+   "ex_date": "2018-09-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.69,
+   "source": "yahoo",
+   "close": 147.13,
+   "pct": 0.469
+  },
+  {
+   "ex_date": "2018-12-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.79,
+   "source": "yahoo",
+   "close": 139.57,
+   "pct": 0.566
+  },
+  {
+   "ex_date": "2019-03-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.79,
+   "source": "yahoo",
+   "close": 152.53,
+   "pct": 0.5179
+  },
+  {
+   "ex_date": "2019-06-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.79,
+   "source": "yahoo",
+   "close": 165.22,
+   "pct": 0.4782
+  },
+  {
+   "ex_date": "2019-09-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.79,
+   "source": "yahoo",
+   "close": 161.14,
+   "pct": 0.4903
+  },
+  {
+   "ex_date": "2019-12-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.91,
+   "source": "yahoo",
+   "close": 167.24,
+   "pct": 0.5441
+  },
+  {
+   "ex_date": "2020-03-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.91,
+   "source": "yahoo",
+   "close": 148.01,
+   "pct": 0.6148
+  },
+  {
+   "ex_date": "2020-06-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.91,
+   "source": "yahoo",
+   "close": 156.04,
+   "pct": 0.5832
+  },
+  {
+   "ex_date": "2020-09-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.91,
+   "source": "yahoo",
+   "close": 137.26,
+   "pct": 0.663
+  },
+  {
+   "ex_date": "2020-12-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.93,
+   "source": "yahoo",
+   "close": 173.84,
+   "pct": 0.535
+  },
+  {
+   "ex_date": "2021-03-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.93,
+   "source": "yahoo",
+   "close": 182.07,
+   "pct": 0.5108
+  },
+  {
+   "ex_date": "2021-06-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.93,
+   "source": "yahoo",
+   "close": 198.19,
+   "pct": 0.4692
+  },
+  {
+   "ex_date": "2021-09-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.93,
+   "source": "yahoo",
+   "close": 205.13,
+   "pct": 0.4534
+  },
+  {
+   "ex_date": "2021-12-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.04,
+   "source": "yahoo",
+   "close": 234.3,
+   "pct": 0.4439
+  },
+  {
+   "ex_date": "2022-03-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.04,
+   "source": "yahoo",
+   "close": 209.7,
+   "pct": 0.4959
+  },
+  {
+   "ex_date": "2022-06-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.04,
+   "source": "yahoo",
+   "close": 219.99,
+   "pct": 0.4727
+  },
+  {
+   "ex_date": "2022-09-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.04,
+   "source": "yahoo",
+   "close": 241.72,
+   "pct": 0.4302
+  },
+  {
+   "ex_date": "2022-12-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.25,
+   "source": "yahoo",
+   "close": 259.22,
+   "pct": 0.4822
+  },
+  {
+   "ex_date": "2023-03-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.25,
+   "source": "yahoo",
+   "close": 221.97,
+   "pct": 0.5631
+  },
+  {
+   "ex_date": "2023-06-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.25,
+   "source": "yahoo",
+   "close": 216.47,
+   "pct": 0.5774
+  },
+  {
+   "ex_date": "2023-09-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.25,
+   "source": "yahoo",
+   "close": 251.05,
+   "pct": 0.4979
+  },
+  {
+   "ex_date": "2023-12-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.4,
+   "source": "yahoo",
+   "close": 232.35,
+   "pct": 0.6025
+  },
+  {
+   "ex_date": "2024-03-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.4,
+   "source": "yahoo",
+   "close": 243.76,
+   "pct": 0.5743
+  },
+  {
+   "ex_date": "2024-06-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.4,
+   "source": "yahoo",
+   "close": 244.27,
+   "pct": 0.5731
+  },
+  {
+   "ex_date": "2024-09-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.4,
+   "source": "yahoo",
+   "close": 278.4,
+   "pct": 0.5029
+  },
+  {
+   "ex_date": "2024-12-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.54,
+   "source": "yahoo",
+   "close": 298.75,
+   "pct": 0.5155
+  },
+  {
+   "ex_date": "2025-03-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.54,
+   "source": "yahoo",
+   "close": 290.55,
+   "pct": 0.53
+  },
+  {
+   "ex_date": "2025-06-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.54,
+   "source": "yahoo",
+   "close": 309.75,
+   "pct": 0.4972
+  },
+  {
+   "ex_date": "2025-09-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.54,
+   "source": "yahoo",
+   "close": 298.03,
+   "pct": 0.5167
+  },
+  {
+   "ex_date": "2025-12-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.7,
+   "source": "yahoo",
+   "close": 264.69,
+   "pct": 0.6423
+  },
+  {
+   "ex_date": "2026-03-13",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.7,
+   "source": "yahoo",
+   "close": 207.45,
+   "pct": 0.8195
+  },
+  {
+   "ex_date": "2026-06-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.7,
+   "source": "yahoo",
+   "close": 225.77,
+   "pct": 0.753
+  },
+  {
+   "ex_date": "2026-09-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 1.7,
+   "source": "yahoo",
+   "close": 267.33,
+   "pct": 0.6359
+  }
+ ]
+}

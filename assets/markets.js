@@ -1,20 +1,21 @@
 const GLOBALX_DISTRIBUTIONS = "https://www.globalxetfs.com/funds/qyld#distributions";
 
 shell("markets").then(async () => {
-  const markets = await fetch("data/markets.json").then((r) => r.json()).catch(() => ({ series: {} }));
+  const [markets, dividends] = await Promise.all([
+    fetch("data/markets.json").then((r) => r.json()).catch(() => ({ series: {} })),
+    fetch("data/markets/QYLD_dividends.json").then((r) => r.ok ? r.json() : null).catch(() => null),
+  ]);
   await Promise.all([
     mountMarket("qyld-root", "QYLD", {
       defaultRange: "6M",
       defaultInterval: "daily",
+      dividends: dividends?.dividends || [],
     }, markets),
     mountMarket("es-root", "ES=F", {
       defaultRange: "1M",
       defaultInterval: "5m",
     }, markets),
   ]);
-  const dividends = await fetch("data/markets/QYLD_dividends.json")
-    .then((r) => r.ok ? r.json() : null)
-    .catch(() => null);
   renderDividends(dividends, markets?.series?.QYLD);
 });
 
@@ -58,6 +59,7 @@ async function mountMarket(rootId, ticker, options, markets) {
     intraday,
     defaultRange: options.defaultRange,
     defaultInterval: options.defaultInterval,
+    dividends: options.dividends || [],
     intradayEligible: true,
   });
 }

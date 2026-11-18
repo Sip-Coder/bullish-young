@@ -1,0 +1,17 @@
+{
+ "generated_at": "2026-11-18T07:22:55+00:00",
+ "ticker": "TTWO",
+ "source": "yahoo",
+ "dividends": [
+  {
+   "ex_date": "2008-09-25",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.001,
+   "source": "yahoo",
+   "close": 16.2,
+   "pct": 0.0062
+  }
+ ]
+}

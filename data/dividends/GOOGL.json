@@ -1,0 +1,107 @@
+{
+ "generated_at": "2026-11-18T07:22:55+00:00",
+ "ticker": "GOOGL",
+ "source": "yahoo",
+ "dividends": [
+  {
+   "ex_date": "2024-06-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2,
+   "source": "yahoo",
+   "close": 174.46,
+   "pct": 0.1146
+  },
+  {
+   "ex_date": "2024-09-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2,
+   "source": "yahoo",
+   "close": 150.92,
+   "pct": 0.1325
+  },
+  {
+   "ex_date": "2024-12-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2,
+   "source": "yahoo",
+   "close": 174.71,
+   "pct": 0.1145
+  },
+  {
+   "ex_date": "2025-03-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.2,
+   "source": "yahoo",
+   "close": 173.86,
+   "pct": 0.115
+  },
+  {
+   "ex_date": "2025-06-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.21,
+   "source": "yahoo",
+   "close": 173.68,
+   "pct": 0.1209
+  },
+  {
+   "ex_date": "2025-09-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.21,
+   "source": "yahoo",
+   "close": 235.0,
+   "pct": 0.0894
+  },
+  {
+   "ex_date": "2025-12-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.21,
+   "source": "yahoo",
+   "close": 321.27,
+   "pct": 0.0654
+  },
+  {
+   "ex_date": "2026-03-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.21,
+   "source": "yahoo",
+   "close": 298.52,
+   "pct": 0.0703
+  },
+  {
+   "ex_date": "2026-06-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.22,
+   "source": "yahoo",
+   "close": 368.53,
+   "pct": 0.0597
+  },
+  {
+   "ex_date": "2026-09-04",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.22,
+   "source": "yahoo",
+   "close": 342.48,
+   "pct": 0.0642
+  }
+ ]
+}

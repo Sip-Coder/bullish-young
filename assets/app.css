@@ -76,3 +76,12 @@
 .dividend-tooltip .tip-row{display:flex;justify-content:space-between;gap:16px;font-variant-numeric:tabular-nums;padding:2px 0}
 .dividend-tooltip .tip-row span:first-child{color:#c8cdd3}
 .es-lag-note{margin:2px 0 0}
+
+.div-marker-overlay{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+.div-marker{position:absolute;width:16px;height:16px;margin:0;padding:0;transform:translate(-50%,-50%);background:#2f6fe0;color:#fff;border:0;border-radius:2px;font:700 11px/16px Inter,ui-sans-serif,system-ui,sans-serif;text-align:center;cursor:pointer;pointer-events:auto;user-select:none;-webkit-user-select:none;box-shadow:0 0 0 1px rgba(255,255,255,.4)}
+.div-marker-count{position:absolute;top:-6px;right:-7px;background:#1b3f96;color:#fff;border-radius:7px;min-width:12px;padding:0 3px;font:700 9px/12px Inter,ui-sans-serif,system-ui,sans-serif}
+.div-marker-tip{position:fixed;z-index:50;min-width:210px;max-width:280px;background:#111;color:#fff;border-radius:4px;padding:10px 12px;font-size:12px;line-height:1.4;box-shadow:0 8px 24px rgba(0,0,0,.28);pointer-events:none}
+.div-marker-tip .tip-title{font-weight:750;margin-bottom:6px}
+.div-marker-tip .tip-row{display:flex;justify-content:space-between;gap:16px;font-variant-numeric:tabular-nums;padding:2px 0}
+.div-marker-tip .tip-row span:first-child{color:#c8cdd3}
+.div-marker-tip .tip-split{border:0;border-top:1px solid #444;margin:8px 0}

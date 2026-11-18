@@ -1,0 +1,207 @@
+{
+ "generated_at": "2026-11-18T07:22:55+00:00",
+ "ticker": "CEG",
+ "source": "yahoo",
+ "dividends": [
+  {
+   "ex_date": "2022-02-24",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.141,
+   "source": "yahoo",
+   "close": 43.09,
+   "pct": 0.3272
+  },
+  {
+   "ex_date": "2022-05-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.141,
+   "source": "yahoo",
+   "close": 57.37,
+   "pct": 0.2458
+  },
+  {
+   "ex_date": "2022-08-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.141,
+   "source": "yahoo",
+   "close": 78.83,
+   "pct": 0.1789
+  },
+  {
+   "ex_date": "2022-11-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.141,
+   "source": "yahoo",
+   "close": 92.31,
+   "pct": 0.1527
+  },
+  {
+   "ex_date": "2023-02-24",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.282,
+   "source": "yahoo",
+   "close": 79.22,
+   "pct": 0.356
+  },
+  {
+   "ex_date": "2023-05-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.282,
+   "source": "yahoo",
+   "close": 79.46,
+   "pct": 0.3549
+  },
+  {
+   "ex_date": "2023-08-11",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.282,
+   "source": "yahoo",
+   "close": 105.72,
+   "pct": 0.2667
+  },
+  {
+   "ex_date": "2023-11-16",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.282,
+   "source": "yahoo",
+   "close": 121.99,
+   "pct": 0.2312
+  },
+  {
+   "ex_date": "2024-03-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.353,
+   "source": "yahoo",
+   "close": 179.98,
+   "pct": 0.1961
+  },
+  {
+   "ex_date": "2024-05-29",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.353,
+   "source": "yahoo",
+   "close": 231.27,
+   "pct": 0.1526
+  },
+  {
+   "ex_date": "2024-08-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.353,
+   "source": "yahoo",
+   "close": 189.87,
+   "pct": 0.1859
+  },
+  {
+   "ex_date": "2024-11-15",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.353,
+   "source": "yahoo",
+   "close": 225.38,
+   "pct": 0.1566
+  },
+  {
+   "ex_date": "2025-03-07",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.388,
+   "source": "yahoo",
+   "close": 207.69,
+   "pct": 0.1868
+  },
+  {
+   "ex_date": "2025-05-16",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.388,
+   "source": "yahoo",
+   "close": 284.4,
+   "pct": 0.1364
+  },
+  {
+   "ex_date": "2025-08-18",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.388,
+   "source": "yahoo",
+   "close": 322.23,
+   "pct": 0.1204
+  },
+  {
+   "ex_date": "2025-11-17",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.388,
+   "source": "yahoo",
+   "close": 338.52,
+   "pct": 0.1146
+  },
+  {
+   "ex_date": "2026-03-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.427,
+   "source": "yahoo",
+   "close": 319.06,
+   "pct": 0.1338
+  },
+  {
+   "ex_date": "2026-05-15",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.427,
+   "source": "yahoo",
+   "close": 275.26,
+   "pct": 0.1551
+  },
+  {
+   "ex_date": "2026-08-18",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.427,
+   "source": "yahoo",
+   "close": 278.2,
+   "pct": 0.1535
+  },
+  {
+   "ex_date": "2026-11-16",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.427,
+   "source": "yahoo",
+   "close": 280.2,
+   "pct": 0.1524
+  }
+ ]
+}

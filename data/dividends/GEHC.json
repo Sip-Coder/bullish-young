@@ -1,0 +1,157 @@
+{
+ "generated_at": "2026-11-18T07:22:55+00:00",
+ "ticker": "GEHC",
+ "source": "yahoo",
+ "dividends": [
+  {
+   "ex_date": "2023-05-22",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.03,
+   "source": "yahoo",
+   "close": 79.34,
+   "pct": 0.0378
+  },
+  {
+   "ex_date": "2023-07-20",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.03,
+   "source": "yahoo",
+   "close": 81.75,
+   "pct": 0.0367
+  },
+  {
+   "ex_date": "2023-10-19",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.03,
+   "source": "yahoo",
+   "close": 65.23,
+   "pct": 0.046
+  },
+  {
+   "ex_date": "2024-01-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.03,
+   "source": "yahoo",
+   "close": 76.25,
+   "pct": 0.0393
+  },
+  {
+   "ex_date": "2024-04-18",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.03,
+   "source": "yahoo",
+   "close": 85.19,
+   "pct": 0.0352
+  },
+  {
+   "ex_date": "2024-07-19",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.03,
+   "source": "yahoo",
+   "close": 80.98,
+   "pct": 0.037
+  },
+  {
+   "ex_date": "2024-10-18",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.03,
+   "source": "yahoo",
+   "close": 90.82,
+   "pct": 0.033
+  },
+  {
+   "ex_date": "2025-01-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.035,
+   "source": "yahoo",
+   "close": 85.36,
+   "pct": 0.041
+  },
+  {
+   "ex_date": "2025-04-25",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.035,
+   "source": "yahoo",
+   "close": 67.08,
+   "pct": 0.0522
+  },
+  {
+   "ex_date": "2025-07-25",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.035,
+   "source": "yahoo",
+   "close": 76.77,
+   "pct": 0.0456
+  },
+  {
+   "ex_date": "2025-10-24",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.035,
+   "source": "yahoo",
+   "close": 77.26,
+   "pct": 0.0453
+  },
+  {
+   "ex_date": "2026-01-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.035,
+   "source": "yahoo",
+   "close": 88.16,
+   "pct": 0.0397
+  },
+  {
+   "ex_date": "2026-04-02",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.035,
+   "source": "yahoo",
+   "close": 71.98,
+   "pct": 0.0486
+  },
+  {
+   "ex_date": "2026-07-24",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.035,
+   "source": "yahoo",
+   "close": 61.99,
+   "pct": 0.0565
+  },
+  {
+   "ex_date": "2026-10-23",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.04,
+   "source": "yahoo",
+   "close": 71.42,
+   "pct": 0.056
+  }
+ ]
+}

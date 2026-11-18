@@ -56,6 +56,56 @@
       : t && `${t.year}-${String(t.month).padStart(2, "0")}-${String(t.day).padStart(2, "0")}`;
   }
 
+
+  function dayFromTime(t) {
+    if (typeof t === "string") return t.slice(0, 10);
+    if (typeof t === "number") return new Date(t * 1000).toISOString().slice(0, 10);
+    if (t && typeof t === "object" && t.year)
+      return `${t.year}-${String(t.month).padStart(2, "0")}-${String(t.day).padStart(2, "0")}`;
+    return null;
+  }
+  function datePlus(iso, days) {
+    let d = new Date(`${iso}T00:00:00Z`);
+    d.setUTCDate(d.getUTCDate() + days);
+    return d.toISOString().slice(0, 10);
+  }
+  function monthPlus(iso, months) {
+    let d = new Date(`${iso}T00:00:00Z`);
+    d.setUTCMonth(d.getUTCMonth() + months);
+    return d.toISOString().slice(0, 10);
+  }
+  function fmtDivDate(iso) {
+    if (!iso || iso === "N/A") return "—";
+    let [y, m, d] = String(iso).split("-");
+    if (!y || !m || !d) return iso;
+    const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    return `${months[Number(m) - 1]} ${Number(d)}, ${y}`;
+  }
+  function fmtDivAmount(value) {
+    if (value == null || !Number.isFinite(+value)) return "—";
+    let n = Number(value), fixed = n.toFixed(4);
+    if (fixed.endsWith("00")) return `$${n.toFixed(2)}`;
+    return `$${fixed}`;
+  }
+  function fmtDivPct(value) {
+    if (value == null || !Number.isFinite(+value)) return "—";
+    return `${Number(value).toFixed(2)}%`;
+  }
+  function normalizeDividends(list) {
+    return (list || [])
+      .filter((row) => row && row.ex_date && row.ex_date !== "N/A" && Number.isFinite(+row.amount))
+      .map((row) => ({
+        ex_date: row.ex_date,
+        record_date: row.record_date || null,
+        payable_date: row.payable_date || row.pay_date || null,
+        declared_date: row.declared_date || null,
+        amount: +row.amount,
+        pct: row.pct != null && Number.isFinite(+row.pct) ? +row.pct : null,
+        close: row.close != null ? +row.close : null,
+      }))
+      .sort((a, b) => a.ex_date.localeCompare(b.ex_date));
+  }
+
   function mount(root, options) {
     const q = (sel) => root.querySelector(sel);
     const qa = (sel) => [...root.querySelectorAll(sel)];
@@ -64,11 +114,13 @@
     let longData = options.weekly || null;
     let intradayData = options.intraday || {};
     let data = dailyData;
+    let dividendRows = normalizeDividends(options.dividends);
     let type = "candles";
     let selectedRange = options.defaultRange || "6M";
     let selectedInterval = options.defaultInterval || "daily";
     let chart, mainSeries, s50, s200, volume, brooksEma, brooksResult = null;
     const drawingsRef = { inst: null };
+    let divTip = null;
     const state = {};
 
     const brooksOn = () => Boolean(q(".brooks-toggle input, #brooks")?.checked);
@@ -228,14 +280,14 @@
         button.classList.toggle("active", on);
         button.setAttribute("aria-pressed", String(on));
       }
-      drawingsRef.inst?.sync();
+      syncOverlays();
     }
     function applyVisibleRange() {
       if (!data.length) return;
       let to = data.at(-1).time, from = rangeStart(selectedRange, to);
       if (from == null || from < data[0].time) from = data[0].time;
       chart.timeScale().setVisibleRange({ from, to });
-      drawingsRef.inst?.sync();
+      syncOverlays();
     }
     function setIntervalValue(interval) {
       selectedInterval = interval;
@@ -248,7 +300,7 @@
       setPriceData();
       updateAvailability();
       applyVisibleRange();
-      drawingsRef.inst?.sync();
+      syncOverlays();
     }
     function setRange(range, applyLogDefault = true) {
       selectedRange = range;
@@ -279,12 +331,151 @@
       qa("[data-type]").forEach((b) => b.classList.toggle("active", b.dataset.type === t));
       applyBrooks();
       setRange(selectedRange, false);
-      drawingsRef.inst?.sync();
+      syncOverlays();
     }
     function toggle(btn, series) {
       let on = !btn.classList.contains("active");
       btn.classList.toggle("active", on);
       series.applyOptions({ visible: on });
+    }
+
+
+    function periodEnd(bar, next) {
+      if (next) return dayFromTime(next.time);
+      let start = dayFromTime(bar.time);
+      if (!start) return null;
+      if (selectedInterval === "weekly") return datePlus(start, 7);
+      if (selectedInterval === "monthly") return monthPlus(start, 1);
+      if (selectedInterval === "quarterly") return monthPlus(start, 3);
+      return datePlus(start, 1);
+    }
+    function findBarForEx(exDate) {
+      if (!data.length || !exDate) return null;
+      if (typeof data[0].time === "number") {
+        return data.find((bar) => dayFromTime(bar.time) === exDate) || null;
+      }
+      if (selectedInterval === "daily") {
+        return data.find((bar) => bar.time === exDate) || data.find((bar) => bar.time >= exDate) || null;
+      }
+      for (let i = 0; i < data.length; i++) {
+        let start = data[i].time, end = periodEnd(data[i], data[i + 1]);
+        if (start <= exDate && (!end || exDate < end)) return data[i];
+      }
+      return null;
+    }
+    function hideDivTip() {
+      if (divTip) divTip.hidden = true;
+    }
+    function divTipHtml(rows) {
+      return rows.map((row, i) => `
+        <div class="tip-title">${i === 0 ? "Dividend" : "Dividend"}</div>
+        <div class="tip-row"><span>Ex Div Date</span><span>${fmtDivDate(row.ex_date)}</span></div>
+        <div class="tip-row"><span>Record Date</span><span>${fmtDivDate(row.record_date)}</span></div>
+        <div class="tip-row"><span>Pay Date</span><span>${fmtDivDate(row.payable_date)}</span></div>
+        <div class="tip-row"><span>Declared Date</span><span>${fmtDivDate(row.declared_date)}</span></div>
+        <div class="tip-row"><span>Amount</span><span>${fmtDivAmount(row.amount)}</span></div>
+        <div class="tip-row"><span>Yield</span><span>${fmtDivPct(row.pct)}</span></div>
+      `).join(rows.length > 1 ? '<hr class="tip-split">' : "");
+    }
+    function placeDivTip(event, rows, anchor) {
+      const tip = divTip;
+      if (!tip) return;
+      tip.innerHTML = divTipHtml(rows);
+      tip.hidden = false;
+      const pad = 8;
+      let x, y;
+      if (anchor) {
+        const rect = anchor.getBoundingClientRect();
+        x = rect.left + rect.width / 2 + 10;
+        y = rect.top - 8;
+      } else {
+        x = event.clientX + 12;
+        y = event.clientY + 12;
+      }
+      // Temporarily visible to measure
+      const w = tip.offsetWidth, h = tip.offsetHeight;
+      if (anchor) y = y - h; // prefer above the marker (Fidelity-style)
+      if (x + w > window.innerWidth - pad) x = (anchor ? anchor.getBoundingClientRect().left : event.clientX) - w - 8;
+      if (y < pad) y = (anchor ? anchor.getBoundingClientRect().bottom + 8 : event.clientY + 12);
+      if (y + h > window.innerHeight - pad) y = window.innerHeight - h - pad;
+      tip.style.left = `${Math.max(pad, x)}px`;
+      tip.style.top = `${Math.max(pad, y)}px`;
+    }
+    function syncOverlays() {
+      drawingsRef.inst?.sync();
+      syncDividendMarkers();
+    }
+    function syncDividendMarkers() {
+      const overlay = q(".div-marker-overlay");
+      if (!overlay || !chart) return;
+      hideDivTip();
+      overlay.replaceChildren();
+      if (!dividendRows.length || !data.length) return;
+      const box = overlay.parentElement;
+      const height = box.clientHeight;
+      const width = box.clientWidth;
+      // Volume occupies the bottom 20% of the plot; the time axis is ~26px.
+      const y = Math.round((height - 26) * 0.80 - 4);
+      const groups = new Map();
+      dividendRows.forEach((row) => {
+        const bar = findBarForEx(row.ex_date);
+        if (!bar) return;
+        const x = chart.timeScale().timeToCoordinate(bar.time);
+        if (x == null || !Number.isFinite(x) || x < -16 || x > width + 16) return;
+        const key = String(bar.time);
+        const group = groups.get(key) || { x, rows: [] };
+        group.rows.push(row);
+        group.x = x;
+        groups.set(key, group);
+      });
+      // Cluster markers that would overlap
+      const clustered = [...groups.values()].sort((a, b) => a.x - b.x);
+      const merged = [];
+      clustered.forEach((group) => {
+        const prev = merged.at(-1);
+        if (prev && Math.abs(group.x - prev.x) < 14) {
+          prev.rows = prev.rows.concat(group.rows);
+          prev.x = (prev.x * (prev.rows.length - group.rows.length) + group.x * group.rows.length) / prev.rows.length;
+        } else {
+          merged.push({ x: group.x, rows: group.rows.slice() });
+        }
+      });
+      merged.forEach((group) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "div-marker";
+        btn.textContent = "D";
+        btn.style.left = `${Math.round(group.x)}px`;
+        btn.style.top = `${y}px`;
+        const label = group.rows.length > 1
+          ? `${group.rows.length} dividends`
+          : `Dividend ${fmtDivDate(group.rows[0].ex_date)} ${fmtDivAmount(group.rows[0].amount)}`;
+        btn.setAttribute("aria-label", label);
+        if (group.rows.length > 1) {
+          const count = document.createElement("span");
+          count.className = "div-marker-count";
+          count.textContent = String(group.rows.length);
+          btn.append(count);
+        }
+        const show = (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          placeDivTip(event, group.rows, btn);
+        };
+        btn.addEventListener("pointerdown", (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+        });
+        btn.addEventListener("pointerup", (event) => event.stopPropagation());
+        btn.addEventListener("click", show);
+        btn.addEventListener("pointerenter", (event) => {
+          if (event.pointerType === "mouse") placeDivTip(event, group.rows, btn);
+        });
+        btn.addEventListener("pointerleave", (event) => {
+          if (event.pointerType === "mouse") hideDivTip();
+        });
+        overlay.append(btn);
+      });
     }
 
     const el = q("#chart, .chart-el");
@@ -316,6 +507,23 @@
 
     const box = q(".chart-box");
     const toolbar = q(".drawing-toolbar");
+    if (box && dividendRows.length) {
+      let overlay = box.querySelector(".div-marker-overlay");
+      if (!overlay) {
+        overlay = document.createElement("div");
+        overlay.className = "div-marker-overlay";
+        overlay.setAttribute("aria-hidden", "false");
+        box.append(overlay);
+      }
+      divTip = document.querySelector(`.div-marker-tip[data-ticker="${CSS.escape(ticker)}"]`);
+      if (!divTip) {
+        divTip = document.createElement("div");
+        divTip.className = "div-marker-tip";
+        divTip.dataset.ticker = ticker;
+        divTip.hidden = true;
+        document.body.append(divTip);
+      }
+    }
     if (window.createDrawings && box && toolbar) {
       drawingsRef.inst = window.createDrawings({
         getChart: () => chart,
@@ -328,8 +536,16 @@
     }
     new ResizeObserver(() => {
       chart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
-      drawingsRef.inst?.sync();
+      syncOverlays();
     }).observe(el);
+    chart.timeScale().subscribeVisibleTimeRangeChange(() => syncDividendMarkers());
+    document.addEventListener("pointerdown", (event) => {
+      if (!event.target.closest(".div-marker") && !event.target.closest(".div-marker-tip")) hideDivTip();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") hideDivTip();
+    });
+    requestAnimationFrame(() => syncDividendMarkers());
     chart.subscribeCrosshairMove((p) => {
       let d = p.seriesData.get(mainSeries),
         base = d

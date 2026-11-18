@@ -1,0 +1,117 @@
+{
+ "generated_at": "2026-11-18T07:22:55+00:00",
+ "ticker": "META",
+ "source": "yahoo",
+ "dividends": [
+  {
+   "ex_date": "2024-02-21",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.5,
+   "source": "yahoo",
+   "close": 471.75,
+   "pct": 0.106
+  },
+  {
+   "ex_date": "2024-06-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.5,
+   "source": "yahoo",
+   "close": 504.1,
+   "pct": 0.0992
+  },
+  {
+   "ex_date": "2024-09-16",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.5,
+   "source": "yahoo",
+   "close": 524.62,
+   "pct": 0.0953
+  },
+  {
+   "ex_date": "2024-12-16",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.5,
+   "source": "yahoo",
+   "close": 620.35,
+   "pct": 0.0806
+  },
+  {
+   "ex_date": "2025-03-14",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.525,
+   "source": "yahoo",
+   "close": 590.64,
+   "pct": 0.0889
+  },
+  {
+   "ex_date": "2025-06-16",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.525,
+   "source": "yahoo",
+   "close": 682.87,
+   "pct": 0.0769
+  },
+  {
+   "ex_date": "2025-09-22",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.525,
+   "source": "yahoo",
+   "close": 778.38,
+   "pct": 0.0674
+  },
+  {
+   "ex_date": "2025-12-15",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.525,
+   "source": "yahoo",
+   "close": 644.23,
+   "pct": 0.0815
+  },
+  {
+   "ex_date": "2026-03-16",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.525,
+   "source": "yahoo",
+   "close": 613.71,
+   "pct": 0.0855
+  },
+  {
+   "ex_date": "2026-06-15",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.525,
+   "source": "yahoo",
+   "close": 566.98,
+   "pct": 0.0926
+  },
+  {
+   "ex_date": "2026-09-21",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.525,
+   "source": "yahoo",
+   "close": 665.75,
+   "pct": 0.0789
+  }
+ ]
+}

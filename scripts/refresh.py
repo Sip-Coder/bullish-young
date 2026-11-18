@@ -35,6 +35,7 @@ NASDAQ_DIVIDENDS_URL = "https://api.nasdaq.com/api/quote/QYLD/dividends?assetcla
 GLOBALX_FUND_URL = "https://www.globalxetfs.com/funds/qyld"
 GLOBALX_DISTRIBUTIONS = "https://www.globalxetfs.com/funds/qyld#distributions"
 MARKETS_DIR = os.path.join(D, "markets")
+DIVIDENDS_DIR = os.path.join(D, "dividends")
 
 def http_get(url, headers, timeout=20):
     req = urllib.request.Request(url, headers=headers)
@@ -375,6 +376,25 @@ def pull_markets():
         print(f"qyld dividends summary failed: {exc}")
     return payload
 
+
+def pull_stock_dividends(ticker):
+    """Yahoo dividend history for stock pages. Soft-fail; never breaks the hourly job."""
+    path = os.path.join(DIVIDENDS_DIR, f"{ticker}.json")
+    previous = load_json(path, {})
+    try:
+        rows = fetch_yahoo_dividends(ticker)
+        try:
+            h = yf.Ticker(ticker.replace(".", "-")).history(period="max", interval="1d", auto_adjust=False)
+            h = h.dropna(subset=["Close"]) if h is not None and not h.empty else None
+            closes = close_lookup(markets_rows(h)) if h is not None and len(h) else {}
+        except Exception as exc:
+            print(f"dividend closes {ticker} failed: {exc}")
+            closes = {}
+        rows = attach_closes(rows, closes) if closes else rows
+        return ticker, {"generated_at": NOW, "ticker": ticker, "source": "yahoo", "dividends": rows}, None
+    except Exception as exc:
+        return ticker, previous or None, str(exc)
+
 def write_json(path, value):
     with open(path,"w",encoding="utf-8") as f: json.dump(value,f,indent=1,allow_nan=False); f.write("\n")
 
@@ -422,4 +442,18 @@ write_json(os.path.join(D,"basket.json"),{"generated_at":NOW,"as_of":NOW,"total"
  "cash_reserve":BASKET["cash_reserve"],"positions":positions})
 markets = pull_markets()
 write_json(os.path.join(D,"markets.json"), markets)
-print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}; long history updates: {len(long_updates)}; intraday files written: {len(intraday_updates)}; market series: {list(markets.get('series', {}))}")
+# Stock-page dividend markers (Yahoo ex-date + amount). Failures must not fail the job.
+div_written = 0
+try:
+    os.makedirs(DIVIDENDS_DIR, exist_ok=True)
+    with ThreadPoolExecutor(max_workers=4) as executor:
+        div_results = list(executor.map(pull_stock_dividends, tickers))
+    for ticker, payload, error in div_results:
+        if error:
+            print(f"dividends {ticker} failed: {error}")
+        if payload and payload.get("dividends"):
+            write_json(os.path.join(DIVIDENDS_DIR, f"{ticker}.json"), payload)
+            div_written += 1
+except Exception as exc:
+    print(f"stock dividends refresh failed: {exc}")
+print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}; long history updates: {len(long_updates)}; intraday files written: {len(intraday_updates)}; market series: {list(markets.get('series', {}))}; dividend files: {div_written}")
