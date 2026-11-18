@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T07:31:24+00:00",
+ "generated_at": "2026-11-18T07:50:34+00:00",
  "ticker": "PYPL",
  "source": "nasdaq",
  "dividends": [
@@ -9,7 +9,9 @@
    "payable_date": "2025-12-10",
    "declared_date": "2025-10-27",
    "amount": 0.14,
+   "amount_adj": 0.14,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 60.7,
    "pct": 0.2306
   },
@@ -19,7 +21,9 @@
    "payable_date": "2026-03-25",
    "declared_date": "2026-02-02",
    "amount": 0.14,
+   "amount_adj": 0.14,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 46.38,
    "pct": 0.3019
   },
@@ -29,7 +33,9 @@
    "payable_date": "2026-06-25",
    "declared_date": "2026-05-04",
    "amount": 0.14,
+   "amount_adj": 0.14,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 42.61,
    "pct": 0.3286
   },
@@ -39,7 +45,9 @@
    "payable_date": "2026-09-25",
    "declared_date": "2026-07-27",
    "amount": 0.14,
+   "amount_adj": 0.14,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 56.82,
    "pct": 0.2464
   },
@@ -49,7 +57,11 @@
    "payable_date": "2026-12-24",
    "declared_date": "2026-10-26",
    "amount": 0.14,
-   "source": "nasdaq"
+   "type": "Cash",
+   "source": "nasdaq",
+   "close": 58.11,
+   "pct": 0.2409,
+   "amount_adj": 0.14
   }
  ]
 }

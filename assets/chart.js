@@ -100,8 +100,11 @@
         payable_date: row.payable_date || row.pay_date || null,
         declared_date: row.declared_date || null,
         amount: +row.amount,
+        amount_adj: row.amount_adj != null && Number.isFinite(+row.amount_adj) ? +row.amount_adj : null,
         pct: row.pct != null && Number.isFinite(+row.pct) ? +row.pct : null,
         close: row.close != null ? +row.close : null,
+        type: row.type || null,
+        special: !!row.special,
       }))
       .sort((a, b) => a.ex_date.localeCompare(b.ex_date));
   }
@@ -366,16 +369,32 @@
     function hideDivTip() {
       if (divTip) divTip.hidden = true;
     }
+    function amountsDiffer(paid, adj) {
+      if (paid == null || adj == null || !Number.isFinite(+paid) || !Number.isFinite(+adj)) return false;
+      return Math.abs(Number(paid) - Number(adj)) >= 0.00005;
+    }
     function divTipHtml(rows) {
-      return rows.map((row, i) => `
-        <div class="tip-title">${i === 0 ? "Dividend" : "Dividend"}</div>
+      return rows.map((row) => {
+        const typeLabel = row.special && row.type && String(row.type).toLowerCase() !== "cash" ? row.type : null;
+        const title = typeLabel ? `Dividend (${typeLabel})` : "Dividend";
+        const adjRow = amountsDiffer(row.amount, row.amount_adj)
+          ? `<div class="tip-row"><span>Split-adjusted</span><span>${fmtDivAmount(row.amount_adj)}</span></div>`
+          : "";
+        const typeRow = typeLabel
+          ? `<div class="tip-row"><span>Type</span><span>${typeLabel}</span></div>`
+          : "";
+        return `
+        <div class="tip-title">${title}</div>
+        ${typeRow}
         <div class="tip-row"><span>Ex Div Date</span><span>${fmtDivDate(row.ex_date)}</span></div>
         <div class="tip-row"><span>Record Date</span><span>${fmtDivDate(row.record_date)}</span></div>
         <div class="tip-row"><span>Pay Date</span><span>${fmtDivDate(row.payable_date)}</span></div>
         <div class="tip-row"><span>Declared Date</span><span>${fmtDivDate(row.declared_date)}</span></div>
         <div class="tip-row"><span>Amount</span><span>${fmtDivAmount(row.amount)}</span></div>
+        ${adjRow}
         <div class="tip-row"><span>Yield</span><span>${fmtDivPct(row.pct)}</span></div>
-      `).join(rows.length > 1 ? '<hr class="tip-split">' : "");
+      `;
+      }).join(rows.length > 1 ? '<hr class="tip-split">' : "");
     }
     function placeDivTip(event, rows, anchor) {
       const tip = divTip;

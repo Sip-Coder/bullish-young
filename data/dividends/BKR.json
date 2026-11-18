@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T07:31:24+00:00",
+ "generated_at": "2026-11-18T07:50:34+00:00",
  "ticker": "BKR",
  "source": "nasdaq",
  "dividends": [
@@ -9,6 +9,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 16.5,
    "pct": 0.697
@@ -19,6 +20,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 25.75,
    "pct": 0.4466
@@ -29,6 +31,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 15.75,
    "pct": 0.7302
@@ -39,6 +42,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.875,
+   "amount_adj": 0.875,
    "source": "yahoo",
    "close": 17.5,
    "pct": 5.0
@@ -49,6 +53,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 15.5,
    "pct": 0.7419
@@ -59,6 +64,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 13.12,
    "pct": 0.8765
@@ -69,6 +75,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 15.0,
    "pct": 0.7667
@@ -79,6 +86,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 17.62,
    "pct": 0.6527
@@ -89,6 +97,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 19.75,
    "pct": 0.5823
@@ -99,6 +108,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 20.75,
    "pct": 0.5542
@@ -109,6 +119,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 22.88,
    "pct": 0.5026
@@ -119,6 +130,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 25.62,
    "pct": 0.4489
@@ -129,6 +141,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 30.38,
    "pct": 0.3785
@@ -139,6 +152,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 28.75,
    "pct": 0.4
@@ -149,6 +163,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 24.62,
    "pct": 0.4671
@@ -159,6 +174,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 28.5,
    "pct": 0.4035
@@ -169,6 +185,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 25.88,
    "pct": 0.4444
@@ -179,6 +196,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 25.0,
    "pct": 0.46
@@ -189,6 +207,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 20.38,
    "pct": 0.5643
@@ -199,6 +218,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 20.62,
    "pct": 0.5577
@@ -209,6 +229,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 22.25,
    "pct": 0.5169
@@ -219,6 +240,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 23.0,
    "pct": 0.5
@@ -229,6 +251,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 20.88,
    "pct": 0.5508
@@ -239,6 +262,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 26.88,
    "pct": 0.4278
@@ -249,6 +273,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 27.12,
    "pct": 0.424
@@ -259,6 +284,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 22.88,
    "pct": 0.5026
@@ -269,6 +295,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 20.12,
    "pct": 0.5716
@@ -279,6 +306,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 18.38,
    "pct": 0.6257
@@ -289,6 +317,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 21.5,
    "pct": 0.5349
@@ -299,6 +328,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 20.5,
    "pct": 0.561
@@ -309,6 +339,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 18.12,
    "pct": 0.6347
@@ -319,6 +350,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 23.12,
    "pct": 0.4974
@@ -329,6 +361,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 22.0,
    "pct": 0.5227
@@ -339,6 +372,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 19.38,
    "pct": 0.5934
@@ -349,6 +383,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 25.88,
    "pct": 0.4444
@@ -359,6 +394,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 30.25,
    "pct": 0.3802
@@ -369,6 +405,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 29.38,
    "pct": 0.3914
@@ -379,6 +416,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 35.75,
    "pct": 0.3217
@@ -389,6 +427,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 39.0,
    "pct": 0.2949
@@ -399,6 +438,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 34.5,
    "pct": 0.3333
@@ -409,6 +449,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 43.44,
    "pct": 0.2647
@@ -419,6 +460,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 45.0,
    "pct": 0.2556
@@ -429,6 +471,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 40.38,
    "pct": 0.2848
@@ -439,6 +482,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 42.62,
    "pct": 0.2698
@@ -449,6 +493,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 25.06,
    "pct": 0.4589
@@ -459,6 +504,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 22.56,
    "pct": 0.5098
@@ -469,6 +515,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 18.06,
    "pct": 0.6368
@@ -479,6 +526,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 31.75,
    "pct": 0.3622
@@ -489,6 +537,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 32.62,
    "pct": 0.3525
@@ -499,6 +548,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 25.56,
    "pct": 0.4499
@@ -509,6 +559,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 23.5,
    "pct": 0.4894
@@ -519,6 +570,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 33.25,
    "pct": 0.3459
@@ -529,6 +581,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 36.31,
    "pct": 0.3167
@@ -539,6 +592,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 37.12,
    "pct": 0.3098
@@ -549,6 +603,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 41.35,
    "pct": 0.2781
@@ -559,6 +614,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 35.69,
    "pct": 0.3222
@@ -569,6 +625,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 34.32,
    "pct": 0.3351
@@ -579,6 +636,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 35.83,
    "pct": 0.321
@@ -589,6 +647,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 34.28,
    "pct": 0.3355
@@ -599,6 +658,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 38.4,
    "pct": 0.2995
@@ -609,6 +669,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 26.8,
    "pct": 0.4291
@@ -619,6 +680,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 29.49,
    "pct": 0.39
@@ -629,6 +691,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 31.77,
    "pct": 0.362
@@ -639,6 +702,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 28.0,
    "pct": 0.4107
@@ -649,6 +713,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 31.14,
    "pct": 0.3693
@@ -659,6 +724,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 27.1,
    "pct": 0.4244
@@ -669,6 +735,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 35.45,
    "pct": 0.3244
@@ -679,6 +746,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 37.39,
    "pct": 0.3076
@@ -689,6 +757,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 40.21,
    "pct": 0.286
@@ -699,6 +768,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 42.54,
    "pct": 0.2703
@@ -709,6 +779,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 44.24,
    "pct": 0.2599
@@ -719,6 +790,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 44.71,
    "pct": 0.2572
@@ -729,6 +801,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.115,
+   "amount_adj": 0.115,
    "source": "yahoo",
    "close": 58.12,
    "pct": 0.1979
@@ -739,6 +812,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.13,
+   "amount_adj": 0.13,
    "source": "yahoo",
    "close": 57.4,
    "pct": 0.2265
@@ -749,6 +823,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.13,
+   "amount_adj": 0.13,
    "source": "yahoo",
    "close": 74.55,
    "pct": 0.1744
@@ -759,6 +834,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.13,
+   "amount_adj": 0.13,
    "source": "yahoo",
    "close": 85.95,
    "pct": 0.1513
@@ -769,6 +845,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.13,
+   "amount_adj": 0.13,
    "source": "yahoo",
    "close": 79.5,
    "pct": 0.1635
@@ -779,6 +856,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.13,
+   "amount_adj": 0.13,
    "source": "yahoo",
    "close": 67.85,
    "pct": 0.1916
@@ -789,6 +867,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.13,
+   "amount_adj": 0.13,
    "source": "yahoo",
    "close": 69.03,
    "pct": 0.1883
@@ -799,6 +878,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.13,
+   "amount_adj": 0.13,
    "source": "yahoo",
    "close": 82.29,
    "pct": 0.158
@@ -809,6 +889,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.13,
+   "amount_adj": 0.13,
    "source": "yahoo",
    "close": 79.13,
    "pct": 0.1643
@@ -819,6 +900,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.13,
+   "amount_adj": 0.13,
    "source": "yahoo",
    "close": 86.72,
    "pct": 0.1499
@@ -829,6 +911,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.13,
+   "amount_adj": 0.13,
    "source": "yahoo",
    "close": 67.27,
    "pct": 0.1933
@@ -839,6 +922,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.13,
+   "amount_adj": 0.13,
    "source": "yahoo",
    "close": 80.88,
    "pct": 0.1607
@@ -849,6 +933,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 86.12,
    "pct": 0.1742
@@ -859,6 +944,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 32.97,
    "pct": 0.455
@@ -869,6 +955,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 35.51,
    "pct": 0.4224
@@ -879,6 +966,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 36.95,
    "pct": 0.406
@@ -889,6 +977,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 38.93,
    "pct": 0.3853
@@ -899,6 +988,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 42.12,
    "pct": 0.3561
@@ -909,6 +999,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 47.6,
    "pct": 0.3151
@@ -919,6 +1010,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 47.32,
    "pct": 0.317
@@ -929,6 +1021,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 48.88,
    "pct": 0.3069
@@ -939,6 +1032,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 46.48,
    "pct": 0.3227
@@ -949,6 +1043,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 68.42,
    "pct": 0.2192
@@ -959,6 +1054,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 72.22,
    "pct": 0.2077
@@ -969,6 +1065,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 71.97,
    "pct": 0.2084
@@ -979,6 +1076,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 55.13,
    "pct": 0.2721
@@ -989,6 +1087,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 49.58,
    "pct": 0.3025
@@ -999,6 +1098,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 44.41,
    "pct": 0.3378
@@ -1009,6 +1109,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 46.99,
    "pct": 0.3192
@@ -1019,6 +1120,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 41.97,
    "pct": 0.3574
@@ -1029,6 +1131,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 44.95,
    "pct": 0.3337
@@ -1039,6 +1142,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 44.49,
    "pct": 0.3372
@@ -1049,6 +1153,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 47.43,
    "pct": 0.3163
@@ -1059,6 +1164,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 58.37,
    "pct": 0.257
@@ -1069,6 +1175,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 55.81,
    "pct": 0.2688
@@ -1079,6 +1186,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.15,
+   "amount_adj": 0.15,
    "source": "yahoo",
    "close": 69.9,
    "pct": 0.2146
@@ -1089,6 +1197,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 70.81,
    "pct": 0.2401
@@ -1099,6 +1208,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 52.67,
    "pct": 0.3228
@@ -1109,6 +1219,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 62.51,
    "pct": 0.272
@@ -1119,6 +1230,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 64.46,
    "pct": 0.2637
@@ -1129,6 +1241,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 54.72,
    "pct": 0.3107
@@ -1139,6 +1252,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 54.07,
    "pct": 0.3144
@@ -1149,6 +1263,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 44.25,
    "pct": 0.3842
@@ -1159,6 +1274,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 45.57,
    "pct": 0.3731
@@ -1169,6 +1285,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 47.13,
    "pct": 0.3607
@@ -1179,6 +1296,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 54.46,
    "pct": 0.3122
@@ -1189,6 +1307,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 62.58,
    "pct": 0.2717
@@ -1199,6 +1318,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "yahoo",
    "close": 59.05,
    "pct": 0.2879
@@ -1209,6 +1329,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 17.5,
+   "amount_adj": 17.5,
    "source": "yahoo",
    "close": 57.68,
    "pct": 30.3398
@@ -1219,7 +1340,9 @@
    "payable_date": "2017-08-25",
    "declared_date": "2017-08-01",
    "amount": 0.17,
+   "amount_adj": 0.17,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 34.94,
    "pct": 0.4865
   },
@@ -1229,7 +1352,9 @@
    "payable_date": "2017-11-22",
    "declared_date": "2017-10-27",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 31.28,
    "pct": 0.5754
   },
@@ -1239,7 +1364,9 @@
    "payable_date": "2018-02-16",
    "declared_date": "2018-01-23",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 32.45,
    "pct": 0.5547
   },
@@ -1249,7 +1376,9 @@
    "payable_date": "2018-06-01",
    "declared_date": "2018-05-11",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 35.87,
    "pct": 0.5018
   },
@@ -1259,7 +1388,9 @@
    "payable_date": "2018-08-24",
    "declared_date": "2018-08-03",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 34.75,
    "pct": 0.518
   },
@@ -1269,7 +1400,9 @@
    "payable_date": "2018-11-30",
    "declared_date": "2018-11-05",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 23.15,
    "pct": 0.7775
   },
@@ -1279,7 +1412,9 @@
    "payable_date": "2019-02-15",
    "declared_date": "2019-01-24",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 23.57,
    "pct": 0.7637
   },
@@ -1289,7 +1424,9 @@
    "payable_date": "2019-05-31",
    "declared_date": "2019-05-10",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 22.91,
    "pct": 0.7857
   },
@@ -1299,7 +1436,9 @@
    "payable_date": "2019-08-23",
    "declared_date": "2019-08-02",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 23.68,
    "pct": 0.7601
   },
@@ -1309,7 +1448,9 @@
    "payable_date": "2019-11-22",
    "declared_date": "2019-10-31",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 21.95,
    "pct": 0.82
   },
@@ -1319,7 +1460,9 @@
    "payable_date": "2020-02-14",
    "declared_date": "2020-01-23",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 22.35,
    "pct": 0.8054
   },
@@ -1329,7 +1472,9 @@
    "payable_date": "2020-06-05",
    "declared_date": "2020-05-14",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 15.42,
    "pct": 1.1673
   },
@@ -1339,7 +1484,9 @@
    "payable_date": "2020-08-21",
    "declared_date": "2020-07-30",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 16.77,
    "pct": 1.0733
   },
@@ -1349,7 +1496,9 @@
    "payable_date": "2020-11-20",
    "declared_date": "2020-10-29",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 15.73,
    "pct": 1.1443
   },
@@ -1359,7 +1508,9 @@
    "payable_date": "2021-02-19",
    "declared_date": "2021-01-29",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 22.08,
    "pct": 0.8152
   },
@@ -1369,7 +1520,9 @@
    "payable_date": "2021-06-04",
    "declared_date": "2021-05-14",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 25.54,
    "pct": 0.7048
   },
@@ -1379,7 +1532,9 @@
    "payable_date": "2021-08-20",
    "declared_date": "2021-07-30",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 21.19,
    "pct": 0.8495
   },
@@ -1389,7 +1544,9 @@
    "payable_date": "2021-11-12",
    "declared_date": "2021-10-22",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 25.08,
    "pct": 0.7177
   },
@@ -1399,7 +1556,9 @@
    "payable_date": "2022-02-18",
    "declared_date": "2022-01-26",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 26.36,
    "pct": 0.6829
   },
@@ -1409,7 +1568,9 @@
    "payable_date": "2022-06-10",
    "declared_date": "2022-05-17",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 37.1,
    "pct": 0.4852
   },
@@ -1419,7 +1580,9 @@
    "payable_date": "2022-08-19",
    "declared_date": "2022-07-29",
    "amount": 0.18,
+   "amount_adj": 0.18,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 24.06,
    "pct": 0.7481
   },
@@ -1429,7 +1592,9 @@
    "payable_date": "2022-11-18",
    "declared_date": "2022-10-27",
    "amount": 0.19,
+   "amount_adj": 0.19,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 28.29,
    "pct": 0.6716
   },
@@ -1439,7 +1604,9 @@
    "payable_date": "2023-02-17",
    "declared_date": "2023-01-25",
    "amount": 0.19,
+   "amount_adj": 0.19,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 31.39,
    "pct": 0.6053
   },
@@ -1449,7 +1616,9 @@
    "payable_date": "2023-06-09",
    "declared_date": "2023-05-16",
    "amount": 0.19,
+   "amount_adj": 0.19,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 28.0,
    "pct": 0.6786
   },
@@ -1459,7 +1628,9 @@
    "payable_date": "2023-08-18",
    "declared_date": "2023-07-27",
    "amount": 0.2,
+   "amount_adj": 0.2,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 35.52,
    "pct": 0.5631
   },
@@ -1469,7 +1640,9 @@
    "payable_date": "2023-11-17",
    "declared_date": "2023-10-25",
    "amount": 0.2,
+   "amount_adj": 0.2,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 35.51,
    "pct": 0.5632
   },
@@ -1479,7 +1652,9 @@
    "payable_date": "2024-02-23",
    "declared_date": "2024-02-01",
    "amount": 0.21,
+   "amount_adj": 0.21,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 29.06,
    "pct": 0.7226
   },
@@ -1489,7 +1664,9 @@
    "payable_date": "2024-05-16",
    "declared_date": "2024-04-23",
    "amount": 0.21,
+   "amount_adj": 0.21,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 31.93,
    "pct": 0.6577
   },
@@ -1499,7 +1676,9 @@
    "payable_date": "2024-08-16",
    "declared_date": "2024-07-25",
    "amount": 0.21,
+   "amount_adj": 0.21,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 34.51,
    "pct": 0.6085
   },
@@ -1509,7 +1688,9 @@
    "payable_date": "2024-11-14",
    "declared_date": "2024-10-22",
    "amount": 0.21,
+   "amount_adj": 0.21,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 37.85,
    "pct": 0.5548
   },
@@ -1519,7 +1700,9 @@
    "payable_date": "2025-02-21",
    "declared_date": "2025-01-30",
    "amount": 0.23,
+   "amount_adj": 0.23,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 47.41,
    "pct": 0.4851
   },
@@ -1529,7 +1712,9 @@
    "payable_date": "2025-05-16",
    "declared_date": "2025-04-22",
    "amount": 0.23,
+   "amount_adj": 0.23,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 36.75,
    "pct": 0.6259
   },
@@ -1539,7 +1724,9 @@
    "payable_date": "2025-08-15",
    "declared_date": "2025-07-22",
    "amount": 0.23,
+   "amount_adj": 0.23,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 43.75,
    "pct": 0.5257
   },
@@ -1549,7 +1736,9 @@
    "payable_date": "2025-11-14",
    "declared_date": "2025-10-21",
    "amount": 0.23,
+   "amount_adj": 0.23,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 48.64,
    "pct": 0.4729
   },
@@ -1559,7 +1748,9 @@
    "payable_date": "2026-02-27",
    "declared_date": "2026-02-05",
    "amount": 0.23,
+   "amount_adj": 0.23,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 61.2,
    "pct": 0.3758
   },
@@ -1569,7 +1760,9 @@
    "payable_date": "2026-05-15",
    "declared_date": null,
    "amount": 0.23,
+   "amount_adj": 0.23,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 69.01,
    "pct": 0.3333
   },
@@ -1579,7 +1772,9 @@
    "payable_date": "2026-08-17",
    "declared_date": "2026-07-22",
    "amount": 0.23,
+   "amount_adj": 0.23,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 62.75,
    "pct": 0.3665
   },
@@ -1589,7 +1784,9 @@
    "payable_date": "2026-11-20",
    "declared_date": "2026-10-27",
    "amount": 0.23,
+   "amount_adj": 0.23,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 48.45,
    "pct": 0.4747
   }

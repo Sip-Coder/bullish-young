@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T07:31:24+00:00",
+ "generated_at": "2026-11-18T07:50:34+00:00",
  "ticker": "META",
  "source": "nasdaq",
  "dividends": [
@@ -9,7 +9,9 @@
    "payable_date": "2024-03-26",
    "declared_date": "2024-02-01",
    "amount": 0.5,
+   "amount_adj": 0.5,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 471.75,
    "pct": 0.106
   },
@@ -19,7 +21,9 @@
    "payable_date": "2024-06-26",
    "declared_date": "2024-05-30",
    "amount": 0.5,
+   "amount_adj": 0.5,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 504.1,
    "pct": 0.0992
   },
@@ -29,7 +33,9 @@
    "payable_date": "2024-09-26",
    "declared_date": "2024-09-05",
    "amount": 0.5,
+   "amount_adj": 0.5,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 524.62,
    "pct": 0.0953
   },
@@ -39,7 +45,9 @@
    "payable_date": "2024-12-27",
    "declared_date": "2024-12-05",
    "amount": 0.5,
+   "amount_adj": 0.5,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 620.35,
    "pct": 0.0806
   },
@@ -49,7 +57,9 @@
    "payable_date": "2025-03-26",
    "declared_date": "2025-02-13",
    "amount": 0.525,
+   "amount_adj": 0.525,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 590.64,
    "pct": 0.0889
   },
@@ -59,7 +69,9 @@
    "payable_date": "2025-06-26",
    "declared_date": "2025-05-29",
    "amount": 0.525,
+   "amount_adj": 0.525,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 682.87,
    "pct": 0.0769
   },
@@ -69,7 +81,9 @@
    "payable_date": "2025-09-29",
    "declared_date": "2025-09-11",
    "amount": 0.525,
+   "amount_adj": 0.525,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 778.38,
    "pct": 0.0674
   },
@@ -79,7 +93,9 @@
    "payable_date": "2025-12-23",
    "declared_date": "2025-12-03",
    "amount": 0.525,
+   "amount_adj": 0.525,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 644.23,
    "pct": 0.0815
   },
@@ -89,7 +105,9 @@
    "payable_date": "2026-03-26",
    "declared_date": "2026-02-12",
    "amount": 0.525,
+   "amount_adj": 0.525,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 613.71,
    "pct": 0.0855
   },
@@ -99,7 +117,9 @@
    "payable_date": "2026-06-25",
    "declared_date": "2026-05-28",
    "amount": 0.525,
+   "amount_adj": 0.525,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 566.98,
    "pct": 0.0926
   },
@@ -109,7 +129,9 @@
    "payable_date": "2026-09-28",
    "declared_date": "2026-09-10",
    "amount": 0.525,
+   "amount_adj": 0.525,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 665.75,
    "pct": 0.0789
   }

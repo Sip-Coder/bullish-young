@@ -154,9 +154,41 @@ def close_lookup(rows):
     return {row["time"]: row["close"] for row in rows}
 
 def close_before(closes, day):
-    """Unadjusted close on the last trading day strictly before the ex-date."""
+    """Split-adjusted close on the last trading day strictly before the ex-date."""
     earlier = [key for key in closes if key < day]
     return closes[max(earlier)] if earlier else None
+
+def split_lookup(ticker):
+    """Yahoo split factors keyed by the split date (ISO). Soft-fail."""
+    try:
+        series = yf.Ticker(ticker.replace(".", "-")).splits
+    except Exception as exc:
+        print(f"splits {ticker} failed: {exc}")
+        return {}
+    out = {}
+    if series is None:
+        return out
+    for stamp, ratio in series.items():
+        day = stamp.date().isoformat() if hasattr(stamp, "date") else str(stamp)[:10]
+        try:
+            value = float(ratio)
+        except (TypeError, ValueError):
+            continue
+        if day and value > 0 and value != 1:
+            out[day] = value
+    return out
+
+def split_adjust_amount(amount, ex_date, splits):
+    """Convert an as-paid amount into today's split-adjusted terms."""
+    if amount is None:
+        return None
+    factor = 1.0
+    for day, ratio in (splits or {}).items():
+        if day > ex_date and ratio:
+            factor *= ratio
+    if not factor:
+        return amount
+    return round(amount / factor, 4)
 
 _nasdaq_lock = threading.Lock()
 _nasdaq_last = 0.0
@@ -181,39 +213,53 @@ def fetch_nasdaq_dividends(ticker="QYLD", assetclass="etf"):
     rows = (((payload or {}).get("data") or {}).get("dividends") or {}).get("rows") or []
     out = []
     for row in rows:
-        if str(row.get("type") or "").strip().lower() not in ("cash", ""):
-            continue
+        typ = str(row.get("type") or "").strip() or "Cash"
         ex_date = parse_mdy(row.get("exOrEffDate"))
         amount = parse_money(row.get("amount"))
         if not ex_date or amount is None:
             continue
-        out.append({
+        item = {
             "ex_date": ex_date,
             "record_date": parse_mdy(row.get("recordDate")),
             "payable_date": parse_mdy(row.get("paymentDate")),
             "declared_date": parse_mdy(row.get("declarationDate")),
             "amount": amount,
+            "type": typ,
             "source": "nasdaq",
-        })
+        }
+        if typ.lower() not in ("cash", ""):
+            item["special"] = True
+        out.append(item)
     if not out:
         raise RuntimeError("nasdaq returned no cash dividends")
     out.sort(key=lambda row: row["ex_date"])
     return out
 
 def merge_dividend_rows(base_rows, nasdaq_rows):
-    """Merge Nasdaq record/pay/declared dates and amounts onto Yahoo (or prior) rows by ex-date."""
+    """Merge Nasdaq as-paid amounts and dates onto Yahoo rows by ex-date.
+
+    Yahoo's amount is split-adjusted and kept as amount_adj. Nasdaq overwrites
+    amount with the as-paid figure when it has that ex-date.
+    """
     by_ex = {}
     for row in base_rows or []:
-        if row.get("ex_date"):
-            by_ex[row["ex_date"]] = dict(row)
+        if not row.get("ex_date"):
+            continue
+        item = dict(row)
+        if item.get("amount_adj") is None and item.get("amount") is not None:
+            item["amount_adj"] = item["amount"]
+        by_ex[item["ex_date"]] = item
     for row in nasdaq_rows or []:
         existing = by_ex.get(row["ex_date"], {})
         merged = dict(existing)
-        for key in ("ex_date", "record_date", "payable_date", "declared_date", "amount", "source"):
+        amount_adj = existing.get("amount_adj")
+        for key in ("ex_date", "record_date", "payable_date", "declared_date", "amount", "type", "special", "source"):
             if row.get(key) is not None:
                 merged[key] = row[key]
         merged["source"] = "nasdaq"
-        by_ex[row["ex_date"]] = merged
+        if amount_adj is not None:
+            merged["amount_adj"] = amount_adj
+        by_ex[merged["ex_date"]] = merged
     rows = list(by_ex.values())
     rows.sort(key=lambda row: row["ex_date"])
     return rows
@@ -234,6 +280,7 @@ def fetch_yahoo_dividends(ticker="QYLD"):
             "payable_date": None,
             "declared_date": None,
             "amount": value,
+            "amount_adj": value,
             "source": "yahoo",
         })
     if not out:
@@ -409,15 +456,44 @@ def pull_markets():
 
 
 
-def drop_unconfirmed_micro_dividends(rows):
-    """Drop Yahoo-only payouts under $0.01/share that Nasdaq did not confirm.
+def _adj_amount(row):
+    if row.get("amount_adj") is not None:
+        return row["amount_adj"]
+    return row.get("amount")
 
-    These are usually non-payer artifacts (MNST, TTWO). Nasdaq-confirmed rows and
-    larger Yahoo-only payouts (for example TSM, where Nasdaq has a gap) are kept.
+def is_real_dividend_payer(rows, years=3):
+    """True for current or historical payers; false for non-payers with only artifacts.
+
+    A ticker is a payer if it has a real dividend in the last `years` years, any
+    Nasdaq-confirmed dividend, or any payout of at least $0.01. A lone sub-cent
+    Yahoo-only row does not count, so MNST/TTWO stay non-payers.
     """
+    cutoff = (dt.datetime.now(dt.timezone.utc).date() - dt.timedelta(days=365 * years)).isoformat()
+    recent = False
+    historical = False
+    for row in rows or []:
+        if not row.get("ex_date"):
+            continue
+        amount = _adj_amount(row)
+        confirmed = row.get("source") == "nasdaq" or (amount is not None and amount >= 0.01)
+        if not confirmed:
+            continue
+        historical = True
+        if row["ex_date"] >= cutoff:
+            recent = True
+    return recent or historical
+
+def drop_stale_nonpayer_micros(rows):
+    """Drop Yahoo-only sub-$0.01 rows only for non-payers like MNST and TTWO.
+
+    Real payers (including lapsed payers with earlier confirmed dividends)
+    keep full split-adjusted history, including old payouts under $0.01/share.
+    """
+    if is_real_dividend_payer(rows):
+        return list(rows or [])
     out = []
     for row in rows or []:
-        amount = row.get("amount")
+        amount = _adj_amount(row)
         if (
             amount is not None
             and amount < 0.01
@@ -427,12 +503,45 @@ def drop_unconfirmed_micro_dividends(rows):
         out.append(row)
     return out
 
-def pull_stock_dividends(ticker):
+def attach_stock_dividend_closes(rows, closes, splits=None):
+    """Yield % = split-adjusted amount / split-adjusted close before ex-date."""
+    out = []
+    for row in rows:
+        close = close_before(closes, row["ex_date"])
+        item = dict(row)
+        item["close"] = close
+        if item.get("amount_adj") is None and item.get("amount") is not None:
+            item["amount_adj"] = split_adjust_amount(item["amount"], item["ex_date"], splits)
+        adj = item.get("amount_adj")
+        item["pct"] = round(adj / close * 100, 4) if close and adj is not None else None
+        out.append(item)
+    return out
+
+def yahoo_rows_from_previous(previous):
+    """Prior split-adjusted amounts only; never treat Nasdaq as-paid figures as adj."""
+    out = []
+    for row in (previous or {}).get("dividends") or []:
+        adj = row.get("amount_adj")
+        if adj is None and row.get("source") != "nasdaq":
+            adj = row.get("amount")
+        if row.get("ex_date") and adj is not None:
+            out.append({
+                "ex_date": row["ex_date"],
+                "record_date": None,
+                "payable_date": None,
+                "declared_date": None,
+                "amount": adj,
+                "amount_adj": adj,
+                "source": "yahoo",
+            })
+    return out
+
+def pull_stock_dividends(ticker, force=False):
     """Daily Yahoo + Nasdaq dividend history for stock-page D markers. Soft-fail."""
     path = os.path.join(DIVIDENDS_DIR, f"{ticker}.json")
     previous = load_json(path, {})
     # Same once-a-day cadence as weekly history; Nasdaq is only hit for payers.
-    if os.path.exists(path) and time.time() - os.path.getmtime(path) < 20 * 60 * 60:
+    if not force and os.path.exists(path) and time.time() - os.path.getmtime(path) < 20 * 60 * 60:
         return ticker, None, None
     try:
         yahoo = []
@@ -440,7 +549,11 @@ def pull_stock_dividends(ticker):
             yahoo = fetch_yahoo_dividends(ticker)
         except Exception as exc:
             print(f"yahoo dividends {ticker} failed: {exc}")
-            yahoo = [row for row in (previous.get("dividends") or [])]
+        have = {row["ex_date"] for row in yahoo}
+        for row in yahoo_rows_from_previous(previous):
+            if row["ex_date"] not in have:
+                yahoo.append(row)
+                have.add(row["ex_date"])
         nasdaq = []
         if yahoo:
             try:
@@ -449,92 +562,95 @@ def pull_stock_dividends(ticker):
                 print(f"nasdaq dividends {ticker} failed: {exc}")
         if not yahoo and not nasdaq:
             return ticker, {"generated_at": NOW, "ticker": ticker, "source": "yahoo", "dividends": []}, "no dividends"
-        rows = drop_unconfirmed_micro_dividends(merge_dividend_rows(yahoo, nasdaq))
+        rows = drop_stale_nonpayer_micros(merge_dividend_rows(yahoo, nasdaq))
         try:
-            h = yf.Ticker(ticker.replace(".", "-")).history(period="max", interval="1d", auto_adjust=False)
+            tk = yf.Ticker(ticker.replace(".", "-"))
+            h = tk.history(period="max", interval="1d", auto_adjust=False)
             h = h.dropna(subset=["Close"]) if h is not None and not h.empty else None
             closes = close_lookup(markets_rows(h)) if h is not None and len(h) else {}
         except Exception as exc:
             print(f"dividend closes {ticker} failed: {exc}")
             closes = {}
-        rows = attach_closes(rows, closes) if closes else rows
-        rows = drop_unconfirmed_micro_dividends(rows)
+        splits = split_lookup(ticker)
+        rows = attach_stock_dividend_closes(rows, closes, splits) if (closes or splits) else rows
+        rows = drop_stale_nonpayer_micros(rows)
         source = "nasdaq" if nasdaq else "yahoo"
         return ticker, {"generated_at": NOW, "ticker": ticker, "source": source, "dividends": rows}, None
     except Exception as exc:
         if previous.get("dividends"):
-            previous = {**previous, "dividends": drop_unconfirmed_micro_dividends(previous.get("dividends") or [])}
+            previous = {**previous, "dividends": drop_stale_nonpayer_micros(previous.get("dividends") or [])}
             return ticker, previous, str(exc)
         return ticker, None, str(exc)
 
 def write_json(path, value):
     with open(path,"w",encoding="utf-8") as f: json.dump(value,f,indent=1,allow_nan=False); f.write("\n")
 
-# Tickers in data/watchlist.json are always included in the hourly refresh; no other file edits are needed.
-# Every page renders all stats.json rows (universe ∪ basket ∪ watchlist).
-tickers = sorted(set(UNIVERSE) | {b["ticker"] for b in BASKET["positions"]} | {s["ticker"] for s in WATCHLIST["stocks"]})
-intraday_tickers = sorted({b["ticker"] for b in BASKET["positions"]} | {s["ticker"] for s in WATCHLIST["stocks"]})
-intraday_jobs = [(ticker,interval,period) for ticker in intraday_tickers for interval,period in
-                 (("1m","5d"),("5m","60d"),("1h","730d"))]
-# Markets tickers get compact intraday too, but are not added to stats.json / Map / Screener.
-intraday_jobs += [(ticker,interval,period) for ticker in MARKET_TICKERS for interval,period in
-                  (("1m","5d"),("5m","60d"),("1h","730d"))]
-with ThreadPoolExecutor(max_workers=4) as executor: results = list(executor.map(pull,tickers))
-with ThreadPoolExecutor(max_workers=4) as executor: long_results = list(executor.map(pull_long,tickers))
-with ThreadPoolExecutor(max_workers=4) as executor: intraday_results = list(executor.map(pull_intraday,intraday_jobs))
-failures = [ticker for ticker,row,hist,error in results if error]
-if len(failures) > len(tickers)/2: raise SystemExit(f"refusing to write: {len(failures)}/{len(tickers)} tickers failed")
-os.makedirs(HISTORY,exist_ok=True); rows=[]
-for ticker,row,hist,error in results:
-    if row is not None: rows.append(row)
-    if hist is not None: write_json(os.path.join(HISTORY,f"{ticker}.json"),hist)
-long_updates = [(ticker,hist) for ticker,hist,error in long_results if hist is not None]
-if long_updates: os.makedirs(HISTORY_LONG,exist_ok=True)
-for ticker,hist in long_updates: write_json(os.path.join(HISTORY_LONG,f"{ticker}.json"),hist)
-intraday_updates = [(ticker,interval,payload) for ticker,interval,payload,error in intraday_results if payload is not None]
-if intraday_updates: os.makedirs(INTRADAY,exist_ok=True)
-for ticker,interval,payload in intraday_updates:
-    path = os.path.join(INTRADAY,f"{file_slug(ticker)}_{interval}.json")
-    with open(path,"w",encoding="utf-8") as f:
-        json.dump(payload,f,separators=(",",":"),allow_nan=False); f.write("\n")
-stats = {r["ticker"]:r for r in rows}
-write_json(os.path.join(D,"stats.json"),{"generated_at":NOW,"as_of":NOW,"count":len(rows),"stocks":rows})
+if __name__ == "__main__":
+    # Tickers in data/watchlist.json are always included in the hourly refresh; no other file edits are needed.
+    # Every page renders all stats.json rows (universe ∪ basket ∪ watchlist).
+    tickers = sorted(set(UNIVERSE) | {b["ticker"] for b in BASKET["positions"]} | {s["ticker"] for s in WATCHLIST["stocks"]})
+    intraday_tickers = sorted({b["ticker"] for b in BASKET["positions"]} | {s["ticker"] for s in WATCHLIST["stocks"]})
+    intraday_jobs = [(ticker,interval,period) for ticker in intraday_tickers for interval,period in
+                     (("1m","5d"),("5m","60d"),("1h","730d"))]
+    # Markets tickers get compact intraday too, but are not added to stats.json / Map / Screener.
+    intraday_jobs += [(ticker,interval,period) for ticker in MARKET_TICKERS for interval,period in
+                      (("1m","5d"),("5m","60d"),("1h","730d"))]
+    with ThreadPoolExecutor(max_workers=4) as executor: results = list(executor.map(pull,tickers))
+    with ThreadPoolExecutor(max_workers=4) as executor: long_results = list(executor.map(pull_long,tickers))
+    with ThreadPoolExecutor(max_workers=4) as executor: intraday_results = list(executor.map(pull_intraday,intraday_jobs))
+    failures = [ticker for ticker,row,hist,error in results if error]
+    if len(failures) > len(tickers)/2: raise SystemExit(f"refusing to write: {len(failures)}/{len(tickers)} tickers failed")
+    os.makedirs(HISTORY,exist_ok=True); rows=[]
+    for ticker,row,hist,error in results:
+        if row is not None: rows.append(row)
+        if hist is not None: write_json(os.path.join(HISTORY,f"{ticker}.json"),hist)
+    long_updates = [(ticker,hist) for ticker,hist,error in long_results if hist is not None]
+    if long_updates: os.makedirs(HISTORY_LONG,exist_ok=True)
+    for ticker,hist in long_updates: write_json(os.path.join(HISTORY_LONG,f"{ticker}.json"),hist)
+    intraday_updates = [(ticker,interval,payload) for ticker,interval,payload,error in intraday_results if payload is not None]
+    if intraday_updates: os.makedirs(INTRADAY,exist_ok=True)
+    for ticker,interval,payload in intraday_updates:
+        path = os.path.join(INTRADAY,f"{file_slug(ticker)}_{interval}.json")
+        with open(path,"w",encoding="utf-8") as f:
+            json.dump(payload,f,separators=(",",":"),allow_nan=False); f.write("\n")
+    stats = {r["ticker"]:r for r in rows}
+    write_json(os.path.join(D,"stats.json"),{"generated_at":NOW,"as_of":NOW,"count":len(rows),"stocks":rows})
 
-positions=[]
-for target in BASKET["positions"]:
-    stock=stats.get(target["ticker"],{}); price=stock.get("price"); ma50=stock.get("ma50"); entry=target["entry_price"]
-    status = "Above 50D: signal" if price and ma50 and price>ma50 else ("Down 10% from entry: signal" if price and price<=.9*entry else "Below 50D: waiting")
-    flag = target.get("flag") if stock.get("levered_fcf") is not None and stock["levered_fcf"]<0 else None
-    positions.append({**target,"shares":round(target["target_usd"]/price,2) if price else None,
-      "whole_shares":int(target["target_usd"]//price) if price else None,"first_half_usd":target["target_usd"]/2,
-      "second_half_usd":target["target_usd"]/2,"price":price,"ma50":ma50,
-      "pct_vs_ma50":round((price/ma50-1)*100,2) if price and ma50 else None,
-      "pct_vs_entry":round((price/entry-1)*100,2) if price else None,"status":status,"flag":flag,"as_of":NOW})
-write_json(os.path.join(D,"basket.json"),{"generated_at":NOW,"as_of":NOW,"total":BASKET["total"],
- "cash_reserve":BASKET["cash_reserve"],"positions":positions})
-markets = pull_markets()
-write_json(os.path.join(D,"markets.json"), markets)
-# Stock-page dividend markers: daily Yahoo + Nasdaq (payers only, throttled). Failures must not fail the job.
-div_written = 0
-div_removed = 0
-try:
-    os.makedirs(DIVIDENDS_DIR, exist_ok=True)
-    with ThreadPoolExecutor(max_workers=2) as executor:
-        div_results = list(executor.map(pull_stock_dividends, tickers))
-    for ticker, payload, error in div_results:
-        if error:
-            print(f"dividends {ticker} failed: {error}")
-        if payload is None:
-            continue
-        path = os.path.join(DIVIDENDS_DIR, f"{ticker}.json")
-        div_rows = payload.get("dividends") or []
-        if div_rows:
-            write_json(path, payload)
-            div_written += 1
-        elif os.path.exists(path):
-            os.remove(path)
-            div_removed += 1
-            print(f"dividends {ticker}: no confirmed rows, removed {path}")
-except Exception as exc:
-    print(f"stock dividends refresh failed: {exc}")
-print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}; long history updates: {len(long_updates)}; intraday files written: {len(intraday_updates)}; market series: {list(markets.get('series', {}))}; dividend files: {div_written}; removed: {div_removed}")
+    positions=[]
+    for target in BASKET["positions"]:
+        stock=stats.get(target["ticker"],{}); price=stock.get("price"); ma50=stock.get("ma50"); entry=target["entry_price"]
+        status = "Above 50D: signal" if price and ma50 and price>ma50 else ("Down 10% from entry: signal" if price and price<=.9*entry else "Below 50D: waiting")
+        flag = target.get("flag") if stock.get("levered_fcf") is not None and stock["levered_fcf"]<0 else None
+        positions.append({**target,"shares":round(target["target_usd"]/price,2) if price else None,
+          "whole_shares":int(target["target_usd"]//price) if price else None,"first_half_usd":target["target_usd"]/2,
+          "second_half_usd":target["target_usd"]/2,"price":price,"ma50":ma50,
+          "pct_vs_ma50":round((price/ma50-1)*100,2) if price and ma50 else None,
+          "pct_vs_entry":round((price/entry-1)*100,2) if price else None,"status":status,"flag":flag,"as_of":NOW})
+    write_json(os.path.join(D,"basket.json"),{"generated_at":NOW,"as_of":NOW,"total":BASKET["total"],
+     "cash_reserve":BASKET["cash_reserve"],"positions":positions})
+    markets = pull_markets()
+    write_json(os.path.join(D,"markets.json"), markets)
+    # Stock-page dividend markers: daily Yahoo + Nasdaq (payers only, throttled). Failures must not fail the job.
+    div_written = 0
+    div_removed = 0
+    try:
+        os.makedirs(DIVIDENDS_DIR, exist_ok=True)
+        with ThreadPoolExecutor(max_workers=2) as executor:
+            div_results = list(executor.map(pull_stock_dividends, tickers))
+        for ticker, payload, error in div_results:
+            if error:
+                print(f"dividends {ticker} failed: {error}")
+            if payload is None:
+                continue
+            path = os.path.join(DIVIDENDS_DIR, f"{ticker}.json")
+            div_rows = payload.get("dividends") or []
+            if div_rows:
+                write_json(path, payload)
+                div_written += 1
+            elif os.path.exists(path):
+                os.remove(path)
+                div_removed += 1
+                print(f"dividends {ticker}: no confirmed rows, removed {path}")
+    except Exception as exc:
+        print(f"stock dividends refresh failed: {exc}")
+    print(f"refreshed {len(rows)} tickers at {NOW}; failures: {failures}; long history updates: {len(long_updates)}; intraday files written: {len(intraday_updates)}; market series: {list(markets.get('series', {}))}; dividend files: {div_written}; removed: {div_removed}")

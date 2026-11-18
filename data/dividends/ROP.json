@@ -1,14 +1,125 @@
 {
- "generated_at": "2026-11-18T07:31:24+00:00",
+ "generated_at": "2026-11-18T07:50:34+00:00",
  "ticker": "ROP",
  "source": "nasdaq",
  "dividends": [
+  {
+   "ex_date": "1992-04-20",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.005,
+   "amount_adj": 0.005,
+   "source": "yahoo",
+   "close": 2.44,
+   "pct": 0.2049
+  },
+  {
+   "ex_date": "1992-06-23",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.005,
+   "amount_adj": 0.005,
+   "source": "yahoo",
+   "close": 1.69,
+   "pct": 0.2959
+  },
+  {
+   "ex_date": "1992-10-05",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.005,
+   "amount_adj": 0.005,
+   "source": "yahoo",
+   "close": 2.06,
+   "pct": 0.2427
+  },
+  {
+   "ex_date": "1993-01-19",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.005,
+   "amount_adj": 0.005,
+   "source": "yahoo",
+   "close": 2.59,
+   "pct": 0.1931
+  },
+  {
+   "ex_date": "1993-05-04",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.005,
+   "amount_adj": 0.005,
+   "source": "yahoo",
+   "close": 4.84,
+   "pct": 0.1033
+  },
+  {
+   "ex_date": "1993-06-29",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.005,
+   "amount_adj": 0.005,
+   "source": "yahoo",
+   "close": 6.75,
+   "pct": 0.0741
+  },
+  {
+   "ex_date": "1993-08-30",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0075,
+   "amount_adj": 0.0075,
+   "source": "yahoo",
+   "close": 8.7,
+   "pct": 0.0862
+  },
+  {
+   "ex_date": "1994-01-10",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0075,
+   "amount_adj": 0.0075,
+   "source": "yahoo",
+   "close": 8.12,
+   "pct": 0.0924
+  },
+  {
+   "ex_date": "1994-04-12",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0075,
+   "amount_adj": 0.0075,
+   "source": "yahoo",
+   "close": 5.75,
+   "pct": 0.1304
+  },
+  {
+   "ex_date": "1994-07-01",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0075,
+   "amount_adj": 0.0075,
+   "source": "yahoo",
+   "close": 6.56,
+   "pct": 0.1143
+  },
   {
    "ex_date": "1994-10-03",
    "record_date": null,
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0125,
+   "amount_adj": 0.0125,
    "source": "yahoo",
    "close": 5.98,
    "pct": 0.209
@@ -19,6 +130,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0125,
+   "amount_adj": 0.0125,
    "source": "yahoo",
    "close": 6.12,
    "pct": 0.2042
@@ -29,6 +141,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0125,
+   "amount_adj": 0.0125,
    "source": "yahoo",
    "close": 6.81,
    "pct": 0.1836
@@ -39,6 +152,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0125,
+   "amount_adj": 0.0125,
    "source": "yahoo",
    "close": 8.75,
    "pct": 0.1429
@@ -49,6 +163,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0187,
+   "amount_adj": 0.0187,
    "source": "yahoo",
    "close": 8.81,
    "pct": 0.2123
@@ -59,6 +174,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0187,
+   "amount_adj": 0.0187,
    "source": "yahoo",
    "close": 10.0,
    "pct": 0.187
@@ -69,6 +185,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0187,
+   "amount_adj": 0.0187,
    "source": "yahoo",
    "close": 12.41,
    "pct": 0.1507
@@ -79,6 +196,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0187,
+   "amount_adj": 0.0187,
    "source": "yahoo",
    "close": 11.81,
    "pct": 0.1583
@@ -89,9 +207,32 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0225,
+   "amount_adj": 0.0225,
    "source": "yahoo",
    "close": 11.5,
    "pct": 0.1957
+  },
+  {
+   "ex_date": "1997-01-08",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0057,
+   "amount_adj": 0.0057,
+   "source": "yahoo",
+   "close": 9.84,
+   "pct": 0.0579
+  },
+  {
+   "ex_date": "1997-04-09",
+   "record_date": null,
+   "payable_date": null,
+   "declared_date": null,
+   "amount": 0.0057,
+   "amount_adj": 0.0057,
+   "source": "yahoo",
+   "close": 10.28,
+   "pct": 0.0554
   },
   {
    "ex_date": "1997-07-16",
@@ -99,6 +240,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0225,
+   "amount_adj": 0.0225,
    "source": "yahoo",
    "close": 14.23,
    "pct": 0.1581
@@ -109,6 +251,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.03,
+   "amount_adj": 0.03,
    "source": "yahoo",
    "close": 16.66,
    "pct": 0.1801
@@ -119,6 +262,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.03,
+   "amount_adj": 0.03,
    "source": "yahoo",
    "close": 13.16,
    "pct": 0.228
@@ -129,6 +273,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.03,
+   "amount_adj": 0.03,
    "source": "yahoo",
    "close": 14.44,
    "pct": 0.2078
@@ -139,6 +284,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.03,
+   "amount_adj": 0.03,
    "source": "yahoo",
    "close": 13.25,
    "pct": 0.2264
@@ -149,6 +295,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.03,
+   "amount_adj": 0.03,
    "source": "yahoo",
    "close": 7.0,
    "pct": 0.4286
@@ -159,6 +306,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0325,
+   "amount_adj": 0.0325,
    "source": "yahoo",
    "close": 10.31,
    "pct": 0.3152
@@ -169,6 +317,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0325,
+   "amount_adj": 0.0325,
    "source": "yahoo",
    "close": 12.31,
    "pct": 0.264
@@ -179,6 +328,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.033,
+   "amount_adj": 0.033,
    "source": "yahoo",
    "close": 16.91,
    "pct": 0.1952
@@ -189,6 +339,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0325,
+   "amount_adj": 0.0325,
    "source": "yahoo",
    "close": 17.75,
    "pct": 0.1831
@@ -199,6 +350,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.035,
+   "amount_adj": 0.035,
    "source": "yahoo",
    "close": 16.94,
    "pct": 0.2066
@@ -209,6 +361,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.035,
+   "amount_adj": 0.035,
    "source": "yahoo",
    "close": 15.5,
    "pct": 0.2258
@@ -219,6 +372,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.035,
+   "amount_adj": 0.035,
    "source": "yahoo",
    "close": 13.88,
    "pct": 0.2522
@@ -229,9 +383,11 @@
    "payable_date": "2000-10-31",
    "declared_date": "2000-08-18",
    "amount": 0.07,
+   "amount_adj": 0.035,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 15.53,
-   "pct": 0.4507
+   "pct": 0.2254
   },
   {
    "ex_date": "2001-01-10",
@@ -239,9 +395,11 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.075,
+   "amount_adj": 0.0375,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 16.56,
-   "pct": 0.4529
+   "pct": 0.2264
   },
   {
    "ex_date": "2001-04-10",
@@ -249,9 +407,11 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.075,
+   "amount_adj": 0.0375,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 17.77,
-   "pct": 0.4221
+   "pct": 0.211
   },
   {
    "ex_date": "2001-07-13",
@@ -259,9 +419,11 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.075,
+   "amount_adj": 0.0375,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 17.93,
-   "pct": 0.4183
+   "pct": 0.2091
   },
   {
    "ex_date": "2001-10-15",
@@ -269,6 +431,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0375,
+   "amount_adj": 0.0375,
    "source": "yahoo",
    "close": 19.33,
    "pct": 0.194
@@ -279,6 +442,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0415,
+   "amount_adj": 0.0415,
    "source": "yahoo",
    "close": 24.56,
    "pct": 0.169
@@ -289,6 +453,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0415,
+   "amount_adj": 0.0415,
    "source": "yahoo",
    "close": 23.07,
    "pct": 0.1799
@@ -299,6 +464,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0415,
+   "amount_adj": 0.0415,
    "source": "yahoo",
    "close": 16.58,
    "pct": 0.2503
@@ -309,6 +475,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.0415,
+   "amount_adj": 0.0415,
    "source": "yahoo",
    "close": 15.95,
    "pct": 0.2602
@@ -319,6 +486,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.044,
+   "amount_adj": 0.044,
    "source": "yahoo",
    "close": 19.8,
    "pct": 0.2222
@@ -329,6 +497,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.044,
+   "amount_adj": 0.044,
    "source": "yahoo",
    "close": 14.73,
    "pct": 0.2987
@@ -339,6 +508,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.044,
+   "amount_adj": 0.044,
    "source": "yahoo",
    "close": 19.66,
    "pct": 0.2238
@@ -349,6 +519,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.044,
+   "amount_adj": 0.044,
    "source": "yahoo",
    "close": 23.87,
    "pct": 0.1843
@@ -359,6 +530,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.049,
+   "amount_adj": 0.049,
    "source": "yahoo",
    "close": 25.9,
    "pct": 0.1892
@@ -369,6 +541,7 @@
    "payable_date": null,
    "declared_date": null,
    "amount": 0.049,
+   "amount_adj": 0.049,
    "source": "yahoo",
    "close": 23.92,
    "pct": 0.2048
@@ -379,9 +552,11 @@
    "payable_date": "2004-07-30",
    "declared_date": "2004-05-19",
    "amount": 0.0963,
+   "amount_adj": 0.048,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 27.58,
-   "pct": 0.3492
+   "pct": 0.174
   },
   {
    "ex_date": "2004-10-13",
@@ -389,9 +564,11 @@
    "payable_date": "2004-10-29",
    "declared_date": "2004-08-11",
    "amount": 0.0963,
+   "amount_adj": 0.049,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 30.57,
-   "pct": 0.315
+   "pct": 0.1603
   },
   {
    "ex_date": "2005-01-12",
@@ -399,9 +576,11 @@
    "payable_date": "2005-01-31",
    "declared_date": "2004-11-18",
    "amount": 0.1062,
+   "amount_adj": 0.0525,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 29.83,
-   "pct": 0.356
+   "pct": 0.176
   },
   {
    "ex_date": "2005-04-13",
@@ -409,9 +588,11 @@
    "payable_date": "2005-04-29",
    "declared_date": "2005-02-17",
    "amount": 0.1062,
+   "amount_adj": 0.053,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 32.49,
-   "pct": 0.3269
+   "pct": 0.1631
   },
   {
    "ex_date": "2005-07-13",
@@ -419,9 +600,11 @@
    "payable_date": "2005-07-29",
    "declared_date": "2005-05-25",
    "amount": 0.1062,
+   "amount_adj": 0.053,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 37.21,
-   "pct": 0.2854
+   "pct": 0.1424
   },
   {
    "ex_date": "2005-10-12",
@@ -429,9 +612,11 @@
    "payable_date": "2005-10-31",
    "declared_date": "2005-08-16",
    "amount": 0.0531,
+   "amount_adj": 0.053,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 36.51,
-   "pct": 0.1454
+   "pct": 0.1452
   },
   {
    "ex_date": "2006-01-11",
@@ -439,9 +624,11 @@
    "payable_date": "2006-01-31",
    "declared_date": "2005-11-07",
    "amount": 0.0587,
+   "amount_adj": 0.059,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 41.22,
-   "pct": 0.1424
+   "pct": 0.1431
   },
   {
    "ex_date": "2006-04-11",
@@ -449,9 +636,11 @@
    "payable_date": "2006-04-28",
    "declared_date": "2006-02-20",
    "amount": 0.0587,
+   "amount_adj": 0.059,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 48.11,
-   "pct": 0.122
+   "pct": 0.1226
   },
   {
    "ex_date": "2006-07-12",
@@ -459,9 +648,11 @@
    "payable_date": "2006-07-31",
    "declared_date": "2006-05-17",
    "amount": 0.0587,
+   "amount_adj": 0.059,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 47.05,
-   "pct": 0.1248
+   "pct": 0.1254
   },
   {
    "ex_date": "2006-10-11",
@@ -469,9 +660,11 @@
    "payable_date": "2006-10-31",
    "declared_date": "2006-08-17",
    "amount": 0.0587,
+   "amount_adj": 0.059,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 45.17,
-   "pct": 0.13
+   "pct": 0.1306
   },
   {
    "ex_date": "2007-01-10",
@@ -479,7 +672,9 @@
    "payable_date": "2007-01-31",
    "declared_date": "2006-11-09",
    "amount": 0.065,
+   "amount_adj": 0.065,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 48.9,
    "pct": 0.1329
   },
@@ -489,7 +684,9 @@
    "payable_date": "2007-04-27",
    "declared_date": "2007-02-15",
    "amount": 0.065,
+   "amount_adj": 0.065,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 55.77,
    "pct": 0.1166
   },
@@ -499,7 +696,9 @@
    "payable_date": "2007-07-31",
    "declared_date": "2007-05-18",
    "amount": 0.065,
+   "amount_adj": 0.065,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 60.18,
    "pct": 0.108
   },
@@ -509,7 +708,9 @@
    "payable_date": "2007-10-31",
    "declared_date": "2007-08-30",
    "amount": 0.065,
+   "amount_adj": 0.065,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 66.3,
    "pct": 0.098
   },
@@ -519,9 +720,11 @@
    "payable_date": "2008-01-31",
    "declared_date": "2007-11-12",
    "amount": 0.0725,
+   "amount_adj": 0.073,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 52.06,
-   "pct": 0.1393
+   "pct": 0.1402
   },
   {
    "ex_date": "2008-04-09",
@@ -529,9 +732,11 @@
    "payable_date": "2008-04-25",
    "declared_date": "2008-02-14",
    "amount": 0.0725,
+   "amount_adj": 0.073,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 61.99,
-   "pct": 0.117
+   "pct": 0.1178
   },
   {
    "ex_date": "2008-07-09",
@@ -539,9 +744,11 @@
    "payable_date": "2008-07-31",
    "declared_date": "2008-05-15",
    "amount": 0.0725,
+   "amount_adj": 0.073,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 61.71,
-   "pct": 0.1175
+   "pct": 0.1183
   },
   {
    "ex_date": "2008-10-08",
@@ -549,9 +756,11 @@
    "payable_date": "2008-10-31",
    "declared_date": "2008-08-14",
    "amount": 0.0725,
+   "amount_adj": 0.073,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 43.27,
-   "pct": 0.1676
+   "pct": 0.1687
   },
   {
    "ex_date": "2009-01-07",
@@ -559,9 +768,11 @@
    "payable_date": "2009-01-30",
    "declared_date": "2008-11-18",
    "amount": 0.0825,
+   "amount_adj": 0.083,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 45.73,
-   "pct": 0.1804
+   "pct": 0.1815
   },
   {
    "ex_date": "2009-04-07",
@@ -569,9 +780,11 @@
    "payable_date": "2009-04-24",
    "declared_date": "2009-02-12",
    "amount": 0.0825,
+   "amount_adj": 0.083,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 45.21,
-   "pct": 0.1825
+   "pct": 0.1836
   },
   {
    "ex_date": "2009-07-08",
@@ -579,9 +792,11 @@
    "payable_date": "2009-07-31",
    "declared_date": "2009-05-20",
    "amount": 0.0825,
+   "amount_adj": 0.083,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 42.81,
-   "pct": 0.1927
+   "pct": 0.1939
   },
   {
    "ex_date": "2009-10-07",
@@ -589,9 +804,11 @@
    "payable_date": "2009-10-30",
    "declared_date": "2009-08-14",
    "amount": 0.0825,
+   "amount_adj": 0.083,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 48.64,
-   "pct": 0.1696
+   "pct": 0.1706
   },
   {
    "ex_date": "2010-01-06",
@@ -599,7 +816,9 @@
    "payable_date": "2010-01-29",
    "declared_date": "2009-11-11",
    "amount": 0.095,
+   "amount_adj": 0.095,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 51.87,
    "pct": 0.1832
   },
@@ -609,7 +828,9 @@
    "payable_date": "2010-04-23",
    "declared_date": "2010-01-25",
    "amount": 0.095,
+   "amount_adj": 0.095,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 59.47,
    "pct": 0.1597
   },
@@ -619,7 +840,9 @@
    "payable_date": "2010-07-30",
    "declared_date": "2010-06-16",
    "amount": 0.095,
+   "amount_adj": 0.095,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 54.79,
    "pct": 0.1734
   },
@@ -629,7 +852,9 @@
    "payable_date": "2010-10-29",
    "declared_date": "2010-08-10",
    "amount": 0.095,
+   "amount_adj": 0.095,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 66.77,
    "pct": 0.1423
   },
@@ -639,7 +864,9 @@
    "payable_date": "2011-01-28",
    "declared_date": "2010-11-10",
    "amount": 0.11,
+   "amount_adj": 0.11,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 75.94,
    "pct": 0.1449
   },
@@ -649,7 +876,9 @@
    "payable_date": "2011-04-22",
    "declared_date": "2011-03-16",
    "amount": 0.11,
+   "amount_adj": 0.11,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 87.6,
    "pct": 0.1256
   },
@@ -659,7 +888,9 @@
    "payable_date": "2011-07-29",
    "declared_date": "2011-06-15",
    "amount": 0.11,
+   "amount_adj": 0.11,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 83.58,
    "pct": 0.1316
   },
@@ -669,7 +900,9 @@
    "payable_date": "2011-10-28",
    "declared_date": "2011-08-12",
    "amount": 0.11,
+   "amount_adj": 0.11,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 70.01,
    "pct": 0.1571
   },
@@ -679,9 +912,11 @@
    "payable_date": "2012-01-27",
    "declared_date": "2011-11-15",
    "amount": 0.1375,
+   "amount_adj": 0.138,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 88.21,
-   "pct": 0.1559
+   "pct": 0.1564
   },
   {
    "ex_date": "2012-04-11",
@@ -689,9 +924,11 @@
    "payable_date": "2012-04-27",
    "declared_date": "2012-03-19",
    "amount": 0.1375,
+   "amount_adj": 0.138,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 95.24,
-   "pct": 0.1444
+   "pct": 0.1449
   },
   {
    "ex_date": "2012-07-11",
@@ -699,9 +936,11 @@
    "payable_date": "2012-07-27",
    "declared_date": "2012-06-13",
    "amount": 0.1375,
+   "amount_adj": 0.138,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 96.3,
-   "pct": 0.1428
+   "pct": 0.1433
   },
   {
    "ex_date": "2012-10-10",
@@ -709,9 +948,11 @@
    "payable_date": "2012-10-26",
    "declared_date": "2012-09-07",
    "amount": 0.1375,
+   "amount_adj": 0.138,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 108.74,
-   "pct": 0.1264
+   "pct": 0.1269
   },
   {
    "ex_date": "2012-12-19",
@@ -719,7 +960,9 @@
    "payable_date": "2012-12-28",
    "declared_date": "2012-12-07",
    "amount": 0.165,
+   "amount_adj": 0.165,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 111.23,
    "pct": 0.1483
   },
@@ -729,7 +972,9 @@
    "payable_date": "2013-04-26",
    "declared_date": "2013-03-19",
    "amount": 0.165,
+   "amount_adj": 0.165,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 122.79,
    "pct": 0.1344
   },
@@ -739,7 +984,9 @@
    "payable_date": "2013-07-26",
    "declared_date": "2013-06-17",
    "amount": 0.165,
+   "amount_adj": 0.165,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 128.46,
    "pct": 0.1284
   },
@@ -749,7 +996,9 @@
    "payable_date": "2013-10-25",
    "declared_date": "2013-09-17",
    "amount": 0.165,
+   "amount_adj": 0.165,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 127.99,
    "pct": 0.1289
   },
@@ -759,7 +1008,9 @@
    "payable_date": "2014-01-24",
    "declared_date": "2013-12-16",
    "amount": 0.2,
+   "amount_adj": 0.2,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 137.93,
    "pct": 0.145
   },
@@ -769,7 +1020,9 @@
    "payable_date": "2014-04-25",
    "declared_date": "2014-03-17",
    "amount": 0.2,
+   "amount_adj": 0.2,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 133.43,
    "pct": 0.1499
   },
@@ -779,7 +1032,9 @@
    "payable_date": "2014-07-25",
    "declared_date": "2014-06-18",
    "amount": 0.2,
+   "amount_adj": 0.2,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 145.26,
    "pct": 0.1377
   },
@@ -789,7 +1044,9 @@
    "payable_date": "2014-10-24",
    "declared_date": "2014-09-16",
    "amount": 0.2,
+   "amount_adj": 0.2,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 143.57,
    "pct": 0.1393
   },
@@ -799,7 +1056,9 @@
    "payable_date": "2015-01-23",
    "declared_date": "2014-12-17",
    "amount": 0.25,
+   "amount_adj": 0.25,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 149.91,
    "pct": 0.1668
   },
@@ -809,7 +1068,9 @@
    "payable_date": "2015-04-24",
    "declared_date": "2015-03-16",
    "amount": 0.25,
+   "amount_adj": 0.25,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 170.95,
    "pct": 0.1462
   },
@@ -819,7 +1080,9 @@
    "payable_date": "2015-07-24",
    "declared_date": "2015-06-16",
    "amount": 0.25,
+   "amount_adj": 0.25,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 175.02,
    "pct": 0.1428
   },
@@ -829,7 +1092,9 @@
    "payable_date": "2015-10-23",
    "declared_date": "2015-09-09",
    "amount": 0.25,
+   "amount_adj": 0.25,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 165.02,
    "pct": 0.1515
   },
@@ -839,7 +1104,9 @@
    "payable_date": "2016-01-22",
    "declared_date": "2015-12-17",
    "amount": 0.3,
+   "amount_adj": 0.3,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 187.56,
    "pct": 0.1599
   },
@@ -849,7 +1116,9 @@
    "payable_date": "2016-04-22",
    "declared_date": "2016-03-15",
    "amount": 0.3,
+   "amount_adj": 0.3,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 178.72,
    "pct": 0.1679
   },
@@ -859,7 +1128,9 @@
    "payable_date": "2016-07-22",
    "declared_date": "2016-06-14",
    "amount": 0.3,
+   "amount_adj": 0.3,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 166.93,
    "pct": 0.1797
   },
@@ -869,7 +1140,9 @@
    "payable_date": "2016-10-21",
    "declared_date": "2016-09-13",
    "amount": 0.3,
+   "amount_adj": 0.3,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 181.95,
    "pct": 0.1649
   },
@@ -879,7 +1152,9 @@
    "payable_date": "2017-01-23",
    "declared_date": "2016-11-22",
    "amount": 0.35,
+   "amount_adj": 0.35,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 185.29,
    "pct": 0.1889
   },
@@ -889,7 +1164,9 @@
    "payable_date": "2017-04-21",
    "declared_date": "2017-03-08",
    "amount": 0.35,
+   "amount_adj": 0.35,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 206.83,
    "pct": 0.1692
   },
@@ -899,7 +1176,9 @@
    "payable_date": "2017-07-21",
    "declared_date": "2017-06-08",
    "amount": 0.35,
+   "amount_adj": 0.35,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 232.34,
    "pct": 0.1506
   },
@@ -909,7 +1188,9 @@
    "payable_date": "2017-10-20",
    "declared_date": "2017-09-20",
    "amount": 0.35,
+   "amount_adj": 0.35,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 249.66,
    "pct": 0.1402
   },
@@ -919,9 +1200,11 @@
    "payable_date": "2018-01-23",
    "declared_date": "2017-12-15",
    "amount": 0.4125,
+   "amount_adj": 0.413,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 267.02,
-   "pct": 0.1545
+   "pct": 0.1547
   },
   {
    "ex_date": "2018-04-06",
@@ -929,9 +1212,11 @@
    "payable_date": "2018-04-23",
    "declared_date": "2018-03-08",
    "amount": 0.4125,
+   "amount_adj": 0.413,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 275.56,
-   "pct": 0.1497
+   "pct": 0.1499
   },
   {
    "ex_date": "2018-07-06",
@@ -939,9 +1224,11 @@
    "payable_date": "2018-07-23",
    "declared_date": "2018-06-07",
    "amount": 0.4125,
+   "amount_adj": 0.413,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 276.0,
-   "pct": 0.1495
+   "pct": 0.1496
   },
   {
    "ex_date": "2018-10-04",
@@ -949,9 +1236,11 @@
    "payable_date": "2018-10-22",
    "declared_date": "2018-09-19",
    "amount": 0.4125,
+   "amount_adj": 0.413,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 298.16,
-   "pct": 0.1383
+   "pct": 0.1385
   },
   {
    "ex_date": "2019-01-08",
@@ -959,9 +1248,11 @@
    "payable_date": "2019-01-23",
    "declared_date": "2018-11-07",
    "amount": 0.4625,
+   "amount_adj": 0.463,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 269.07,
-   "pct": 0.1719
+   "pct": 0.1721
   },
   {
    "ex_date": "2019-04-05",
@@ -969,9 +1260,11 @@
    "payable_date": "2019-04-22",
    "declared_date": "2019-03-15",
    "amount": 0.4625,
+   "amount_adj": 0.463,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 345.16,
-   "pct": 0.134
+   "pct": 0.1341
   },
   {
    "ex_date": "2019-07-05",
@@ -979,9 +1272,11 @@
    "payable_date": "2019-07-24",
    "declared_date": "2019-06-13",
    "amount": 0.4625,
+   "amount_adj": 0.463,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 378.08,
-   "pct": 0.1223
+   "pct": 0.1225
   },
   {
    "ex_date": "2019-10-03",
@@ -989,9 +1284,11 @@
    "payable_date": "2019-10-22",
    "declared_date": "2019-09-18",
    "amount": 0.4625,
+   "amount_adj": 0.463,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 337.9,
-   "pct": 0.1369
+   "pct": 0.137
   },
   {
    "ex_date": "2020-01-08",
@@ -999,9 +1296,11 @@
    "payable_date": "2020-01-23",
    "declared_date": "2019-11-12",
    "amount": 0.5125,
+   "amount_adj": 0.513,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 361.44,
-   "pct": 0.1418
+   "pct": 0.1419
   },
   {
    "ex_date": "2020-04-07",
@@ -1009,9 +1308,11 @@
    "payable_date": "2020-04-22",
    "declared_date": "2020-03-13",
    "amount": 0.5125,
+   "amount_adj": 0.513,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 312.62,
-   "pct": 0.1639
+   "pct": 0.1641
   },
   {
    "ex_date": "2020-07-07",
@@ -1019,9 +1320,11 @@
    "payable_date": "2020-07-22",
    "declared_date": "2020-06-09",
    "amount": 0.5125,
+   "amount_adj": 0.513,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 393.19,
-   "pct": 0.1303
+   "pct": 0.1305
   },
   {
    "ex_date": "2020-10-05",
@@ -1029,9 +1332,11 @@
    "payable_date": "2020-10-20",
    "declared_date": "2020-09-18",
    "amount": 0.5125,
+   "amount_adj": 0.513,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 395.72,
-   "pct": 0.1295
+   "pct": 0.1296
   },
   {
    "ex_date": "2021-01-07",
@@ -1039,9 +1344,11 @@
    "payable_date": "2021-01-22",
    "declared_date": "2020-11-11",
    "amount": 0.5625,
+   "amount_adj": 0.563,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 423.4,
-   "pct": 0.1329
+   "pct": 0.133
   },
   {
    "ex_date": "2021-04-01",
@@ -1049,9 +1356,11 @@
    "payable_date": "2021-04-22",
    "declared_date": "2021-03-19",
    "amount": 0.5625,
+   "amount_adj": 0.563,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 403.34,
-   "pct": 0.1395
+   "pct": 0.1396
   },
   {
    "ex_date": "2021-07-07",
@@ -1059,9 +1368,11 @@
    "payable_date": "2021-07-23",
    "declared_date": "2021-06-10",
    "amount": 0.5625,
+   "amount_adj": 0.563,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 474.16,
-   "pct": 0.1186
+   "pct": 0.1187
   },
   {
    "ex_date": "2021-10-05",
@@ -1069,9 +1380,11 @@
    "payable_date": "2021-10-20",
    "declared_date": "2021-09-17",
    "amount": 0.5625,
+   "amount_adj": 0.563,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 445.49,
-   "pct": 0.1263
+   "pct": 0.1264
   },
   {
    "ex_date": "2022-01-07",
@@ -1079,7 +1392,9 @@
    "payable_date": "2022-01-24",
    "declared_date": "2021-11-10",
    "amount": 0.62,
+   "amount_adj": 0.62,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 471.5,
    "pct": 0.1315
   },
@@ -1089,7 +1404,9 @@
    "payable_date": "2022-04-22",
    "declared_date": "2022-03-17",
    "amount": 0.62,
+   "amount_adj": 0.62,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 476.95,
    "pct": 0.13
   },
@@ -1099,7 +1416,9 @@
    "payable_date": "2022-07-22",
    "declared_date": "2022-06-16",
    "amount": 0.62,
+   "amount_adj": 0.62,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 404.75,
    "pct": 0.1532
   },
@@ -1109,7 +1428,9 @@
    "payable_date": "2022-10-21",
    "declared_date": "2022-09-16",
    "amount": 0.62,
+   "amount_adj": 0.62,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 379.95,
    "pct": 0.1632
   },
@@ -1119,9 +1440,11 @@
    "payable_date": "2023-01-23",
    "declared_date": "2022-11-10",
    "amount": 0.6825,
+   "amount_adj": 0.683,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 435.92,
-   "pct": 0.1566
+   "pct": 0.1567
   },
   {
    "ex_date": "2023-04-05",
@@ -1129,9 +1452,11 @@
    "payable_date": "2023-04-21",
    "declared_date": "2023-03-16",
    "amount": 0.6825,
+   "amount_adj": 0.683,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 437.01,
-   "pct": 0.1562
+   "pct": 0.1563
   },
   {
    "ex_date": "2023-07-07",
@@ -1139,9 +1464,11 @@
    "payable_date": "2023-07-24",
    "declared_date": null,
    "amount": 0.6825,
+   "amount_adj": 0.683,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 477.0,
-   "pct": 0.1431
+   "pct": 0.1432
   },
   {
    "ex_date": "2023-10-05",
@@ -1149,9 +1476,11 @@
    "payable_date": "2023-10-23",
    "declared_date": "2023-09-27",
    "amount": 0.6825,
+   "amount_adj": 0.683,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 488.15,
-   "pct": 0.1398
+   "pct": 0.1399
   },
   {
    "ex_date": "2024-01-08",
@@ -1159,7 +1488,9 @@
    "payable_date": "2024-01-23",
    "declared_date": "2023-11-09",
    "amount": 0.75,
+   "amount_adj": 0.75,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 523.07,
    "pct": 0.1434
   },
@@ -1169,7 +1500,9 @@
    "payable_date": "2024-04-22",
    "declared_date": "2024-03-14",
    "amount": 0.75,
+   "amount_adj": 0.75,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 544.68,
    "pct": 0.1377
   },
@@ -1179,7 +1512,9 @@
    "payable_date": "2024-07-22",
    "declared_date": "2024-06-12",
    "amount": 0.75,
+   "amount_adj": 0.75,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 562.56,
    "pct": 0.1333
   },
@@ -1189,7 +1524,9 @@
    "payable_date": "2024-10-21",
    "declared_date": "2024-09-18",
    "amount": 0.75,
+   "amount_adj": 0.75,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 537.87,
    "pct": 0.1394
   },
@@ -1199,7 +1536,9 @@
    "payable_date": "2025-01-17",
    "declared_date": "2024-11-06",
    "amount": 0.825,
+   "amount_adj": 0.825,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 513.79,
    "pct": 0.1606
   },
@@ -1209,7 +1548,9 @@
    "payable_date": "2025-04-22",
    "declared_date": "2025-03-07",
    "amount": 0.825,
+   "amount_adj": 0.825,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 579.7,
    "pct": 0.1423
   },
@@ -1219,7 +1560,9 @@
    "payable_date": "2025-07-22",
    "declared_date": "2025-06-11",
    "amount": 0.825,
+   "amount_adj": 0.825,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 566.0,
    "pct": 0.1458
   },
@@ -1229,7 +1572,9 @@
    "payable_date": "2025-10-17",
    "declared_date": "2025-08-06",
    "amount": 0.825,
+   "amount_adj": 0.825,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 497.59,
    "pct": 0.1658
   },
@@ -1239,7 +1584,9 @@
    "payable_date": "2026-01-16",
    "declared_date": "2025-11-05",
    "amount": 0.91,
+   "amount_adj": 0.91,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 445.13,
    "pct": 0.2044
   },
@@ -1249,7 +1596,9 @@
    "payable_date": "2026-04-22",
    "declared_date": null,
    "amount": 0.91,
+   "amount_adj": 0.91,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 357.88,
    "pct": 0.2543
   },
@@ -1259,7 +1608,9 @@
    "payable_date": "2026-07-22",
    "declared_date": null,
    "amount": 0.91,
+   "amount_adj": 0.91,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 363.76,
    "pct": 0.2502
   },
@@ -1269,7 +1620,9 @@
    "payable_date": "2026-10-21",
    "declared_date": "2026-08-06",
    "amount": 0.91,
+   "amount_adj": 0.91,
    "source": "nasdaq",
+   "type": "Cash",
    "close": 362.59,
    "pct": 0.251
   },
@@ -1278,7 +1631,11 @@
    "record_date": "2027-01-04",
    "payable_date": "2027-01-19",
    "amount": 1.0,
-   "source": "nasdaq"
+   "type": "Cash",
+   "source": "nasdaq",
+   "close": 471.92,
+   "pct": 0.2119,
+   "amount_adj": 1.0
   }
  ]
 }
