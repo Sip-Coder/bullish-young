@@ -518,8 +518,8 @@
       chart.priceScale("right").applyOptions({ scaleMargins: { top: 0.06, bottom: 0.24 } });
       chart.priceScale("volume").applyOptions({ scaleMargins: { top: 0.82, bottom: 0 } });
     }
-    s50 = chart.addLineSeries({ color: "#e39116", lineWidth: 1, priceLineVisible: false, lastValueVisible: false });
-    s200 = chart.addLineSeries({ color: "#366dc9", lineWidth: 1, priceLineVisible: false, lastValueVisible: false });
+    s50 = chart.addLineSeries({ color: "#16a34a", lineWidth: 2, priceLineVisible: false, lastValueVisible: false });
+    s200 = chart.addLineSeries({ color: "#dc2626", lineWidth: 2, priceLineVisible: false, lastValueVisible: false });
     state.chart = chart;
     data = intervalSource(selectedInterval);
     state.data = data;
