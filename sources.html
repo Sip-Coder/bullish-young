@@ -1,1 +1,68 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bullish Young — Sources</title><link rel="stylesheet" href="assets/app.css"></head><body><main><h1>Sources</h1><ul class="source-list"><li>Yahoo Finance (via yfinance Python library) — quotes, statistics, daily OHLCV, refreshed hourly by GitHub Actions</li><li><a href="https://github.com/tradingview/lightweight-charts">TradingView Lightweight Charts</a> — Apache-2.0</li><li>SEC EDGAR</li><li>Universe — Nasdaq-100 stocks held by QYLD (ticker list only)</li><li>Last refresh: <span id="last-refresh">—</span></li></ul><div class="table-wrap"><table><thead><tr><th class="text">Ticker</th><th class="text">SEC EDGAR 10-K</th><th class="text">Yahoo key statistics</th></tr></thead><tbody></tbody></table></div></main><script src="assets/common.js"></script><script>shell('sources').then(()=>{document.querySelector('#last-refresh').textContent=BY.time(BY.stats.generated_at||BY.stats.as_of);document.querySelector('tbody').innerHTML=BY.stats.stocks.map(s=>`<tr><td class="text">${s.ticker}</td><td class="text"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=${s.ticker}&amp;type=10-K">10-K search</a></td><td class="text"><a href="https://finance.yahoo.com/quote/${s.ticker}/key-statistics/">Key statistics</a></td></tr>`).join('')})</script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Bullish Young — Sources</title>
+    <link rel="stylesheet" href="assets/app.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Sources</h1>
+      <ul class="source-list">
+        <li>
+          Yahoo Finance (via yfinance Python library) — quotes, statistics,
+          daily OHLCV, refreshed hourly by GitHub Actions
+        </li>
+        <li>
+          <a href="https://github.com/tradingview/lightweight-charts"
+            >TradingView Lightweight Charts</a
+          >
+          — Apache-2.0
+        </li>
+        <li>SEC EDGAR</li>
+        <li>Universe — Nasdaq-100 stocks held by QYLD (ticker list only)</li>
+        <li>Last refresh: <span id="last-refresh">—</span></li>
+      </ul>
+    <section class="brooks-source">
+      <h2>Al Brooks price action indicator</h2>
+      <p><a href="https://www.brookstradingcourse.com/">Brooks Trading Course</a></p>
+      <ul class="source-list">
+        <li>20 EMA: a 20-bar exponential moving average.</li>
+        <li>Bar types: trend bars have a body at least 50% of the range (green for bull, red for bear); dojis have a body at most 25% and are gray; other bars use lighter directional colors.</li>
+        <li>Always In flips long after two consecutive bull trend bars close above the EMA, or one bull trend bar closes above the prior 10-bar high; the rules mirror for short.</li>
+        <li>H1/H2/H3 and L1/L2/L3 count pullback attempts only after a new pullback leg between counts. H3/L3 is a wedge.</li>
+        <li>A strong setup has count ≥2, a signal bar closing in the top third for bulls or bottom third for bears, and a pullback within 1% of the EMA. Gray is weak.</li>
+        <li>Inside/outside: “i” stays within the prior bar; consecutive inside bars are “ii”/“iii” on the last bar of the run; “o” exceeds the prior high and low.</li>
+      </ul>
+      <p class="muted">Indicator inspired by Al Brooks' price action concepts; not affiliated.</p>
+    </section>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="text">Ticker</th>
+              <th class="text">SEC EDGAR 10-K</th>
+              <th class="text">Yahoo key statistics</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </main>
+    <script src="assets/common.js"></script>
+    <script>
+      shell("sources").then(() => {
+        document.querySelector("#last-refresh").textContent = BY.time(
+          BY.stats.generated_at || BY.stats.as_of,
+        );
+        document.querySelector("tbody").innerHTML = BY.stats.stocks
+          .map(
+            (s) =>
+              `<tr><td class="text">${s.ticker}</td><td class="text"><a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&amp;CIK=${s.ticker}&amp;type=10-K">10-K search</a></td><td class="text"><a href="https://finance.yahoo.com/quote/${s.ticker}/key-statistics/">Key statistics</a></td></tr>`,
+          )
+          .join("");
+      });
+    </script>
+  </body>
+</html>
