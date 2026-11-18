@@ -9,6 +9,7 @@ let ticker = new URLSearchParams(location.search).get("t")?.toUpperCase(),
   lines = [],
   lineMode = false,
   type = "candles",
+  rangeDays = 180,
   brooksResult = null;
 const brooksOn = () => document.querySelector("#brooks").checked;
 shell("").then(async () => {
@@ -20,7 +21,7 @@ shell("").then(async () => {
   document.title = `Bullish Young — ${ticker}`;
   let basket = BY.basket?.positions?.find((x) => x.ticker === ticker);
   document.querySelector(".stock-head").innerHTML =
-    `<div><h1>${ticker} · ${s.name || ""}</h1><div class="muted">${s.sector || "—"} · ${s.industry || "—"}</div></div><span class="stock-price">${BY.money(s.price)}</span><span class="${s.change >= 0 ? "up" : "down"}">${s.change >= 0 ? "+" : ""}${BY.money(s.change)} (${BY.pct(s.chg_pct)})</span>${basket ? `<span class="pill ${basket.status.includes("Above") ? "green" : basket.status.includes("10%") ? "amber" : ""}">${BY.money(basket.target_usd)} · ${basket.status}</span>` : ""}`;
+    `<div><h1>${ticker} · ${s.name || ""}</h1><div class="muted">${s.sector || "—"} · ${s.industry || "—"}</div></div><span class="stock-price">${BY.money(s.price)}</span><span class="${s.change >= 0 ? "up" : "down"}">${BY.change(s.change)} (${BY.pct(s.chg_pct)})</span>${basket ? `<span class="mobile-break"></span><span class="pill basket-pill ${basket.status.includes("Above") ? "green" : basket.status.includes("10%") ? "amber" : ""}">${BY.money(basket.target_usd)} · ${basket.status}</span>` : ""}`;
   data = await fetch(`data/history/${ticker}.json`).then((r) => r.json());
   document.querySelector("#brooks").checked =
     new URLSearchParams(location.search).get("brooks") === "1";
@@ -108,6 +109,7 @@ function applyBrooks() {
     brooksResult = null;
     mainSeries.setMarkers([]);
     setPriceData();
+    setRange(rangeDays);
     return;
   }
   brooksResult = window.BrooksPA.analyze(data);
@@ -130,6 +132,7 @@ function applyBrooks() {
   badge.className = `brooks-badge ${state}`;
   setPriceData();
   applyMarkers();
+  setRange(rangeDays);
 }
 function setPriceData() {
   let bars =
@@ -189,7 +192,7 @@ function makeChart() {
   s50.setData(sma(50));
   s200.setData(sma(200));
   setType("candles");
-  chart.timeScale().fitContent();
+  setRange(180);
   new ResizeObserver(() =>
     chart.applyOptions({ width: el.clientWidth, height: el.clientHeight }),
   ).observe(el);
@@ -227,11 +230,7 @@ function makeChart() {
     .forEach((b) => (b.onclick = () => setType(b.dataset.type)));
   document.querySelectorAll("[data-days]").forEach(
     (b) =>
-      (b.onclick = () => {
-        let to = data.at(-1).time,
-          from = data[Math.max(0, data.length - +b.dataset.days)].time;
-        chart.timeScale().setVisibleRange({ from, to });
-      }),
+      (b.onclick = () => setRange(+b.dataset.days)),
   );
   sma50.onclick = () => toggle(sma50, s50);
   sma200.onclick = () => toggle(sma200, s200);
@@ -246,6 +245,15 @@ function makeChart() {
   document.querySelector("#brooks").onchange = applyBrooks;
   document.querySelector("#bar-types").onchange = setPriceData;
   document.querySelector("#inside-outside").onchange = applyMarkers;
+}
+function setRange(days) {
+  rangeDays = days;
+  let to = data.at(-1).time,
+    from = data[Math.max(0, data.length - days)].time;
+  chart.timeScale().setVisibleRange({ from, to });
+  document
+    .querySelectorAll("[data-days]")
+    .forEach((b) => b.classList.toggle("active", +b.dataset.days === days));
 }
 function setType(t) {
   if (mainSeries) chart.removeSeries(mainSeries);
@@ -268,6 +276,7 @@ function setType(t) {
     .forEach((b) => b.classList.toggle("active", b.dataset.type === t));
   lines = [];
   applyBrooks();
+  setRange(rangeDays);
 }
 function toggle(btn, series) {
   let on = !btn.classList.contains("active");
