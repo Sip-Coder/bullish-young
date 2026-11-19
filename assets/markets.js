@@ -12,8 +12,8 @@ shell("markets").then(async () => {
       dividends: dividends?.dividends || [],
     }, markets),
     mountMarket("es-root", "ES=F", {
-      defaultRange: "1Y",
-      defaultInterval: "daily",
+      defaultRange: "1M",
+      defaultInterval: "5m",
     }, markets),
   ]);
   renderDividends(dividends, markets?.series?.QYLD);
