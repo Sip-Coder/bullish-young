@@ -119,7 +119,7 @@
     let data = dailyData;
     let dividendRows = normalizeDividends(options.dividends);
     let type = "candles";
-    let selectedRange = options.defaultRange || "6M";
+    let selectedRange = options.defaultRange || "1Y";
     let selectedInterval = options.defaultInterval || "daily";
     let chart, mainSeries, s50, s200, volume, brooksEma, brooksResult = null;
     const drawingsRef = { inst: null };

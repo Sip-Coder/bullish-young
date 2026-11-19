@@ -7,13 +7,13 @@ shell("markets").then(async () => {
   ]);
   await Promise.all([
     mountMarket("qyld-root", "QYLD", {
-      defaultRange: "6M",
+      defaultRange: "1Y",
       defaultInterval: "daily",
       dividends: dividends?.dividends || [],
     }, markets),
     mountMarket("es-root", "ES=F", {
-      defaultRange: "1M",
-      defaultInterval: "5m",
+      defaultRange: "1Y",
+      defaultInterval: "daily",
     }, markets),
   ]);
   renderDividends(dividends, markets?.series?.QYLD);

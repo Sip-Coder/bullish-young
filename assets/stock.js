@@ -40,7 +40,7 @@ shell("").then(async () => {
     daily: dailyData,
     weekly: longData,
     intraday: intradayData,
-    defaultRange: "6M",
+    defaultRange: "1Y",
     defaultInterval: "daily",
     dividends: dividendPayload?.dividends || [],
     intradayEligible,
