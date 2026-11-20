@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-19T21:30:30+00:00",
- "as_of": "2026-11-19T21:30:30+00:00",
+ "generated_at": "2026-11-20T03:12:19+00:00",
+ "as_of": "2026-11-20T03:12:19+00:00",
  "total": 45000,
  "cash_reserve": 3250,
  "positions": [
@@ -19,7 +19,7 @@
    "pct_vs_entry": -6.1,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "AVGO",
@@ -36,7 +36,7 @@
    "pct_vs_entry": 1.48,
    "status": "Above 50D: signal",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "MU",
@@ -53,7 +53,7 @@
    "pct_vs_entry": -3.09,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "MRVL",
@@ -70,7 +70,7 @@
    "pct_vs_entry": -6.9,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "ASML",
@@ -87,7 +87,7 @@
    "pct_vs_entry": -1.95,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "LRCX",
@@ -104,7 +104,7 @@
    "pct_vs_entry": -3.33,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "MSFT",
@@ -116,12 +116,12 @@
    "first_half_usd": 2250.0,
    "second_half_usd": 2250.0,
    "price": 498.3,
-   "ma50": 520.06,
-   "pct_vs_ma50": -4.18,
+   "ma50": 519.08,
+   "pct_vs_ma50": -4.0,
    "pct_vs_entry": -1.57,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "META",
@@ -133,12 +133,12 @@
    "first_half_usd": 2250.0,
    "second_half_usd": 2250.0,
    "price": 596.22,
-   "ma50": 678.33,
-   "pct_vs_ma50": -12.1,
+   "ma50": 680.01,
+   "pct_vs_ma50": -12.32,
    "pct_vs_entry": -3.66,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "GOOGL",
@@ -155,7 +155,7 @@
    "pct_vs_ma50": -15.78,
    "pct_vs_entry": -2.69,
    "status": "Below 50D: waiting",
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "CSCO",
@@ -172,7 +172,7 @@
    "pct_vs_entry": -0.43,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "ALAB",
@@ -184,12 +184,12 @@
    "first_half_usd": 1000.0,
    "second_half_usd": 1000.0,
    "price": 211.6,
-   "ma50": 287.43,
-   "pct_vs_ma50": -26.38,
+   "ma50": 288.97,
+   "pct_vs_ma50": -26.77,
    "pct_vs_entry": 0.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "MPWR",
@@ -206,7 +206,7 @@
    "pct_vs_entry": -1.63,
    "status": "Above 50D: signal",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "SNDK",
@@ -218,12 +218,12 @@
    "first_half_usd": 800.0,
    "second_half_usd": 800.0,
    "price": 755.16,
-   "ma50": 776.21,
-   "pct_vs_ma50": -2.71,
+   "ma50": 170.69,
+   "pct_vs_ma50": 342.42,
    "pct_vs_entry": -5.28,
-   "status": "Below 50D: waiting",
+   "status": "Above 50D: signal",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "WDC",
@@ -240,7 +240,7 @@
    "pct_vs_entry": 4.75,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   },
   {
    "ticker": "STX",
@@ -257,7 +257,7 @@
    "pct_vs_entry": 3.37,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-19T21:30:30+00:00"
+   "as_of": "2026-11-20T03:12:19+00:00"
   }
  ]
 }
