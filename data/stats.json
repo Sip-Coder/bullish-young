@@ -1,11 +1,11 @@
 {
- "generated_at": "2026-11-21T23:14:04+00:00",
- "as_of": "2026-11-21T23:14:04+00:00",
+ "generated_at": "2026-11-22T03:14:10+00:00",
+ "as_of": "2026-11-22T03:14:10+00:00",
  "count": 102,
  "stocks": [
   {
    "ticker": "AAPL",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/AAPL/key-statistics/",
    "market_cap": 4978144444416,
    "enterprise_value": 5015901044736,
@@ -54,7 +54,7 @@
   },
   {
    "ticker": "ABNB",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ABNB/key-statistics/",
    "market_cap": 101660999680,
    "enterprise_value": 90018684928,
@@ -103,7 +103,7 @@
   },
   {
    "ticker": "ADBE",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ADBE/key-statistics/",
    "market_cap": 84732731392,
    "enterprise_value": 85877735424,
@@ -152,7 +152,7 @@
   },
   {
    "ticker": "ADI",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ADI/key-statistics/",
    "market_cap": 167620886528,
    "enterprise_value": 174460010496,
@@ -198,7 +198,7 @@
   },
   {
    "ticker": "ADP",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ADP/key-statistics/",
    "market_cap": 119102865408,
    "enterprise_value": 121365168128,
@@ -247,7 +247,7 @@
   },
   {
    "ticker": "ADSK",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ADSK/key-statistics/",
    "market_cap": 51096317952,
    "enterprise_value": 50646319104,
@@ -296,7 +296,7 @@
   },
   {
    "ticker": "AEP",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/AEP/key-statistics/",
    "market_cap": 68142026752,
    "enterprise_value": 123865022464,
@@ -345,7 +345,7 @@
   },
   {
    "ticker": "ALAB",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ALAB/key-statistics/",
    "market_cap": 31521949696,
    "enterprise_value": 30188697600,
@@ -394,7 +394,7 @@
   },
   {
    "ticker": "ALNY",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ALNY/key-statistics/",
    "market_cap": 19262902272,
    "enterprise_value": 18672504832,
@@ -443,7 +443,7 @@
   },
   {
    "ticker": "AMAT",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/AMAT/key-statistics/",
    "market_cap": 240166404096,
    "enterprise_value": 237178585088,
@@ -492,7 +492,7 @@
   },
   {
    "ticker": "AMD",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/AMD/key-statistics/",
    "market_cap": 702393286656,
    "enterprise_value": 689471619072,
@@ -538,7 +538,7 @@
   },
   {
    "ticker": "AMGN",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/AMGN/key-statistics/",
    "market_cap": 235642683392,
    "enterprise_value": 276459683840,
@@ -587,7 +587,7 @@
   },
   {
    "ticker": "AMZN",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/AMZN/key-statistics/",
    "market_cap": 2668898811904,
    "enterprise_value": 2859513675776,
@@ -636,7 +636,7 @@
   },
   {
    "ticker": "APP",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/APP/key-statistics/",
    "market_cap": 115396132864,
    "enterprise_value": 115738542080,
@@ -685,7 +685,7 @@
   },
   {
    "ticker": "ARM",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ARM/key-statistics/",
    "market_cap": 162853994496,
    "enterprise_value": 159733006336,
@@ -734,7 +734,7 @@
   },
   {
    "ticker": "ASML",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ASML/key-statistics/",
    "market_cap": 488023621632,
    "enterprise_value": 26938609500160,
@@ -780,7 +780,7 @@
   },
   {
    "ticker": "AVGO",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/AVGO/key-statistics/",
    "market_cap": 1453140738048,
    "enterprise_value": 1488584704000,
@@ -829,7 +829,7 @@
   },
   {
    "ticker": "AXON",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/AXON/key-statistics/",
    "market_cap": 23708321792,
    "enterprise_value": 25041283072,
@@ -878,7 +878,7 @@
   },
   {
    "ticker": "BKNG",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/BKNG/key-statistics/",
    "market_cap": 107769749504,
    "enterprise_value": 113274748928,
@@ -927,7 +927,7 @@
   },
   {
    "ticker": "BKR",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/BKR/key-statistics/",
    "market_cap": 44499849216,
    "enterprise_value": 57813848064,
@@ -976,7 +976,7 @@
   },
   {
    "ticker": "CCEP",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/CCEP/key-statistics/",
    "market_cap": 50657034240,
    "enterprise_value": 61882343424,
@@ -1022,7 +1022,7 @@
   },
   {
    "ticker": "CDNS",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/CDNS/key-statistics/",
    "market_cap": 77259636736,
    "enterprise_value": 78528946176,
@@ -1071,7 +1071,7 @@
   },
   {
    "ticker": "CEG",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/CEG/key-statistics/",
    "market_cap": 83475374080,
    "enterprise_value": 106586374144,
@@ -1120,7 +1120,7 @@
   },
   {
    "ticker": "CMCSA",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/CMCSA/key-statistics/",
    "market_cap": 88420057088,
    "enterprise_value": 168328052736,
@@ -1169,7 +1169,7 @@
   },
   {
    "ticker": "COST",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/COST/key-statistics/",
    "market_cap": 488395014144,
    "enterprise_value": 477274996736,
@@ -1218,7 +1218,7 @@
   },
   {
    "ticker": "CPRT",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/CPRT/key-statistics/",
    "market_cap": 28801091584,
    "enterprise_value": 24414763008,
@@ -1264,7 +1264,7 @@
   },
   {
    "ticker": "CRWD",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/CRWD/key-statistics/",
    "market_cap": 234931617792,
    "enterprise_value": 230775750656,
@@ -1313,7 +1313,7 @@
   },
   {
    "ticker": "CRWV",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/CRWV/key-statistics/",
    "market_cap": 21972525056,
    "enterprise_value": 83965526016,
@@ -1362,7 +1362,7 @@
   },
   {
    "ticker": "CSCO",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/CSCO/key-statistics/",
    "market_cap": 357343494144,
    "enterprise_value": 372951515136,
@@ -1408,7 +1408,7 @@
   },
   {
    "ticker": "CSX",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/CSX/key-statistics/",
    "market_cap": 90510852096,
    "enterprise_value": 108287328256,
@@ -1454,7 +1454,7 @@
   },
   {
    "ticker": "CTAS",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/CTAS/key-statistics/",
    "market_cap": 87360487424,
    "enterprise_value": 89707282432,
@@ -1503,7 +1503,7 @@
   },
   {
    "ticker": "DASH",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/DASH/key-statistics/",
    "market_cap": 66529988608,
    "enterprise_value": 63855988736,
@@ -1552,7 +1552,7 @@
   },
   {
    "ticker": "DDOG",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/DDOG/key-statistics/",
    "market_cap": 56817266688,
    "enterprise_value": 52890910720,
@@ -1601,7 +1601,7 @@
   },
   {
    "ticker": "DXCM",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/DXCM/key-statistics/",
    "market_cap": 29582467072,
    "enterprise_value": 29157466112,
@@ -1650,7 +1650,7 @@
   },
   {
    "ticker": "EXC",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/EXC/key-statistics/",
    "market_cap": 47294779392,
    "enterprise_value": 99018776576,
@@ -1699,7 +1699,7 @@
   },
   {
    "ticker": "FANG",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/FANG/key-statistics/",
    "market_cap": 49063747584,
    "enterprise_value": 67902746624,
@@ -1748,7 +1748,7 @@
   },
   {
    "ticker": "FAST",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/FAST/key-statistics/",
    "market_cap": 58064928768,
    "enterprise_value": 58304729088,
@@ -1797,7 +1797,7 @@
   },
   {
    "ticker": "FER",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/FER/key-statistics/",
    "market_cap": 41184006144,
    "enterprise_value": 49815715840,
@@ -1846,7 +1846,7 @@
   },
   {
    "ticker": "FTNT",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/FTNT/key-statistics/",
    "market_cap": 91515445248,
    "enterprise_value": 87276945408,
@@ -1895,7 +1895,7 @@
   },
   {
    "ticker": "GEHC",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/GEHC/key-statistics/",
    "market_cap": 36460392448,
    "enterprise_value": 44292395008,
@@ -1944,7 +1944,7 @@
   },
   {
    "ticker": "GILD",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/GILD/key-statistics/",
    "market_cap": 206429536256,
    "enterprise_value": 224624558080,
@@ -1993,7 +1993,7 @@
   },
   {
    "ticker": "GOOG",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/GOOG/key-statistics/",
    "market_cap": 3245615874048,
    "enterprise_value": 3148871892992,
@@ -2042,7 +2042,7 @@
   },
   {
    "ticker": "GOOGL",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/GOOGL/key-statistics/",
    "market_cap": 3261475323904,
    "enterprise_value": 3164731342848,
@@ -2091,7 +2091,7 @@
   },
   {
    "ticker": "HON",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/HON/key-statistics/",
    "market_cap": 67483115520,
    "enterprise_value": 78774116352,
@@ -2140,7 +2140,7 @@
   },
   {
    "ticker": "HONA",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/HONA/key-statistics/",
    "market_cap": 47779872768,
    "enterprise_value": 62483869696,
@@ -2186,7 +2186,7 @@
   },
   {
    "ticker": "IDXX",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/IDXX/key-statistics/",
    "market_cap": 53276061696,
    "enterprise_value": 54051487744,
@@ -2235,7 +2235,7 @@
   },
   {
    "ticker": "INTC",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/INTC/key-statistics/",
    "market_cap": 272553181184,
    "enterprise_value": 285324214272,
@@ -2281,7 +2281,7 @@
   },
   {
    "ticker": "INTU",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/INTU/key-statistics/",
    "market_cap": 72271306752,
    "enterprise_value": 73790218240,
@@ -2330,7 +2330,7 @@
   },
   {
    "ticker": "ISRG",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ISRG/key-statistics/",
    "market_cap": 138328162304,
    "enterprise_value": 134417276928,
@@ -2379,7 +2379,7 @@
   },
   {
    "ticker": "KDP",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/KDP/key-statistics/",
    "market_cap": 49738104832,
    "enterprise_value": 87084441600,
@@ -2428,7 +2428,7 @@
   },
   {
    "ticker": "KLAC",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/KLAC/key-statistics/",
    "market_cap": 165306843136,
    "enterprise_value": 166558302208,
@@ -2477,7 +2477,7 @@
   },
   {
    "ticker": "LIN",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/LIN/key-statistics/",
    "market_cap": 230841090048,
    "enterprise_value": 255169101824,
@@ -2526,7 +2526,7 @@
   },
   {
    "ticker": "LITE",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/LITE/key-statistics/",
    "market_cap": 41764028416,
    "enterprise_value": 41221578752,
@@ -2572,7 +2572,7 @@
   },
   {
    "ticker": "LRCX",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/LRCX/key-statistics/",
    "market_cap": 228935565312,
    "enterprise_value": 225233633280,
@@ -2621,7 +2621,7 @@
   },
   {
    "ticker": "MAR",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/MAR/key-statistics/",
    "market_cap": 104711593984,
    "enterprise_value": 121936584704,
@@ -2670,7 +2670,7 @@
   },
   {
    "ticker": "MCHP",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/MCHP/key-statistics/",
    "market_cap": 30171756544,
    "enterprise_value": 35269558272,
@@ -2719,7 +2719,7 @@
   },
   {
    "ticker": "MDLZ",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/MDLZ/key-statistics/",
    "market_cap": 83899760640,
    "enterprise_value": 104656764928,
@@ -2768,7 +2768,7 @@
   },
   {
    "ticker": "MELI",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/MELI/key-statistics/",
    "market_cap": 68694163456,
    "enterprise_value": 77480165376,
@@ -2817,7 +2817,7 @@
   },
   {
    "ticker": "META",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/META/key-statistics/",
    "market_cap": 1433642336256,
    "enterprise_value": 1466035339264,
@@ -2866,7 +2866,7 @@
   },
   {
    "ticker": "MNST",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/MNST/key-statistics/",
    "market_cap": 85523693568,
    "enterprise_value": 81909506048,
@@ -2912,7 +2912,7 @@
   },
   {
    "ticker": "MPWR",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/MPWR/key-statistics/",
    "market_cap": 55695495168,
    "enterprise_value": 54625632256,
@@ -2961,7 +2961,7 @@
   },
   {
    "ticker": "MRNA",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/MRNA/key-statistics/",
    "market_cap": 78901084160,
    "enterprise_value": 77959086080,
@@ -3010,7 +3010,7 @@
   },
   {
    "ticker": "MRVL",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/MRVL/key-statistics/",
    "market_cap": 110023368704,
    "enterprise_value": 108580634624,
@@ -3059,7 +3059,7 @@
   },
   {
    "ticker": "MSFT",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/MSFT/key-statistics/",
    "market_cap": 3598139523072,
    "enterprise_value": 3667561807872,
@@ -3108,7 +3108,7 @@
   },
   {
    "ticker": "MSTR",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/MSTR/key-statistics/",
    "market_cap": 32931311616,
    "enterprise_value": 46785753088,
@@ -3157,7 +3157,7 @@
   },
   {
    "ticker": "MU",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/MU/key-statistics/",
    "market_cap": 672642433024,
    "enterprise_value": 634387431424,
@@ -3203,7 +3203,7 @@
   },
   {
    "ticker": "NBIS",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/NBIS/key-statistics/",
    "market_cap": 23815892992,
    "enterprise_value": 32487895040,
@@ -3249,7 +3249,7 @@
   },
   {
    "ticker": "NFLX",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/NFLX/key-statistics/",
    "market_cap": 232951873536,
    "enterprise_value": 242258706432,
@@ -3298,7 +3298,7 @@
   },
   {
    "ticker": "NVDA",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/NVDA/key-statistics/",
    "market_cap": 3031172907008,
    "enterprise_value": 2966443261952,
@@ -3344,7 +3344,7 @@
   },
   {
    "ticker": "NXPI",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/NXPI/key-statistics/",
    "market_cap": 59270258688,
    "enterprise_value": 66682261504,
@@ -3393,7 +3393,7 @@
   },
   {
    "ticker": "ODFL",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ODFL/key-statistics/",
    "market_cap": 34633244672,
    "enterprise_value": 34187018240,
@@ -3442,7 +3442,7 @@
   },
   {
    "ticker": "ORLY",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ORLY/key-statistics/",
    "market_cap": 74309812224,
    "enterprise_value": 84411801600,
@@ -3491,7 +3491,7 @@
   },
   {
    "ticker": "PANW",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/PANW/key-statistics/",
    "market_cap": 281865715712,
    "enterprise_value": 281522733056,
@@ -3540,7 +3540,7 @@
   },
   {
    "ticker": "PAYX",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/PAYX/key-statistics/",
    "market_cap": 40094081024,
    "enterprise_value": 43780780032,
@@ -3589,7 +3589,7 @@
   },
   {
    "ticker": "PCAR",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/PCAR/key-statistics/",
    "market_cap": 53808844800,
    "enterprise_value": 59671842816,
@@ -3638,7 +3638,7 @@
   },
   {
    "ticker": "PDD",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/PDD/key-statistics/",
    "market_cap": 119109820416,
    "enterprise_value": -332799475712,
@@ -3687,7 +3687,7 @@
   },
   {
    "ticker": "PEP",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/PEP/key-statistics/",
    "market_cap": 191519621120,
    "enterprise_value": 232432631808,
@@ -3736,7 +3736,7 @@
   },
   {
    "ticker": "PLTR",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/PLTR/key-statistics/",
    "market_cap": 345738838016,
    "enterprise_value": 335519645696,
@@ -3785,7 +3785,7 @@
   },
   {
    "ticker": "PYPL",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/PYPL/key-statistics/",
    "market_cap": 44265783296,
    "enterprise_value": 48236781568,
@@ -3834,7 +3834,7 @@
   },
   {
    "ticker": "QCOM",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/QCOM/key-statistics/",
    "market_cap": 160435798016,
    "enterprise_value": 168746795008,
@@ -3883,7 +3883,7 @@
   },
   {
    "ticker": "REGN",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/REGN/key-statistics/",
    "market_cap": 95243403264,
    "enterprise_value": 85795168256,
@@ -3932,7 +3932,7 @@
   },
   {
    "ticker": "RKLB",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/RKLB/key-statistics/",
    "market_cap": 30566393856,
    "enterprise_value": 24218722304,
@@ -3981,7 +3981,7 @@
   },
   {
    "ticker": "ROP",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ROP/key-statistics/",
    "market_cap": 45539921920,
    "enterprise_value": 54948622336,
@@ -4030,7 +4030,7 @@
   },
   {
    "ticker": "ROST",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/ROST/key-statistics/",
    "market_cap": 68473933824,
    "enterprise_value": 68279136256,
@@ -4076,7 +4076,7 @@
   },
   {
    "ticker": "SBUX",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/SBUX/key-statistics/",
    "market_cap": 117578506240,
    "enterprise_value": 136157609984,
@@ -4125,7 +4125,7 @@
   },
   {
    "ticker": "SHOP",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/SHOP/key-statistics/",
    "market_cap": 159168495616,
    "enterprise_value": 154629505024,
@@ -4174,7 +4174,7 @@
   },
   {
    "ticker": "SNDK",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/SNDK/key-statistics/",
    "market_cap": 90200072192,
    "enterprise_value": 85195071488,
@@ -4220,7 +4220,7 @@
   },
   {
    "ticker": "SNPS",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/SNPS/key-statistics/",
    "market_cap": 75920687104,
    "enterprise_value": 83153649664,
@@ -4269,7 +4269,7 @@
   },
   {
    "ticker": "SPCX",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/SPCX/key-statistics/",
    "market_cap": 1735524220928,
    "enterprise_value": 1684887175168,
@@ -4315,7 +4315,7 @@
   },
   {
    "ticker": "STX",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/STX/key-statistics/",
    "market_cap": 104911724544,
    "enterprise_value": 106325721088,
@@ -4361,7 +4361,7 @@
   },
   {
    "ticker": "TER",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/TER/key-statistics/",
    "market_cap": 31970445312,
    "enterprise_value": 31690037248,
@@ -4410,7 +4410,7 @@
   },
   {
    "ticker": "TMUS",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/TMUS/key-statistics/",
    "market_cap": 175415541760,
    "enterprise_value": 288783532032,
@@ -4459,7 +4459,7 @@
   },
   {
    "ticker": "TRI",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/TRI/key-statistics/",
    "market_cap": 44022083584,
    "enterprise_value": 46641082368,
@@ -4508,7 +4508,7 @@
   },
   {
    "ticker": "TSLA",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/TSLA/key-statistics/",
    "market_cap": 1366942810112,
    "enterprise_value": 1338540687360,
@@ -4557,7 +4557,7 @@
   },
   {
    "ticker": "TSM",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/TSM/key-statistics/",
    "market_cap": 1652980711424,
    "enterprise_value": 10321946214400,
@@ -4603,7 +4603,7 @@
   },
   {
    "ticker": "TTWO",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/TTWO/key-statistics/",
    "market_cap": 39314833408,
    "enterprise_value": 40552632320,
@@ -4652,7 +4652,7 @@
   },
   {
    "ticker": "TXN",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/TXN/key-statistics/",
    "market_cap": 241006919680,
    "enterprise_value": 246419914752,
@@ -4701,7 +4701,7 @@
   },
   {
    "ticker": "VRTX",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/VRTX/key-statistics/",
    "market_cap": 130576982016,
    "enterprise_value": 130752069632,
@@ -4750,7 +4750,7 @@
   },
   {
    "ticker": "WDAY",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/WDAY/key-statistics/",
    "market_cap": 42059321344,
    "enterprise_value": 42428321792,
@@ -4799,7 +4799,7 @@
   },
   {
    "ticker": "WDC",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/WDC/key-statistics/",
    "market_cap": 97739538432,
    "enterprise_value": 97347551232,
@@ -4848,7 +4848,7 @@
   },
   {
    "ticker": "WMT",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/WMT/key-statistics/",
    "market_cap": 1018236174336,
    "enterprise_value": 1089029472256,
@@ -4897,7 +4897,7 @@
   },
   {
    "ticker": "XEL",
-   "as_of": "2026-11-21T23:14:04+00:00",
+   "as_of": "2026-11-22T03:14:10+00:00",
    "source": "https://finance.yahoo.com/quote/XEL/key-statistics/",
    "market_cap": 50900643840,
    "enterprise_value": 91153645568,
