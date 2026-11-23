@@ -1,16 +1,16 @@
 {
- "generated_at": "2026-11-23T16:01:08+00:00",
+ "generated_at": "2026-11-23T21:20:23+00:00",
  "series": {
   "QYLD": {
    "ticker": "QYLD",
    "slug": "QYLD",
    "name": "Global X NASDAQ 100 Covered Cal",
-   "price": 16.42,
+   "price": 16.41,
    "price_date": "2026-11-23",
    "ttm_total": 2.1263,
-   "ttm_yield": 12.95,
+   "ttm_yield": 12.96,
    "annualized_payout": 1.9044,
-   "distribution_rate": 11.6,
+   "distribution_rate": 11.61,
    "latest_dividend": {
     "ex_date": "2026-11-23",
     "record_date": "2026-11-23",
@@ -35,7 +35,7 @@
    "ticker": "ES=F",
    "slug": "ES-F",
    "name": "E-Mini S&P 500 Dec 26",
-   "price": 7273.75,
+   "price": 7265.75,
    "price_date": "2026-11-23"
   }
  }
