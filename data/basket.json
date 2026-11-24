@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-24T21:36:46+00:00",
- "as_of": "2026-11-24T21:36:46+00:00",
+ "generated_at": "2026-11-24T22:20:18+00:00",
+ "as_of": "2026-11-24T22:20:18+00:00",
  "total": 45000,
  "cash_reserve": 3250,
  "positions": [
@@ -19,7 +19,7 @@
    "pct_vs_entry": -0.05,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "AVGO",
@@ -36,7 +36,7 @@
    "pct_vs_entry": -11.86,
    "status": "Down 10% from entry: signal",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "MU",
@@ -53,7 +53,7 @@
    "pct_vs_entry": -11.6,
    "status": "Down 10% from entry: signal",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "MRVL",
@@ -70,7 +70,7 @@
    "pct_vs_entry": -11.54,
    "status": "Down 10% from entry: signal",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "ASML",
@@ -87,7 +87,7 @@
    "pct_vs_entry": -3.4,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "LRCX",
@@ -104,7 +104,7 @@
    "pct_vs_entry": -6.9,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "MSFT",
@@ -121,7 +121,7 @@
    "pct_vs_entry": -2.0,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "META",
@@ -138,7 +138,7 @@
    "pct_vs_entry": -4.69,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "GOOGL",
@@ -155,7 +155,7 @@
    "pct_vs_ma50": -12.7,
    "pct_vs_entry": -0.41,
    "status": "Below 50D: waiting",
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "CSCO",
@@ -172,7 +172,7 @@
    "pct_vs_entry": -1.18,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "ALAB",
@@ -189,7 +189,7 @@
    "pct_vs_entry": -9.59,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "MPWR",
@@ -206,7 +206,7 @@
    "pct_vs_entry": -9.66,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "SNDK",
@@ -223,7 +223,7 @@
    "pct_vs_entry": -90.22,
    "status": "Down 10% from entry: signal",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "WDC",
@@ -240,7 +240,7 @@
    "pct_vs_entry": -3.31,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   },
   {
    "ticker": "STX",
@@ -257,7 +257,7 @@
    "pct_vs_entry": -4.35,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-24T21:36:46+00:00"
+   "as_of": "2026-11-24T22:20:18+00:00"
   }
  ]
 }
