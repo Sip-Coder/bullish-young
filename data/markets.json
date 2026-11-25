@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-24T22:20:18+00:00",
+ "generated_at": "2026-11-25T00:22:44+00:00",
  "series": {
   "QYLD": {
    "ticker": "QYLD",
@@ -35,7 +35,7 @@
    "ticker": "ES=F",
    "slug": "ES-F",
    "name": "E-Mini S&P 500 Dec 26",
-   "price": 7210.75,
+   "price": 7193.0,
    "price_date": "2026-11-24"
   }
  }
