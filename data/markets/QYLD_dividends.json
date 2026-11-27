@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-11-27T08:26:50+00:00",
+ "generated_at": "2026-11-27T18:57:07+00:00",
  "ticker": "QYLD",
  "source": "nasdaq",
- "price": 16.24,
- "price_date": "2026-11-25",
+ "price": 16.51,
+ "price_date": "2026-11-27",
  "latest": {
   "ex_date": "2026-11-23",
   "record_date": "2026-11-23",
@@ -16,9 +16,9 @@
   "pct": 0.9944
  },
  "ttm_total": 2.1263,
- "ttm_yield": 13.09,
+ "ttm_yield": 12.88,
  "annualized_payout": 1.9044,
- "distribution_rate": 11.73,
+ "distribution_rate": 11.53,
  "globalx": {
   "as_of": "2026-11-17",
   "nav": 17.12,
