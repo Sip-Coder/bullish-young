@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-11-27T18:57:07+00:00",
- "as_of": "2026-11-27T18:57:07+00:00",
+ "generated_at": "2026-11-28T01:58:06+00:00",
+ "as_of": "2026-11-28T01:58:06+00:00",
  "total": 45000,
  "cash_reserve": 3250,
  "positions": [
@@ -14,12 +14,12 @@
    "first_half_usd": 2500.0,
    "second_half_usd": 2500.0,
    "price": 150.49,
-   "ma50": 202.28,
-   "pct_vs_ma50": -25.6,
+   "ma50": 203.33,
+   "pct_vs_ma50": -25.99,
    "pct_vs_entry": -3.2,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "AVGO",
@@ -31,12 +31,12 @@
    "first_half_usd": 2000.0,
    "second_half_usd": 2000.0,
    "price": 312.34,
-   "ma50": 339.84,
-   "pct_vs_ma50": -8.09,
+   "ma50": 340.4,
+   "pct_vs_ma50": -8.24,
    "pct_vs_entry": -8.57,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "MU",
@@ -48,12 +48,12 @@
    "first_half_usd": 1450.0,
    "second_half_usd": 1450.0,
    "price": 646.95,
-   "ma50": 888.8,
-   "pct_vs_ma50": -27.21,
+   "ma50": 893.74,
+   "pct_vs_ma50": -27.61,
    "pct_vs_entry": -9.19,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "MRVL",
@@ -65,12 +65,12 @@
    "first_half_usd": 650.0,
    "second_half_usd": 650.0,
    "price": 140.54,
-   "ma50": 212.99,
-   "pct_vs_ma50": -34.02,
+   "ma50": 214.47,
+   "pct_vs_ma50": -34.47,
    "pct_vs_entry": -5.51,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "ASML",
@@ -82,12 +82,12 @@
    "first_half_usd": 1400.0,
    "second_half_usd": 1400.0,
    "price": 1325.82,
-   "ma50": 1602.52,
-   "pct_vs_ma50": -17.27,
+   "ma50": 1608.17,
+   "pct_vs_ma50": -17.56,
    "pct_vs_entry": -4.14,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "LRCX",
@@ -99,12 +99,12 @@
    "first_half_usd": 1000.0,
    "second_half_usd": 1000.0,
    "price": 192.69,
-   "ma50": 261.26,
-   "pct_vs_ma50": -26.25,
+   "ma50": 262.66,
+   "pct_vs_ma50": -26.64,
    "pct_vs_entry": -8.54,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "MSFT",
@@ -116,12 +116,12 @@
    "first_half_usd": 2250.0,
    "second_half_usd": 2250.0,
    "price": 492.85,
-   "ma50": 518.57,
-   "pct_vs_ma50": -4.96,
+   "ma50": 519.09,
+   "pct_vs_ma50": -5.06,
    "pct_vs_entry": -2.64,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "META",
@@ -133,12 +133,12 @@
    "first_half_usd": 2250.0,
    "second_half_usd": 2250.0,
    "price": 628.96,
-   "ma50": 671.34,
-   "pct_vs_ma50": -6.31,
+   "ma50": 672.2,
+   "pct_vs_ma50": -6.43,
    "pct_vs_entry": 1.63,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "GOOGL",
@@ -151,11 +151,11 @@
    "first_half_usd": 1500.0,
    "second_half_usd": 1500.0,
    "price": 274.96,
-   "ma50": 316.79,
-   "pct_vs_ma50": -13.2,
+   "ma50": 317.65,
+   "pct_vs_ma50": -13.44,
    "pct_vs_entry": -1.87,
    "status": "Below 50D: waiting",
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "CSCO",
@@ -167,12 +167,12 @@
    "first_half_usd": 1250.0,
    "second_half_usd": 1250.0,
    "price": 97.04,
-   "ma50": 105.05,
-   "pct_vs_ma50": -7.62,
+   "ma50": 105.21,
+   "pct_vs_ma50": -7.77,
    "pct_vs_entry": 2.03,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "ALAB",
@@ -184,12 +184,12 @@
    "first_half_usd": 1000.0,
    "second_half_usd": 1000.0,
    "price": 206.84,
-   "ma50": 279.97,
-   "pct_vs_ma50": -26.12,
+   "ma50": 281.47,
+   "pct_vs_ma50": -26.51,
    "pct_vs_entry": -2.25,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "MPWR",
@@ -201,12 +201,12 @@
    "first_half_usd": 1325.0,
    "second_half_usd": 1325.0,
    "price": 1265.02,
-   "ma50": 1298.55,
-   "pct_vs_ma50": -2.58,
+   "ma50": 1299.23,
+   "pct_vs_ma50": -2.63,
    "pct_vs_entry": -3.97,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "SNDK",
@@ -218,12 +218,12 @@
    "first_half_usd": 800.0,
    "second_half_usd": 800.0,
    "price": 85.36,
-   "ma50": 167.79,
-   "pct_vs_ma50": -49.13,
+   "ma50": 169.5,
+   "pct_vs_ma50": -49.64,
    "pct_vs_entry": -89.29,
    "status": "Down 10% from entry: signal",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "WDC",
@@ -235,12 +235,12 @@
    "first_half_usd": 750.0,
    "second_half_usd": 750.0,
    "price": 292.11,
-   "ma50": 362.34,
-   "pct_vs_ma50": -19.38,
+   "ma50": 363.78,
+   "pct_vs_ma50": -19.7,
    "pct_vs_entry": 3.1,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   },
   {
    "ticker": "STX",
@@ -252,12 +252,12 @@
    "first_half_usd": 750.0,
    "second_half_usd": 750.0,
    "price": 509.66,
-   "ma50": 680.28,
-   "pct_vs_ma50": -25.08,
+   "ma50": 683.76,
+   "pct_vs_ma50": -25.46,
    "pct_vs_entry": 1.04,
    "status": "Below 50D: waiting",
    "flag": null,
-   "as_of": "2026-11-27T18:57:07+00:00"
+   "as_of": "2026-11-28T01:58:06+00:00"
   }
  ]
 }
